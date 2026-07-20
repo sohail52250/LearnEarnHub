@@ -90,8 +90,10 @@ res.sendFile(__dirname+"/public/index.html");
 const PORT = process.env.PORT || 3000;
 
 
-app.listen(PORT,()=>{
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log("Learn & Earn Hub running on port " + PORT);
+  });
+}
 
-console.log("Learn & Earn Hub running on port "+PORT);
-
-});
+module.exports = app;
