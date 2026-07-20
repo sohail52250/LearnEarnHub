@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>User Profile</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h2>User Profile</h2>
+
+
+<input id="bio"
+placeholder="About you">
+
+
+<input id="skills"
+placeholder="Your skills">
+
+
+<input id="city"
+placeholder="City">
+
+
+<button onclick="save()">
+Save Profile
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+async function save(){
+
+
+let r=await fetch("/api/profile/create",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+bio:bio.value,
+skills:skills.value,
+city:city.value
+
+})
+
+});
+
+
+alert(await r.text());
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+

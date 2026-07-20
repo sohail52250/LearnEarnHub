@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Post Advertisement</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>
+Post Your Service / Advertisement
+</h2>
+
+<input id="title_en" placeholder="Title English">
+
+<input id="title_ur" placeholder="عنوان اردو">
+
+<textarea id="description_en" placeholder="Description English"></textarea>
+
+<textarea id="description_ur" placeholder="تفصیل اردو"></textarea>
+
+<input id="phone" placeholder="Phone / WhatsApp">
+
+<input id="city" placeholder="City">
+
+<input id="category" placeholder="Category">
+
+<button onclick="postAd()">
+Publish Ad
+</button>
+
+</div>
+
+
+<script>
+
+async function postAd(){
+
+let response=await fetch("/api/ads/create",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+title_en:title_en.value,
+title_ur:title_ur.value,
+
+description_en:description_en.value,
+description_ur:description_ur.value,
+
+phone:phone.value,
+city:city.value,
+category:category.value,
+
+approved:false
+
+})
+
+});
+
+
+let data=await response.json();
+
+alert(JSON.stringify(data));
+
+}
+
+</script>
+
+</body>
+</html>

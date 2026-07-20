@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Marketplace</title>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Marketplace</h2>
+
+<div id="ads"></div>
+
+</div>
+
+
+<script>
+
+async function load(){
+
+let r=await fetch("/api/ads");
+
+let ads=await r.json();
+
+ads.forEach(a=>{
+
+document.getElementById("ads").innerHTML+=`
+
+<div class="card">
+
+<h3>${a.title_en}</h3>
+
+<p>${a.description_en}</p>
+
+<p>${a.city}</p>
+
+<p>${a.phone}</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+load();
+
+</script>
+
+</body>
+</html>
