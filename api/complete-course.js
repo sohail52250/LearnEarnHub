@@ -1,71 +1,76 @@
 const express = require("express");
 const router = express.Router();
-
 const { createClient } = require("@supabase/supabase-js");
+
+router.post("/", async (req,res)=>{
+
+try {
 
 const supabase = createClient(
  process.env.SUPABASE_URL,
  process.env.SUPABASE_KEY
 );
 
-router.post("/", async (req,res)=>{
-
-try {
-
 const {user_id,course_id}=req.body;
 
-const {data:course,error:courseError}=await supabase
+if(!user_id || !course_id){
+ return res.json({
+  step:"input",
+  error:"missing user_id or course_id"
+ });
+}
+
+const courseResult = await supabase
 .from("courses")
-.select("points")
+.select("*")
 .eq("id",course_id)
 .single();
 
-if(courseError)
- return res.json({success:false,error:courseError});
+if(courseResult.error){
+ return res.json({
+  step:"course",
+  error:courseResult.error
+ });
+}
 
 
-const {data:progress,error:progressError}=await supabase
+const progressResult = await supabase
 .from("course_progress")
 .insert({
- user_id,
- course_id,
+ user_id:user_id,
+ course_id:course_id,
  completed:true,
- points_added:course.points
+ points_added:courseResult.data.points || 0
 })
 .select();
 
-if(progressError)
- return res.json({success:false,error:progressError});
+
+if(progressResult.error){
+ return res.json({
+  step:"progress",
+  error:progressResult.error
+ });
+}
 
 
-const {error:updateError}=await supabase
-.rpc("increment_points",{
- userid:user_id,
- amount:course.points
+return res.json({
+ success:true,
+ course:courseResult.data,
+ progress:progressResult.data
 });
 
 
-if(updateError)
- return res.json({success:false,error:updateError});
+}catch(err){
 
-
-res.json({
-success:true,
-message:"Course completed",
-points:course.points,
-data:progress
-});
-
-
-}catch(e){
-
-res.status(500).json({
-success:false,
-error:e.message
+return res.status(500).json({
+ step:"catch",
+ error:err.message,
+ stack:err.stack
 });
 
 }
 
 });
 
-module.exports=router;
+
+module.exports = router;
