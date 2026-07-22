@@ -14,6 +14,7 @@ app.get("/api/status",(req,res)=>{
 });
 
 
+app.use("/api/auth", require("./auth"));
 app.use("/api/users", require("./users"));
 app.use("/api/ads", require("./ads"));
 app.use("/api/courses", require("./courses"));
