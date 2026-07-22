@@ -16,57 +16,50 @@ if(req.method !== "POST"){
 const {user_id, course_id} = req.body;
 
 if(!user_id || !course_id){
- return 
-const {data:userData}=await supabase
-.from("users")
-.select("points")
-.eq("id",user_id)
-.single();
-
-await supabase
-.from("users")
-.update({
- points:(userData?.points || 0) + course.points
-})
-.eq("id",user_id);
-
-res.json({
+ return res.status(400).json({
   success:false,
   error:"Missing user_id or course_id"
  });
 }
 
-const {data:course,error:courseError} =
-await supabase
+
+// Check existing completion
+const {data:existing} = await supabase
+.from("user_progress")
+.select("id")
+.eq("user_id",user_id)
+.eq("course_id",course_id)
+.eq("completed",true)
+.maybeSingle();
+
+
+if(existing){
+ return res.json({
+  success:false,
+  message:"Course already completed"
+ });
+}
+
+
+// Get course points
+const {data:course,error:courseError} = await supabase
 .from("courses")
 .select("points")
 .eq("id",course_id)
 .single();
 
+
 if(courseError){
- return 
-const {data:userData}=await supabase
-.from("users")
-.select("points")
-.eq("id",user_id)
-.single();
-
-await supabase
-.from("users")
-.update({
- points:(userData?.points || 0) + course.points
-})
-.eq("id",user_id);
-
-res.json({
+ return res.json({
+  success:false,
   step:"course",
   error:courseError
  });
 }
 
 
-const {data:progress,error:progressError} =
-await supabase
+// Save completion
+const {data:progress,error:progressError} = await supabase
 .from("user_progress")
 .insert({
  user_id:user_id,
@@ -78,42 +71,31 @@ await supabase
 
 
 if(progressError){
- return 
-const {data:userData}=await supabase
-.from("users")
-.select("points")
-.eq("id",user_id)
-.single();
-
-await supabase
-.from("users")
-.update({
- points:(userData?.points || 0) + course.points
-})
-.eq("id",user_id);
-
-res.json({
+ return res.json({
+  success:false,
   step:"progress",
   error:progressError
  });
 }
 
 
-return 
+// Update user points
 const {data:userData}=await supabase
 .from("users")
 .select("points")
 .eq("id",user_id)
 .single();
 
+
 await supabase
 .from("users")
 .update({
- points:(userData?.points || 0) + course.points
+ points:(userData?.points || 0) + (course.points || 0)
 })
 .eq("id",user_id);
 
-res.json({
+
+return res.json({
  success:true,
  message:"Course completed",
  points:course.points || 0,
@@ -125,7 +107,6 @@ res.json({
 
 return res.status(500).json({
  success:false,
- step:"server",
  error:e.message
 });
 
