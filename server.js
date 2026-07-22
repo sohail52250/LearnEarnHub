@@ -1,33 +1,25 @@
 require("dotenv").config();
 
 const express = require("express");
-const cors = require("cors");
-
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.get("/api/status", (req, res) => {
+app.get("/",(req,res)=>{
   res.json({
-    name: "Learn & Earn Hub",
-    status: "Running",
-    database: "Supabase"
+    app:"Learn & Earn Hub",
+    version:"1.0"
   });
 });
 
-app.get("/", (req, res) => {
+app.get("/api/status",(req,res)=>{
   res.json({
-    app: "Learn & Earn Hub",
-    languages: ["English", "Urdu"],
-    features: [
-      "Learn",
-      "Earn",
-      "Marketplace",
-      "Profiles"
-    ]
+    name:"Learn & Earn Hub",
+    status:"Running",
+    database:"Supabase"
   });
 });
+
+const dbtest = require("./api/dbtest");
+
+app.get("/api/dbtest",dbtest);
 
 module.exports = app;
