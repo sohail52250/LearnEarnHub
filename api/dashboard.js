@@ -1,69 +1,71 @@
 const { createClient } = require("@supabase/supabase-js");
 
-module.exports = async function(req,res){
-
-try {
-
-const supabase = createClient(
- process.env.SUPABASE_URL,
- process.env.SUPABASE_KEY
+const db = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
 );
 
-const user_id = req.query.user_id;
+module.exports = async (req,res)=>{
+
+try{
+
+const {user_id}=req.query;
 
 if(!user_id){
- return res.status(400).json({
-  success:false,
-  error:"user_id required"
- });
-}
-
-
-const userResult = await supabase
-.from("users")
-.select("id,name,email,language,points,created_at,phone")
-.eq("id", user_id)
-.maybeSingle();
-
-
-if(userResult.error){
  return res.json({
   success:false,
-  step:"users",
-  error:userResult.error
+  error:"missing user_id"
  });
 }
 
 
-const progressResult = await supabase
-.from("user_progress")
+// user data (no password)
+const {data:user,error:userError}=await db
+.from("users")
 .select("id,name,email,language,points,created_at,phone")
-.eq("user_id", user_id);
+.eq("id",user_id)
+.single();
 
 
-if(progressResult.error){
+if(userError){
+ return res.json({
+  success:false,
+  step:"user",
+  error:userError
+ });
+}
+
+
+// progress data
+const {data:progress,error:progressError}=await db
+.from("user_progress")
+.select("id,user_id,lesson_id,course_id,completed,score,created_at,points_added")
+.eq("user_id",user_id);
+
+
+if(progressError){
  return res.json({
   success:false,
   step:"progress",
-  error:progressResult.error
+  error:progressError
  });
 }
 
 
 return res.json({
  success:true,
- user:userResult.data,
- progress:progressResult.data
+ user:user,
+ progress:progress
 });
 
 
-}catch(err){
+}catch(e){
 
 return res.status(500).json({
  success:false,
- message:err.message
+ error:e.message
 });
 
 }
 
-}
+};
