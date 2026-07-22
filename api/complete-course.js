@@ -35,7 +35,7 @@ if(courseResult.error){
 
 
 const progressResult = await supabase
-.from("course_progress")
+.from("user_progress")
 .insert({
  user_id:user_id,
  course_id:course_id,
