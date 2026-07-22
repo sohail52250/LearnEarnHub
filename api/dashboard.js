@@ -21,7 +21,7 @@ if(!user_id){
 
 const userResult = await supabase
 .from("users")
-.select("*")
+.select("id,name,email,language,points,created_at,phone")
 .eq("id", user_id)
 .maybeSingle();
 
@@ -37,7 +37,7 @@ if(userResult.error){
 
 const progressResult = await supabase
 .from("user_progress")
-.select("*")
+.select("id,name,email,language,points,created_at,phone")
 .eq("user_id", user_id);
 
 
