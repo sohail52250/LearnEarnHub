@@ -17,7 +17,8 @@ app.get("/api/status",(req,res)=>{
 app.use("/api/auth", require("./auth"));
 app.use("/api/users", require("./users"));
 app.use("/api/ads", require("./ads"));
-app.use("/api/courses", require("./courses"));\napp.use("/api/complete-course", require("./complete-course"));
+app.use("/api/courses", require("./courses"));
+app.use("/api/complete-course", require("./complete-course"));
 
 
 module.exports = app;
