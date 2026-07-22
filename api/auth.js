@@ -73,6 +73,8 @@ const token = jwt.sign(
 );
 
 
+delete data.password;
+
 return res.json({
 success:true,
 token,
