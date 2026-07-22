@@ -1,78 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Post Advertisement</title>
-<link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post Ad - Learn Earn Hub</title>
 </head>
 
 <body>
 
-<div class="card">
+<h1>Post Your Service / Product</h1>
 
-<h2>
-Post Your Service / Advertisement
-</h2>
+<form id="adForm">
 
-<input id="title_en" placeholder="Title English">
+<input name="title" placeholder="Title English"><br>
 
-<input id="title_ur" placeholder="عنوان اردو">
+<input name="title_ur" placeholder="عنوان اردو"><br>
 
-<textarea id="description_en" placeholder="Description English"></textarea>
+<textarea name="description" placeholder="Description English"></textarea><br>
 
-<textarea id="description_ur" placeholder="تفصیل اردو"></textarea>
+<textarea name="description_ur" placeholder="تفصیل اردو"></textarea><br>
 
-<input id="phone" placeholder="Phone / WhatsApp">
+<input name="category" placeholder="Category"><br>
 
-<input id="city" placeholder="City">
+<input name="contact" placeholder="Phone / WhatsApp"><br>
 
-<input id="category" placeholder="Category">
+<input name="location" placeholder="City"><br>
 
-<button onclick="postAd()">
-Publish Ad
+<button>
+Post Ad
 </button>
 
-</div>
+</form>
 
+
+<script src="app.js"></script>
 
 <script>
 
-async function postAd(){
+document.getElementById("adForm").onsubmit=async(e)=>{
 
-let response=await fetch("/api/ads/create",{
+e.preventDefault();
 
-method:"POST",
+let result=await postAd(e.target);
 
-headers:{
-"Content-Type":"application/json"
-},
+alert(JSON.stringify(result));
 
-body:JSON.stringify({
-
-title_en:title_en.value,
-title_ur:title_ur.value,
-
-description_en:description_en.value,
-description_ur:description_ur.value,
-
-phone:phone.value,
-city:city.value,
-category:category.value,
-
-approved:false
-
-})
-
-});
-
-
-let data=await response.json();
-
-alert(JSON.stringify(data));
-
-}
+};
 
 </script>
+
 
 </body>
 </html>
