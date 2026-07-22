@@ -20,15 +20,6 @@ extended:true
 app.use(express.static("public"));
 
 
-app.use(session({
-
-secret:"learnEarnSecret",
-
-resave:false,
-
-saveUninitialized:false
-
-}));
 
 
 // Routes
