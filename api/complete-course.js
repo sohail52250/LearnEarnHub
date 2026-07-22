@@ -16,7 +16,21 @@ if(req.method !== "POST"){
 const {user_id, course_id} = req.body;
 
 if(!user_id || !course_id){
- return res.json({
+ return 
+const {data:userData}=await supabase
+.from("users")
+.select("points")
+.eq("id",user_id)
+.single();
+
+await supabase
+.from("users")
+.update({
+ points:(userData?.points || 0) + course.points
+})
+.eq("id",user_id);
+
+res.json({
   success:false,
   error:"Missing user_id or course_id"
  });
@@ -30,7 +44,21 @@ await supabase
 .single();
 
 if(courseError){
- return res.json({
+ return 
+const {data:userData}=await supabase
+.from("users")
+.select("points")
+.eq("id",user_id)
+.single();
+
+await supabase
+.from("users")
+.update({
+ points:(userData?.points || 0) + course.points
+})
+.eq("id",user_id);
+
+res.json({
   step:"course",
   error:courseError
  });
@@ -50,14 +78,42 @@ await supabase
 
 
 if(progressError){
- return res.json({
+ return 
+const {data:userData}=await supabase
+.from("users")
+.select("points")
+.eq("id",user_id)
+.single();
+
+await supabase
+.from("users")
+.update({
+ points:(userData?.points || 0) + course.points
+})
+.eq("id",user_id);
+
+res.json({
   step:"progress",
   error:progressError
  });
 }
 
 
-return res.json({
+return 
+const {data:userData}=await supabase
+.from("users")
+.select("points")
+.eq("id",user_id)
+.single();
+
+await supabase
+.from("users")
+.update({
+ points:(userData?.points || 0) + course.points
+})
+.eq("id",user_id);
+
+res.json({
  success:true,
  message:"Course completed",
  points:course.points || 0,
