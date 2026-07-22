@@ -18,22 +18,24 @@ if(!user_id){
  });
 }
 
-const {data:user,error:userError}=await supabase
+
+const {data:user,userError}=await supabase
 .from("users")
-.select("id,name,email,points,language,created_at")
+.select("id,name,email,language,points,created_at")
 .eq("id",user_id)
 .single();
+
 
 if(userError){
  return res.json({
   success:false,
-  step:"user",
+  step:"users",
   error:userError
  });
 }
 
 
-const {data:progress,error:progressError}=await supabase
+const {data:progress, error:progressError}=await supabase
 .from("user_progress")
 .select("course_id,completed,points_added,created_at")
 .eq("user_id",user_id);
@@ -48,10 +50,20 @@ if(progressError){
 }
 
 
+let totalPoints = 0;
+
+(progress || []).forEach(item=>{
+ totalPoints += item.points_added || 0;
+});
+
+
 res.json({
  success:true,
- user:user,
- completed_courses:progress
+ user:{
+  ...user,
+  earned_points:totalPoints
+ },
+ completed_courses:progress || []
 });
 
 
@@ -59,7 +71,9 @@ res.json({
 
 res.status(500).json({
  success:false,
- error:e.message
+ step:"crash",
+ error:e.message,
+ stack:e.stack
 });
 
 }
