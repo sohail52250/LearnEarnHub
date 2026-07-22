@@ -1,81 +1,69 @@
 const { createClient } = require("@supabase/supabase-js");
 
+module.exports = async function(req,res){
+
+try {
+
 const supabase = createClient(
  process.env.SUPABASE_URL,
  process.env.SUPABASE_KEY
 );
 
-module.exports = async (req,res)=>{
-
-try{
-
-const {user_id}=req.query;
+const user_id = req.query.user_id;
 
 if(!user_id){
- return res.json({
+ return res.status(400).json({
   success:false,
-  error:"Missing user_id"
+  error:"user_id required"
  });
 }
 
 
-const {data:user,userError}=await supabase
+const userResult = await supabase
 .from("users")
-.select("id,name,email,language,points,created_at")
-.eq("id",user_id)
-.single();
+.select("*")
+.eq("id", user_id)
+.maybeSingle();
 
 
-if(userError){
+if(userResult.error){
  return res.json({
   success:false,
   step:"users",
-  error:userError
+  error:userResult.error
  });
 }
 
 
-const {data:progress, error:progressError}=await supabase
+const progressResult = await supabase
 .from("user_progress")
-.select("course_id,completed,points_added,created_at")
-.eq("user_id",user_id);
+.select("*")
+.eq("user_id", user_id);
 
 
-if(progressError){
+if(progressResult.error){
  return res.json({
   success:false,
   step:"progress",
-  error:progressError
+  error:progressResult.error
  });
 }
 
 
-let totalPoints = 0;
-
-(progress || []).forEach(item=>{
- totalPoints += item.points_added || 0;
-});
-
-
-res.json({
+return res.json({
  success:true,
- user:{
-  ...user,
-  earned_points:totalPoints
- },
- completed_courses:progress || []
+ user:userResult.data,
+ progress:progressResult.data
 });
 
 
-}catch(e){
+}catch(err){
 
-res.status(500).json({
+return res.status(500).json({
  success:false,
- step:"crash",
- error:e.message,
- stack:e.stack
+ message:err.message
 });
 
 }
 
-};
+}
