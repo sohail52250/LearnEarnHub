@@ -29,7 +29,7 @@ const {data:progress,error:progressError}=await db
 .from("user_progress")
 .insert({
  user_id:user_id,
- lesson_id:course_id,
+ course_id:course_id,
  completed:true
 })
 .select();
