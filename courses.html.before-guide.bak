@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Courses - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Learn & Earn Hub Courses</h1>
+
+<ul>
+<li><a href="/courses/computer-basics.html">Computer Basics / کمپیوٹر بنیادی معلومات</a></li>
+<li><a href="/courses/word.html">Microsoft Word</a></li>
+<li><a href="/courses/excel.html">Microsoft Excel</a></li>
+<li><a href="/courses/powerpoint.html">Microsoft PowerPoint</a></li>
+</ul>
+
+<a href="/">Home</a>
+
+</body>
+</html>
