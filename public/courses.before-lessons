@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Courses - Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Learn & Earn Hub Courses</h1>
+
+<h2>Basic Computer Skills (English)</h2>
+
+<ul>
+<li><b>Microsoft Word:</b> Learn document creation, formatting, saving files and printing.</li>
+<li><b>Microsoft Excel:</b> Learn tables, formulas, calculations and data management.</li>
+<li><b>Microsoft PowerPoint:</b> Learn presentations, slides and visual designs.</li>
+<li><b>Notepad:</b> Learn simple text writing and basic computer notes.</li>
+<li><b>WordPad:</b> Learn formatted text documents.</li>
+<li><b>Microsoft Paint:</b> Learn basic drawing and image editing.</li>
+<li><b>Windows Basics:</b> Learn files, folders, settings and computer management.</li>
+<li><b>Internet Browsing:</b> Learn searching, websites, email and online safety.</li>
+</ul>
+
+
+<h2>بنیادی کمپیوٹر کورسز (اردو)</h2>
+
+<ul>
+<li><b>مائیکروسافٹ ورڈ:</b> ڈاکومنٹ بنانا، فارمیٹنگ، محفوظ کرنا اور پرنٹ کرنا سیکھیں۔</li>
+<li><b>مائیکروسافٹ ایکسل:</b> ٹیبل، فارمولے، حساب اور ڈیٹا مینجمنٹ سیکھیں۔</li>
+<li><b>مائیکروسافٹ پاورپوائنٹ:</b> پریزنٹیشن اور سلائیڈ بنانا سیکھیں۔</li>
+<li><b>نوٹ پیڈ:</b> سادہ تحریر اور نوٹس لکھنا سیکھیں۔</li>
+<li><b>ورڈ پیڈ:</b> فارمیٹ شدہ ڈاکومنٹ بنانا سیکھیں۔</li>
+<li><b>پینٹ:</b> بنیادی ڈرائنگ اور تصویر ایڈیٹنگ سیکھیں۔</li>
+<li><b>ونڈوز:</b> فائل، فولڈر اور کمپیوٹر استعمال کرنا سیکھیں۔</li>
+<li><b>انٹرنیٹ براؤزنگ:</b> ویب سائٹس، سرچ اور آن لائن حفاظت سیکھیں۔</li>
+</ul>
+
+
+<h2>Why Learn?</h2>
+<p>
+Learn practical computer skills that help students, workers and beginners
+improve their digital knowledge and earning opportunities.
+</p>
+
+<p>
+عملی کمپیوٹر مہارتیں سیکھیں جو تعلیم، نوکری اور آن لائن مواقع میں مددگار ہوں۔
+</p>
+
+<a href="/">Home</a>
+
+</body>
+</html>
