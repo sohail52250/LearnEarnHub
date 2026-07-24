@@ -614,3 +614,56 @@ border-radius:10px;
 
 }
 
+
+/* Trust Upgrade */
+
+.trust-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+
+.trust-card{
+
+background:#ffffff;
+padding:22px;
+border-radius:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+
+}
+
+
+.trust-card h3{
+
+color:#2563eb;
+
+}
+
+
+.progress-section{
+
+background:#eff6ff;
+
+}
+
+
+.progress-section li{
+
+margin:12px;
+font-size:18px;
+
+}
+
+
+@media(max-width:600px){
+
+.trust-grid{
+grid-template-columns:1fr;
+}
+
+}
+
