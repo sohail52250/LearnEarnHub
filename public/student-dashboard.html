@@ -1,46 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Student Dashboard - Learn & Earn Hub</title>
 <link rel="stylesheet" href="style.css">
-<script src="/student-dashboard.js"></script>
+<script src="/lesson-progress.js"></script>
 </head>
 
-<body onload="showProgress()">
+
+<body>
 
 <nav>
 <a href="/">Home</a> |
 <a href="/courses.html">Courses</a> |
-<a href="/student-dashboard.html">Dashboard</a>
+<a href="/practice.html">Practice</a> |
+<a href="/quiz.html">Quiz</a>
 </nav>
 
-<div class="card">
 
-<h1>Student Dashboard</h1>
+<div class="card dashboard">
 
-<h2>Your Learning Progress</h2>
+<h1>🎓 Student Dashboard</h1>
 
-<p id="progress"></p>
+<p>
+Track your learning progress and achievements.
+</p>
 
 
-<h2>Learning Goals</h2>
+<h2>Learning Progress</h2>
+
+<div class="progress-box">
+<div id="progress"></div>
+</div>
+
+<p id="progress-text">
+Checking progress...
+</p>
+
+
+<h2>Quick Learning</h2>
 
 <ul>
-<li>Complete beginner computer courses</li>
-<li>Practice daily</li>
-<li>Build useful digital skills</li>
-<li>Prepare for online opportunities</li>
+
+<li>
+<a href="/courses.html">
+Browse Courses
+</a>
+</li>
+
+
+<li>
+<a href="/practice.html">
+Practice Skills
+</a>
+</li>
+
+
+<li>
+<a href="/quiz.html">
+Take Quiz
+</a>
+</li>
+
+
+<li>
+<a href="/certificate.html">
+View Certificate
+</a>
+</li>
+
 </ul>
 
 
-<a href="/certificate.html">
-<button>
-Get Certificate
-</button>
-</a>
+<h2>Completed Lessons</h2>
+
+<div id="lessons">
+Loading...
+</div>
 
 
 </div>
 
+
+<script>
+
+let lessons=[
+
+"word-basics",
+"excel-basics",
+"powerpoint-basics",
+"html-basics",
+"css-basics",
+"email-basics"
+
+];
+
+
+let completed=0;
+
+
+let output="";
+
+
+lessons.forEach(function(item){
+
+if(localStorage.getItem(item)=="completed"){
+
+completed++;
+
+output += "✅ "+item+"<br>";
+
+}else{
+
+output += "⬜ "+item+"<br>";
+
+}
+
+});
+
+
+document.getElementById("lessons").innerHTML=output;
+
+
+let percent=Math.round(
+(completed/lessons.length)*100
+);
+
+
+document.getElementById("progress").style.width=
+percent+"%";
+
+
+document.getElementById("progress-text").innerHTML=
+percent+"% Completed";
+
+
+</script>
+
+
 </body>
+
 </html>
