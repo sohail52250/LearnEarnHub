@@ -1,48 +1,201 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Learning Guide - Learn & Earn Hub</title>
-<link rel="stylesheet" href="/style.css">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Learning Dashboard - Learn & Earn Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-<nav style="padding:15px;text-align:center;background:#f2f2f2">
+
+<nav>
+
 <a href="/">Home</a> |
 <a href="/courses.html">Courses</a> |
-<a href="/search.html">Search</a> |
-<a href="/learning-guide.html">Learning Guide</a> |
-<a href="/computer-basics.html">Computer Basics</a> |
-<a href="/internet-safety.html">Internet Safety</a> |
-<a href="/digital-skills.html">Digital Skills</a> |
-<a href="/about.html">About</a> |
-<a href="/contact.html">Contact</a>
+<a href="/learning-guide.html">Learning Guide</a>
+
 </nav>
-<hr>
 
 
-<h1>Learning Guide</h1>
 
-<h2>Step by Step Learning</h2>
+<section class="card">
 
-<ol>
-<li>Learn computer basics</li>
-<li>Practice typing and file management</li>
-<li>Learn Word, Excel and PowerPoint</li>
-<li>Learn Internet browsing and safety</li>
-<li>Use your skills for opportunities</li>
-</ol>
+<h1>🎓 Learning Dashboard</h1>
 
-<h2>سیکھنے کا آسان طریقہ</h2>
+<h2>آپ کی سیکھنے کی پیش رفت</h2>
 
-<ol>
-<li>کمپیوٹر کی بنیادی معلومات سیکھیں</li>
-<li>ٹائپنگ اور فائل مینجمنٹ کی مشق کریں</li>
-<li>ورڈ، ایکسل اور پاورپوائنٹ سیکھیں</li>
-<li>انٹرنیٹ کا محفوظ استعمال سیکھیں</li>
-<li>اپنی مہارت استعمال کریں</li>
-</ol>
 
-<a href="/courses.html">Courses</a>
+<p>
+Complete lessons and track your progress.
+</p>
+
+<p>
+سبق مکمل کریں اور اپنی ترقی دیکھیں۔
+</p>
+
+
+<div class="progress-box">
+
+<div id="progressBar"></div>
+
+</div>
+
+
+<p id="progressText">
+0% Completed
+</p>
+
+
+</section>
+
+
+
+
+<section class="card">
+
+
+<h2>Beginner Learning Steps</h2>
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Computer Basics / کمپیوٹر بنیادیات
+
+</div>
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Microsoft Word
+
+</div>
+
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Microsoft Excel
+
+</div>
+
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Internet Safety
+
+</div>
+
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Freelancing Basics
+
+</div>
+
+
+</section>
+
+
+
+<script>
+
+
+let checks=document.querySelectorAll(".lessonCheck");
+
+
+function updateProgress(){
+
+
+let done=0;
+
+
+checks.forEach((c)=>{
+
+if(c.checked){
+done++;
+}
+
+});
+
+
+let percent=Math.round((done/checks.length)*100);
+
+
+document.getElementById("progressBar").style.width=percent+"%";
+
+
+document.getElementById("progressText").innerHTML=
+percent+"% Completed / مکمل";
+
+
+localStorage.setItem(
+"learningProgress",
+JSON.stringify(
+Array.from(checks).map(x=>x.checked)
+)
+);
+
+
+}
+
+
+
+let saved=JSON.parse(
+localStorage.getItem("learningProgress")
+);
+
+
+if(saved){
+
+checks.forEach((c,i)=>{
+
+c.checked=saved[i];
+
+});
+
+}
+
+
+checks.forEach(c=>{
+
+c.addEventListener(
+"change",
+updateProgress
+);
+
+});
+
+
+updateProgress();
+
+
+</script>
+
+
+
+<footer>
+
+<p>
+Learn & Earn Hub © 2026
+</p>
+
+</footer>
+
 
 </body>
+
 </html>

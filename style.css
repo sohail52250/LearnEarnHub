@@ -698,3 +698,47 @@ footer a{
 color:#93c5fd;
 }
 
+
+
+/* Learning Dashboard */
+
+.progress-box{
+
+width:100%;
+height:25px;
+background:#e5e7eb;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+
+#progressBar{
+
+height:100%;
+width:0%;
+background:#2563eb;
+transition:.4s;
+
+}
+
+
+.lesson{
+
+padding:15px;
+margin:10px 0;
+background:#f8fafc;
+border-radius:12px;
+font-size:18px;
+
+}
+
+
+.lesson input{
+
+transform:scale(1.4);
+margin-right:12px;
+
+}
+
+
