@@ -50,7 +50,13 @@ cursor:pointer;
 
 </style>
 
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/certificate-generator.js"></script>
+
 </head>
+
 
 
 <body>
@@ -125,5 +131,30 @@ document.getElementById(
 </script>
 
 
+
+<div class="card">
+
+<h2>Create Certificate</h2>
+
+<input id="course-name"
+placeholder="Course name">
+
+<br><br>
+
+<button onclick="
+generateCertificate(
+document.getElementById('course-name').value
+)
+">
+
+Generate Certificate
+
+</button>
+
+<p id="certificate-result"></p>
+
+</div>
+
 </body>
+
 </html>
