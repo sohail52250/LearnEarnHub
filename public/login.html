@@ -2,56 +2,46 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Login - Learn & Earn Hub</title>
 <link rel="stylesheet" href="style.css">
+<script src="/account.js"></script>
 </head>
+
 
 <body>
 
-<nav>
-<a href="/">Home</a> |
-<a href="/register.html">Register</a>
-</nav>
 
+<div class="card">
 
-<section class="card">
+<h1>Student Login</h1>
 
-<h1>🔐 Student Login</h1>
 
 <input id="email" placeholder="Email">
 
+
+<br><br>
+
+
+<input id="password" type="password" placeholder="Password">
+
+
+<br><br>
+
+
 <button onclick="loginUser()">
-Login / داخل ہوں
+Login
 </button>
 
-<p id="msg"></p>
 
-</section>
-
-
-<script>
-
-function loginUser(){
-
-let user=
-JSON.parse(localStorage.getItem("user"));
+<p>
+New student?
+<a href="/register.html">
+Create Account
+</a>
+</p>
 
 
-if(user){
-
-location.href="/profile.html";
-
-}else{
-
-document.getElementById("msg").innerHTML=
-"Please create account first";
-
-}
-
-}
-
-</script>
+</div>
 
 
 </body>

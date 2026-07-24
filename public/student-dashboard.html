@@ -4,7 +4,12 @@
 <head>
 <title>Student Dashboard - Learn & Earn Hub</title>
 <link rel="stylesheet" href="style.css">
-<script src="/lesson-progress.js"></script>
+<script src="/lesson-progress.js">showUser();
+
+</script>
+<script src="/account.js">showUser();
+
+</script>
 </head>
 
 
@@ -21,6 +26,7 @@
 <div class="card dashboard">
 
 <h1>🎓 Student Dashboard</h1>
+<h3 id="username"></h3>
 
 <p>
 Track your learning progress and achievements.
@@ -134,6 +140,8 @@ percent+"%";
 document.getElementById("progress-text").innerHTML=
 percent+"% Completed";
 
+
+showUser();
 
 </script>
 
