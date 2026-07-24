@@ -36,7 +36,8 @@ return;
 }
 
 
-alert("Lesson completed!");
+addXP(10);
+alert("Lesson completed! +10 XP");
 
 loadProgress();
 
