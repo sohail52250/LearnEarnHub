@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+<nav>
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a>
+</nav>
+
+
+<section class="card">
+
+<h1>👨‍🎓 Student Profile</h1>
+
+<h2 id="username"></h2>
+
+<p>
+Welcome to your learning journey.
+</p>
+
+<p>
+آپ کے سیکھنے کا سفر شروع ہو گیا ہے۔
+</p>
+
+
+<a href="/learning-guide.html">
+<button>
+Open Learning Dashboard
+</button>
+</a>
+
+
+<br><br>
+
+
+<button onclick="logout()">
+Logout
+</button>
+
+
+</section>
+
+
+<script>
+
+let user=
+JSON.parse(localStorage.getItem("user"));
+
+
+if(user){
+
+document.getElementById("username").innerHTML=
+user.name;
+
+}
+
+
+function logout(){
+
+localStorage.removeItem("user");
+
+location.href="/login.html";
+
+}
+
+</script>
+
+
+</body>
+</html>

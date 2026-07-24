@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Post Ad - Learn Earn Hub</title>
+<script src="/adsense.js"></script>
+</head>
+
+<body>
+
+<h1>Post Your Service / Product</h1>
+
+<form id="adForm">
+
+<input name="title" placeholder="Title English"><br>
+
+<input name="title_ur" placeholder="عنوان اردو"><br>
+
+<textarea name="description" placeholder="Description English"></textarea><br>
+
+<textarea name="description_ur" placeholder="تفصیل اردو"></textarea><br>
+
+<input name="category" placeholder="Category"><br>
+
+<input name="contact" placeholder="Phone / WhatsApp"><br>
+
+<input name="location" placeholder="City"><br>
+
+<button>
+Post Ad
+</button>
+
+</form>
+
+
+<script src="app.js"></script>
+
+<script>
+
+document.getElementById("adForm").onsubmit=async(e)=>{
+
+e.preventDefault();
+
+let result=await postAd(e.target);
+
+alert(JSON.stringify(result));
+
+};
+
+</script>
+
+
+</body>
+</html>

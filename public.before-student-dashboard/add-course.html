@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Course</title>
+<link rel="stylesheet" href="style.css">
+<script src="/adsense.js"></script>
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h2>Add Learning Content</h2>
+
+
+<input id="title_en"
+placeholder="Course title English">
+
+
+<input id="title_ur"
+placeholder="Course title Urdu">
+
+
+<textarea id="content_en"
+placeholder="English content">
+</textarea>
+
+
+<textarea id="content_ur"
+placeholder="Urdu content">
+</textarea>
+
+
+<button onclick="save()">
+Save Course
+</button>
+
+
+</div>
+
+
+
+<script>
+
+async function save(){
+
+let r=await fetch("/api/courses/create",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+title_en:title_en.value,
+title_ur:title_ur.value,
+
+content_en:content_en.value,
+content_ur:content_ur.value
+
+})
+
+});
+
+
+alert(await r.text());
+
+}
+
+</script>
+
+
+</body>
+</html>
