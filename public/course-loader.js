@@ -51,6 +51,33 @@ box.innerHTML=data.map(course=>`
 Start Course
 </button>
 
+<div class="review-box">
+
+<h4>Rate this course</h4>
+
+<select id="rating-${course.id}">
+<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+<option value="4">⭐⭐⭐⭐ Good</option>
+<option value="3">⭐⭐⭐ Average</option>
+<option value="2">⭐⭐ Needs Improvement</option>
+<option value="1">⭐ Poor</option>
+</select>
+
+<br>
+
+<textarea 
+id="comment-${course.id}"
+placeholder="Write your feedback">
+</textarea>
+
+<br>
+
+<button onclick="submitReview(${course.id})">
+Submit Review
+</button>
+
+</div>
+
 </div>
 
 `).join("");
