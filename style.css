@@ -667,3 +667,34 @@ grid-template-columns:1fr;
 
 }
 
+
+/* Professional Footer Upgrade */
+
+.brand-section,
+.contact-section{
+text-align:center;
+}
+
+
+.contact-section button{
+background:#2563eb;
+}
+
+
+.contact-section button:hover{
+background:#1d4ed8;
+}
+
+
+footer{
+margin-top:30px;
+padding:30px 15px;
+background:#111827;
+color:white;
+}
+
+
+footer a{
+color:#93c5fd;
+}
+
