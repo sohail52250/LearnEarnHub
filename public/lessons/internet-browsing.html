@@ -5,7 +5,12 @@
 <link rel="stylesheet" href="/style.css">
 <script src="/lesson-progress.js"></script>
 <script src="/certificate-system.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/student-tools.js"></script>
 </head>
+
 
 <body>
 
@@ -208,6 +213,28 @@ result.innerHTML="Try again. Keep learning!";
 
 </script>
 
+
+<div class="card">
+
+<button onclick="bookmarkLesson('internet-browsing')">
+🔖 Bookmark Lesson
+</button>
+
+<br>
+
+<textarea id="note-internet-browsing"
+placeholder="Write your notes here">
+</textarea>
+
+<br>
+
+<button onclick="saveNote('internet-browsing')">
+📝 Save Note
+</button>
+
+</div>
+
 </body>
+
 
 </html>

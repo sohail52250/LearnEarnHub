@@ -5,7 +5,12 @@
 <link rel="stylesheet" href="/style.css">
 <script src="/lesson-progress.js"></script>
 <script src="/certificate-system.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/student-tools.js"></script>
 </head>
+
 
 <body>
 <h2>HTML Website Basics</h2>
@@ -239,6 +244,28 @@ result.innerHTML="Try again. Keep learning!";
 
 </script>
 
+
+<div class="card">
+
+<button onclick="bookmarkLesson('html-basics')">
+🔖 Bookmark Lesson
+</button>
+
+<br>
+
+<textarea id="note-html-basics"
+placeholder="Write your notes here">
+</textarea>
+
+<br>
+
+<button onclick="saveNote('html-basics')">
+📝 Save Note
+</button>
+
+</div>
+
 </body>
+
 
 </html>
