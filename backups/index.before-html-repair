@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="/adsense.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6687674736927382" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<nav style="padding:15px;text-align:center;background:#f2f2f2">
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/search.html">Search</a> |
+<a href="/learning-guide.html">Learning Guide</a> |
+<a href="/computer-basics.html">Computer Basics</a> |
+<a href="/internet-safety.html">Internet Safety</a> |
+<a href="/digital-skills.html">Digital Skills</a> |
+<a href="/about.html">About</a> |
+<a href="/contact.html">Contact</a>
+</nav>
+<hr>
+
+ style="padding:15px;text-align:center;background:#f2f2f2">
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/learning-guide.html">Learning Guide</a> |
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+<a href="/about.html">About Us</a> |
+<a href="/contact.html">Contact</a> |
+<a href="/privacy.html">Privacy</a> |
+<a href="/terms.html">Terms</a>
+

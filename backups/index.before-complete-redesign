@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="/adsense.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6687674736927382" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+<nav style="padding:15px;text-align:center;background:#f2f2f2">
+<a href="/">Home</a> | <a href="/search.html">Search</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/learning-guide.html">Learning Guide</a> |
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+<a href="/about.html">About Us</a> |
+<a href="/contact.html">Contact</a> |
+<a href="/privacy.html">Privacy</a> |
+<a href="/terms.html">Terms</a>
+</nav>
+
+
+<header>
+<h1 id="title">Learn & Earn Hub</h1>
+<button onclick="urdu()">اردو</button>
+<button onclick="english()">English</button>
+</header>
+
+
+<div class="card">
+
+<h2 id="welcome">
+Learn skills and grow your income
+</h2>
+
+<p id="text">
+Learn free skills, advertise services and connect with people.
+</p>
+
+
+<a href="register.html">
+<button>Register</button>
+</a>
+
+
+<a href="login.html">
+<button>Login</button>
+</a>
+
+
+<a href="market.html">
+<button>Marketplace</button>
+<a href="/learn.html"><button>Start Learning Guide</button></a>
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+</a>
+
+
+</div>
+<hr>
+<h3>Learn & Earn Hub</h3>
+<p><a href="/about.html">About Us</a></p>
+<p><a href="/courses.html">Courses</a></p>
+<p><a href="/contact.html">Contact Us</a></p>
+<p><a href="/privacy.html">Privacy Policy</a></p>
+<p><a href="/terms.html">Terms & Conditions</a></p>
+
+
+
+<script>
+
+function urdu(){
+document.getElementById("welcome").innerHTML=
+"ہنر سیکھیں اور آگے بڑھیں";
+
+document.getElementById("text").innerHTML=
+"مفت تعلیم حاصل کریں، اپنی سروس کا اشتہار لگائیں اور لوگوں سے رابطہ کریں";
+}
+
+
+function english(){
+location.reload();
+}
+
+</script>
+
+
+<hr>
+<h2>Why Learn With Learn & Earn Hub?</h2>
+<p>
+Learn practical digital skills step by step. These skills help students,
+job seekers and beginners improve their computer knowledge and create
+better opportunities online.
+</p>
+
+<h3>کیوں سیکھیں؟</h3>
+<p>
+Learn & Earn Hub آپ کو کمپیوٹر اور ڈیجیٹل مہارتیں آسان طریقے سے سکھاتا ہے۔
+یہ مہارتیں روزگار، تعلیم اور آن لائن مواقع میں مددگار ثابت ہو سکتی ہیں۔
+</p>
+
+<h3>Featured Beginner Courses</h3>
+<ul>
+<li>Microsoft Word</li>
+<li>Microsoft Excel</li>
+<li>Microsoft PowerPoint</li>
+<li>Windows Basics</li>
+<li>Internet Browsing</li>
+</ul>
+
+<p>
+<a href="/courses.html">Start Learning Courses</a>
+</p>
+
+
+
+<div class="card">
+<h2>Computer Learning Guide</h2>
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+<p>
+Start learning basic computer skills including Word, Excel, PowerPoint,
+Windows and Internet browsing.
+</p>
+
+<p>
+کمپیوٹر کی بنیادی مہارتیں سیکھیں جیسے ورڈ، ایکسل، پاورپوائنٹ،
+ونڈوز اور انٹرنیٹ استعمال کرنا۔
+</p>
+
+<a href="/courses.html">
+<button>View Courses / کورسز دیکھیں</button>
+</a>
+</div>
+
+
+<section class="card">
+<h2>Why Learn With Learn & Earn Hub?</h2>
+
+<p>
+Learn step by step from basic computer skills to useful digital skills.
+</p>
+
+<h3>Step by Step Learning Guide</h3>
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+
+<ol>
+<li>
+<strong>Step 1:</strong> Learn computer basics<br>
+کمپیوٹر کی بنیادی معلومات سیکھیں
+</li>
+
+<li>
+<strong>Step 2:</strong> Practice typing and file management<br>
+ٹائپنگ اور فائل مینجمنٹ کی مشق کریں
+</li>
+
+<li>
+<strong>Step 3:</strong> Learn office tools like Word, Excel and PowerPoint<br>
+ورڈ، ایکسل اور پاور پوائنٹ سیکھیں
+</li>
+
+<li>
+<strong>Step 4:</strong> Learn internet browsing and online safety<br>
+انٹرنیٹ براؤزنگ اور آن لائن حفاظت سیکھیں
+</li>
+
+<li>
+<strong>Step 5:</strong> Use skills to earn and provide services<br>
+اپنی مہارت سے کمائی اور سروسز حاصل کریں
+</li>
+</ol>
+
+<a href="/courses.html">
+<button>Start Learning Courses</button>
+</a>
+
+</section>
+
+
+<hr>
+
+<section class="card">
+<h2>Learn & Earn Hub</h2>
+
+<p>
+Start learning basic computer skills step by step.
+</p>
+
+<h3>Learning Guide</h3>
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+<ol>
+<li>Create your account</li>
+<li>Select a beginner course</li>
+<li>Complete lessons step by step</li>
+<li>Practice skills on your computer</li>
+<li>Use your skills to earn opportunities</li>
+</ol>
+
+<h3>Basic Courses</h3>
+<ul>
+<li>Microsoft Word - Documents and typing</li>
+<li>Microsoft Excel - Tables and calculations</li>
+<li>Microsoft PowerPoint - Presentations</li>
+<li>Notepad - Basic text editing</li>
+<li>WordPad - Simple documents</li>
+<li>Microsoft Paint - Drawing basics</li>
+<li>Windows Basics - Files and folders</li>
+<li>Internet Browsing - Safe web usage</li>
+</ul>
+
+<h3>بنیادی کورسز</h3>
+<ul>
+<li>مائیکروسافٹ ورڈ - دستاویزات بنانا</li>
+<li>مائیکروسافٹ ایکسل - ٹیبل اور حساب</li>
+<li>مائیکروسافٹ پاور پوائنٹ - پریزنٹیشن</li>
+<li>نوٹ پیڈ - بنیادی تحریر</li>
+<li>ورڈ پیڈ - آسان دستاویزات</li>
+<li>پینٹ - ڈرائنگ سیکھیں</li>
+<li>ونڈوز بنیادی استعمال</li>
+<li>انٹرنیٹ براؤزنگ</li>
+</ul>
+
+<p>
+<a href="/courses.html">View Full Courses</a>
+</p>
+
+</section>
+
+<footer>
+<hr>
+<p>
+<a href="/">Home</a> |
+<a href="/about.html">About Us</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/contact.html">Contact</a> |
+<a href="/privacy.html">Privacy</a> |
+<a href="/terms.html">Terms</a>
+</p>
+
+<p>Learn & Earn Hub © 2026</p>
+</footer>
+
+
+<section class="card">
+<h2>How to Learn Step by Step</h2>
+
+<p>1. Choose a skill from our courses.</p>
+<p>2. Start with basic lessons.</p>
+<p>3. Practice using real examples.</p>
+<p>4. Complete small tasks.</p>
+<p>5. Improve your skills and offer services.</p>
+
+<h3>سیکھنے کا آسان طریقہ</h3>
+<p>1. اپنی پسند کا ہنر منتخب کریں۔</p>
+<p>2. بنیادی سبق شروع کریں۔</p>
+<p>3. عملی مشق کریں۔</p>
+<p>4. چھوٹے کام مکمل کریں۔</p>
+<p>5. اپنی مہارت بہتر بنائیں اور سروس دیں۔</p>
+</section>
+<hr>
+<h2>Learning Resources</h2>
+<p><a href="/learning-guide.html">Learning Guide</a></p>
+<p><a href="/roadmap.html">Learning Roadmap</a></p>
+<p><a href="/faq.html">Student FAQ</a></p>
+<p><a href="/glossary.html">Computer Glossary</a></p>
+<p><a href="/freelancing.html">Freelancing Basics</a></p>
+<hr>
+
+
+<hr>
+
+<section class="card">
+<h2>Popular Beginner Courses</h2>
+
+<p>Start learning the most useful computer skills:</p>
+
+<ul>
+<li>
+<a href="/lessons/word-basics.html">
+Microsoft Word Basics
+</a>
+</li>
+
+<li>
+<a href="/lessons/excel-basics.html">
+Microsoft Excel Basics
+</a>
+</li>
+
+<li>
+<a href="/lessons/powerpoint-basics.html">
+Microsoft PowerPoint Basics
+</a>
+</li>
+
+<li>
+<a href="/lessons/windows-basics.html">
+Windows Basics
+</a>
+</li>
+
+<li>
+<a href="/lessons/internet-browsing.html">
+Internet Browsing Skills
+</a>
+</li>
+</ul>
+
+
+<h3>مشہور ابتدائی کورسز</h3>
+
+<ul>
+<li><a href="/lessons/word-basics.html">مائیکروسافٹ ورڈ</a></li>
+<li><a href="/lessons/excel-basics.html">مائیکروسافٹ ایکسل</a></li>
+<li><a href="/lessons/powerpoint-basics.html">پاور پوائنٹ</a></li>
+<li><a href="/lessons/windows-basics.html">ونڈوز بیسکس</a></li>
+<li><a href="/lessons/internet-browsing.html">انٹرنیٹ براؤزنگ</a></li>
+</ul>
+
+<a href="/courses.html">
+<button>View All Courses</button>
+</a>
+
+</section>
+
+
+<hr>
+<section class="card">
+<h2>Useful Pages</h2>
+<p><a href="/learning-guide.html">Learning Guide</a></p>
+<p><a href="/computer-basics.html">Computer Basics</a></p>
+<p><a href="/internet-safety.html">Internet Safety</a></p>
+<p><a href="/digital-skills.html">Digital Skills</a></p>
+<p><a href="/about.html">About Us</a></p>
+<p><a href="/courses.html">Courses</a></p>
+<p><a href="/contact.html">Contact Us</a></p>
+<p><a href="/privacy.html">Privacy Policy</a></p>
+<p><a href="/terms.html">Terms & Conditions</a></p>
+</section>
+
+</body>
+</html>
