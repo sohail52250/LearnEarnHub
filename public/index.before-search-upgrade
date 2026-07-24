@@ -27,7 +27,6 @@ crossorigin="anonymous"></script>
 <a href="/digital-skills.html">Digital Skills</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
-<a href="/my-courses.html">My Courses</a> |
 </nav>
 
 
@@ -174,44 +173,6 @@ Learn & Earn Hub آپ کو آسان طریقے سے کمپیوٹر اور ڈیج
 
 </section>
 
-
-
-<section class="card search-box">
-
-<h2>🔎 Search Lessons / سبق تلاش کریں</h2>
-
-<input 
-id="lessonSearch"
-type="text"
-placeholder="Search Word, Excel, Internet..."
-onkeyup="searchLessons()">
-
-<div id="lessonList">
-
-<p>
-<a href="/lessons/word-basics.html">Microsoft Word Basics</a>
-</p>
-
-<p>
-<a href="/lessons/excel-basics.html">Microsoft Excel Basics</a>
-</p>
-
-<p>
-<a href="/lessons/powerpoint-basics.html">Microsoft PowerPoint Basics</a>
-</p>
-
-<p>
-<a href="/lessons/windows-basics.html">Windows Basics</a>
-</p>
-
-<p>
-<a href="/lessons/internet-browsing.html">Internet Browsing Skills</a>
-</p>
-
-</div>
-
-</section>
-
 <h2>Popular Beginner Courses</h2>
 
 <p>
@@ -320,86 +281,6 @@ Freelancing Basics
 
 <section class="card">
 
-
-
-<section class="card trust-section">
-
-<h2>⭐ Why Students Choose Learn & Earn Hub</h2>
-
-<div class="trust-grid">
-
-<div class="trust-card">
-<h3>🎯 Easy Learning</h3>
-<p>
-Step by step computer lessons for beginners.
-</p>
-<p>
-ابتدائی طلبہ کے لیے آسان مرحلہ وار تعلیم۔
-</p>
-</div>
-
-
-<div class="trust-card">
-<h3>💻 Practical Skills</h3>
-<p>
-Learn Word, Excel, Internet and digital skills.
-</p>
-<p>
-ورڈ، ایکسل، انٹرنیٹ اور ڈیجیٹل مہارتیں سیکھیں۔
-</p>
-</div>
-
-
-<div class="trust-card">
-<h3>🚀 Career Growth</h3>
-<p>
-Use your skills for education and online opportunities.
-</p>
-<p>
-اپنی مہارت سے تعلیم اور آن لائن مواقع حاصل کریں۔
-</p>
-</div>
-
-
-<div class="trust-card">
-<h3>🏆 Beginner Friendly</h3>
-<p>
-Designed for students and new computer users.
-</p>
-<p>
-طلبہ اور نئے کمپیوٹر صارفین کے لیے تیار کیا گیا۔
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="card progress-section">
-
-<h2>📈 Your Learning Journey</h2>
-
-<ol>
-<li>✅ Create your learning plan</li>
-<li>✅ Complete beginner lessons</li>
-<li>✅ Practice computer skills</li>
-<li>✅ Build confidence</li>
-<li>✅ Use skills for opportunities</li>
-</ol>
-
-<h3>آپ کا سیکھنے کا سفر</h3>
-
-<ol>
-<li>اپنا تعلیمی منصوبہ بنائیں</li>
-<li>ابتدائی سبق مکمل کریں</li>
-<li>کمپیوٹر کی مشق کریں</li>
-<li>اعتماد حاصل کریں</li>
-<li>مہارت کو مواقع میں استعمال کریں</li>
-</ol>
-
-</section>
-
 <h2>Useful Pages</h2>
 
 <p>
@@ -421,61 +302,6 @@ Designed for students and new computer users.
 </section>
 
 
-
-
-
-<section class="card brand-section">
-
-<h2>🌐 About Learn & Earn Hub</h2>
-
-<p>
-Learn & Earn Hub helps beginners learn computer skills,
-digital skills and online opportunities step by step.
-</p>
-
-<p>
-لرن اینڈ ارن ہب نئے سیکھنے والوں کو کمپیوٹر،
-ڈیجیٹل مہارتیں اور آن لائن مواقع آسان طریقے سے سکھاتا ہے۔
-</p>
-
-<div class="trust-grid">
-
-<div class="trust-card">
-<h3>🔒 Safe Learning</h3>
-<p>Beginner-friendly educational content.</p>
-</div>
-
-<div class="trust-card">
-<h3>📚 Free Resources</h3>
-<p>Learn useful skills without difficulty.</p>
-</div>
-
-<div class="trust-card">
-<h3>💡 Practical Knowledge</h3>
-<p>Skills you can use in real life.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="card contact-section">
-
-<h2>📞 Contact & Support</h2>
-
-<p>
-Need help? Visit our contact page.
-</p>
-
-<p>
-مدد کے لیے رابطہ صفحہ دیکھیں۔
-</p>
-
-<a href="/contact.html">
-<button>Contact Us / رابطہ کریں</button>
-</a>
-
-</section>
 
 <footer>
 
@@ -534,33 +360,6 @@ document.body.innerHTML=t;
 function setEnglish(){
 
 location.reload();
-
-}
-
-</script>
-
-
-
-<script>
-
-function searchLessons(){
-
-let input=document.getElementById("lessonSearch");
-let filter=input.value.toLowerCase();
-
-let items=document.querySelectorAll("#lessonList p");
-
-items.forEach(function(item){
-
-let txt=item.innerText.toLowerCase();
-
-if(txt.includes(filter)){
-item.style.display="";
-}else{
-item.style.display="none";
-}
-
-});
 
 }
 

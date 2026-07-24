@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Guide - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav style="padding:15px;text-align:center;background:#f2f2f2">
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/search.html">Search</a> |
+<a href="/learning-guide.html">Learning Guide</a> |
+<a href="/computer-basics.html">Computer Basics</a> |
+<a href="/internet-safety.html">Internet Safety</a> |
+<a href="/digital-skills.html">Digital Skills</a> |
+<a href="/about.html">About</a> |
+<a href="/contact.html">Contact</a>
+</nav>
+<hr>
+
+
+<h1>Learning Guide</h1>
+
+<h2>Step by Step Learning</h2>
+
+<ol>
+<li>Learn computer basics</li>
+<li>Practice typing and file management</li>
+<li>Learn Word, Excel and PowerPoint</li>
+<li>Learn Internet browsing and safety</li>
+<li>Use your skills for opportunities</li>
+</ol>
+
+<h2>سیکھنے کا آسان طریقہ</h2>
+
+<ol>
+<li>کمپیوٹر کی بنیادی معلومات سیکھیں</li>
+<li>ٹائپنگ اور فائل مینجمنٹ کی مشق کریں</li>
+<li>ورڈ، ایکسل اور پاورپوائنٹ سیکھیں</li>
+<li>انٹرنیٹ کا محفوظ استعمال سیکھیں</li>
+<li>اپنی مہارت استعمال کریں</li>
+</ol>
+
+<a href="/courses.html">Courses</a>
+
+</body>
+</html>
