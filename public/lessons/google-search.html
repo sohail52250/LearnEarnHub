@@ -3,6 +3,7 @@
 <head>
 <title>Google Search Skills - Learn & Earn Hub</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/lesson-progress.js"></script>
 </head>
 
 <body>
@@ -60,6 +61,36 @@
 </a>
 
 </section>
+
+
+
+<hr>
+
+<h2>Practice Quiz</h2>
+
+<p>1. Did you understand this lesson?</p>
+<button onclick="alert('Great! Continue practicing.')">
+Yes
+</button>
+
+<p>2. Can you use this skill in daily life?</p>
+<button onclick="alert('Keep learning!')">
+Yes
+</button>
+
+
+<h2>Lesson Completion</h2>
+
+<button onclick="completeLesson('google-search')">
+Mark Lesson Complete
+</button>
+
+<p id="status"></p>
+
+<script>
+document.getElementById("status").innerHTML =
+checkProgress('google-search');
+</script>
 
 </body>
 </html>
