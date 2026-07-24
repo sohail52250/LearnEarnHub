@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Basics - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/lesson-progress.js"></script>
+<script src="/certificate-system.js"></script>
+</head>
+
+<body>
+<h2>CSS Design Basics</h2>
+<p>CSS makes websites attractive.</p>
+<ul>
+<li>Colors</li>
+<li>Fonts</li>
+<li>Layouts</li>
+<li>Mobile responsive design</li>
+</ul>
+
+
+<nav>
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/my-courses.html">My Courses</a>
+</nav>
+
+<section class="card">
+
+<h1>CSS Basics</h1>
+
+<h2>Lesson Overview</h2>
+<p>Design webpages with colors, layouts and responsive styles.</p>
+
+<h2>What You Will Learn</h2>
+<ul>
+<li>Basic concepts and practical usage</li>
+<li>Step-by-step learning method</li>
+<li>Real everyday examples</li>
+<li>Practice activities</li>
+</ul>
+
+<h2>Step by Step Guide</h2>
+
+<ol>
+<li>Understand the basic tools</li>
+<li>Practice each feature</li>
+<li>Create a small project</li>
+<li>Review your mistakes</li>
+<li>Apply skills in real life</li>
+</ol>
+
+<h2>Practice Task</h2>
+<p>Create a small project using this skill and save your work.</p>
+
+<h2>اردو میں آسان وضاحت</h2>
+<p>
+یہ سبق آپ کو روزمرہ زندگی میں استعمال ہونے والی کمپیوٹر مہارتیں آسان طریقے سے سکھاتا ہے۔
+مشق کریں اور اپنی صلاحیت بہتر بنائیں۔
+</p>
+
+<h2>Quick Check</h2>
+
+<ul>
+<li>What did you learn today?</li>
+<li>Can you complete a small task yourself?</li>
+<li>Can you explain this skill to someone else?</li>
+</ul>
+
+<a href="/courses.html">
+<button>Back To Courses</button>
+</a>
+
+</section>
+
+
+
+<hr>
+
+<h2>Practice Quiz</h2>
+
+<p>1. Did you understand this lesson?</p>
+<button onclick="alert('Great! Continue practicing.')">
+Yes
+</button>
+
+<p>2. Can you use this skill in daily life?</p>
+<button onclick="alert('Keep learning!')">
+Yes
+</button>
+
+
+<h2>Lesson Completion</h2>
+
+<button onclick="completeLesson('css-basics')">
+Mark Lesson Complete
+</button>
+
+<p id="status"></p>
+
+<script>
+document.getElementById("status").innerHTML =
+checkProgress('css-basics');
+</script>
+
+
+
+<div class="card">
+
+<h3 id="status">Lesson Progress</h3>
+
+<button onclick="completeLesson('css-basics')">
+Complete Lesson
+</button>
+
+</div>
+
+
+<h2>CSS Complete Beginner Course</h2>
+
+<h3>What is CSS?</h3>
+<p>
+CSS controls website design and appearance.
+</p>
+
+<ul>
+<li>Colors</li>
+<li>Fonts</li>
+<li>Spacing</li>
+<li>Layouts</li>
+<li>Responsive design</li>
+</ul>
+
+<h3>Project</h3>
+<p>Design a beautiful homepage.</p>
+
+<h2>CSS Complete Course</h2>
+
+<h3>Website Design</h3>
+
+<p>
+CSS makes websites attractive and user friendly.
+</p>
+
+<ul>
+<li>Colors</li>
+<li>Fonts</li>
+<li>Spacing</li>
+<li>Layouts</li>
+<li>Mobile responsive design</li>
+</ul>
+
+<h3>Project</h3>
+<p>
+Design a modern homepage using CSS.
+</p>
+
+<hr>
+
+<h2>📝 Lesson Quiz</h2>
+
+<div class="quiz-box">
+
+<p><b>Question 1:</b> What is the main purpose of this course?</p>
+
+<label>
+<input type="radio" name="q1" value="correct">
+Learning practical digital skills
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q1" value="wrong">
+Playing games only
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q1" value="wrong">
+Deleting files
+</label>
+
+
+<p><b>Question 2:</b> Why are computer skills useful?</p>
+
+<label>
+<input type="radio" name="q2" value="correct">
+They help in education, work and daily life
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q2" value="wrong">
+They are useless
+</label>
+
+
+<br><br>
+
+<button onclick="checkQuiz()">Submit Quiz</button>
+
+<p id="quiz-result"></p>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+let score=0;
+
+document.querySelectorAll(
+'input[type=radio]:checked'
+).forEach(function(a){
+
+if(a.value=="correct"){
+score++;
+}
+
+});
+
+let result=document.getElementById("quiz-result");
+
+if(score>=2){
+
+result.innerHTML="✅ Passed! Certificate progress updated.";
+
+}else{
+
+result.innerHTML="Try again. Keep learning!";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

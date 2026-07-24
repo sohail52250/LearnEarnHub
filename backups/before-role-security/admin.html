@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Course Manager</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/admin.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Admin Course Manager</h1>
+
+<input id="courseTitle" placeholder="Course title">
+
+<br><br>
+
+<input id="courseCategory" placeholder="Category">
+
+<br><br>
+
+<textarea id="courseDescription"
+placeholder="Course description"></textarea>
+
+<br><br>
+
+<button onclick="addCourse()">
+Add Course
+</button>
+
+<p id="admin-message"></p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Existing Courses</h2>
+
+<div id="admin-courses">
+
+Loading...
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>
