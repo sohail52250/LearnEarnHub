@@ -1,0 +1,9 @@
+{
+  "name": "Learn & Earn Hub",
+  "short_name": "LearnEarnHub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "description": "Learn computer and digital skills step by step."
+}
