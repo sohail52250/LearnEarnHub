@@ -30,6 +30,12 @@ crossorigin="anonymous"></script>
 </nav>
 
 
+
+<div class="card language-box">
+<button onclick="setEnglish()">English</button>
+<button onclick="setUrdu()">اردو</button>
+</div>
+
 <header class="card">
 
 <h1>Learn & Earn Hub</h1>
@@ -317,6 +323,46 @@ x.style.display="flex";
 x.style.display="block";
 }
 }
+</script>
+
+
+
+<script>
+
+function setUrdu(){
+
+document.documentElement.lang="ur";
+
+let t=document.body.innerHTML;
+
+t=t.replace(/Learn & Earn Hub/g,"لرن اینڈ ارن ہب");
+t=t.replace(/Learn skills and grow your income/g,"مہارتیں سیکھیں اور اپنی آمدنی بڑھائیں");
+t=t.replace(/Start Learning \/ سیکھنا شروع کریں/g,"سیکھنا شروع کریں");
+t=t.replace(/View Courses \/ کورسز دیکھیں/g,"کورسز دیکھیں");
+t=t.replace(/Popular Skills \/ مشہور مہارتیں/g,"مشہور مہارتیں");
+t=t.replace(/Computer Basics/g,"کمپیوٹر بنیادی معلومات");
+t=t.replace(/Internet Safety/g,"انٹرنیٹ حفاظت");
+t=t.replace(/Digital Skills/g,"ڈیجیٹل مہارتیں");
+t=t.replace(/Microsoft Word/g,"مائیکروسافٹ ورڈ");
+t=t.replace(/Microsoft Excel/g,"مائیکروسافٹ ایکسل");
+t=t.replace(/PowerPoint/g,"پاور پوائنٹ");
+t=t.replace(/Windows Basics/g,"ونڈوز بنیادی استعمال");
+t=t.replace(/Internet Skills/g,"انٹرنیٹ مہارتیں");
+t=t.replace(/Popular Beginner Courses/g,"ابتدائی کورسز");
+t=t.replace(/Learning Resources/g,"سیکھنے کے وسائل");
+t=t.replace(/Useful Pages/g,"ضروری صفحات");
+
+document.body.innerHTML=t;
+
+}
+
+
+function setEnglish(){
+
+location.reload();
+
+}
+
 </script>
 
 </body>
