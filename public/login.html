@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - Learn & Earn Hub</title>
 <link rel="stylesheet" href="style.css">
-<title>Login</title>
-<script src="/adsense.js"></script>
 </head>
 
 <body>
 
-<div class="card">
+<nav>
+<a href="/">Home</a> |
+<a href="/register.html">Register</a>
+</nav>
 
-<h2>Login</h2>
+
+<section class="card">
+
+<h1>🔐 Student Login</h1>
 
 <input id="email" placeholder="Email">
 
-<input id="password" type="password" placeholder="Password">
+<button onclick="loginUser()">
+Login / داخل ہوں
+</button>
 
-<button onclick="login()">Login</button>
+<p id="msg"></p>
 
-</div>
+</section>
 
 
 <script>
 
-async function login(){
+function loginUser(){
 
-let r=await fetch("/api/auth/login",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-
-email:email.value,
-password:password.value
-
-})
-
-});
+let user=
+JSON.parse(localStorage.getItem("user"));
 
 
-let d=await r.json();
+if(user){
 
-alert(JSON.stringify(d));
+location.href="/profile.html";
+
+}else{
+
+document.getElementById("msg").innerHTML=
+"Please create account first";
+
+}
 
 }
 
 </script>
+
 
 </body>
 </html>

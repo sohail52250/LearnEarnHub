@@ -742,3 +742,17 @@ margin-right:12px;
 }
 
 
+
+input{
+
+display:block;
+width:90%;
+max-width:400px;
+padding:14px;
+margin:12px auto;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:18px;
+
+}
+
