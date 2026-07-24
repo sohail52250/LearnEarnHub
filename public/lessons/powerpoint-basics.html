@@ -9,7 +9,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/supabase-config.js"></script>
 <script src="/student-tools.js"></script>
+
+<script src="/course-player.js"></script>
 </head>
+
 
 
 <body>
@@ -239,7 +242,21 @@ placeholder="Write your notes here">
 
 </div>
 
+
+<div class="card">
+
+<button onclick="previousLesson('powerpoint-basics')">
+⬅ Previous Lesson
+</button>
+
+<button onclick="nextLesson('powerpoint-basics')">
+Next Lesson ➡
+</button>
+
+</div>
+
 </body>
+
 
 
 </html>
