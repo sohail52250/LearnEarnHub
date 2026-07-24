@@ -1,11 +1,19 @@
 function completeLesson(name){
- localStorage.setItem(name,"completed");
- alert("Lesson completed!");
+
+localStorage.setItem(name,"completed");
+
+alert("Lesson completed! Great job.");
+
 }
 
-function checkProgress(name){
- if(localStorage.getItem(name)){
-   return "✅ Completed";
- }
- return "⏳ Not completed";
+
+function lessonStatus(name){
+
+if(localStorage.getItem(name)=="completed"){
+
+document.getElementById("status").innerHTML =
+"✅ Completed";
+
+}
+
 }
