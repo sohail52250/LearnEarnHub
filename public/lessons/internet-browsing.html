@@ -86,6 +86,53 @@
 <a href="/completion.html">کورس مکمل کرنے کا صفحہ دیکھیں</a>
 </p>
 </section>
+
+<hr>
+
+<section class="card">
+<h2>Practice Exercise</h2>
+
+<p><strong>English:</strong> Complete a small task using the skills learned in this lesson.</p>
+
+<p><strong>اردو:</strong> اس سبق میں سیکھی گئی مہارت استعمال کرتے ہوئے ایک چھوٹا عملی کام مکمل کریں۔</p>
+</section>
+
+<section class="card">
+<h2>Quick Quiz</h2>
+
+<ol>
+<li>What was the main topic of this lesson?</li>
+<li>Which skill did you practice?</li>
+<li>Can you complete the task without help?</li>
+</ol>
+
+<h3>مختصر سوالات</h3>
+
+<ol>
+<li>اس سبق کا بنیادی موضوع کیا تھا؟</li>
+<li>آپ نے کون سی مہارت سیکھی؟</li>
+<li>کیا آپ یہ کام خود مکمل کر سکتے ہیں؟</li>
+</ol>
+</section>
+
+<section class="card">
+<h2>Lesson Complete</h2>
+
+<button onclick="markComplete()">
+Mark Lesson Complete
+</button>
+
+<p id="done"></p>
+</section>
+
+<script>
+function markComplete(){
+document.getElementById('done').innerHTML =
+'✅ Lesson completed successfully!';
+localStorage.setItem(location.pathname,'completed');
+}
+</script>
+
 </body>
 
 </html>
