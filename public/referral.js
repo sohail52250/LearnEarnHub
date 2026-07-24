@@ -1,4 +1,3 @@
-
 async function loadReferralCode(){
 
 const client=supabase.createClient(
@@ -21,7 +20,7 @@ let {data}=await client
 if(!data){
 
 const code=
-"LEH" +
+"LEH"+
 user.id.replace(/-/g,'').substring(0,8);
 
 await client
@@ -40,16 +39,22 @@ window.location.origin+
 "/register.html?ref="+
 data.referral_code;
 
-const box=document.getElementById(
-"referral-box"
-);
+const box=document.getElementById("referral-box");
 
 if(box){
 
-box.innerHTML=
-`
-<p><strong>Your Referral Code:</strong> ${data.referral_code}</p>
-<input value="${link}" readonly style="width:100%">
+box.innerHTML=`
+<h3>🎁 Invite Friends</h3>
+<p>Your Referral Code:</p>
+<p><strong>${data.referral_code}</strong></p>
+
+<input
+value="${link}"
+readonly
+style="width:100%;padding:8px;">
+
+<br><br>
+
 <button onclick="navigator.clipboard.writeText('${link}')">
 Copy Referral Link
 </button>
@@ -63,4 +68,3 @@ document.addEventListener(
 "DOMContentLoaded",
 loadReferralCode
 );
-
