@@ -16,7 +16,8 @@ crossorigin="anonymous"></script>
 
 <body>
 
-<nav>
+<button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+<nav id="mobileNav">
 <a href="/">Home</a>
 <a href="/courses.html">Courses</a>
 <a href="/search.html">Search</a>
@@ -253,6 +254,19 @@ Learn & Earn Hub © 2026
 
 </footer>
 
+
+
+
+<script>
+function toggleMenu(){
+var x=document.getElementById("mobileNav");
+if(x.style.display==="block"){
+x.style.display="flex";
+}else{
+x.style.display="block";
+}
+}
+</script>
 
 </body>
 </html>
