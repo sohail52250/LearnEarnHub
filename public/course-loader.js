@@ -89,3 +89,35 @@ document.addEventListener(
 "DOMContentLoaded",
 loadDynamicCourses
 );
+
+
+async function loadPopularCourses(){
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+const {data}=await client
+.from("reviews")
+.select("course_id,rating");
+
+
+if(!data)return;
+
+
+let counts={};
+
+
+data.forEach(r=>{
+
+counts[r.course_id]=(counts[r.course_id]||0)+Number(r.rating);
+
+});
+
+
+console.log("Popular courses:",counts);
+
+}
+
