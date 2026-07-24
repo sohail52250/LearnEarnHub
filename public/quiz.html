@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skill Quiz - Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/practice.html">Practice</a>
+</nav>
+
+
+<div class="card">
+
+<h1>Computer Skills Quiz</h1>
+
+<p>Test your basic computer knowledge.</p>
+
+
+<form id="quiz">
+
+<h3>1. Which program is used to create documents?</h3>
+
+<input type="radio" name="q1" value="1">
+Microsoft Word<br>
+
+<input type="radio" name="q1" value="0">
+Paint<br>
+
+
+<h3>2. HTML is used for?</h3>
+
+<input type="radio" name="q2" value="1">
+Creating web pages<br>
+
+<input type="radio" name="q2" value="0">
+Editing photos<br>
+
+
+<h3>3. Excel is mainly used for?</h3>
+
+<input type="radio" name="q3" value="1">
+Tables and calculations<br>
+
+<input type="radio" name="q3" value="0">
+Playing videos<br>
+
+
+<br>
+
+<button type="button" onclick="checkQuiz()">
+Submit Quiz
+</button>
+
+</form>
+
+
+<h2 id="result"></h2>
+
+
+</div>
+
+
+<script>
+
+function checkQuiz(){
+
+let score=0;
+
+let answers=document.querySelectorAll(
+'input[type="radio"]:checked'
+);
+
+
+answers.forEach(function(a){
+
+score += Number(a.value);
+
+});
+
+
+if(score>=2){
+
+document.getElementById("result").innerHTML =
+"🎉 Passed! You can get your certificate.";
+
+localStorage.setItem(
+"certificate",
+"Computer Skills Certificate"
+);
+
+}else{
+
+document.getElementById("result").innerHTML =
+"Keep practicing and try again.";
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
