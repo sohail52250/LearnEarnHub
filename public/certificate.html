@@ -2,39 +2,46 @@
 <html>
 
 <head>
-<title>Certificate - Learn & Earn Hub</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
+<title>Learn & Earn Hub Certificate</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
 
 <body>
 
-
 <div class="card certificate">
 
+<h1>Certificate of Completion</h1>
 
-<h1>🏆 Certificate</h1>
+<p>This certificate is proudly awarded to</p>
 
-
-<p>
-This certificate is awarded to
-</p>
-
-
-<h2>Learn & Earn Hub Student</h2>
-
+<h2 id="student-name">Student</h2>
 
 <p>
-For successfully completing Computer Skills training.
+For completing digital skills training at
+<br>
+<strong>Learn & Earn Hub</strong>
 </p>
-
 
 <p>
-Learn & Earn Hub © 2026
+Computer Skills • Digital Skills • Online Learning
 </p>
 
+<button onclick="window.print()">
+Print Certificate
+</button>
 
 </div>
+
+
+<script>
+
+document.getElementById("student-name").innerHTML =
+localStorage.getItem("studentName") || "Student";
+
+</script>
 
 
 </body>
