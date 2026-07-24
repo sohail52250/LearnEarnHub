@@ -173,6 +173,44 @@ Learn & Earn Hub آپ کو آسان طریقے سے کمپیوٹر اور ڈیج
 
 </section>
 
+
+
+<section class="card search-box">
+
+<h2>🔎 Search Lessons / سبق تلاش کریں</h2>
+
+<input 
+id="lessonSearch"
+type="text"
+placeholder="Search Word, Excel, Internet..."
+onkeyup="searchLessons()">
+
+<div id="lessonList">
+
+<p>
+<a href="/lessons/word-basics.html">Microsoft Word Basics</a>
+</p>
+
+<p>
+<a href="/lessons/excel-basics.html">Microsoft Excel Basics</a>
+</p>
+
+<p>
+<a href="/lessons/powerpoint-basics.html">Microsoft PowerPoint Basics</a>
+</p>
+
+<p>
+<a href="/lessons/windows-basics.html">Windows Basics</a>
+</p>
+
+<p>
+<a href="/lessons/internet-browsing.html">Internet Browsing Skills</a>
+</p>
+
+</div>
+
+</section>
+
 <h2>Popular Beginner Courses</h2>
 
 <p>
@@ -360,6 +398,33 @@ document.body.innerHTML=t;
 function setEnglish(){
 
 location.reload();
+
+}
+
+</script>
+
+
+
+<script>
+
+function searchLessons(){
+
+let input=document.getElementById("lessonSearch");
+let filter=input.value.toLowerCase();
+
+let items=document.querySelectorAll("#lessonList p");
+
+items.forEach(function(item){
+
+let txt=item.innerText.toLowerCase();
+
+if(txt.includes(filter)){
+item.style.display="";
+}else{
+item.style.display="none";
+}
+
+});
 
 }
 
