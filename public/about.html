@@ -32,6 +32,10 @@
 
 </head>
 <body>
+<div id="instructor-menu"></div>
+<script>
+fetch("/instructor-nav.html").then(r=>r.text()).then(t=>document.getElementById("instructor-menu").innerHTML=t);
+</script>
 
 <nav style="padding:15px;text-align:center;background:#f2f2f2">
 <a href="/">Home</a> |
