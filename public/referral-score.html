@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Referral Score</title>
+</head>
+
+<body>
+
+<h1>My Referral Performance</h1>
+
+<div id="score">
+Loading...
+</div>
+
+<script src="/referral-score.js"></script>
+
+<script>
+
+async function load(){
+
+const user =
+JSON.parse(
+localStorage.getItem("user") || "null"
+);
+
+if(!user){
+document.getElementById("score").innerHTML =
+"Login required";
+return;
+}
+
+const data =
+await getReferralScore(user.id);
+
+if(!data.length){
+
+document.getElementById("score").innerHTML =
+"No score record yet";
+
+return;
+}
+
+const s = data[0];
+
+document.getElementById("score").innerHTML = `
+<p>Total Referrals: ${s.total_referrals}</p>
+<p>Approved Referrals: ${s.approved_referrals}</p>
+<p>Active Businesses: ${s.active_businesses}</p>
+<p>Referral Score: ${s.score}</p>
+`;
+
+}
+
+load();
+
+</script>
+
+</body>
+</html>
