@@ -1,128 +1,139 @@
+async function createSkillBadge(courseId){
 
-async function awardBadge(userId,badge){
-
-const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-);
+const user =
+JSON.parse(localStorage.getItem("user") || "null");
 
 
-await client
-.from("user_badges")
-.upsert({
+if(!user){
+return;
+}
 
-user_id:userId,
 
-badge:badge
+const course =
+await fetch(
+`${SUPABASE_URL}/rest/v1/courses?id=eq.${courseId}`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+}
+)
+.then(r=>r.json());
+
+
+if(!course.length){
+return;
+}
+
+
+
+const rewards =
+course[0].skill_reward || [];
+
+
+
+for(const skill of rewards){
+
+
+await fetch(
+`${SUPABASE_URL}/rest/v1/learner_badges`,
+{
+method:"POST",
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`,
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+
+user_id:user.id,
+
+skill:skill,
+
+badge_name:
+"Certified "+skill+" Skill"
+
+})
+
+});
+
+}
+
+
+await updateLearnerSkills(rewards);
+
+}
+
+
+
+async function updateLearnerSkills(newSkills){
+
+
+const user =
+JSON.parse(localStorage.getItem("user") || "null");
+
+
+
+const profile =
+await fetch(
+`${SUPABASE_URL}/rest/v1/learner_profiles?user_id=eq.${user.id}`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+}
+)
+.then(r=>r.json());
+
+
+
+if(!profile.length){
+return;
+}
+
+
+
+const oldSkills =
+profile[0].skills || [];
+
+
+
+const skills =
+[
+...new Set([
+...oldSkills,
+...newSkills
+])
+];
+
+
+
+await fetch(
+`${SUPABASE_URL}/rest/v1/learner_profiles?user_id=eq.${user.id}`,
+{
+method:"PATCH",
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`,
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+
+skills:skills,
+
+career_score:
+Math.min(skills.length*10,100)
+
+})
 
 });
 
 
-await client
-.from("achievements")
-.upsert({
-
-user_id:userId,
-
-achievement:badge
-
-});
-
 }
 
 
 
-async function checkBadges(){
-
-const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-);
-
-
-const {data:userData}=await client.auth.getUser();
-
-if(!userData.user) return;
-
-
-const userId=userData.user.id;
-
-
-
-// Lesson badge
-
-const {data:lessons}=await client
-.from("lesson_progress")
-.select("*")
-.eq("user_id",userId);
-
-
-
-if(lessons && lessons.length >= 1){
-
-await awardBadge(
-userId,
-"🎓 First Lesson Complete"
-);
-
-}
-
-
-if(lessons && lessons.length >= 5){
-
-await awardBadge(
-userId,
-"📚 Learning Explorer"
-);
-
-}
-
-
-
-// Certificate badge
-
-const {data:certs}=await client
-.from("certificates")
-.select("*")
-.eq("user_id",userId);
-
-
-if(certs && certs.length >= 1){
-
-await awardBadge(
-userId,
-"🏆 Certificate Master"
-);
-
-}
-
-
-
-// Referral badge
-
-const {data:refs}=await client
-.from("referrals")
-.select("*")
-.eq("referrer_user_id",userId)
-.eq("rewarded",true);
-
-
-
-if(refs && refs.length >= 5){
-
-await awardBadge(
-userId,
-"🎁 Referral Ambassador"
-);
-
-}
-
-
-}
-
-
-document.addEventListener(
-"DOMContentLoaded",
-checkBadges
-);
+window.createSkillBadge=createSkillBadge;
 
