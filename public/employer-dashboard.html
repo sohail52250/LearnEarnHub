@@ -1,52 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Employer Dashboard</title>
-
-<link rel="stylesheet" href="/style.css">
-
 </head>
 
 <body>
 
+
 <div class="card">
 
 <h1>
-💼 Employer Dashboard
+Employer Matching Dashboard
 </h1>
 
 <p>
-Post jobs and find skilled learners.
+Find skilled learners for your opportunity
 </p>
 
+</div>
+
+
+<div class="card">
 
 <h2>
-Post Opportunity
+Recommended Learners
 </h2>
 
-
-<input placeholder="Job Title">
-
-<input placeholder="Required Skill">
-
-<textarea placeholder="Job Description"></textarea>
-
-
-<button>
-Publish Job
-</button>
-
-
-
-<a href="/post-job.html">
-<button>📢 Post New Opportunity</button>
-</a>
+<div id="learners">
+Loading...
+</div>
 
 </div>
+
+
+<script src="/business-matching.js"></script>
+
+
+<script>
+
+async function loadMatches(){
+
+let learners =
+await findBusinessMatches([
+"excel",
+"typing",
+"internet"
+]);
+
+
+document.getElementById("learners").innerHTML =
+learners.length
+?
+learners.map(
+l =>
+`⭐ ${l.name || "Learner"} 
+(${l.score}% match)`
+).join("<br>")
+:
+"No matching learners found";
+
+}
+
+
+loadMatches();
+
+</script>
 
 
 </body>

@@ -1,75 +1,61 @@
-async function loadBusinessMatches(){
+async function findBusinessMatches(requiredSkills){
 
-const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
+const learners = await fetch(
+`${SUPABASE_URL}/rest/v1/learner_profiles`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+})
+.then(r=>r.json());
+
+
+let results=[];
+
+
+learners.forEach(learner=>{
+
+let skills =
+learner.skills || [];
+
+
+let matched =
+requiredSkills.filter(
+s=>skills.includes(s)
 );
 
 
-const {data:offers}=await client
-.from("business_offers")
-.select("*")
-.eq("verified",true);
+let score =
+requiredSkills.length
+?
+Math.round(
+(matched.length / requiredSkills.length)*100
+)
+:0;
 
 
+if(score>0){
 
-const box=document.getElementById(
-"matches"
+results.push({
+
+name:learner.full_name,
+score:score,
+skills:skills
+
+});
+
+}
+
+});
+
+
+return results.sort(
+(a,b)=>b.score-a.score
 );
-
-
-
-if(!offers || !offers.length){
-
-box.innerHTML=
-"No verified opportunities available.";
-
-return;
 
 }
 
 
-
-box.innerHTML=offers.map(o=>`
-
-<div class="card">
-
-<h2>
-🏢 ${o.business_name}
-</h2>
-
-
-<p>
-Offers:
-${o.offer || ""}
-</p>
-
-
-<p>
-Needs:
-${o.need || ""}
-</p>
-
-
-<p>
-Provides:
-${o.provide || ""}
-</p>
-
-
-<button>
-Connect Opportunity
-</button>
-
-
-</div>
-
-`).join("");
-
-}
-
-
-document.addEventListener(
-"DOMContentLoaded",
-loadBusinessMatches
-);
+window.findBusinessMatches =
+findBusinessMatches;
