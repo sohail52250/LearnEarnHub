@@ -21,6 +21,9 @@ password
 
 
 
+alert("Login response received");
+console.log(result);
+
 if(result.error){
 
 alert(result.error.message);
