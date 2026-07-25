@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Find Learners</title>
+</head>
+
+
+<body>
+
+
+<h1>
+Find Skilled Learners
+</h1>
+
+
+<div id="learners">
+Loading...
+</div>
+
+
+<script src="/business-learner-matching.js"></script>
+
+
+<script>
+
+
+async function load(){
+
+
+let results =
+await findLearnersForBusiness(
+[
+"excel",
+"marketing",
+"freelancing"
+]
+);
+
+
+
+document.getElementById("learners")
+.innerHTML =
+
+results.map(
+l=>`
+
+<div class="card">
+
+<h3>
+${l.full_name || "Learner"}
+</h3>
+
+
+<p>
+Skills:
+${(l.skills||[]).join(",")}
+</p>
+
+
+<p>
+Match:
+${l.match_score}%
+</p>
+
+
+<button onclick="contact('${l.user_id}')">
+
+Contact Learner
+
+</button>
+
+
+</div>
+
+`
+).join("");
+
+}
+
+
+
+async function contact(id){
+
+
+const user =
+JSON.parse(
+localStorage.getItem("user")||"null"
+);
+
+
+
+await sendContactRequest(
+id,
+user.id
+);
+
+
+
+alert(
+"Contact request sent"
+);
+
+
+}
+
+
+
+load();
+
+
+</script>
+
+
+</body>
+</html>
