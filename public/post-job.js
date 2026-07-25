@@ -27,14 +27,14 @@ const {data:business}=await client
 
 if(!business){
 
-alert("Create business profile first");
+alert("Please create a business profile first");
 
 return;
 
 }
 
 
-await client
+const {error}=await client
 .from("jobs")
 .insert({
 
@@ -59,7 +59,16 @@ status:"active"
 });
 
 
-alert("Opportunity published");
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+
+alert("Opportunity published successfully");
 
 }
 
