@@ -1,22 +1,56 @@
+
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Business Marketplace - Learn & Earn Hub</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>
+Business Marketplace - Learn & Earn Hub
+</title>
+
 
 <link rel="stylesheet" href="/style.css">
 
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="/supabase-config.js"></script>
-<script src="/business-marketplace.js"></script>
+
+<script src="/business-marketplace-v2.js"></script>
+
 
 </head>
 
 
 <body>
+
+
+<nav>
+
+<a href="/">
+Home
+</a>
+
+|
+
+<a href="/courses.html">
+Courses
+</a>
+
+|
+
+<a href="/learner-dashboard.html">
+Learner Dashboard
+</a>
+
+</nav>
+
 
 
 <div class="card">
@@ -25,52 +59,30 @@
 🏢 Business Marketplace
 </h1>
 
+
 <p>
-Find products, suppliers, buyers and business opportunities.
+Connect skilled learners with verified companies.
 </p>
 
 
-<a href="/post-business-offer.html">
-<button>
-Post Business Offer
-</button>
-</a>
+<input id="jobSearch"
+placeholder="Search opportunities..."
+onkeyup="searchJobs()">
 
 
 </div>
 
 
-<div id="business-list">
 
-Loading...
+<div id="jobs">
+
+Loading opportunities...
 
 </div>
 
 
-<div class="card">
-<h2 data-en="Business Opportunities" data-ur="کاروباری مواقع">Business Opportunities</h2>
-<p data-en="Find products, sellers, buyers and partners." data-ur="مصنوعات، فروخت کنندگان، خریدار اور شراکت دار تلاش کریں۔">Find products, sellers, buyers and partners.</p>
-</div>
-<div class="card">
-<h2>Referral Network</h2>
-<a href="/referral-manager-dashboard.html">Open Referral Dashboard</a>
-</div>
-<div class="card">
-<h2>Business Opportunities</h2>
-<div id="businessOffers">Loading...</div>
-</div>
-<script src="/business-marketplace-engine.js"></script>
-<script src="/business-marketplace-v2.js"></script>
-<div class="card">
-<h2>Sponsor Your Opportunity</h2>
-<a href="/sponsor-dashboard.html">Business Sponsor Area</a>
-</div>
-<script src="/auth-role.js"></script>
-<script src="/role-guard.js"></script>
-<div class="card">
-<h2>Find Skilled Learners</h2>
-<a href="/business-talent-search.html">Talent Search</a>
-</div>
+
 </body>
 
 </html>
+

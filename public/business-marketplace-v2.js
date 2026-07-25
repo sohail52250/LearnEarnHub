@@ -1,41 +1,191 @@
-async function showMarketplace(){
 
-let offers =
-await loadBusinessOffers();
+let jobs=[];
 
 
-document.getElementById("businessOffers")
-.innerHTML =
-offers.length
-?
-offers.map(
-o=>`
+async function loadJobs(){
 
-<div class="card">
 
-<h3>${o.product}</h3>
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
 
-<p>
-Stock: ${o.quantity || ""}
-</p>
 
-<p>
-Need: ${o.needs || ""}
-</p>
 
-<p>
-Price: ${o.price || ""}
-</p>
+const {data,error}=await client
 
-</div>
+.from("job_opportunities")
 
-`
-).join("")
-:
-"No business opportunities";
+.select("*")
+
+.eq("status","open")
+
+.order("created_at",{ascending:false});
+
+
+
+if(error){
+
+document.getElementById("jobs").innerHTML=
+"Unable to load opportunities";
+
+return;
 
 }
 
 
-showMarketplace();
+
+jobs=data || [];
+
+displayJobs(jobs);
+
+
+}
+
+
+
+function displayJobs(list){
+
+
+document.getElementById("jobs").innerHTML=
+
+
+list.map(job=>`
+
+<div class="card">
+
+
+<h2>
+💼 ${job.title}
+</h2>
+
+
+<p>
+${job.description || ""}
+</p>
+
+
+<p>
+🛠 Skill:
+${job.skill_required || "Not specified"}
+</p>
+
+
+<p>
+Status:
+${job.status}
+</p>
+
+
+
+<button onclick="applyJob(${job.id})">
+
+Apply Now
+
+</button>
+
+
+
+</div>
+
+
+`).join("");
+
+}
+
+
+
+
+function searchJobs(){
+
+
+const text=document
+.getElementById("jobSearch")
+.value
+.toLowerCase();
+
+
+
+displayJobs(
+
+jobs.filter(j=>
+
+j.title.toLowerCase()
+.includes(text)
+
+)
+
+);
+
+
+}
+
+
+
+
+
+async function applyJob(id){
+
+
+const user=JSON.parse(
+localStorage.getItem("user") || "null"
+);
+
+
+
+if(!user){
+
+alert("Please login first");
+
+return;
+
+}
+
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+const {error}=await client
+
+.from("job_applications")
+
+.insert({
+
+job_id:id,
+
+learner_id:user.id
+
+});
+
+
+
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+
+
+alert(
+"Application submitted successfully"
+);
+
+
+}
+
+
+
+document.addEventListener(
+"DOMContentLoaded",
+loadJobs
+);
+
 
