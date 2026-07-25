@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Referral Manager</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>
+Referral Network Dashboard
+</h1>
+
+<p>
+Manage business connections privately.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Referral Records
+</h2>
+
+<div id="referrals">
+Loading...
+</div>
+
+</div>
+
+
+<script>
+
+async function loadReferralRecords(){
+
+const data =
+await fetch(
+`${SUPABASE_URL}/rest/v1/business_referrals`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+}
+)
+.then(r=>r.json());
+
+
+document.getElementById("referrals")
+.innerHTML =
+data.length
+?
+data.map(
+r =>
+`
+<p>
+Business: ${r.business_id}
+<br>
+Status: ${r.status}
+</p>
+`
+).join("")
+:
+"No referrals yet";
+
+}
+
+
+loadReferralRecords();
+
+</script>
+
+
+</body>
+</html>
