@@ -89,6 +89,12 @@ let jobs=getRecommendations(learnerSkills);
 document.getElementById("careerRecommendations").innerHTML=jobs.map(j=>"<li>"+j+"</li>").join("");
 document.getElementById("opportunityScore").innerText=calculateOpportunityScore(learnerSkills)+"/100";
 </script>
+<script src="/career-supabase.js"></script>
+<script src="/opportunity-matching.js"></script>
+<div class="card" id="LearnEarnCareer">
+<h2 data-en="Your Learning To Earning Path" data-ur="آپ کا سیکھنے سے کمانے تک کا راستہ">Your Learning To Earning Path</h2>
+<p data-en="Your skills will be matched with opportunities." data-ur="آپ کی مہارتوں کو مواقع سے ملایا جائے گا۔">Your skills will be matched with opportunities.</p>
+</div>
 </body>
 
 </html>
