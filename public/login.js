@@ -11,7 +11,7 @@ document.getElementById("password").value;
 
 
 const result =
-await supabase.auth.signInWithPassword({
+await supabaseClient.auth.signInWithPassword({
 
 email,
 password
