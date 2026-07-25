@@ -19,6 +19,10 @@ const CAREER_MAP = {
   freelancing: [
     "Freelancer",
     "Project Assistant"
+  ],
+  ms_office: [
+    "Office Assistant",
+    "Documentation Specialist"
   ]
 };
 
@@ -33,7 +37,7 @@ function getRecommendations(skills){
 
   return Object.entries(scores)
     .sort((a,b)=>b[1]-a[1])
-    .map(x=>x[0]);
+    .map(item=>item[0]);
 }
 
 window.getRecommendations = getRecommendations;

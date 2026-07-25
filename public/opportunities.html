@@ -40,6 +40,15 @@ Loading opportunities...
 </div>
 
 
+<script src="/career-engine.js"></script>
+<div class="card">
+<h2 data-en="Recommended Opportunities" data-ur="تجویز کردہ مواقع">Recommended Opportunities</h2>
+<div id="recommendedJobs"></div>
+</div>
+<script>
+let recommended=getRecommendations(["excel","typing","internet"]);
+document.getElementById("recommendedJobs").innerHTML=recommended.map(j=>"✅ "+j).join("<br>");
+</script>
 </body>
 
 </html>

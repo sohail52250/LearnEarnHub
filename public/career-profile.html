@@ -75,6 +75,20 @@ Loading...
 </div>
 
 
+<script src="/career-engine.js"></script>
+<script src="/opportunity-score.js"></script>
+<div class="card">
+<h2 data-en="Career Recommendations" data-ur="کیریئر تجاویز">Career Recommendations</h2>
+<ul id="careerRecommendations"></ul>
+<h2 data-en="Opportunity Score" data-ur="مواقع اسکور">Opportunity Score</h2>
+<h3 id="opportunityScore">0/100</h3>
+</div>
+<script>
+let learnerSkills=["excel","typing","internet"];
+let jobs=getRecommendations(learnerSkills);
+document.getElementById("careerRecommendations").innerHTML=jobs.map(j=>"<li>"+j+"</li>").join("");
+document.getElementById("opportunityScore").innerText=calculateOpportunityScore(learnerSkills)+"/100";
+</script>
 </body>
 
 </html>
