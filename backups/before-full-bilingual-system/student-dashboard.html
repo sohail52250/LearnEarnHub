@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Dashboard - Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/lesson-progress.js">showUser();
+
+</script>
+<script src="/account.js">showUser();
+
+</script>
+<script src="/supabase-config.js"></script>
+<script src="/auth-cloud.js"></script>
+<script src="/certificate-system.js"></script>
+<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+
+<title>Student Dashboard - Learn & Earn Hub</title>
+
+<meta name="description" content="Learn student dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+
+<meta property="og:title" content="Student Dashboard - Learn & Earn Hub">
+<meta property="og:description" content="Learn student dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn-earnhub.vercel.app/student-dashboard.html">
+
+<link rel="canonical" href="https://learn-earnhub.vercel.app/student-dashboard.html">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Learn & Earn Hub",
+  "url": "https://learn-earnhub.vercel.app",
+  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+}
+</script>
+
+</head>
+
+
+<body>
+
+<nav>
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/practice.html">Practice</a> |
+<a href="/quiz.html">Quiz</a>
+</nav>
+
+
+<div class="card dashboard">
+
+<h1>🎓 Student Dashboard</h1>
+<h3 id="username"></h3>
+
+<p>
+Track your learning progress and achievements.
+</p>
+
+
+<h2>Learning Progress</h2>
+
+<div class="progress-box">
+<div id="progress"></div>
+</div>
+
+<p id="progress-text">
+Checking progress...
+</p>
+
+
+<h2>Quick Learning</h2>
+
+<ul>
+
+<li>
+<a href="/courses.html">
+Browse Courses
+</a>
+</li>
+
+
+<li>
+<a href="/practice.html">
+Practice Skills
+</a>
+</li>
+
+
+<li>
+<a href="/quiz.html">
+Take Quiz
+</a>
+</li>
+
+
+<li>
+<a href="/certificate.html">
+View Certificate
+</a>
+</li>
+
+</ul>
+
+
+<h2>Completed Lessons</h2>
+
+<div id="lessons">
+Loading...
+</div>
+
+
+</div>
+
+
+<script>
+
+let lessons=[
+
+"word-basics",
+"excel-basics",
+"powerpoint-basics",
+"html-basics",
+"css-basics",
+"email-basics"
+
+];
+
+
+let completed=0;
+
+
+let output="";
+
+
+lessons.forEach(function(item){
+
+if(localStorage.getItem(item)=="completed"){
+
+completed++;
+
+output += "✅ "+item+"<br>";
+
+}else{
+
+output += "⬜ "+item+"<br>";
+
+}
+
+});
+
+
+document.getElementById("lessons").innerHTML=output;
+
+
+let percent=Math.round(
+(completed/lessons.length)*100
+);
+
+
+document.getElementById("progress").style.width=
+percent+"%";
+
+
+document.getElementById("progress-text").innerHTML=
+percent+"% Completed";
+
+
+showUser();
+
+</script>
+
+
+
+<div class="card">
+
+<h2>🏆 Achievements</h2>
+
+<ul>
+
+<li>🎯 First Lesson Completed</li>
+
+<li>📚 Learning Explorer</li>
+
+<li>💻 Digital Skills Beginner</li>
+
+<li>🎓 Certificate Earned</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>🏆 My Achievements</h2>
+
+<div id="reward-box">
+Loading rewards...
+</div>
+
+</div>
+
+<script src="/rewards.js"></script>
+
+
+<div class="card">
+
+<h2>📊 Course Progress</h2>
+
+<div id="course-progress">
+Loading...
+</div>
+
+</div>
+
+
+<script src="/progress-dashboard.js"></script>
+
+
+<div class="card">
+
+<h2>🤖 Learning Assistant</h2>
+
+<input id="assistant-question"
+placeholder="Ask what to learn next">
+
+<button onclick="askAssistant()">
+Ask
+</button>
+
+<p id="assistant-answer">
+Your learning guide will appear here.
+</p>
+
+</div>
+
+
+<script src="/learning-assistant.js"></script>
+
+<script src="/mobile-nav.js"></script>
+
+<div class="card">
+<h2>🎁 Invite Friends</h2>
+<div id="referral-box">
+Loading referral link...
+</div>
+</div>
+
+<script src="/referral.js"></script>
+
+
+<div class="card">
+<h2>⭐ Your XP</h2>
+<p id="xp-display">Loading...</p>
+</div>
+
+<script src="/xp.js"></script>
+<script src="/referral-rewards.js"></script>
+
+<div class="card">
+
+<h2>🏆 Your Level</h2>
+
+<div id="level-display">
+Loading...
+</div>
+
+</div>
+
+<script src="/level-system.js"></script>
+
+
+<div class="card">
+
+<h2>🏅 Your Badges</h2>
+
+<div id="badge-display">
+Loading...
+</div>
+
+</div>
+
+<script src="/badges.js"></script>
+
+<script src="/badge-engine.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+</html>
