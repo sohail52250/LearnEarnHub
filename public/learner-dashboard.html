@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learner Dashboard - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<h1 data-en="My Learning Journey" data-ur="میرا سیکھنے کا سفر">
+My Learning Journey
+</h1>
+
+<p>
+Skills → Career → Opportunities → Earning
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2 data-en="My Skills" data-ur="میری مہارتیں">
+My Skills
+</h2>
+
+<div id="skills">
+Loading...
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2 data-en="Career Score" data-ur="کیریئر اسکور">
+Career Score
+</h2>
+
+<h1 id="score">
+0/100
+</h1>
+
+</div>
+
+
+<div class="card">
+
+<h2 data-en="Recommended Opportunities" data-ur="تجویز کردہ مواقع">
+Recommended Opportunities
+</h2>
+
+<div id="matches">
+Loading...
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2 data-en="Next Skill To Learn" data-ur="اگلی سیکھنے والی مہارت">
+Next Skill To Learn
+</h2>
+
+<p id="nextSkill">
+Complete courses to unlock recommendations
+</p>
+
+</div>
+
+
+<script src="/career-engine.js"></script>
+<script src="/supabase-matching.js"></script>
+
+<script>
+
+const demoSkills=[
+"excel",
+"typing",
+"internet"
+];
+
+
+document.getElementById("skills").innerHTML =
+demoSkills.map(
+s=>"✅ "+s
+).join("<br>");
+
+
+document.getElementById("score").innerText =
+Math.min(demoSkills.length*20,100)+"/100";
+
+
+document.getElementById("nextSkill").innerText =
+"Digital Marketing";
+
+
+if(window.getRecommendations){
+
+let jobs=getRecommendations(demoSkills);
+
+document.getElementById("matches").innerHTML =
+jobs.map(
+j=>"⭐ "+j
+).join("<br>");
+
+}
+
+</script>
+
+
+</body>
+</html>
