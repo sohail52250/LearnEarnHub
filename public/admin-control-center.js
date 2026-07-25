@@ -1,6 +1,5 @@
 
-
-async function loadAdminPanel(){
+async function loadAdminCenter(){
 
 
 const client=supabase.createClient(
@@ -10,191 +9,86 @@ SUPABASE_ANON_KEY
 
 
 
-const users=await client
+const courses =
+await client
+
+.from("instructor_courses")
+
+.select("id",{count:"exact"});
+
+
+
+const users =
+await client
+
 .from("profiles")
-.select("*");
+
+.select("id",{count:"exact"});
 
 
 
-const courses=await client
-.from("courses")
-.select("*");
+const businesses =
+await client
 
-
-
-const businesses=await client
 .from("businesses")
-.select("*");
 
-
-
-const rewards=await client
-.from("platform_rewards")
-.select("*");
+.select("id",{count:"exact"});
 
 
 
 
-document.getElementById("admin-panel").innerHTML=`
+document.getElementById(
+"admin-stats"
+).innerHTML=`
+
+<h2>Platform Overview</h2>
+
+<p>
+📚 Courses:
+${courses.count || 0}
+</p>
+
+<p>
+👤 Users:
+${users.count || 0}
+</p>
+
+<p>
+🏢 Businesses:
+${businesses.count || 0}
+</p>
+
+`;
 
 
 
-<div class="card">
+document.getElementById(
+"activity"
+).innerHTML=`
 
 <h2>
-👥 User Management
+System Status
 </h2>
 
 <p>
-Total Users:
-${users.data?.length || 0}
+✅ Course system active
 </p>
-
-
-<button>
-Manage Users
-</button>
-
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-📚 Course Management
-</h2>
-
 
 <p>
-Courses:
-${courses.data?.length || 0}
+✅ Instructor system active
 </p>
-
-
-<button>
-Review Courses
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-🏢 Business Verification
-</h2>
-
 
 <p>
-Pending Businesses:
-
-${businesses.data?.filter(
-b=>!b.verified
-).length || 0}
-
+✅ Business network active
 </p>
-
-
-<button>
-Verify Businesses
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-📊 Platform Analytics
-</h2>
-
-
-<p>
-Active Learning Platform
-</p>
-
-
-<p>
-Users:
-${users.data?.length || 0}
-</p>
-
-
-<p>
-Courses:
-${courses.data?.length || 0}
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-🎁 Reward Tracking
-</h2>
-
-
-<p>
-Reward Transactions:
-
-${rewards.data?.length || 0}
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-🔐 Security Dashboard
-</h2>
-
-
-<p>
-Authentication monitoring enabled
-</p>
-
-
-<p>
-Security logs active
-</p>
-
-
-</div>
-
-
 
 `;
 
 }
 
 
-
 document.addEventListener(
 "DOMContentLoaded",
-loadAdminPanel
+loadAdminCenter
 );
-
-
 
