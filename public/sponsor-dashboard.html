@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Sponsor Dashboard</title>
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>
+Business Sponsor Dashboard
+</h1>
+
+
+<input id="title"
+placeholder="Opportunity title">
+
+
+<br>
+
+
+<textarea id="description"
+placeholder="Describe opportunity">
+</textarea>
+
+
+<br>
+
+
+<input id="skills"
+placeholder="Required skills separated by comma">
+
+
+<br>
+
+
+<button onclick="submitOffer()">
+Submit For Review
+</button>
+
+
+</div>
+
+
+<script src="/sponsor-opportunity-engine.js"></script>
+
+
+<script>
+
+async function submitOffer(){
+
+await submitSponsorOpportunity({
+
+title:
+document.getElementById("title").value,
+
+description:
+document.getElementById("description").value,
+
+skills:
+document.getElementById("skills").value
+.split(",")
+
+});
+
+
+alert("Submitted for admin approval");
+
+}
+
+</script>
+
+
+</body>
+</html>

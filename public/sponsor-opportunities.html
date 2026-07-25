@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Premium Opportunities</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>
+⭐ Premium Opportunities
+</h1>
+
+<p>
+Exclusive opportunities from verified partners.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div id="sponsorList">
+Loading...
+</div>
+
+</div>
+
+
+
+<script src="/sponsor-opportunity-engine.js"></script>
+
+<script>
+
+async function load(){
+
+let items =
+await loadSponsoredOpportunities();
+
+
+document.getElementById("sponsorList")
+.innerHTML =
+items.length
+?
+items.map(
+x=>`
+
+<div class="card">
+
+<h3>${x.title}</h3>
+
+<p>${x.description}</p>
+
+<p>
+Required Skills:
+${(x.required_skills||[]).join(", ")}
+</p>
+
+</div>
+
+`
+).join("")
+:
+"No sponsored opportunities available";
+
+}
+
+
+load();
+
+</script>
+
+
+</body>
+</html>
