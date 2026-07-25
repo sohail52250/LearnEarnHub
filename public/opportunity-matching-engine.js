@@ -1,88 +1,126 @@
-async function runOpportunityMatching(){
+function calculateMatch(
+learner,
+opportunity
+){
 
-const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
+let score = 0;
+
+
+let learnerSkills =
+learner.skills || [];
+
+
+let required =
+opportunity.required_skills || [];
+
+
+
+let skillMatches =
+required.filter(
+s=>learnerSkills.includes(s)
 );
 
 
-const {data:needs}=await client
-.from("business_needs")
-.select("*")
-.eq("status","open");
 
+if(required.length){
 
-const {data:offers}=await client
-.from("business_offers")
-.select("*")
-.eq("verified",true);
+score +=
+(skillMatches.length / required.length) * 60;
 
-
-if(!needs || !offers) return;
-
-
-for(const need of needs){
-
-
-for(const offer of offers){
-
-
-const needText =
-(
-(need.need_title || "")+
-" "+
-(need.category || "")
-)
-.toLowerCase();
-
-
-
-const offerText =
-(
-(offer.offer || "")+
-" "+
-(offer.provide || "")+
-" "+
-(offer.category || "")
-)
-.toLowerCase();
+}
 
 
 
 if(
-needText.includes(offer.category?.toLowerCase()) ||
-offerText.includes(need.category?.toLowerCase())
+learner.location &&
+opportunity.location &&
+learner.location === opportunity.location
 ){
 
+score += 20;
 
-await client
-.from("opportunity_matches")
-.insert({
+}
 
-need_id:need.id,
 
-offer_id:offer.id,
 
-match_score:80,
+if(
+learner.career_score
+){
 
-status:"matched",
+score +=
+Math.min(
+learner.career_score * 0.2,
+20
+);
 
-created_at:new Date()
+}
 
-});
+
+
+return Math.round(score);
+
+}
+
+
+
+
+async function findBestOpportunities(userId){
+
+
+const learner =
+await fetch(
+`${SUPABASE_URL}/rest/v1/learner_profiles?user_id=eq.${userId}`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+}
+)
+.then(r=>r.json());
+
+
+
+const opportunities =
+await fetch(
+`${SUPABASE_URL}/rest/v1/opportunities`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+}
+)
+.then(r=>r.json());
+
+
+
+if(!learner.length)
+return [];
+
+
+
+return opportunities.map(o=>({
+
+...o,
+
+match_score:
+calculateMatch(
+learner[0],
+o
+)
+
+}))
+.sort(
+(a,b)=>
+b.match_score-a.match_score
+);
 
 
 }
 
 
-}
 
+window.findBestOpportunities =
+findBestOpportunities;
 
-}
-
-
-}
-
-
-window.runOpportunityMatching=
-runOpportunityMatching;
