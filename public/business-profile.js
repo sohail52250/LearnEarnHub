@@ -6,17 +6,23 @@ SUPABASE_ANON_KEY
 );
 
 
-const {data:user}=await client.auth.getUser();
+const {data:userData}=await client.auth.getUser();
 
 
-if(!user.user) return;
+if(!userData.user){
+
+alert("Login required");
+
+return;
+
+}
 
 
 await client
 .from("business_profiles")
 .insert({
 
-user_id:user.user.id,
+user_id:userData.user.id,
 
 company_name:
 document.getElementById("company-name").value,

@@ -5,7 +5,6 @@ SUPABASE_URL,
 SUPABASE_ANON_KEY
 );
 
-
 const {data:jobs,error}=await client
 .from("jobs")
 .select("*")
@@ -15,7 +14,6 @@ const {data:jobs,error}=await client
 
 const box=document.getElementById("jobs-list");
 
-
 if(!box) return;
 
 
@@ -23,8 +21,8 @@ if(error || !jobs || jobs.length===0){
 
 box.innerHTML=`
 <div class="card">
-<h2>No opportunities yet</h2>
-<p>New opportunities will appear here.</p>
+<h2>No opportunities available yet</h2>
+<p>New jobs will appear soon.</p>
 </div>
 `;
 
@@ -39,13 +37,12 @@ box.innerHTML=jobs.map(job=>`
 
 <h2>💼 ${job.title}</h2>
 
-<p>${job.description}</p>
+<p>${job.description || ""}</p>
 
 <p>
 ⭐ Skills:
 ${job.skills_required || "Not specified"}
 </p>
-
 
 <button onclick="applyJob('${job.id}')">
 Apply
@@ -58,6 +55,7 @@ Apply
 }
 
 
+
 async function applyJob(jobId){
 
 const client=supabase.createClient(
@@ -66,10 +64,10 @@ SUPABASE_ANON_KEY
 );
 
 
-const {data:user}=await client.auth.getUser();
+const {data:userData}=await client.auth.getUser();
 
 
-if(!user.user){
+if(!userData.user){
 
 alert("Please login first");
 
@@ -84,14 +82,14 @@ await client
 
 job_id:jobId,
 
-student_id:user.user.id,
+student_id:userData.user.id,
 
 status:"pending"
 
 });
 
 
-alert("Application submitted");
+alert("Application submitted successfully");
 
 }
 
@@ -100,3 +98,6 @@ document.addEventListener(
 "DOMContentLoaded",
 loadJobs
 );
+
+
+window.applyJob=applyJob;

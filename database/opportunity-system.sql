@@ -1,11 +1,10 @@
-
 create table if not exists business_profiles (
 
 id uuid default gen_random_uuid() primary key,
 
 user_id uuid references auth.users(id),
 
-company_name text,
+company_name text not null,
 
 description text,
 
@@ -24,7 +23,7 @@ id uuid default gen_random_uuid() primary key,
 
 business_id uuid references business_profiles(id),
 
-title text,
+title text not null,
 
 description text,
 
@@ -56,4 +55,3 @@ status text default 'pending',
 created_at timestamp default now()
 
 );
-
