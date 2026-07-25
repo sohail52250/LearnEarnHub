@@ -112,5 +112,17 @@ j=>"⭐ "+j
 </script>
 
 
+<script src="/learner-auth-dashboard.js"></script>
+<script>
+if(window.loadRealLearner){loadRealLearner();}
+</script>
 </body>
 </html>
+
+<script>
+window.addEventListener("load",()=>{
+if(!localStorage.getItem("user")){
+console.log("Learner login required");
+}
+});
+</script>
