@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Learner Verification</title>
+</head>
+
+<body>
+
+
+<h1>
+Verified Skills
+</h1>
+
+
+<div id="skills">
+Loading...
+</div>
+
+
+<script src="/skill-verification.js"></script>
+
+
+<script>
+
+async function load(){
+
+const user =
+JSON.parse(localStorage.getItem("user")||"null");
+
+
+const badges =
+await getLearnerVerification(user.id);
+
+
+document.getElementById("skills")
+.innerHTML =
+badges.length
+?
+badges.map(
+b=>"✅ "+b.badge_name
+).join("<br>")
+:
+"No verified skills yet";
+
+
+}
+
+
+load();
+
+</script>
+
+
+</body>
+</html>
