@@ -47,6 +47,12 @@ Status:
 ${a.status}
 </p>
 
+<a href="/learner-profile-view.html?id=${a.applicant_id}">
+<button>
+View Skills Passport
+</button>
+</a>
+
 
 <button onclick="updateStatus('${a.id}','accepted')">
 Accept
