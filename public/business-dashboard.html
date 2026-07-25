@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Business Dashboard - Learn & Earn Hub</title>
-
 <link rel="stylesheet" href="/style.css">
-
 <script src="/supabase-config.js"></script>
 <script src="/career-language.js"></script>
 <script src="/business-dashboard.js"></script>
-
 </head>
-
-
 <body>
 
+<nav>
+<a href="/">Home</a> |
+<a href="/business.html">Business</a> |
+<a href="/business-talent-search.html">Talent Search</a>
+</nav>
+
 <div class="card">
-
-<h1 data-key="title">
-Business Dashboard
-</h1>
-
-<p data-key="subtitle">
-Find skilled learners for your opportunities.
-</p>
-
+<h1>🏢 Business Dashboard</h1>
+<p>Find, evaluate and connect with skilled learners.</p>
 </div>
 
-
-<div id="candidates">
-
-Loading learners...
-
+<div class="card">
+<h2>📊 Dashboard Summary</h2>
+<ul>
+<li>Available Learners</li>
+<li>Business Opportunities</li>
+<li>Verified Businesses</li>
+<li>Recent Applications</li>
+</ul>
 </div>
 
+<div class="card">
+<h2>⚡ Quick Actions</h2>
+<p><a href="/post-business-offer.html">Post Opportunity</a></p>
+<p><a href="/business-talent-search.html">Search Talent</a></p>
+<p><a href="/business-profile.html">Business Profile</a></p>
+</div>
+
+<div class="card">
+<h2>🎓 Learner Matches</h2>
+<div id="candidates">Loading learners...</div>
+</div>
 
 </body>
-
 </html>
