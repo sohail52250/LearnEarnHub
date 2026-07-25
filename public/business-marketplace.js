@@ -38,7 +38,7 @@ box.innerHTML=data.map(b=>`
 <div class="card">
 
 <h2>
-🏢 ${b.business_name}
+🏢 ${b.business_name} ${b.verified ? "✅" : ""}
 </h2>
 
 
