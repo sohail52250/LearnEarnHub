@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 
-<title>Run Matching</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Opportunity Matching Engine</title>
+
+<link rel="stylesheet" href="/style.css">
 
 <script src="/supabase-config.js"></script>
 <script src="/auto-match.js"></script>
@@ -14,14 +20,25 @@
 
 <body>
 
+<div class="card">
+
 <h1>
-Matching Engine
+🎯 Opportunity Matching Engine
 </h1>
 
+<p>
+Find matching business opportunities automatically.
+</p>
+
+
 <button onclick="checkNewMatches()">
-Find Opportunities
+Run Matching
 </button>
 
+
+<div id="result"></div>
+
+</div>
 
 </body>
 
