@@ -32,6 +32,9 @@ business_name:businessName,
 category:category,
 
 verified:false,
+verification_status:"pending",
+verification_type:"referral",
+trust_score:0,
 
 verification_type:"referral_pending",
 

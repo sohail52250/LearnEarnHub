@@ -34,7 +34,10 @@ document.getElementById("website").value,
 contact:
 document.getElementById("contact").value,
 
-verified:false
+verified:false,
+verification_status:"pending",
+verification_type:"referral",
+trust_score:0
 
 };
 

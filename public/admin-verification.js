@@ -70,7 +70,11 @@ SUPABASE_ANON_KEY
 await client
 .from("business_profiles")
 .update({
-verified:true
+verified:true,
+verification_status:"verified",
+verification_type:"referral",
+trust_score:80,
+verified_at:new Date()
 })
 .eq("id",id);
 
