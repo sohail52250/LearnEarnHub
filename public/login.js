@@ -83,6 +83,7 @@ roleData[0].role;
 
 
 
+alert("REDIRECTING TO LEARNER DASHBOARD");
 if(role==="learner")
 location.href="/learner-dashboard.html";
 
