@@ -11,12 +11,13 @@
 <link rel="stylesheet" href="/style.css">
 
 <script src="/supabase-config.js"></script>
-<script src="/career-language.js"></script>
 <script src="/career-profile.js"></script>
 
 </head>
 
+
 <body>
+
 
 <div class="card">
 
@@ -24,11 +25,55 @@
 🚀 My Career Profile
 </h1>
 
-<div id="career-card">
-Loading profile...
-</div>
+<p>
+Your verified learning and earning identity.
+</p>
+
+
+<input id="career-name"
+placeholder="Your Name">
+
+
+<textarea id="career-about"
+placeholder="About yourself">
+</textarea>
+
+
+<input id="career-skills"
+placeholder="Skills (Excel, Design, Marketing...)">
+
+
+<input id="career-projects"
+placeholder="Projects / Portfolio">
+
+
+<button onclick="saveCareerProfile()">
+Save Profile
+</button>
+
+
+<p id="message"></p>
 
 </div>
+
+
+
+<div class="card">
+
+<h2>
+🏆 Verified Achievements
+</h2>
+
+
+<div id="achievements">
+
+Loading...
+
+</div>
+
+
+</div>
+
 
 </body>
 

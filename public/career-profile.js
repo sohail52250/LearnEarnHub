@@ -1,4 +1,4 @@
-async function loadCareerProfile(){
+async function saveCareerProfile(){
 
 const client=supabase.createClient(
 SUPABASE_URL,
@@ -9,115 +9,91 @@ SUPABASE_ANON_KEY
 const {data:userData}=await client.auth.getUser();
 
 
-if(!userData.user) return;
+if(!userData.user)return;
 
 
-const userId=userData.user.id;
+
+await client
+.from("career_profiles")
+.upsert({
+
+user_id:userData.user.id,
+
+name:
+document.getElementById("career-name").value,
+
+about:
+document.getElementById("career-about").value,
+
+skills:
+document.getElementById("career-skills").value,
+
+projects:
+document.getElementById("career-projects").value
+
+});
+
+
+
+document.getElementById("message")
+.innerHTML=
+"Profile saved successfully";
+
+}
+
+
+
+async function loadAchievements(){
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+const {data:userData}=await client.auth.getUser();
+
+
+if(!userData.user)return;
 
 
 const {data:profile}=await client
 .from("profiles")
 .select("xp,reward_units")
-.eq("id",userId)
+.eq("id",userData.user.id)
 .single();
 
 
 
-const {data:lessons}=await client
-.from("lesson_progress")
-.select("*")
-.eq("user_id",userId);
+document.getElementById(
+"achievements"
+).innerHTML=
 
+`
 
-
-const {data:certificates}=await client
-.from("certificates")
-.select("*")
-.eq("user_id",userId);
-
-
-
-const completedLessons =
-lessons ? lessons.length : 0;
-
-
-const certificateCount =
-certificates ? certificates.length : 0;
-
-
-const xp =
-profile?.xp || 0;
-
-
-let readiness="Beginner";
-
-if(xp>=500){
-readiness="Skill Builder";
-}
-
-if(xp>=1000){
-readiness="Career Ready";
-}
-
-
-const box=document.getElementById(
-"career-card"
-);
-
-
-if(box){
-
-box.innerHTML=`
-
-<h2>
-🏅 ${readiness}
-</h2>
-
-
-<p>
 ⭐ XP:
-${xp}
-</p>
+${profile?.xp || 0}
 
+<br>
 
-<p>
-📚 Completed Lessons:
-${completedLessons}
-</p>
+🎁 Rewards:
+${profile?.reward_units || 0}
 
+<br>
 
-<p>
-📜 Certificates:
-${certificateCount}
-</p>
-
-
-<h3>
-Verified Skills
-</h3>
-
-
-<ul>
-
-${completedLessons > 0
-?
-"<li>Digital Learning Progress Verified</li>"
-:
-"<li>Start learning to unlock skills</li>"
-}
-
-</ul>
-
+🏅 Verified learner
 
 `;
 
 }
 
 
-}
-
 
 document.addEventListener(
 "DOMContentLoaded",
-loadCareerProfile
+loadAchievements
 );
+
+
+window.saveCareerProfile=
+saveCareerProfile;
