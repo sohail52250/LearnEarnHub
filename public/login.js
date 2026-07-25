@@ -61,6 +61,8 @@ if(roleError){
 
 const role = roleData.role;
 
+console.log("ROLE RESPONSE:", roleData);
+
 if(!roleData.length){
 
 alert("Role not found");
