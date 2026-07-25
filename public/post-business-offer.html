@@ -1,20 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Post Business Offer</title>
-
-<link rel="stylesheet" href="/style.css">
-
-<script src="/supabase-config.js"></script>
-<script src="/post-business-offer.js"></script>
-
+<title>Post Business Opportunity</title>
 </head>
-
 
 <body>
 
@@ -22,53 +11,65 @@
 <div class="card">
 
 <h1>
-📦 Post Business Opportunity
+Post Business Opportunity
 </h1>
 
 
-<input id="business-name"
-placeholder="Business/Firma Name">
+<input id="product" placeholder="What do you sell?">
+
+<br>
+
+<input id="stock" placeholder="Stock available">
+
+<br>
+
+<input id="need" placeholder="Need buyers, resellers or distributors">
+
+<br>
+
+<input id="price" placeholder="Price / range">
 
 
-<input id="category"
-placeholder="Category">
-
-
-<input id="offer"
-placeholder="What do you sell?">
-
-
-<input id="stock"
-placeholder="Available stock quantity">
-
-
-<input id="need"
-placeholder="What do you need to buy?">
-
-
-<input id="provide"
-placeholder="What can you provide?">
-
-
-<textarea id="details"
-placeholder="Business details">
-</textarea>
-
-
-
-<button onclick="postBusinessOffer()">
-
-Publish
-
+<button onclick="postOffer()">
+Submit
 </button>
-
-
-<p id="message"></p>
 
 
 </div>
 
 
-</body>
 
+<script src="/business-marketplace-engine.js"></script>
+
+
+<script>
+
+async function postOffer(){
+
+await createBusinessOffer({
+
+product:
+document.getElementById("product").value,
+
+quantity:
+document.getElementById("stock").value,
+
+needs:
+document.getElementById("need").value,
+
+price:
+document.getElementById("price").value
+
+});
+
+
+alert("Business opportunity submitted");
+
+}
+
+
+</script>
+
+
+</body>
 </html>
