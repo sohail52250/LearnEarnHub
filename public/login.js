@@ -46,29 +46,21 @@ JSON.stringify(user)
 
 
 
-const roleData =
-await fetch(
 
-`${SUPABASE_URL}/rest/v1/user_roles?user_id=eq.${user.id}`,
+const {data:roleData,error:roleError}=await supabaseClient
+.from("user_roles")
+.select("role")
+.eq("user_id",user.id)
+.single();
 
-{
-
-headers:{
-
-apikey:SUPABASE_ANON_KEY,
-
-Authorization:
-`Bearer ${SUPABASE_ANON_KEY}`
-
+if(roleError){
+ alert("Role error: "+roleError.message);
+ console.log(roleError);
+ return;
 }
 
-}
+const role = roleData.role;
 
-).then(r=>r.json());
-
-
-
-console.log("ROLE DATA:", roleData);
 if(!roleData.length){
 
 alert("Role not found");
