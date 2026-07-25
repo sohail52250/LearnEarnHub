@@ -1,132 +1,65 @@
+
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<title>Learner Dashboard - Learn & Earn Hub</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>
+Learner Dashboard - Learn & Earn Hub
+</title>
+
+
 <link rel="stylesheet" href="/style.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase-config.js"></script>
+
+<script src="/learner-dashboard.js"></script>
+
+
 </head>
+
 
 <body>
 
-<div class="card">
 
-<h1 data-en="My Learning Journey" data-ur="میرا سیکھنے کا سفر">
-My Learning Journey
-</h1>
+<nav>
 
-<p>
-Skills → Career → Opportunities → Earning
-</p>
+<a href="/">
+Home
+</a>
 
-</div>
+|
 
+<a href="/courses.html">
+Courses
+</a>
 
-<div class="card">
+|
 
-<h2 data-en="My Skills" data-ur="میری مہارتیں">
-My Skills
-</h2>
+<a href="/profile.html">
+Profile
+</a>
 
-<div id="skills">
-Loading...
-</div>
-
-</div>
+</nav>
 
 
-<div class="card">
+<div id="dashboard">
 
-<h2 data-en="Career Score" data-ur="کیریئر اسکور">
-Career Score
-</h2>
-
-<h1 id="score">
-0/100
-</h1>
+Loading dashboard...
 
 </div>
 
 
-<div class="card">
-
-<h2 data-en="Recommended Opportunities" data-ur="تجویز کردہ مواقع">
-Recommended Opportunities
-</h2>
-
-<div id="matches">
-Loading...
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2 data-en="Next Skill To Learn" data-ur="اگلی سیکھنے والی مہارت">
-Next Skill To Learn
-</h2>
-
-<p id="nextSkill">
-Complete courses to unlock recommendations
-</p>
-
-</div>
-
-
-<script src="/career-engine.js"></script>
-<script src="/supabase-matching.js"></script>
-
-<script>
-
-const demoSkills=[
-"excel",
-"typing",
-"internet"
-];
-
-
-document.getElementById("skills").innerHTML =
-demoSkills.map(
-s=>"✅ "+s
-).join("<br>");
-
-
-document.getElementById("score").innerText =
-Math.min(demoSkills.length*20,100)+"/100";
-
-
-document.getElementById("nextSkill").innerText =
-"Digital Marketing";
-
-
-if(window.getRecommendations){
-
-let jobs=getRecommendations(demoSkills);
-
-document.getElementById("matches").innerHTML =
-jobs.map(
-j=>"⭐ "+j
-).join("<br>");
-
-}
-
-</script>
-
-
-<script src="/learner-auth-dashboard.js"></script>
-<script>
-if(window.loadRealLearner){loadRealLearner();}
-</script>
-<script src="/course-skill-engine.js"></script>
-<script src="/course-complete.js"></script>
-<script src="/auth-role.js"></script>
-<script src="/role-guard.js"></script>
 </body>
+
 </html>
 
-<script>
-window.addEventListener("load",()=>{
-if(!localStorage.getItem("user")){
-console.log("Learner login required");
-}
-});
-</script>
