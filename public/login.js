@@ -1,4 +1,5 @@
 async function login(){
+alert('Login function started');
 
 
 const email =
