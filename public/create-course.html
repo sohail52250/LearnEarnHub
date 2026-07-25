@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Create Course</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase-config.js"></script>
+
+<script src="/create-course.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>
+📚 Create Professional Course
+</h1>
+
+
+<input id="title" placeholder="Course title">
+
+<textarea id="description"
+placeholder="Detailed course description"></textarea>
+
+
+<input id="category"
+placeholder="Skill category">
+
+
+<select id="level">
+
+<option>Beginner</option>
+
+<option>Intermediate</option>
+
+<option>Advanced</option>
+
+</select>
+
+
+<button onclick="createCourse()">
+Submit For Review
+</button>
+
+
+</div>
+
+</body>
+
+</html>
