@@ -55,10 +55,10 @@ await fetch(
 
 headers:{
 
-apikey:SUPABASE_KEY,
+apikey:SUPABASE_ANON_KEY,
 
 Authorization:
-`Bearer ${SUPABASE_KEY}`
+`Bearer ${SUPABASE_ANON_KEY}`
 
 }
 
