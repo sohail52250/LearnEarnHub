@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Admin Control Center</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>
+Admin Control Center
+</h1>
+
+<p>
+Manage Learn & Earn Hub ecosystem.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Pending Businesses
+</h2>
+
+<div id="businesses">
+Loading...
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Sponsored Opportunities
+</h2>
+
+<div id="sponsors">
+Loading...
+</div>
+
+</div>
+
+
+
+<script src="/admin-control.js"></script>
+
+
+<script>
+
+
+async function loadAdmin(){
+
+let businesses =
+await loadPendingBusinesses();
+
+
+document.getElementById("businesses")
+.innerHTML =
+businesses.length
+?
+businesses.map(
+b=>`
+
+<div>
+
+<h3>${b.business_name}</h3>
+
+<button onclick="approve('${b.id}')">
+Approve
+</button>
+
+</div>
+
+`
+).join("")
+:
+"No pending businesses";
+
+
+let sponsors =
+await loadSponsoredPending();
+
+
+document.getElementById("sponsors")
+.innerHTML =
+sponsors.length
+?
+sponsors.map(
+s=>`
+
+<div>
+
+<h3>${s.title}</h3>
+
+<p>${s.description}</p>
+
+</div>
+
+`
+).join("")
+:
+"No sponsored listings";
+
+}
+
+
+
+async function approve(id){
+
+await verifyBusiness(id);
+
+alert("Business verified");
+
+location.reload();
+
+}
+
+
+loadAdmin();
+
+
+</script>
+
+
+</body>
+</html>
