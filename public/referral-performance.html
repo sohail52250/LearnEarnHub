@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Referral Performance</title>
+</head>
+
+
+<body>
+
+
+<h1>
+My Referral Activity
+</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+<script src="/business-referral-engine.js"></script>
+
+
+<script>
+
+
+async function load(){
+
+
+const user =
+JSON.parse(
+localStorage.getItem("user")||"null"
+);
+
+
+
+const data =
+await getMyReferrals(user.id);
+
+
+
+document.getElementById("list")
+.innerHTML =
+data.length
+?
+data.map(
+r=>`
+
+<div class="card">
+
+<h3>
+${r.business_name}
+</h3>
+
+<p>
+Status: ${r.status}
+</p>
+
+</div>
+
+`
+).join("")
+:
+"No referrals yet";
+
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+</html>

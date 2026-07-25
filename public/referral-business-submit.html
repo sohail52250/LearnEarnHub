@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Submit Business Lead</title>
+</head>
+
+
+<body>
+
+
+<h1>
+Refer a Business
+</h1>
+
+
+<input id="business"
+placeholder="Business name">
+
+<br>
+
+<input id="category"
+placeholder="Business category">
+
+<br>
+
+<input id="contact"
+placeholder="Contact information">
+
+
+<br>
+
+<button onclick="submitLead()">
+Submit
+</button>
+
+
+
+<script src="/business-referral-engine.js"></script>
+
+
+<script>
+
+async function submitLead(){
+
+
+const user =
+JSON.parse(
+localStorage.getItem("user")||"null"
+);
+
+
+
+await createBusinessLead({
+
+business_name:
+document.getElementById("business").value,
+
+category:
+document.getElementById("category").value,
+
+contact:
+document.getElementById("contact").value,
+
+referrer_id:user.id
+
+});
+
+
+alert("Business lead submitted");
+
+}
+
+
+</script>
+
+
+</body>
+</html>
