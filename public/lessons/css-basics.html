@@ -29,7 +29,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
+  "@type": "<span data-en="Course" data-ur="کورس">Course</span>",
   "name": "Css Basics",
   "provider": {
     "@type": "Organization",
@@ -44,7 +44,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
+  "@type": "<span data-en="Course" data-ur="کورس">Course</span>",
   "name": "Css Basics",
   "description": "Beginner friendly Css Basics course from Learn & Earn Hub.",
   "provider": {
@@ -66,7 +66,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "<span data-en="Home" data-ur="ہوم">Home</span>",
       "item": "https://learn-earnhub.vercel.app"
     },
     {
@@ -78,11 +78,65 @@
 }
 </script>
 
+
+<script src="/language-switch.js"></script>
+<script src="/language-engine.js"></script>
+<script src="/lesson-content-engine.js"></script>
 </head>
 
 
 
+
+
+
+
 <body>
+
+<h1 data-lesson-key="title">
+Css Basics
+</h1>
+
+<p data-lesson-key="intro">
+Learn this course step by step.
+</p>
+
+<h2 data-lesson-key="topic1">
+Getting Started
+</h2>
+
+<p data-lesson-key="topic1_text">
+Learn the basic concepts and practical skills.
+</p>
+
+
+
+<div class="card">
+
+<button onclick="changeLanguage('en')">
+English
+</button>
+
+<button onclick="changeLanguage('ur')">
+اردو
+</button>
+
+</div>
+
+
+
+<div id="lang-buttons" class="card">
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+<button onclick="setLanguage('ur')">
+اردو
+</button>
+
+</div>
+
+
 <h2>CSS Design Basics</h2>
 <p>CSS makes websites attractive.</p>
 <ul>
@@ -94,16 +148,16 @@
 
 
 <nav>
-<a href="/">Home</a> |
-<a href="/courses.html">Courses</a> |
-<a href="/my-courses.html">My Courses</a>
+<a href="/"><span data-en="Home" data-ur="ہوم">Home</span></a> |
+<a href="/courses.html"><span data-en="Course" data-ur="کورس">Course</span>s</a> |
+<a href="/my-courses.html">My <span data-en="Course" data-ur="کورس">Course</span>s</a>
 </nav>
 
 <section class="card">
 
 <h1>CSS Basics</h1>
 
-<h2>Lesson Overview</h2>
+<h2><span data-en="Lesson" data-ur="سبق">Lesson</span> Overview</h2>
 <p>Design webpages with colors, layouts and responsive styles.</p>
 
 <h2>What You Will Learn</h2>
@@ -142,7 +196,7 @@
 </ul>
 
 <a href="/courses.html">
-<button>Back To Courses</button>
+<button><span data-en="Back" data-ur="واپس">Back</span> To <span data-en="Course" data-ur="کورس">Course</span>s</button>
 </a>
 
 </section>
@@ -164,33 +218,33 @@ Yes
 </button>
 
 
-<h2>Lesson Completion</h2>
+<h2><span data-en="Lesson" data-ur="سبق">Lesson</span> Completion</h2>
 
-<button onclick="completeLesson('css-basics')">
-Mark Lesson Complete
+<button onclick="complete<span data-en="Lesson" data-ur="سبق">Lesson</span>('css-basics')">
+Mark <span data-en="Lesson" data-ur="سبق">Lesson</span> Complete
 </button>
 
 <p id="status"></p>
 
 <script>
 document.getElementById("status").innerHTML =
-checkProgress('css-basics');
+check<span data-en="Progress" data-ur="پیش رفت">Progress</span>('css-basics');
 </script>
 
 
 
 <div class="card">
 
-<h3 id="status">Lesson Progress</h3>
+<h3 id="status"><span data-en="Lesson" data-ur="سبق">Lesson</span> <span data-en="Progress" data-ur="پیش رفت">Progress</span></h3>
 
-<button onclick="completeLesson('css-basics')">
-Complete Lesson
+<button onclick="complete<span data-en="Lesson" data-ur="سبق">Lesson</span>('css-basics')">
+<span data-en="Complete <span data-en="Lesson" data-ur="سبق">Lesson</span>" data-ur="سبق مکمل کریں">Complete <span data-en="Lesson" data-ur="سبق">Lesson</span></span>
 </button>
 
 </div>
 
 
-<h2>CSS Complete Beginner Course</h2>
+<h2>CSS Complete Beginner <span data-en="Course" data-ur="کورس">Course</span></h2>
 
 <h3>What is CSS?</h3>
 <p>
@@ -208,7 +262,7 @@ CSS controls website design and appearance.
 <h3>Project</h3>
 <p>Design a beautiful homepage.</p>
 
-<h2>CSS Complete Course</h2>
+<h2>CSS Complete <span data-en="Course" data-ur="کورس">Course</span></h2>
 
 <h3>Website Design</h3>
 
@@ -231,7 +285,7 @@ Design a modern homepage using CSS.
 
 <hr>
 
-<h2>📝 Lesson Quiz</h2>
+<h2>📝 <span data-en="Lesson" data-ur="سبق">Lesson</span> Quiz</h2>
 
 <div class="quiz-box">
 
@@ -300,7 +354,7 @@ let result=document.getElementById("quiz-result");
 
 if(score>=2){
 
-result.innerHTML="✅ Passed! Certificate progress updated.";
+result.innerHTML="✅ Passed! <span data-en="Certificate" data-ur="سرٹیفکیٹ">Certificate</span> progress updated.";
 
 }else{
 
@@ -315,8 +369,8 @@ result.innerHTML="Try again. Keep learning!";
 
 <div class="card">
 
-<button onclick="bookmarkLesson('css-basics')">
-🔖 Bookmark Lesson
+<button onclick="bookmark<span data-en="Lesson" data-ur="سبق">Lesson</span>('css-basics')">
+🔖 Bookmark <span data-en="Lesson" data-ur="سبق">Lesson</span>
 </button>
 
 <br>
@@ -336,12 +390,12 @@ placeholder="Write your notes here">
 
 <div class="card">
 
-<button onclick="previousLesson('css-basics')">
-⬅ Previous Lesson
+<button onclick="previous<span data-en="Lesson" data-ur="سبق">Lesson</span>('css-basics')">
+⬅ Previous <span data-en="Lesson" data-ur="سبق">Lesson</span>
 </button>
 
-<button onclick="nextLesson('css-basics')">
-Next Lesson ➡
+<button onclick="next<span data-en="Lesson" data-ur="سبق">Lesson</span>('css-basics')">
+<span data-en="Next" data-ur="اگلا">Next</span> <span data-en="Lesson" data-ur="سبق">Lesson</span> ➡
 </button>
 
 </div>

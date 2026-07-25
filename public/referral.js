@@ -5,11 +5,26 @@ SUPABASE_URL,
 SUPABASE_ANON_KEY
 );
 
+
+const lang =
+localStorage.getItem("language") || "en";
+
+
+const translationResponse =
+await fetch(`/translations/rewards-${lang}.json`);
+
+
+const t =
+await translationResponse.json();
+
+
 const {data:userData}=await client.auth.getUser();
 
 if(!userData.user) return;
 
+
 const user=userData.user;
+
 
 let {data}=await client
 .from("referral_codes")
@@ -17,11 +32,13 @@ let {data}=await client
 .eq("user_id",user.id)
 .single();
 
+
 if(!data){
 
-const code=
+const code =
 "LEH"+
 user.id.replace(/-/g,'').substring(0,8);
+
 
 await client
 .from("referral_codes")
@@ -30,39 +47,58 @@ user_id:user.id,
 referral_code:code
 });
 
-data={referral_code:code};
+
+data={
+referral_code:code
+};
 
 }
 
-const link=
+
+const link =
 window.location.origin+
 "/register.html?ref="+
 data.referral_code;
 
-const box=document.getElementById("referral-box");
+
+const box =
+document.getElementById("referral-box");
+
 
 if(box){
 
 box.innerHTML=`
-<h3>🎁 Invite Friends</h3>
-<p>Your Referral Code:</p>
-<p><strong>${data.referral_code}</strong></p>
+
+<h3>
+🎁 ${t.invite || "Invite Friends"}
+</h3>
+
+<p>
+${t.share_message || "Share your invite link and earn rewards."}
+</p>
+
 
 <input
 value="${link}"
 readonly
 style="width:100%;padding:8px;">
 
+
 <br><br>
 
+
 <button onclick="navigator.clipboard.writeText('${link}')">
-Copy Referral Link
+
+${t.copy_link || "Copy Invite Link"}
+
 </button>
+
 `;
 
 }
 
 }
+
 
 document.addEventListener(
 "DOMContentLoaded",

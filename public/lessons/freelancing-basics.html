@@ -29,7 +29,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
+  "@type": "<span data-en="Course" data-ur="کورس">Course</span>",
   "name": "Freelancing Basics",
   "provider": {
     "@type": "Organization",
@@ -44,7 +44,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
+  "@type": "<span data-en="Course" data-ur="کورس">Course</span>",
   "name": "Freelancing Basics",
   "description": "Beginner friendly Freelancing Basics course from Learn & Earn Hub.",
   "provider": {
@@ -66,7 +66,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "<span data-en="Home" data-ur="ہوم">Home</span>",
       "item": "https://learn-earnhub.vercel.app"
     },
     {
@@ -78,11 +78,65 @@
 }
 </script>
 
+
+<script src="/language-switch.js"></script>
+<script src="/language-engine.js"></script>
+<script src="/lesson-content-engine.js"></script>
 </head>
 
 
 
+
+
+
+
 <body>
+
+<h1 data-lesson-key="title">
+Freelancing Basics
+</h1>
+
+<p data-lesson-key="intro">
+Learn this course step by step.
+</p>
+
+<h2 data-lesson-key="topic1">
+Getting Started
+</h2>
+
+<p data-lesson-key="topic1_text">
+Learn the basic concepts and practical skills.
+</p>
+
+
+
+<div class="card">
+
+<button onclick="changeLanguage('en')">
+English
+</button>
+
+<button onclick="changeLanguage('ur')">
+اردو
+</button>
+
+</div>
+
+
+
+<div id="lang-buttons" class="card">
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+<button onclick="setLanguage('ur')">
+اردو
+</button>
+
+</div>
+
+
 <h2>Freelancing Basics</h2>
 <p>Learn how to provide services online.</p>
 <ul>
@@ -94,16 +148,16 @@
 
 
 <nav>
-<a href="/">Home</a> |
-<a href="/courses.html">Courses</a> |
-<a href="/my-courses.html">My Courses</a>
+<a href="/"><span data-en="Home" data-ur="ہوم">Home</span></a> |
+<a href="/courses.html"><span data-en="Course" data-ur="کورس">Course</span>s</a> |
+<a href="/my-courses.html">My <span data-en="Course" data-ur="کورس">Course</span>s</a>
 </nav>
 
 <section class="card">
 
 <h1>Freelancing Basics</h1>
 
-<h2>Lesson Overview</h2>
+<h2><span data-en="Lesson" data-ur="سبق">Lesson</span> Overview</h2>
 <p>Learn skills, profiles, clients and online work basics.</p>
 
 <h2>What You Will Learn</h2>
@@ -142,7 +196,7 @@
 </ul>
 
 <a href="/courses.html">
-<button>Back To Courses</button>
+<button><span data-en="Back" data-ur="واپس">Back</span> To <span data-en="Course" data-ur="کورس">Course</span>s</button>
 </a>
 
 </section>
@@ -164,33 +218,33 @@ Yes
 </button>
 
 
-<h2>Lesson Completion</h2>
+<h2><span data-en="Lesson" data-ur="سبق">Lesson</span> Completion</h2>
 
-<button onclick="completeLesson('freelancing-basics')">
-Mark Lesson Complete
+<button onclick="complete<span data-en="Lesson" data-ur="سبق">Lesson</span>('freelancing-basics')">
+Mark <span data-en="Lesson" data-ur="سبق">Lesson</span> Complete
 </button>
 
 <p id="status"></p>
 
 <script>
 document.getElementById("status").innerHTML =
-checkProgress('freelancing-basics');
+check<span data-en="Progress" data-ur="پیش رفت">Progress</span>('freelancing-basics');
 </script>
 
 
 
 <div class="card">
 
-<h3 id="status">Lesson Progress</h3>
+<h3 id="status"><span data-en="Lesson" data-ur="سبق">Lesson</span> <span data-en="Progress" data-ur="پیش رفت">Progress</span></h3>
 
-<button onclick="completeLesson('freelancing-basics')">
-Complete Lesson
+<button onclick="complete<span data-en="Lesson" data-ur="سبق">Lesson</span>('freelancing-basics')">
+<span data-en="Complete <span data-en="Lesson" data-ur="سبق">Lesson</span>" data-ur="سبق مکمل کریں">Complete <span data-en="Lesson" data-ur="سبق">Lesson</span></span>
 </button>
 
 </div>
 
 
-<h2>Freelancing Complete Course</h2>
+<h2>Freelancing Complete <span data-en="Course" data-ur="کورس">Course</span></h2>
 
 <h3>Start Online Work</h3>
 
@@ -209,7 +263,7 @@ Create a sample freelancer profile.
 
 <hr>
 
-<h2>📝 Lesson Quiz</h2>
+<h2>📝 <span data-en="Lesson" data-ur="سبق">Lesson</span> Quiz</h2>
 
 <div class="quiz-box">
 
@@ -278,7 +332,7 @@ let result=document.getElementById("quiz-result");
 
 if(score>=2){
 
-result.innerHTML="✅ Passed! Certificate progress updated.";
+result.innerHTML="✅ Passed! <span data-en="Certificate" data-ur="سرٹیفکیٹ">Certificate</span> progress updated.";
 
 }else{
 
@@ -293,8 +347,8 @@ result.innerHTML="Try again. Keep learning!";
 
 <div class="card">
 
-<button onclick="bookmarkLesson('freelancing-basics')">
-🔖 Bookmark Lesson
+<button onclick="bookmark<span data-en="Lesson" data-ur="سبق">Lesson</span>('freelancing-basics')">
+🔖 Bookmark <span data-en="Lesson" data-ur="سبق">Lesson</span>
 </button>
 
 <br>
@@ -314,12 +368,12 @@ placeholder="Write your notes here">
 
 <div class="card">
 
-<button onclick="previousLesson('freelancing-basics')">
-⬅ Previous Lesson
+<button onclick="previous<span data-en="Lesson" data-ur="سبق">Lesson</span>('freelancing-basics')">
+⬅ Previous <span data-en="Lesson" data-ur="سبق">Lesson</span>
 </button>
 
-<button onclick="nextLesson('freelancing-basics')">
-Next Lesson ➡
+<button onclick="next<span data-en="Lesson" data-ur="سبق">Lesson</span>('freelancing-basics')">
+<span data-en="Next" data-ur="اگلا">Next</span> <span data-en="Lesson" data-ur="سبق">Lesson</span> ➡
 </button>
 
 </div>

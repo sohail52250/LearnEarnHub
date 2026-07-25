@@ -29,7 +29,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
+  "@type": "<span data-en="Course" data-ur="کورس">Course</span>",
   "name": "Cloud Storage",
   "provider": {
     "@type": "Organization",
@@ -44,7 +44,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Course",
+  "@type": "<span data-en="Course" data-ur="کورس">Course</span>",
   "name": "Cloud Storage",
   "description": "Beginner friendly Cloud Storage course from Learn & Earn Hub.",
   "provider": {
@@ -66,7 +66,7 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "<span data-en="Home" data-ur="ہوم">Home</span>",
       "item": "https://learn-earnhub.vercel.app"
     },
     {
@@ -78,23 +78,77 @@
 }
 </script>
 
+
+<script src="/language-switch.js"></script>
+<script src="/language-engine.js"></script>
+<script src="/lesson-content-engine.js"></script>
 </head>
+
+
+
+
 
 
 
 <body>
 
+<h1 data-lesson-key="title">
+Cloud Storage
+</h1>
+
+<p data-lesson-key="intro">
+Learn this course step by step.
+</p>
+
+<h2 data-lesson-key="topic1">
+Getting Started
+</h2>
+
+<p data-lesson-key="topic1_text">
+Learn the basic concepts and practical skills.
+</p>
+
+
+
+<div class="card">
+
+<button onclick="changeLanguage('en')">
+English
+</button>
+
+<button onclick="changeLanguage('ur')">
+اردو
+</button>
+
+</div>
+
+
+
+<div id="lang-buttons" class="card">
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+<button onclick="setLanguage('ur')">
+اردو
+</button>
+
+</div>
+
+
+
 <nav>
-<a href="/">Home</a> |
-<a href="/courses.html">Courses</a> |
-<a href="/my-courses.html">My Courses</a>
+<a href="/"><span data-en="Home" data-ur="ہوم">Home</span></a> |
+<a href="/courses.html"><span data-en="Course" data-ur="کورس">Course</span>s</a> |
+<a href="/my-courses.html">My <span data-en="Course" data-ur="کورس">Course</span>s</a>
 </nav>
 
 <section class="card">
 
 <h1>Cloud Storage Basics</h1>
 
-<h2>Lesson Overview</h2>
+<h2><span data-en="Lesson" data-ur="سبق">Lesson</span> Overview</h2>
 <p>Learn online storage, backup and file sharing.</p>
 
 <h2>What You Will Learn</h2>
@@ -133,7 +187,7 @@
 </ul>
 
 <a href="/courses.html">
-<button>Back To Courses</button>
+<button><span data-en="Back" data-ur="واپس">Back</span> To <span data-en="Course" data-ur="کورس">Course</span>s</button>
 </a>
 
 </section>
@@ -155,33 +209,33 @@ Yes
 </button>
 
 
-<h2>Lesson Completion</h2>
+<h2><span data-en="Lesson" data-ur="سبق">Lesson</span> Completion</h2>
 
-<button onclick="completeLesson('cloud-storage')">
-Mark Lesson Complete
+<button onclick="complete<span data-en="Lesson" data-ur="سبق">Lesson</span>('cloud-storage')">
+Mark <span data-en="Lesson" data-ur="سبق">Lesson</span> Complete
 </button>
 
 <p id="status"></p>
 
 <script>
 document.getElementById("status").innerHTML =
-checkProgress('cloud-storage');
+check<span data-en="Progress" data-ur="پیش رفت">Progress</span>('cloud-storage');
 </script>
 
 
 
 <div class="card">
 
-<h3 id="status">Lesson Progress</h3>
+<h3 id="status"><span data-en="Lesson" data-ur="سبق">Lesson</span> <span data-en="Progress" data-ur="پیش رفت">Progress</span></h3>
 
-<button onclick="completeLesson('cloud-storage')">
-Complete Lesson
+<button onclick="complete<span data-en="Lesson" data-ur="سبق">Lesson</span>('cloud-storage')">
+<span data-en="Complete <span data-en="Lesson" data-ur="سبق">Lesson</span>" data-ur="سبق مکمل کریں">Complete <span data-en="Lesson" data-ur="سبق">Lesson</span></span>
 </button>
 
 </div>
 
 
-<h2>Cloud Storage Complete Course</h2>
+<h2>Cloud Storage Complete <span data-en="Course" data-ur="کورس">Course</span></h2>
 
 <h3>What is Cloud Storage?</h3>
 <p>
@@ -193,7 +247,7 @@ Cloud storage allows you to save files online and access them from different dev
 <li>Upload files</li>
 <li>Create folders</li>
 <li>Share documents</li>
-<li>Backup important data</li>
+<li><span data-en="Back" data-ur="واپس">Back</span>up important data</li>
 <li>Manage online storage</li>
 </ul>
 
@@ -204,7 +258,7 @@ Upload and organize your documents using a cloud storage service.
 
 <hr>
 
-<h2>📝 Lesson Quiz</h2>
+<h2>📝 <span data-en="Lesson" data-ur="سبق">Lesson</span> Quiz</h2>
 
 <div class="quiz-box">
 
@@ -273,7 +327,7 @@ let result=document.getElementById("quiz-result");
 
 if(score>=2){
 
-result.innerHTML="✅ Passed! Certificate progress updated.";
+result.innerHTML="✅ Passed! <span data-en="Certificate" data-ur="سرٹیفکیٹ">Certificate</span> progress updated.";
 
 }else{
 
@@ -288,8 +342,8 @@ result.innerHTML="Try again. Keep learning!";
 
 <div class="card">
 
-<button onclick="bookmarkLesson('cloud-storage')">
-🔖 Bookmark Lesson
+<button onclick="bookmark<span data-en="Lesson" data-ur="سبق">Lesson</span>('cloud-storage')">
+🔖 Bookmark <span data-en="Lesson" data-ur="سبق">Lesson</span>
 </button>
 
 <br>
@@ -309,12 +363,12 @@ placeholder="Write your notes here">
 
 <div class="card">
 
-<button onclick="previousLesson('cloud-storage')">
-⬅ Previous Lesson
+<button onclick="previous<span data-en="Lesson" data-ur="سبق">Lesson</span>('cloud-storage')">
+⬅ Previous <span data-en="Lesson" data-ur="سبق">Lesson</span>
 </button>
 
-<button onclick="nextLesson('cloud-storage')">
-Next Lesson ➡
+<button onclick="next<span data-en="Lesson" data-ur="سبق">Lesson</span>('cloud-storage')">
+<span data-en="Next" data-ur="اگلا">Next</span> <span data-en="Lesson" data-ur="سبق">Lesson</span> ➡
 </button>
 
 </div>
