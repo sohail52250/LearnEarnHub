@@ -59,6 +59,7 @@ ${c.status}
 
 <button onclick="approveCourse('${c.id}')">
 
+<button onclick="reviewWithAI('${c.course_id}')">🤖 AI Review</button>
 Approve
 
 </button>
