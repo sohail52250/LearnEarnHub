@@ -50,7 +50,6 @@ if(business){
 
 
 await client
-.from("business_referrals")
 .insert({
 
 business_id:business.id,

@@ -1,7 +1,6 @@
 async function createBusinessLead(data){
 
 return await fetch(
-`${SUPABASE_URL}/rest/v1/business_referrals`,
 {
 method:"POST",
 headers:{
@@ -17,7 +16,6 @@ business_category:data.category,
 
 contact_info:data.contact,
 
-referrer_id:data.referrer_id,
 
 status:"pending"
 
@@ -33,7 +31,6 @@ status:"pending"
 async function getMyReferrals(userId){
 
 return await fetch(
-`${SUPABASE_URL}/rest/v1/business_referrals?referrer_id=eq.${userId}`,
 {
 headers:{
 apikey:SUPABASE_KEY,
@@ -49,7 +46,6 @@ Authorization:`Bearer ${SUPABASE_KEY}`
 async function updateReferralStatus(id,status){
 
 await fetch(
-`${SUPABASE_URL}/rest/v1/business_referrals?id=eq.${id}`,
 {
 method:"PATCH",
 headers:{

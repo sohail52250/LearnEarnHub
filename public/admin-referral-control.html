@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Private Referral Control</title>
+</head>
+
+<body>
+
+
+<h1>
+Private Referral Management
+</h1>
+
+
+<div id="referrals">
+Loading...
+</div>
+
+
+<script src="/private-referral-admin.js"></script>
+
+
+<script>
+
+async function load(){
+
+let data =
+await loadAdminReferrals();
+
+
+document.getElementById("referrals")
+.innerHTML =
+data.map(
+r=>`
+
+<div>
+
+<h3>${r.business_name}</h3>
+
+<p>
+Referral Owner:
+${r.referrer_id}
+</p>
+
+<p>
+Status:
+${r.status}
+</p>
+
+</div>
+
+`
+).join("");
+
+}
+
+
+load();
+
+</script>
+
+
+</body>
+</html>

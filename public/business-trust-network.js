@@ -12,7 +12,6 @@ if(!userData.user)return;
 
 
 const {data:referrals}=await client
-.from("business_referrals")
 .select("*")
 .eq(
 "referrer_user_id",
