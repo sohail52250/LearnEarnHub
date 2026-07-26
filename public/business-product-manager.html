@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Business Product Manager</title>
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/business-product-manager.js"></script>
+</head>
+
+<body>
+
+<div class="card">
+<h1>📦 Product Manager</h1>
+
+<input id="name" placeholder="Product Name">
+<input id="category" placeholder="Category">
+<input id="price" placeholder="Price">
+<input id="stock" placeholder="Stock">
+
+<textarea id="description" placeholder="Description"></textarea>
+
+<button onclick="addProduct()">
+Save Product (Draft)
+</button>
+
+<p id="msg"></p>
+</div>
+
+<div class="card">
+<h2>Your Products</h2>
+<div id="products">
+Loading...
+</div>
+</div>
+
+</body>
+</html>
