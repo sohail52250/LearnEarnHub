@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Business Deal Request</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>🏢 Business Deal Request</h1>
+
+
+<select id="type">
+
+<option value="sale">
+Sell Company
+</option>
+
+<option value="merger">
+Merger
+</option>
+
+<option value="joint_venture">
+Joint Venture
+</option>
+
+<option value="collaboration">
+Collaboration
+</option>
+
+</select>
+
+
+<input id="company"
+placeholder="Company Name">
+
+
+<input id="industry"
+placeholder="Industry">
+
+
+<textarea id="description"
+placeholder="Describe your business">
+</textarea>
+
+
+<textarea id="requirements"
+placeholder="What are you looking for?">
+</textarea>
+
+
+<input id="value"
+placeholder="Expected Value">
+
+
+<button onclick="submitBusinessDeal()">
+Submit Request
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+<script src="/business-deal-request.js"></script>
+
+
+</body>
+
+</html>
