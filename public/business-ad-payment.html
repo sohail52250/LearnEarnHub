@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Business Advertisement Payment</title>
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/business-ad-payment.js"></script>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>📢 Advertisement Packages</h1>
+
+<button onclick="requestAd('Basic',100)">
+Basic Ad - Rs 100
+</button>
+
+<br><br>
+
+<button onclick="requestAd('Premium',500)">
+Premium Ad - Rs 500
+</button>
+
+<br><br>
+
+<button onclick="requestAd('Featured',1000)">
+Featured Ad - Rs 1000
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</body>
+</html>
