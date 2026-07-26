@@ -1,91 +1,50 @@
 
-async function loadDealRoom(){
+async function sendDealMessage(data){
 
-const client=supabase.createClient(
+const client =
+supabase.createClient(
 SUPABASE_URL,
 SUPABASE_ANON_KEY
 );
 
 
-const user=JSON.parse(
-localStorage.getItem("user") || "null"
-);
-
-
-if(!user){
-document.getElementById("room").innerHTML=
-"Login required";
-return;
-}
-
-
-const {data,error}=await client
-.from("deal_rooms")
-.select("*")
-.or(
-`party_one_id.eq.${user.id},party_two_id.eq.${user.id}`
-);
+const {data:result,error}=await client
+.from("deal_messages")
+.insert(data)
+.select();
 
 
 if(error){
-document.getElementById("room").innerHTML=
-error.message;
-return;
+
+console.log(error);
+return null;
+
 }
 
 
-document.getElementById("room").innerHTML=
-
-data.length ?
-
-data.map(r=>`
-
-<div class="card">
-
-<h3>
-🔐 Deal Room #${r.id}
-</h3>
-
-<p>
-Status:
-${r.status}
-</p>
-
-<p>
-AI Assistance:
-Enabled
-</p>
-
-
-<button onclick="openChat(${r.id})">
-Open Secure Conversation
-</button>
-
-
-</div>
-
-`).join("")
-
-:
-
-"No active deal rooms";
-
+return result;
 
 }
 
 
 
-function openChat(id){
+async function requestMeeting(data){
 
-location.href=
-"/deal-chat.html?room="+id;
-
-}
-
-
-
-document.addEventListener(
-"DOMContentLoaded",
-loadDealRoom
+const client =
+supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
 );
+
+
+return await client
+.from("deal_meeting_requests")
+.insert(data);
+
+}
+
+
+
+window.sendDealMessage=sendDealMessage;
+window.requestMeeting=requestMeeting;
 
