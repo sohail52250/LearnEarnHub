@@ -9,6 +9,15 @@
 "help":"Help",
 "login":"Inloggen",
 "register":"Registreren",
+
 "title":"Leer vaardigheden. Bouw je toekomst.",
-"intro":"Leer, verdien, groei en verbind wereldwijd."
+"intro":"Leer, verdien, groei en verbind wereldwijd.",
+
+"start_learning":"Start met leren",
+"create_account":"Gratis account maken",
+"popular_courses":"Populaire cursussen",
+"how_it_works":"Hoe het werkt",
+"rewards":"Leerbeloningen",
+"roadmap":"Leer → Verdien route",
+"career_dashboard":"Carrière dashboard"
 }
