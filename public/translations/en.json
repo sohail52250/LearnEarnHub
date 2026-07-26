@@ -1,11 +1,14 @@
 {
-  "site_name": "Learn & Earn Hub",
-  "lesson_complete": "Complete Lesson",
-  "course": "Course",
-  "lesson": "Lesson",
-  "next": "Next",
-  "previous": "Previous",
-  "progress": "Progress",
-  "certificate": "Certificate",
-  "start_learning": "Start Learning"
+"home":"Home",
+"learn":"Learn",
+"earn":"Earn",
+"business":"Business",
+"deals":"Deals",
+"advertise":"Advertise",
+"career":"Career",
+"help":"Help",
+"login":"Login",
+"register":"Register",
+"title":"Learn Skills. Build Your Future.",
+"intro":"Learn, earn, grow and connect worldwide."
 }

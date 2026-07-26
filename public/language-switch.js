@@ -1,25 +1,75 @@
-function setLanguage(lang){
 
-document.querySelectorAll("[data-en]")
-.forEach(el=>{
+let currentLanguage =
+localStorage.getItem("language") || "en";
 
-el.innerHTML =
-lang==="ur"
-? el.getAttribute("data-ur")
-: el.getAttribute("data-en");
 
-});
+async function setLanguage(lang){
 
-localStorage.setItem("language",lang);
+localStorage.setItem(
+"language",
+lang
+);
+
+currentLanguage=lang;
+
+await loadLanguage();
 
 }
 
 
-document.addEventListener("DOMContentLoaded",()=>{
 
-const saved =
-localStorage.getItem("language") || "en";
+async function loadLanguage(){
 
-setLanguage(saved);
+const response =
+await fetch(
+`/translations/${currentLanguage}.json`
+);
+
+
+const words =
+await response.json();
+
+
+
+document.querySelectorAll("[data-key]")
+.forEach(el=>{
+
+let key =
+el.getAttribute("data-key");
+
+
+if(words[key]){
+
+el.innerHTML =
+words[key];
+
+}
 
 });
+
+
+
+if(currentLanguage==="ur" ||
+currentLanguage==="ar"){
+
+document.documentElement.dir="rtl";
+
+}else{
+
+document.documentElement.dir="ltr";
+
+}
+
+
+}
+
+
+
+document.addEventListener(
+"DOMContentLoaded",
+loadLanguage
+);
+
+
+window.setLanguage=setLanguage;
+
