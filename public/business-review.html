@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Business Review</title>
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/business-review.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>⭐ Rate Business</h1>
+
+<input id="business_id" placeholder="Business ID">
+
+<select id="rating">
+<option value="5">⭐⭐⭐⭐⭐</option>
+<option value="4">⭐⭐⭐⭐</option>
+<option value="3">⭐⭐⭐</option>
+<option value="2">⭐⭐</option>
+<option value="1">⭐</option>
+</select>
+
+
+<textarea id="review"
+placeholder="Write your review">
+</textarea>
+
+
+<button onclick="submitReview()">
+Submit Review
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</body>
+</html>
