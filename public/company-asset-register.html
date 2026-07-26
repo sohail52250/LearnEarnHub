@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Company Asset Register</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/company-asset-register.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>🏢 Company Asset Register</h1>
+
+
+<input id="company_id"
+placeholder="Company ID">
+
+
+<input id="asset_name"
+placeholder="Asset Name">
+
+
+<input id="asset_type"
+placeholder="Asset Type">
+
+
+<input id="value"
+placeholder="Estimated Value PKR"
+type="number">
+
+
+<textarea id="details"
+placeholder="Asset Details"></textarea>
+
+
+<button onclick="addAsset()">
+Add Asset
+</button>
+
+
+<p id="message"></p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Assets</h2>
+
+<div id="assets">
+Loading...
+</div>
+
+</div>
+
+
+</body>
+</html>

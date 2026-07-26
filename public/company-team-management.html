@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Company Team Management</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>👥 Company Team Management</h1>
+
+
+<input id="company_id"
+placeholder="Company ID">
+
+
+<input id="employee_id"
+placeholder="Employee User ID">
+
+
+<select id="role">
+
+<option>
+employee
+</option>
+
+<option>
+manager
+</option>
+
+<option>
+director
+</option>
+
+</select>
+
+
+
+<button onclick="addEmployee()">
+Add Team Member
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function addEmployee(){
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+const {error}=await client
+.from("company_employees")
+.insert({
+
+company_id:
+document.getElementById("company_id").value,
+
+user_id:
+document.getElementById("employee_id").value,
+
+role:
+document.getElementById("role").value,
+
+status:"active"
+
+});
+
+
+
+document.getElementById("result")
+.innerHTML=
+
+error ? error.message :
+"✅ Team member added";
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
