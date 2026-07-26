@@ -30,6 +30,12 @@
 
 
 <body>
+
+<div id="language-selector"></div>
+
+<script src="/language-loader.js"></script>
+
+
 <div id="instructor-menu"></div>
 <script>
 fetch("/instructor-nav.html").then(r=>r.text()).then(t=>document.getElementById("instructor-menu").innerHTML=t);

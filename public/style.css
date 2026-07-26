@@ -309,3 +309,23 @@ button {
 
 }
 
+
+
+[dir="rtl"] {
+
+text-align:right;
+
+}
+
+
+#language-box button {
+
+margin:5px;
+
+padding:10px;
+
+cursor:pointer;
+
+}
+
+
