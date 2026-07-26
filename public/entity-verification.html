@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Entity Verification Center</title>
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="card">
+
+<h1>🏢 Entity Verification Center</h1>
+
+<p>
+Create your trusted LearnEarnHub platform identity.
+</p>
+
+
+<input id="entity_name"
+placeholder="Company / Person Name">
+
+
+<select id="entity_type">
+
+<option value="company">
+Company
+</option>
+
+<option value="firm">
+Firm
+</option>
+
+<option value="individual">
+Individual
+</option>
+
+<option value="investor">
+Investor
+</option>
+
+<option value="organization">
+Organization
+</option>
+
+</select>
+
+
+<button onclick="submitVerification()">
+Submit Verification
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+<script src="/entity-verification.js"></script>
+
+</body>
+</html>
