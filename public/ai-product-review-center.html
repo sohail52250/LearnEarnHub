@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Product Review Center</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/ai-product-approval-engine.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>🤖 AI Product Review Center</h1>
+
+
+<input id="productId"
+placeholder="Product ID">
+
+
+<button onclick="review()">
+Run AI Check
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+
+<script>
+
+async function review(){
+
+let id=document
+.getElementById("productId")
+.value;
+
+
+let result=
+await runAIProductApproval(id);
+
+
+document.getElementById("result")
+.innerHTML=
+
+result
+?
+`
+Status: ${result.status}<br>
+Score: ${result.score}%<br>
+${result.reason}
+`
+:
+"Review failed";
+
+
+}
+
+</script>
+
+
+</body>
+</html>
