@@ -8,19 +8,37 @@ SUPABASE_ANON_KEY
 
 const {data}=await client
 .from("business_profiles")
-.select("*")
-.eq("verified",true);
+.select("*");
 
-document.getElementById("businesses").innerHTML=
-(data||[]).map(b=>`
+const box=document.getElementById("businesses");
+
+if(!data || !data.length){
+
+box.innerHTML="No businesses available.";
+return;
+
+}
+
+box.innerHTML=data.map(b=>`
 
 <div class="card">
 
-<h2>${b.company_name}</h2>
+<h2>
+🏢 ${b.business_name || "Business"}
+</h2>
 
-<p>${b.description||""}</p>
+<p>
+${b.description || ""}
+</p>
 
-<p>✅ Verified Business</p>
+<p>
+⭐ Trust Score:
+${b.trust_score || 0}
+</p>
+
+<p>
+${b.verified ? "✅ Verified" : "⏳ Pending Verification"}
+</p>
 
 </div>
 
@@ -28,5 +46,8 @@ document.getElementById("businesses").innerHTML=
 
 }
 
-loadBusinesses();
+document.addEventListener(
+"DOMContentLoaded",
+loadBusinesses
+);
 
