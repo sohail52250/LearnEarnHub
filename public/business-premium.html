@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Business Premium Plans</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/business-premium.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🏆 Business Premium</h1>
+
+<button onclick="buyPlan('Starter',500)">
+Starter Plan - Rs 500
+</button>
+
+<br><br>
+
+<button onclick="buyPlan('Professional',1500)">
+Professional Plan - Rs 1500
+</button>
+
+<br><br>
+
+<button onclick="buyPlan('Enterprise',5000)">
+Enterprise Plan - Rs 5000
+</button>
+
+
+<p id="message"></p>
+
+</div>
+
+</body>
+</html>
