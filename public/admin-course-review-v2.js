@@ -6,22 +6,27 @@ SUPABASE_URL,
 SUPABASE_ANON_KEY
 );
 
-const {data:courses}=await client
+const {data:courses,error}=await client
 .from("courses")
 .select("*")
 .order("created_at",{ascending:false});
 
 const box=document.getElementById("reviewQueue");
 
+if(error){
+box.innerHTML="Failed to load courses";
+return;
+}
+
 box.innerHTML=(courses||[]).map(course=>`
 
 <div class="card">
 
-<h2>${course.title}</h2>
+<h2>${course.title || "Untitled Course"}</h2>
 
-<p>${course.description||""}</p>
+<p>${course.description || ""}</p>
 
-<p>Category: ${course.category||"General"}</p>
+<p><strong>Category:</strong> ${course.category || "General"}</p>
 
 <button onclick="approveCourse(${course.id})">
 ✅ Approve
@@ -53,6 +58,7 @@ quality_score:90
 });
 
 alert("Course approved");
+
 location.reload();
 
 }
@@ -73,6 +79,7 @@ quality_score:30
 });
 
 alert("Course rejected");
+
 location.reload();
 
 }
