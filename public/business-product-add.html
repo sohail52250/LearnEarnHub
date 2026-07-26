@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Product</title>
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/business-product-add.js"></script>
+
+</head>
+
+<body>
+
+<h1>📦 Add Business Product</h1>
+
+<input id="name" placeholder="Product Name"><br><br>
+
+<input id="category" placeholder="Category"><br><br>
+
+<textarea id="description" placeholder="Description"></textarea><br><br>
+
+<input id="stock" type="number" placeholder="Available Stock"><br><br>
+
+<input id="price" type="number" placeholder="Price PKR"><br><br>
+
+<input id="image" placeholder="Image URL"><br><br>
+
+<button onclick="addProduct()">
+Publish Product
+</button>
+
+<p id="msg"></p>
+
+</body>
+</html>
