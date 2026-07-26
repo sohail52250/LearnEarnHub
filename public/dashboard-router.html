@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard Router</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="/role-access-control.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>🔐 Dashboard Access</h1>
+
+<p>
+Checking account permissions...
+</p>
+
+</div>
+
+
+<script>
+
+const user=getCurrentUser();
+
+if(user){
+
+redirectByRole(user.role);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
