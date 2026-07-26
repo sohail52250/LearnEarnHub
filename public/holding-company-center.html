@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Holding Company Center</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/holding-company-center.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🏢 Holding Company Center</h1>
+
+<input id="company_name"
+placeholder="Holding Company Name">
+
+<textarea id="description"
+placeholder="Description"></textarea>
+
+
+<button onclick="createHoldingCompany()">
+Create Holding Company
+</button>
+
+
+<p id="message"></p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Your Holding Companies</h2>
+
+<div id="companies">
+Loading...
+</div>
+
+</div>
+
+
+</body>
+</html>

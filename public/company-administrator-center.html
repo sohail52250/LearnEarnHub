@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Company Administrator Center</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>👤 Company Administrator Management</h1>
+
+
+<input id="company_id"
+placeholder="Company ID">
+
+
+<input id="user_id"
+placeholder="Administrator User ID">
+
+
+<select id="role">
+
+<option>
+administrator
+</option>
+
+<option>
+manager
+</option>
+
+<option>
+auditor
+</option>
+
+</select>
+
+
+
+<button onclick="assignAdmin()">
+Assign Role
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+
+<script>
+
+async function assignAdmin(){
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+const {error}=await client
+.from("company_administrators")
+.insert({
+
+company_id:
+document.getElementById("company_id").value,
+
+user_id:
+document.getElementById("user_id").value,
+
+role:
+document.getElementById("role").value,
+
+permissions:{},
+
+status:"active"
+
+});
+
+
+
+document.getElementById("result")
+.innerHTML=
+
+error ? error.message :
+"✅ Administrator assigned";
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
