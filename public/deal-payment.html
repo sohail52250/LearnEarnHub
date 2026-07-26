@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Deal Room Payment</title>
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>💳 Deal Room Access</h1>
+
+<p>
+Unlock secure business conversation.
+</p>
+
+
+<select id="package">
+
+<option value="500">
+Basic Introduction - PKR 500
+</option>
+
+<option value="2000">
+Premium Deal Room - PKR 2000
+</option>
+
+<option value="5000">
+Enterprise Negotiation - PKR 5000
+</option>
+
+</select>
+
+
+<button onclick="requestPayment()">
+Request Access
+</button>
+
+
+<p id="message"></p>
+
+</div>
+
+
+<script src="/deal-payment.js"></script>
+
+</body>
+</html>
