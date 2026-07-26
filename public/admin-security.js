@@ -1,71 +1,67 @@
 
-async function checkAdminAccess(){
+function checkAdmin(){
 
-const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
+const user =
+JSON.parse(
+localStorage.getItem("user")
 );
-
-
-const {data:{user}} =
-await client.auth.getUser();
 
 
 if(!user){
 
-location.href="/login.html";
-
-return;
+window.location.href="/login.html";
+return false;
 
 }
 
 
-const {data:roleData,error}=await client
+if(user.role !== "admin"){
 
-.from("user_roles")
-
-.select("role")
-
-.eq("user_id",user.id)
-
-.single();
-
-
-
-if(error || !roleData || roleData.role!=="admin"){
-
-
-document.body.innerHTML=`
-
+document.body.innerHTML =
+`
 <div class="card">
-
-<h1>
-🚫 Access Denied
-</h1>
-
-<p>
-Admin permission required.
-</p>
-
-<a href="/index.html">
-Return Home
-</a>
-
+<h1>Access Denied</h1>
+<p>Admin permission required.</p>
 </div>
-
 `;
-
 
 return false;
 
 }
 
 
-
 return true;
+
+}
+
+
+
+async function createAdminLog(action,details){
+
+const client =
+supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+await client
+.from("admin_logs")
+.insert({
+
+action:action,
+
+details:details,
+
+created_at:new Date()
+
+});
 
 
 }
 
 
+
+window.checkAdmin=checkAdmin;
+window.createAdminLog=createAdminLog;
 
