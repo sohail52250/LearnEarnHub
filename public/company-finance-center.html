@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Company Finance Center</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>💰 Company Finance Center</h1>
+
+
+<input id="company_id"
+placeholder="Company ID">
+
+
+<select id="type">
+
+<option value="income">
+Income
+</option>
+
+<option value="expense">
+Expense
+</option>
+
+</select>
+
+
+<input id="amount"
+type="number"
+placeholder="Amount PKR">
+
+
+<input id="category"
+placeholder="Category">
+
+
+<textarea id="description"
+placeholder="Description"></textarea>
+
+
+
+<button onclick="addFinanceRecord()">
+Add Record
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function addFinanceRecord(){
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+const {error}=await client
+.from("company_financial_records")
+.insert({
+
+company_id:
+document.getElementById("company_id").value,
+
+record_type:
+document.getElementById("type").value,
+
+amount:
+Number(document.getElementById("amount").value),
+
+category:
+document.getElementById("category").value,
+
+description:
+document.getElementById("description").value
+
+});
+
+
+
+document.getElementById("result")
+.innerHTML=
+
+error ? error.message :
+"✅ Financial record saved";
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>

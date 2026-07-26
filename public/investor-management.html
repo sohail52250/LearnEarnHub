@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investor Management</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>📈 Investor & Shareholder Management</h1>
+
+
+<input id="company_id"
+placeholder="Company ID">
+
+
+<input id="investor_name"
+placeholder="Investor Name">
+
+
+<input id="investment"
+type="number"
+placeholder="Investment PKR">
+
+
+<input id="share"
+type="number"
+placeholder="Ownership %">
+
+
+<button onclick="addInvestor()">
+Add Investor
+</button>
+
+
+<p id="message"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function addInvestor(){
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+const {error}=await client
+.from("company_investors")
+.insert({
+
+company_id:
+document.getElementById("company_id").value,
+
+investor_name:
+document.getElementById("investor_name").value,
+
+investment_amount:
+Number(document.getElementById("investment").value),
+
+ownership_percentage:
+Number(document.getElementById("share").value),
+
+status:"active"
+
+});
+
+
+
+document.getElementById("message")
+.innerHTML=
+
+error ? error.message :
+"✅ Investor added";
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
