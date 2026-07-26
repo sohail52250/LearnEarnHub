@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Password Reset</title>
+<title>Login</title>
 
 <link rel="stylesheet" href="/style.css">
 
@@ -16,15 +16,26 @@
 
 <div class="card">
 
-<h1>🔑 Reset Password</h1>
+<h1>🔐 Login</h1>
 
 
 <input id="email" placeholder="Email">
 
 
-<button onclick="resetPassword(email.value)">
-Send Reset Link
+<input id="password" type="password" placeholder="Password">
+
+
+<button onclick="loginUser(
+email.value,
+password.value
+)">
+Login
 </button>
+
+
+<a href="/forgot-password.html">
+Forgot Password
+</a>
 
 
 </div>

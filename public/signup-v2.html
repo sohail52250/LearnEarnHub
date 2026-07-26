@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Password Reset</title>
+<title>Create Account</title>
 
 <link rel="stylesheet" href="/style.css">
 
@@ -14,20 +14,28 @@
 
 <body>
 
+
 <div class="card">
 
-<h1>🔑 Reset Password</h1>
+<h1>🚀 Register</h1>
 
 
 <input id="email" placeholder="Email">
 
 
-<button onclick="resetPassword(email.value)">
-Send Reset Link
+<input id="password" type="password" placeholder="Password">
+
+
+<button onclick="signUpUser(
+email.value,
+password.value
+)">
+Create Account
 </button>
 
 
 </div>
+
 
 </body>
 
