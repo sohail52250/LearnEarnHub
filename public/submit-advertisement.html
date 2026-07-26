@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Submit Advertisement</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/submit-advertisement.js"></script>
+
+</head>
+<body>
+
+<h1>📣 Submit Advertisement</h1>
+
+<input id="title" placeholder="Advertisement Title"><br><br>
+
+<textarea id="description"
+placeholder="Advertisement Details"></textarea><br><br>
+
+<select id="package">
+<option>Bronze</option>
+<option>Silver</option>
+<option>Gold</option>
+</select>
+
+<br><br>
+
+<button onclick="submitAdvertisement()">
+Submit Advertisement
+</button>
+
+<div id="msg"></div>
+
+</body>
+</html>
