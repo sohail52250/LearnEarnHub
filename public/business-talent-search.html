@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Find Learners</title>
-</head>
 
+<title>
+Talent Discovery Center
+</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
 
 <body>
 
+<div class="card">
 
 <h1>
-Find Skilled Learners
+🎯 Talent Discovery Center
 </h1>
 
+<p>
+Businesses discover talent.
+Applications stay inside the platform.
+No direct contact information is shared.
+</p>
+
+</div>
 
 <div id="learners">
 Loading...
 </div>
 
-
 <script src="/business-learner-matching.js"></script>
-
 
 <script>
 
-
 async function load(){
 
-
-let results =
-await findLearnersForBusiness(
-[
+let results=
+await findLearnersForBusiness([
 "excel",
 "marketing",
 "freelancing"
-]
-);
-
-
+]);
 
 document.getElementById("learners")
-.innerHTML =
+.innerHTML=
 
-results.map(
-l=>`
+results.map(l=>`
 
 <div class="card">
 
@@ -51,66 +54,36 @@ l=>`
 ${l.full_name || "Learner"}
 </h3>
 
+<p>
+Match Score:
+${l.match_score || 0}%
+</p>
 
 <p>
 Skills:
-${(l.skills||[]).join(",")}
+${(l.skills||[]).join(", ")}
 </p>
-
 
 <p>
-Match:
-${l.match_score}%
+Certificates:
+${l.certificates || 0}
 </p>
 
-
-<button onclick="contact('${l.user_id}')">
-
-Contact Learner
-
-</button>
-
+<p>
+Status:
+Available For Opportunities
+</p>
 
 </div>
 
-`
-).join("");
+`).join("");
 
 }
-
-
-
-async function contact(id){
-
-
-const user =
-JSON.parse(
-localStorage.getItem("user")||"null"
-);
-
-
-
-await sendContactRequest(
-id,
-user.id
-);
-
-
-
-alert(
-"Contact request sent"
-);
-
-
-}
-
-
 
 load();
 
-
 </script>
-
 
 </body>
 </html>
+

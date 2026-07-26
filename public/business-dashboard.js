@@ -6,164 +6,91 @@ SUPABASE_URL,
 SUPABASE_ANON_KEY
 );
 
-
-const user=JSON.parse(
-localStorage.getItem("user") || "null"
-);
-
+const user=
+JSON.parse(localStorage.getItem("user")||"null");
 
 if(!user){
 location.href="/login.html";
 return;
 }
 
-
-
 const {data:business}=await client
 .from("business_profiles")
 .select("*")
-.eq("user_id",user.id)
+.eq("owner_id",user.id)
 .single();
 
-
-
-let businessId=business?.id;
-
-
-
-const {data:offers}=await client
+const {data:opportunities}=await client
 .from("business_opportunities")
 .select("*")
-.eq("business_id",businessId);
+.eq("business_user_id",user.id);
 
-
-
-const {count}=await client
-.from("job_applications")
-.select("*",{count:"exact",head:true});
-
-
+const {data:needs}=await client
+.from("business_needs")
+.select("*")
+.eq("business_id",business?.id);
 
 document.getElementById("business-panel").innerHTML=`
 
 <div class="card">
 
 <h1>
-🏢 ${business?.company_name || "New Business"}
+🏢 ${business?.business_name || "Business"}
 </h1>
 
-
 <p>
-${business?.description || 
-"Create your professional company profile"}
+${business?.description || ""}
 </p>
 
-
-
 <p>
-${business?.verified 
-?"✅ Verified Business"
-:"⏳ Verification Pending"}
+Verification:
+${business?.verification_status || "pending"}
 </p>
 
-
+<p>
+⭐ Trust Score:
+${business?.trust_score || 0}
+</p>
 
 </div>
-
-
-
-<div class="card">
-
-<h2>📊 Business Overview</h2>
-
-
-<p>
-📢 Opportunities:
-${offers?.length || 0}
-</p>
-
-
-<p>
-👥 Applications:
-${count || 0}
-</p>
-
-
-</div>
-
-
 
 <div class="card">
 
 <h2>
-⚡ Quick Actions
+📊 Overview
 </h2>
 
+<p>
+Opportunities:
+${opportunities?.length || 0}
+</p>
+
+<p>
+Business Needs:
+${needs?.length || 0}
+</p>
+
+</div>
+
+<div class="card">
+
+<a href="/business-trust-center.html">
+<button>Trust Center</button>
+</a>
 
 <a href="/post-business-offer.html">
-<button>
-Post Opportunity
-</button>
+<button>Post Opportunity</button>
 </a>
-
-
-<a href="/business-profile.html">
-<button>
-Edit Company Profile
-</button>
-</a>
-
 
 <a href="/business-talent-search.html">
-<button>
-Find Talent
-</button>
+<button>Talent Discovery</button>
 </a>
-
-
-</div>
-
-
-
-<div class="card">
-
-<h2>
-📢 Active Opportunities
-</h2>
-
-
-${
-offers?.map(
-o=>`
-
-<div>
-
-<h3>${o.title}</h3>
-
-<p>${o.description}</p>
-
-<p>
-Skill:
-${o.skill_required || "Any"}
-</p>
-
-</div>
-
-<hr>
-
-`
-).join("")
-||
-"No opportunities posted yet"
-}
-
 
 </div>
 
 `;
 
 }
-
 
 document.addEventListener(
 "DOMContentLoaded",

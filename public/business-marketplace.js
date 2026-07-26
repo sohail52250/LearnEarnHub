@@ -1,3 +1,4 @@
+
 async function loadBusinessOffers(){
 
 const client=supabase.createClient(
@@ -5,87 +6,64 @@ SUPABASE_URL,
 SUPABASE_ANON_KEY
 );
 
-
 const {data}=await client
-.from("business_offers")
+.from("business_needs")
 .select("*")
-.order(
-"created_at",
-{ascending:false}
-);
+.order("created_at",{ascending:false});
 
-
-
-const box=document.getElementById(
-"business-list"
-);
-
-
+const box=
+document.getElementById("business-list");
 
 if(!data || !data.length){
 
 box.innerHTML=
-"No business opportunities yet.";
+"No active business needs.";
 
 return;
 
 }
 
-
-
-box.innerHTML=data.map(b=>`
+box.innerHTML=data.map(item=>`
 
 <div class="card">
 
 <h2>
-🏢 ${b.business_name} ${b.verified ? "✅" : ""}
+${item.need_title}
 </h2>
-
 
 <p>
 Category:
-${b.category}
+${item.category}
 </p>
-
 
 <p>
-Selling:
-${b.offer}
+Budget:
+${item.budget || "Not specified"}
 </p>
-
 
 <p>
-Stock:
-${b.stock}
+Location:
+${item.location || "Remote"}
 </p>
-
 
 <p>
-Need:
-${b.need}
+Quantity:
+${item.quantity || "Flexible"}
 </p>
-
 
 <p>
-Provide:
-${b.provide}
+Status:
+${item.status || "Open"}
 </p>
-
-
-<p>
-${b.details}
-</p>
-
 
 </div>
-
 
 `).join("");
 
 }
 
-
 document.addEventListener(
 "DOMContentLoaded",
 loadBusinessOffers
 );
+
