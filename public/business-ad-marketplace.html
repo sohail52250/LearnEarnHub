@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Business Advertisement Marketplace</title>
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/business-ad-marketplace.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>📢 Business Advertisements</h1>
+
+<select id="categoryFilter" onchange="filterAds()">
+<option value="">All Categories</option>
+<option value="services">Services</option>
+<option value="products">Products</option>
+<option value="jobs">Jobs</option>
+<option value="training">Training</option>
+</select>
+
+
+</div>
+
+
+<div id="ads-list"></div>
+
+
+</body>
+</html>
