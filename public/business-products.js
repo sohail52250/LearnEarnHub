@@ -44,7 +44,7 @@ Number(document.getElementById("price").value),
 image_url:
 document.getElementById("image_url").value,
 
-status:"active",
+status:"draft",
 
 created_at:new Date()
 

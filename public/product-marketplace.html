@@ -41,7 +41,7 @@ SUPABASE_ANON_KEY
 const {data}=await client
 .from("business_products")
 .select("*")
-.eq("status","active")
+.eq("status","published")
 .order(
 "created_at",
 {ascending:false}
