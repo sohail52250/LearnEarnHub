@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Advertisement Review</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/ai-ad-approval-engine.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>🤖 AI Advertisement Review Center</h1>
+
+
+<input id="adId"
+placeholder="Advertisement ID">
+
+
+<button onclick="reviewAd()">
+Run AI Check
+</button>
+
+
+<p id="result"></p>
+
+</div>
+
+
+<script>
+
+async function reviewAd(){
+
+let id=document
+.getElementById("adId")
+.value;
+
+
+let result=
+await runAIAdApproval(id);
+
+
+document.getElementById("result")
+.innerHTML=
+
+result
+?
+`
+Status: ${result.status}<br>
+Score: ${result.score}%<br>
+Reason: ${result.reason}
+`
+:
+"Review failed";
+
+
+}
+
+</script>
+
+
+</body>
+</html>
