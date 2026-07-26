@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Business Inquiry</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>📩 Send Business Inquiry</h1>
+
+
+<textarea id="message"
+placeholder="Your message"></textarea>
+
+
+<button onclick="sendInquiry()">
+Send
+</button>
+
+
+<p id="result"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function sendInquiry(){
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+const user=JSON.parse(
+localStorage.getItem("user")||"null"
+);
+
+
+const id=
+new URLSearchParams(location.search)
+.get("id");
+
+
+
+await client
+.from("business_sale_inquiries")
+.insert({
+
+listing_id:id,
+
+buyer_id:user.id,
+
+message:
+document.getElementById("message").value,
+
+status:"pending"
+
+});
+
+
+
+document.getElementById("result")
+.innerHTML=
+"✅ Inquiry sent";
+
+}
+
+
+</script>
+
+
+</body>
+</html>

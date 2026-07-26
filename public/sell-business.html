@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sell Your Business</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/sell-business.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🏢 Sell Your Business</h1>
+
+<input id="business_name" placeholder="Business / Company Name">
+
+<input id="category" placeholder="Industry Category">
+
+<textarea id="description"
+placeholder="Business Description"></textarea>
+
+<input id="years"
+type="number"
+placeholder="Years Operating">
+
+<input id="price"
+type="number"
+placeholder="Asking Price PKR">
+
+<textarea id="assets"
+placeholder="Assets Included"></textarea>
+
+<textarea id="reason"
+placeholder="Reason For Selling"></textarea>
+
+
+<button onclick="submitBusinessSale()">
+Submit For Review
+</button>
+
+
+<p id="message"></p>
+
+</div>
+
+</body>
+</html>

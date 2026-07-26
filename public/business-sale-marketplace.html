@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Business Sale Marketplace</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<h1>🏢 Businesses For Sale</h1>
+
+
+<div id="businesses">
+Loading...
+</div>
+
+
+</div>
+
+
+
+<script>
+
+async function loadBusinesses(){
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+const {data}=await client
+.from("business_sale_listings")
+.select("*")
+.eq("status","approved")
+.order("created_at",
+{ascending:false});
+
+
+
+document.getElementById("businesses")
+.innerHTML=
+
+(data||[]).map(b=>`
+
+<div class="card">
+
+<h2>
+${b.business_name}
+</h2>
+
+<p>
+Category:
+${b.category}
+</p>
+
+
+<p>
+${b.description}
+</p>
+
+
+<p>
+Operating:
+${b.years_operating} years
+</p>
+
+
+<p>
+Asking:
+PKR ${b.asking_price}
+</p>
+
+
+<button onclick="inquire('${b.id}')">
+Send Inquiry
+</button>
+
+
+</div>
+
+`).join("")
+||
+"No businesses available";
+
+
+}
+
+
+
+function inquire(id){
+
+location.href=
+"/business-sale-inquiry.html?id="+id;
+
+}
+
+
+loadBusinesses();
+
+</script>
+
+
+</body>
+</html>
