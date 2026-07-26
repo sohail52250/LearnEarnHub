@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Stock Dashboard</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>📊 Product Stock Dashboard</h1>
+
+<div id="stock">
+Loading...
+</div>
+
+</div>
+
+
+
+<script>
+
+async function load(){
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+const user=JSON.parse(
+localStorage.getItem("user") || "null"
+);
+
+
+const {data}=await client
+.from("business_products")
+.select("*")
+.eq("business_id",user.id);
+
+
+
+document.getElementById("stock").innerHTML=
+
+(data||[]).map(p=>`
+
+<div class="card">
+
+<h3>
+${p.product_name}
+</h3>
+
+<p>
+Stock:
+${p.stock}
+</p>
+
+<p>
+Price:
+Rs ${p.price}
+</p>
+
+
+</div>
+
+`).join("")
+||
+"No products";
+
+
+}
+
+
+load();
+
+</script>
+
+</body>
+</html>
