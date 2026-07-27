@@ -1,62 +1,45 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 echo "======================================"
-echo " LearnEarnHub Course Lesson Upgrade"
+echo " LearnEarnHub Course Lessons Upgrade"
 echo "======================================"
 
-mkdir -p public/lessons
+mkdir -p database
 
-echo "1) Creating database SQL..."
-
-cat > course-lessons-upgrade.sql <<'SQL'
-
+cat > database/course_lessons_upgrade.sql <<'SQL'
 CREATE TABLE IF NOT EXISTS course_lessons (
-id BIGSERIAL PRIMARY KEY,
-course_id UUID REFERENCES courses(id) ON DELETE CASCADE,
-title_en TEXT NOT NULL,
-title_ur TEXT NOT NULL,
-content_en TEXT,
-content_ur TEXT,
-lesson_order INTEGER DEFAULT 1,
-points INTEGER DEFAULT 10,
-created_at TIMESTAMP DEFAULT NOW()
+id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+course_id uuid REFERENCES courses(id) ON DELETE CASCADE,
+lesson_title_en text NOT NULL,
+lesson_title_ur text,
+lesson_content_en text,
+lesson_content_ur text,
+video_url text,
+lesson_order integer DEFAULT 1,
+points integer DEFAULT 5,
+created_at timestamp DEFAULT now()
 );
 
 ALTER TABLE course_lessons ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Public read lessons"
-ON course_lessons
-FOR SELECT
-USING (true);
-
 SQL
 
 
-echo "SQL created:"
-echo "course-lessons-upgrade.sql"
+echo "Creating lessons API..."
 
-echo ""
-echo "2) Creating lesson API..."
-
-cat > api/lessons.js <<'JS'
+cat > api/course-lessons.js <<'JS'
 const db=require("../database");
 
 module.exports=async(req,res)=>{
 
 if(req.method==="GET"){
 
-const {course_id}=req.query;
+const course_id=req.query.course_id;
 
-let query=db
+const {data,error}=await db
 .from("course_lessons")
 .select("*")
+.eq("course_id",course_id)
 .order("lesson_order");
-
-if(course_id){
-query=query.eq("course_id",course_id);
-}
-
-const {data,error}=await query;
 
 return res.json({
 data,
@@ -68,30 +51,12 @@ error
 
 if(req.method==="POST"){
 
-const {
-course_id,
-title_en,
-title_ur,
-content_en,
-content_ur,
-lesson_order,
-points
-}=req.body;
-
+const lesson=req.body;
 
 const {data,error}=await db
 .from("course_lessons")
-.insert([{
-course_id,
-title_en,
-title_ur,
-content_en,
-content_ur,
-lesson_order,
-points
-}])
+.insert([lesson])
 .select();
-
 
 return res.json({
 success:!error,
@@ -110,115 +75,103 @@ error:"Method not allowed"
 JS
 
 
-echo "3) Creating lesson viewer..."
+echo "Creating lesson seed script..."
 
-cat > public/lesson-viewer.html <<'HTML'
-<!DOCTYPE html>
-<html>
-<head>
-<title>LearnEarnHub Lesson</title>
-<meta charset="UTF-8">
-</head>
-
-<body>
-
-<h1>Lesson Viewer</h1>
-
-<div id="lesson">
-Loading lesson...
-</div>
-
-
-<script>
-
-const params=new URLSearchParams(location.search);
-const course=params.get("course_id");
-
-
-fetch("/api/lessons?course_id="+course)
-.then(r=>r.json())
-.then(x=>{
-
-let html="";
-
-x.data.forEach(l=>{
-
-html+=`
-<h2>${l.title_en}</h2>
-<h3>${l.title_ur}</h3>
-
-<p>${l.content_en}</p>
-
-<p>${l.content_ur}</p>
-
-<hr>
-`;
-
-});
-
-document.getElementById("lesson").innerHTML=html;
-
-});
-
-</script>
-
-</body>
-</html>
-HTML
-
-
-echo "4) Creating sample lesson installer..."
-
-cat > add-sample-lessons.sh <<'SH'
+cat > add-course-lessons.sh <<'SEED'
 #!/data/data/com.termux/files/usr/bin/bash
 
-URL="https://learn-earnhub.vercel.app/api/lessons"
+URL="https://learn-earnhub.vercel.app/api/course-lessons"
 
-COURSE="9340f8f3-8d69-4881-8585-42f1af2f77c4"
+COURSE_ID=$1
 
 
-curl -s -X POST $URL \
+add(){
+
+curl -s -X POST "$URL" \
 -H "Content-Type: application/json" \
--d "{
-\"course_id\":\"$COURSE\",
-\"title_en\":\"Introduction Lesson\",
-\"title_ur\":\"تعارفی سبق\",
-\"content_en\":\"Learn course basics, goals and practical skills.\",
-\"content_ur\":\"کورس کے بنیادی اصول، مقاصد اور عملی مہارتیں سیکھیں۔\",
-\"lesson_order\":1,
-\"points\":10
-}"
+-d "$1"
+
+echo ""
+
+}
 
 
-curl -s -X POST $URL \
--H "Content-Type: application/json" \
--d "{
-\"course_id\":\"$COURSE\",
-\"title_en\":\"Practical Exercise\",
-\"title_ur\":\"عملی مشق\",
-\"content_en\":\"Complete exercises and build your skills.\",
-\"content_ur\":\"مشقیں مکمل کریں اور اپنی مہارت بہتر کریں۔\",
-\"lesson_order\":2,
-\"points\":20
-}"
-
-echo
-echo "Lessons added"
-SH
+add '{
+"course_id":"'$COURSE_ID'",
+"lesson_title_en":"Introduction",
+"lesson_title_ur":"تعارف",
+"lesson_content_en":"Course overview and learning objectives.",
+"lesson_content_ur":"کورس کا تعارف اور مقاصد۔",
+"lesson_order":1,
+"points":5
+}'
 
 
-chmod +x add-sample-lessons.sh
+add '{
+"course_id":"'$COURSE_ID'",
+"lesson_title_en":"Basic Concepts",
+"lesson_title_ur":"بنیادی تصورات",
+"lesson_content_en":"Learn important concepts and terminology.",
+"lesson_content_ur":"اہم تصورات اور اصطلاحات سیکھیں۔",
+"lesson_order":2,
+"points":10
+}'
 
 
-echo "5) Git save"
+add '{
+"course_id":"'$COURSE_ID'",
+"lesson_title_en":"Practical Skills",
+"lesson_title_ur":"عملی مہارتیں",
+"lesson_content_en":"Practice real world examples and exercises.",
+"lesson_content_ur":"حقیقی مثالوں اور مشقوں سے سیکھیں۔",
+"lesson_order":3,
+"points":15
+}'
 
-git add .
-git commit -m "Add complete course lesson system" || true
+
+add '{
+"course_id":"'$COURSE_ID'",
+"lesson_title_en":"Project Work",
+"lesson_title_ur":"پروجیکٹ ورک",
+"lesson_content_en":"Build a practical project.",
+"lesson_content_ur":"ایک عملی منصوبہ تیار کریں۔",
+"lesson_order":4,
+"points":20
+}'
+
+
+add '{
+"course_id":"'$COURSE_ID'",
+"lesson_title_en":"Final Assessment",
+"lesson_title_ur":"حتمی جائزہ",
+"lesson_content_en":"Complete assessment and earn certificate.",
+"lesson_content_ur":"جائزہ مکمل کریں اور سرٹیفکیٹ حاصل کریں۔",
+"lesson_order":5,
+"points":25
+}'
+
+SEED
+
+
+chmod +x add-course-lessons.sh
+
+
+git add database/course_lessons_upgrade.sql api/course-lessons.js add-course-lessons.sh
+
+git commit -m "Add course lessons learning system" || true
+
 git push
 
 
 echo ""
 echo "======================================"
-echo "DONE"
+echo " Course Lessons System Added"
 echo "======================================"
+
+echo "Next:"
+echo "1. Run SQL in Supabase:"
+echo "database/course_lessons_upgrade.sql"
+echo ""
+echo "2. Add lessons using:"
+echo "./add-course-lessons.sh COURSE_ID"
 
