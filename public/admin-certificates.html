@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Admin Certificate Control</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<style>
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:15px;
+border-radius:12px;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+cursor:pointer;
+}
+
+input{
+padding:10px;
+width:80%;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<h1>
+🏆 Certificate Administration
+</h1>
+
+
+<div class="card">
+
+<h2>
+Search Certificate
+</h2>
+
+
+<input id="code"
+placeholder="Certificate Code">
+
+
+<button onclick="loadCertificate()">
+Search
+</button>
+
+
+</div>
+
+
+
+<div id="result"></div>
+
+
+
+</div>
+
+
+<script>
+
+
+async function loadCertificate(){
+
+
+let code=document
+.getElementById("code")
+.value;
+
+
+let r=await fetch(
+"/api/certificate?code="+code
+);
+
+
+let data=await r.json();
+
+
+
+if(!data.valid){
+
+document.getElementById("result")
+.innerHTML=
+"<div class='card'>❌ Invalid Certificate</div>";
+
+return;
+
+}
+
+
+
+let c=data.certificate;
+
+
+document.getElementById("result")
+.innerHTML=`
+
+<div class="card">
+
+<h2>
+${c.certificate_title}
+</h2>
+
+<p>
+Code: ${c.certificate_code}
+</p>
+
+<p>
+Status:
+${c.status || "pending"}
+</p>
+
+
+<input id="reason"
+placeholder="Reason if revoking">
+
+
+<br>
+
+
+<button onclick="updateCertificate('approve')">
+✅ Approve
+</button>
+
+
+<button onclick="updateCertificate('revoke')">
+❌ Revoke
+</button>
+
+
+</div>
+
+`;
+
+
+
+}
+
+
+
+async function updateCertificate(action){
+
+
+let code=document
+.getElementById("code")
+.value;
+
+
+let reason=document
+.getElementById("reason")
+?.value;
+
+
+
+await fetch(
+"/api/admin-certificate-control",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action,
+
+certificate_code:code,
+
+reason
+
+})
+
+}
+
+);
+
+
+
+alert(
+"Certificate updated"
+);
+
+
+loadCertificate();
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
