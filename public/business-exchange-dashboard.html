@@ -1,30 +1,151 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Business Exchange Dashboard</title>
+
 <meta charset="UTF-8">
+
 <style>
+
 .card{
 border:1px solid #ddd;
-padding:20px;
+padding:15px;
 margin:10px;
 border-radius:12px;
 }
+
+button{
+padding:10px;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <h1>🏢 Business Exchange Dashboard</h1>
 
-<div class="card">🏷 Sell Business</div>
-<div class="card">🔎 Buy Business</div>
-<div class="card">🤝 Acquisition</div>
-<div class="card">🔗 Merger</div>
-<div class="card">🌐 Partnership</div>
-<div class="card">📂 Due Diligence</div>
-<div class="card">📄 Contracts</div>
-<div class="card">📊 Deal Progress</div>
+
+<div class="card">
+
+<h2>Create Deal</h2>
+
+
+<select id="type">
+
+<option>Sell Business</option>
+
+<option>Buy Business</option>
+
+<option>Acquisition</option>
+
+<option>Merger</option>
+
+<option>Partnership</option>
+
+</select>
+
+
+<input id="title" placeholder="Deal Title">
+
+
+<textarea id="description"
+placeholder="Description"></textarea>
+
+
+<button onclick="createDeal()">
+Create Deal
+</button>
+
+
+</div>
+
+
+
+<h2>Available Deals</h2>
+
+<div id="deals">
+Loading...
+</div>
+
+
+
+<script>
+
+
+async function loadDeals(){
+
+let r=await fetch("/api/business-exchange");
+
+let d=await r.json();
+
+
+deals.innerHTML=(d.deals||[])
+
+.map(x=>`
+
+<div class="card">
+
+<h3>${x.title}</h3>
+
+<p>${x.deal_type}</p>
+
+<p>Status: ${x.status}</p>
+
+<p>${x.description||""}</p>
+
+</div>
+
+`)
+
+.join("");
+
+}
+
+
+async function createDeal(){
+
+
+await fetch("/api/business-exchange",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+deal_type:type.value,
+
+title:title.value,
+
+description:description.value,
+
+status:"draft"
+
+})
+
+});
+
+
+alert("Deal created");
+
+loadDeals();
+
+}
+
+
+loadDeals();
+
+</script>
+
 
 </body>
+
 </html>
