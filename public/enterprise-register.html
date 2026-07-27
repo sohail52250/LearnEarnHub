@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Registration</title>
+
+<meta charset="UTF-8">
+
+</head>
+
+
+<body>
+
+
+<h1>
+Enterprise Registration
+</h1>
+
+
+<form id="form">
+
+
+<input id="company_name" placeholder="Company Name">
+
+<input id="industry" placeholder="Industry">
+
+
+<textarea id="description"
+placeholder="Company Description"></textarea>
+
+
+<input id="website" placeholder="Website">
+
+
+<input id="email" placeholder="Email">
+
+
+<input id="phone" placeholder="Phone">
+
+
+<input id="city" placeholder="City">
+
+
+<input id="country" placeholder="Country">
+
+
+<input id="employees" placeholder="Number of Employees">
+
+
+<button>
+Register Enterprise
+</button>
+
+
+</form>
+
+
+
+<script>
+
+
+form.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+await fetch("/api/enterprise-register",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+user_id:localStorage.getItem("user_id"),
+
+company_name:company_name.value,
+
+industry:industry.value,
+
+description:description.value,
+
+website:website.value,
+
+email:email.value,
+
+phone:phone.value,
+
+city:city.value,
+
+country:country.value,
+
+employees:employees.value
+
+})
+
+
+});
+
+
+alert("Enterprise registered");
+
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
