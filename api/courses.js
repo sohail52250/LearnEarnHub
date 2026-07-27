@@ -21,6 +21,8 @@ if(req.method==="POST"){
 
 const {
 title_en,
+                                 content_en,
+                                 content_ur,
 title_ur,
 description_en,
 description_ur,
@@ -32,6 +34,8 @@ const {data,error}=await db
 .from("courses")
 .insert([{
 title_en,
+                                 content_en,
+                                 content_ur,
 title_ur,
 description_en,
 description_ur,
