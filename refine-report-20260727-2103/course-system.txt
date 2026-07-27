@@ -1,0 +1,74 @@
+public/learn.js:let r=await fetch("/api/courses");
+public/learn.js:let box=document.getElementById("courses");
+public/course-categories.js:let courses=document.querySelectorAll(".course-card");
+public/course-categories.js:courses.forEach(function(course){
+public/admin.js:.from("courses")
+public/admin.js:let box=document.getElementById("admin-courses");
+public/admin.js:.from("courses")
+public/admin.js:box.innerHTML="No courses found";
+public/course-loader.js:const box=document.getElementById("dynamic-courses");
+public/course-loader.js:.from("courses")
+public/course-loader.js:box.innerHTML="Unable to load courses";
+public/course-loader.js:box.innerHTML="No new courses available yet";
+public/course-loader.js:console.log("Popular courses:",counts);
+public/enrollment.js:let courses =
+public/enrollment.js:JSON.parse(localStorage.getItem("courses") || "[]");
+public/enrollment.js:if(!courses.includes(course)){
+public/enrollment.js:courses.push(course);
+public/enrollment.js:"courses",
+public/enrollment.js:JSON.stringify(courses)
+public/enrollment.js:let courses =
+public/enrollment.js:JSON.parse(localStorage.getItem("courses") || "[]");
+public/enrollment.js:if(courses.length===0){
+public/enrollment.js:"No courses enrolled yet / ابھی کوئی کورس منتخب نہیں";
+public/enrollment.js:courses.forEach(c=>{
+public/progress-dashboard.js:"<p>🎓 All courses completed! Certificate unlocked.</p>"
+public/service-worker.js:"/courses.html",
+public/analytics.js:const courses=await client
+public/analytics.js:.from("courses")
+public/analytics.js:${courses.count || 0}</h3>
+public/marketplace.js:"marketplace-courses"
+public/marketplace.js:.from("course_catalog")
+public/marketplace.js:box.innerHTML="Unable to load courses";
+public/enrollment-system.js:window.location="/my-courses.html";
+public/badge-engine.js:`${SUPABASE_URL}/rest/v1/courses?id=eq.${courseId}`,
+public/progress-summary.js:📚 ${t.courses || "Courses Progress"}:
+public/career-guide.js:courses:[
+public/career-guide.js:courses:[
+public/career-guide.js:courses:[
+public/career-guide.js:courses:[
+public/career-guide.js:${career.courses.map(c=>
+public/profile.js:${stats?.completed_courses || 0}
+public/courses-v2.js:.from("courses")
+public/courses-v2.js:document.getElementById("courses").innerHTML=
+public/courses-v2.js:"Unable to load courses";
+public/courses-v2.js:function displayCourses(courses){
+public/courses-v2.js:document.getElementById("courses").innerHTML=
+public/courses-v2.js:courses.map(course=>`
+public/admin-control-center.js:const courses =
+public/admin-control-center.js:.from("instructor_courses")
+public/admin-control-center.js:${courses.count || 0}
+public/instructors.js:${i.courses_created}
+public/create-course.js:.from("instructor_courses")
+public/admin-ai-review.js:.from("courses")
+public/course-marketplace.js:.from("courses")
+public/course-marketplace.js:"courses"
+public/course-marketplace.js:box.innerHTML="Unable to load courses";
+public/learner-auth-dashboard.js:: "Complete courses to unlock skills";
+public/learner-dashboard.js:${stats?.completed_courses || 0}
+public/learner-dashboard.js:"Complete courses to earn badges"
+public/learner-dashboard.js:<a href="/courses.html">
+public/course-categories-v1.js:<a href="/courses.html?category=${encodeURIComponent(category.name)}">
+public/instructor-dashboard.js:const {data:courses}=await client
+public/instructor-dashboard.js:.from("instructor_courses")
+public/instructor-dashboard.js:(courses||[]).map(course=>`
+public/admin-course-review-v2.js:const {data:courses,error}=await client
+public/admin-course-review-v2.js:.from("courses")
+public/admin-course-review-v2.js:box.innerHTML="Failed to load courses";
+public/admin-course-review-v2.js:box.innerHTML=(courses||[]).map(course=>`
+routes/courses.js:.from("courses")
+routes/courses.js:.from("courses")
+api/index.js:app.use("/api/courses", require("./courses"));
+api/courses.js:.from("courses")
+api/courses.js:.from("courses")
+api/complete-course.js:.from("courses")

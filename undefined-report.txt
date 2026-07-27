@@ -1,0 +1,1 @@
+public/career-supabase.js:  if(typeof getRecommendations !== "undefined"){
