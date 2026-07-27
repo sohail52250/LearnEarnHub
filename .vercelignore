@@ -1,0 +1,8 @@
+node_modules
+backups
+public.before-student-dashboard
+public/lessons.before*
+*.backup*
+safe-backups
+audit.txt
+reports

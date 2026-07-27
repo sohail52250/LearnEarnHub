@@ -67,7 +67,7 @@ ${course.category}
 
 <p>
 📊 Level:
-${course.level || 'Beginner' || "Beginner"}
+${course.level || "Beginner"}
 </p>
 
 
@@ -78,9 +78,9 @@ ${course.instructor || "LearnEarnHub Instructor"}
 
 
 <p>
-⭐ ${course.rating || 0 || "New"}
+⭐ ${course.rating || "New"}
 |
-👥 ${course.students || 0 || 0} students
+👥 ${course.students || 0} students
 </p>
 
 
