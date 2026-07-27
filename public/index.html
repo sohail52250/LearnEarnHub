@@ -56,9 +56,19 @@ margin-top:30px;
 
 <body>
 
+<div style="text-align:right;margin-bottom:15px">
+<select onchange="loadLanguage(this.value)">
+<option value="en">🇬🇧 English</option>
+<option value="ur">🇵🇰 اردو</option>
+<option value="ar">🇸🇦 العربية</option>
+<option value="nl">🇳🇱 Nederlands</option>
+</select>
+</div>
+
+
 <div class="hero">
 
-<h1>🚀 LearnEarnHub</h1>
+<h1 data-i18n="home_title">🚀 LearnEarnHub</h1>
 
 <p>
 Learn Skills • Earn Opportunities • Build Business • Grow Enterprise
@@ -184,6 +194,8 @@ Learn Skills • Earn Opportunities • Build Business • Grow Enterprise
 <a href="/privacy.html">Privacy</a>
 
 </footer>
+
+<script src="/language-switcher.js"></script>
 
 </body>
 </html>
