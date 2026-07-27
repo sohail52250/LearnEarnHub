@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Business Profile</title>
+</head>
+
+<body>
+
+
+<h1>
+Create Business Profile
+</h1>
+
+
+<form id="form">
+
+
+<input id="company_name"
+placeholder="Company Name">
+
+
+<textarea id="description"
+placeholder="Business Description"></textarea>
+
+
+<input id="category"
+placeholder="Category">
+
+
+<input id="city"
+placeholder="City">
+
+
+<input id="contact"
+placeholder="Contact">
+
+
+<button>
+Save
+</button>
+
+
+</form>
+
+
+
+<script>
+
+
+form.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+let data={
+
+user_id:localStorage.getItem("user_id"),
+
+company_name:company_name.value,
+
+description:description.value,
+
+category:category.value,
+
+city:city.value,
+
+contact:contact.value
+
+};
+
+
+let r=await fetch("/api/business-profile",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(data)
+
+});
+
+
+alert("Business profile saved");
+
+
+};
+
+
+</script>
+
+
+</body>
+</html>

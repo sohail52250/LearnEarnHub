@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Business Dashboard</title>
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Business Dashboard
+</h1>
+
+
+<div id="dashboard">
+Loading...
+</div>
+
+
+
+<script>
+
+let user_id=localStorage.getItem("user_id");
+
+
+fetch("/api/business-dashboard-v2?user_id="+user_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+let b=d.business||{};
+
+
+document.getElementById("dashboard").innerHTML=`
+
+<div class="card">
+
+<h2>
+${b.company_name||"Business"}
+</h2>
+
+<p>
+${b.description||""}
+</p>
+
+<p>
+Verification:
+${b.verified?"✅ Verified":"Pending"}
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Opportunities Posted
+</h3>
+
+${d.opportunities.length}
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Applications Received
+</h3>
+
+${d.applications.length}
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Products / Services
+</h3>
+
+${d.products.length}
+
+</div>
+
+
+`;
+
+});
+
+
+</script>
+
+</body>
+
+</html>
