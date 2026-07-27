@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learner Profile</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+<h1>Learner Profile / طالب پروفائل</h1>
+
+<div id="profile">
+Loading profile...
+</div>
+
+
+<script>
+
+const user_id=localStorage.getItem("user_id");
+
+
+fetch("/api/learner-profile?user_id="+user_id)
+.then(r=>r.json())
+.then(data=>{
+
+document.getElementById("profile").innerHTML=`
+
+<h2>${data.profile?.bio || "No Bio"}</h2>
+
+<p>Skills:
+${data.profile?.skills || "Not added"}
+</p>
+
+<p>
+Level:
+${data.profile?.level || 1}
+</p>
+
+<p>
+Completed Lessons:
+${data.completed_lessons}
+</p>
+
+<h3>Badges</h3>
+
+${(data.badges||[])
+.map(b=>"<p>🏅 "+b.badge_name+"</p>")
+.join("")}
+
+`;
+
+});
+
+</script>
+
+
+</body>
+</html>
