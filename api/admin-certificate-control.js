@@ -2,7 +2,26 @@ const {requireAuth,requireAdmin}=require("./auth-middleware");
 const db=require("../database");
 
 
-module.exports=[requireAuth,requireAdmin,async(req,res)=>{
+
+module.exports=async(req,res)=>{
+
+try{
+
+await new Promise((resolve,reject)=>{
+
+requireAuth(req,res,()=>{
+
+requireAdmin(req,res,()=>{
+
+resolve();
+
+});
+
+});
+
+});
+
+
 
 
 if(!req.user){
