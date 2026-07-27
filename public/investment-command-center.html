@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment Command Center</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🚀 Investment Command Center</h1>
+
+
+<div id="summary" class="card">
+Loading...
+</div>
+
+
+<div id="pipeline" class="card">
+</div>
+
+
+<div id="alerts" class="card">
+</div>
+
+
+
+<script>
+
+let investor_id =
+localStorage.getItem("user_id");
+
+
+fetch(
+"/api/investment-command-center?investor_id="+investor_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+summary.innerHTML=
+
+`
+
+<h2>Portfolio Summary</h2>
+
+Investments:
+${d.summary.investments}
+
+<br>
+
+Active Deals:
+${d.summary.active_deals}
+
+<br>
+
+Compliance:
+${JSON.stringify(d.summary.compliance_status)}
+
+`;
+
+
+
+pipeline.innerHTML=
+
+`
+
+<h2>Deal Pipeline</h2>
+
+<pre>
+${JSON.stringify(d.pipeline,null,2)}
+</pre>
+
+`;
+
+
+
+alerts.innerHTML=
+
+`
+
+<h2>AI Intelligence Alerts</h2>
+
+<pre>
+${JSON.stringify(d.alerts,null,2)}
+</pre>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
