@@ -1,8 +1,7 @@
-const {requireAuth,requireAdmin}=require("./auth-middleware");
 const db=require("../database");
 
 
-module.exports=[requireAuth,requireAdmin,async(req,res)=>{
+module.exports=async(req,res)=>{
 
 
 if(!req.user){
@@ -125,4 +124,3 @@ error:"Invalid action"
 
 
 };
-];

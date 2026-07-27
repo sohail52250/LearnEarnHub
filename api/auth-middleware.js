@@ -1,64 +1,77 @@
-const jwt = require("jsonwebtoken");
+const jwt=require("jsonwebtoken");
+
 
 function requireAuth(req,res,next){
 
-    const auth = req.headers.authorization;
+try{
 
-    if(!auth){
-        return res.status(401).json({
-            error:"Login required"
-        });
-    }
+const header=req.headers.authorization;
 
-    const token = auth.replace("Bearer ","");
 
-    try{
+if(!header){
 
-        const user = jwt.verify(
-            token,
-            process.env.JWT_SECRET || "learn-earnhub-secret"
-        );
+return res.status(401).json({
+error:"Authentication required"
+});
 
-        req.user=user;
-        next();
-
-    }catch(e){
-
-        return res.status(401).json({
-            error:"Invalid token"
-        });
-
-    }
 }
 
 
-function requireRole(...roles){
+const token=header.replace("Bearer ","");
 
-    return (req,res,next)=>{
 
-        if(!req.user){
-            return res.status(401).json({
-                error:"Unauthorized"
-            });
-        }
+const decoded=jwt.verify(
+token,
+process.env.JWT_SECRET || "learn-earnhub-secret"
+);
 
-        if(
-            req.user.role==="admin" ||
-            roles.includes(req.user.role)
-        ){
-            return next();
-        }
 
-        return res.status(403).json({
-            error:"Access denied"
-        });
+req.user=decoded;
 
-    };
+
+next();
+
+
+}catch(err){
+
+return res.status(401).json({
+error:"Invalid token"
+});
+
+}
+
+}
+
+
+function requireAdmin(req,res,next){
+
+if(!req.user){
+
+return res.status(401).json({
+error:"Login required"
+});
+
+}
+
+
+if(
+req.user.role!=="admin" &&
+req.user.is_admin!==true
+){
+
+return res.status(403).json({
+error:"Admin access required"
+});
+
+}
+
+
+next();
 
 }
 
 
 module.exports={
- requireAuth,
- requireRole
+requireAuth,
+requireAdmin
 };
