@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment Automation Center</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>⚙️ Investment Automation Center</h1>
+
+
+<div id="alerts">
+
+Loading alerts...
+
+</div>
+
+
+<div id="reports">
+
+Loading reports...
+
+</div>
+
+
+
+<script>
+
+let investor_id =
+localStorage.getItem("user_id");
+
+
+fetch(
+"/api/investment-automation?investor_id="+investor_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+alerts.innerHTML=
+
+`
+
+<div class="card">
+
+<h2>Investor Alerts</h2>
+
+<pre>${JSON.stringify(d.alerts,null,2)}</pre>
+
+</div>
+
+`;
+
+
+
+reports.innerHTML=
+
+`
+
+<div class="card">
+
+<h2>Scheduled Reports</h2>
+
+<pre>${JSON.stringify(d.reports,null,2)}</pre>
+
+</div>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
