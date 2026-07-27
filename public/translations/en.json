@@ -29,5 +29,9 @@
   "certificates": "Certificates",
   "profile": "Unified Profile",
   "business_marketplace": "Business Marketplace",
-  "enterprise_zone": "Enterprise Zone"
+  "enterprise_zone": "Enterprise Zone",
+  "choose_path": "Choose Your Path",
+  "learner": "Learner",
+  "freelancer": "Freelancer",
+  "enterprise": "Enterprise"
 }
