@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Partner Network</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🌐 Enterprise Marketplace & Partner Network</h1>
+
+
+<div class="card">
+
+<h2>
+Corporate Partners
+</h2>
+
+<pre id="partners">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+B2B Opportunities
+</h2>
+
+<pre id="opportunities">
+Loading...
+</pre>
+
+</div>
+
+
+
+<script>
+
+fetch("/api/enterprise-partner-network")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+partners.innerHTML=
+JSON.stringify(d.partners,null,2);
+
+
+opportunities.innerHTML=
+JSON.stringify(d.opportunities,null,2);
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
