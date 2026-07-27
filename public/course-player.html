@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Course Player</title>
+<meta charset="UTF-8">
+<title>LearnEarnHub Course Player</title>
 </head>
+
 <body>
-<h1>Course Player / کورس پلیئر</h1>
-<p>Loading course...</p>
-<script src="/course-player.js"></script>
+
+<h1 id="title">Loading course...</h1>
+
+<h3 id="description"></h3>
+
+<div id="content">
+Loading lesson content...
+</div>
+
+<button onclick="completeCourse()">
+Complete Course / کورس مکمل کریں
+</button>
+
+<script>
+
+const API="/api/courses";
+
+let course=null;
+
+async function loadCourse(){
+
+let res=await fetch(API);
+let json=await res.json();
+
+course=json.data[0];
+
+document.getElementById("title").innerText=
+course.title_en+" / "+course.title_ur;
+
+document.getElementById("description").innerText=
+course.description_en;
+
+document.getElementById("content").innerText=
+course.content_en || "Content coming soon";
+
+}
+
+
+async function completeCourse(){
+
+alert("Course completion uses existing API");
+
+}
+
+
+loadCourse();
+
+</script>
+
 </body>
 </html>
