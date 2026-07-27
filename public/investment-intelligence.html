@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment Intelligence Platform</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1>🧠 Investment Intelligence Platform</h1>
+
+
+<div class="card">
+
+<h2>
+Market Insights
+</h2>
+
+<pre id="market">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Top Opportunities
+</h2>
+
+<pre id="opportunities">
+Loading...
+</pre>
+
+</div>
+
+
+
+<script>
+
+fetch("/api/investment-intelligence")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+market.innerHTML=
+JSON.stringify(
+d.market_insights,
+null,
+2
+);
+
+
+opportunities.innerHTML=
+JSON.stringify(
+d.top_opportunities,
+null,
+2
+);
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
