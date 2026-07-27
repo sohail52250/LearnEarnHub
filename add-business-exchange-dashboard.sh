@@ -1,3 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+cat > public/business-exchange-dashboard.html <<'HTML'
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,3 +31,12 @@ border-radius:12px;
 
 </body>
 </html>
+HTML
+
+
+git add .
+git commit -m "Add Business Exchange Dashboard" || true
+git push
+
+echo "Business Exchange Dashboard Added"
+
