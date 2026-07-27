@@ -1,109 +1,92 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-img{
-  max-width:100%;
-  height:auto;
-}
-
-table{
-  display:block;
-  overflow-x:auto;
-  width:100%;
-}
-
-.card{
-  width:100%;
-  max-width:100%;
-}
-
-@media (max-width:768px){
-  body{
-    font-size:16px;
-  }
-
-  h1{
-    font-size:24px;
-  }
-
-  h2{
-    font-size:20px;
-  }
-}
-
-@media (max-width:480px){
-  h1{
-    font-size:20px;
-  }
-
-  h2{
-    font-size:18px;
-  }
-}
-</style>
 
 <title>Business Verification</title>
 
-<link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
-<link rel="manifest" href="/manifest.json"></head>
+</head>
 
 
 <body>
 
-<div class="card">
 
-<h1>🏢 Verify Business</h1>
-
-
-<input id="name"
-placeholder="Business Name">
+<h1>
+Business Verification Request
+</h1>
 
 
-<input id="reg"
+<form id="verifyForm">
+
+
+<input id="company_name"
+placeholder="Company Name">
+
+
+<input id="registration_number"
 placeholder="Registration Number">
 
 
-<input id="country"
-placeholder="Country">
-
-
-<input id="document"
+<input id="document_url"
 placeholder="Document URL">
 
 
-<button onclick="submitVerification()">
+<button>
 Submit Verification
 </button>
 
 
-<p id="message"></p>
+</form>
 
 
-</div>
+
+<script>
 
 
-<script src="/business-verification.js"></script>
+verifyForm.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+let body={
+
+user_id:localStorage.getItem("user_id"),
+
+company_name:company_name.value,
+
+registration_number:registration_number.value,
+
+document_url:document_url.value
+
+};
+
+
+let r=await fetch("/api/business-verification",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(body)
+
+});
+
+
+alert("Verification submitted");
+
+
+};
+
+
+</script>
+
 
 </body>
 
 </html>
+
