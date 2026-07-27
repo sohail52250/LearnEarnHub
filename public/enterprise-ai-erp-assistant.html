@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise AI ERP Assistant</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🤖 Enterprise AI ERP Assistant</h1>
+
+
+<div class="card">
+<h2>AI Insights</h2>
+<pre id="insights">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Inventory Predictions</h2>
+<pre id="inventory">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Supplier Risk Alerts</h2>
+<pre id="risks">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Executive Reports</h2>
+<pre id="reports">Loading...</pre>
+</div>
+
+
+
+<script>
+
+let organization_id =
+new URLSearchParams(location.search)
+.get("organization_id");
+
+
+fetch(
+"/api/enterprise-ai-erp-assistant?organization_id="+organization_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+insights.innerHTML=
+JSON.stringify(d.ai_insights,null,2);
+
+inventory.innerHTML=
+JSON.stringify(d.inventory_predictions,null,2);
+
+risks.innerHTML=
+JSON.stringify(d.supplier_risk_alerts,null,2);
+
+reports.innerHTML=
+JSON.stringify(d.executive_reports,null,2);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
