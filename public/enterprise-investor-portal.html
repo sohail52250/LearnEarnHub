@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Investor Portal</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏢 Enterprise Investor Portal</h1>
+
+
+<div class="card">
+
+<h2>
+Team Members
+</h2>
+
+<pre id="members">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Private Deal Rooms
+</h2>
+
+<pre id="rooms">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Enterprise Reports
+</h2>
+
+<pre id="reports">
+Loading...
+</pre>
+
+</div>
+
+
+
+<script>
+
+
+let organization_id =
+new URLSearchParams(location.search)
+.get("organization_id");
+
+
+fetch(
+"/api/enterprise-investor-portal?organization_id="+organization_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+members.innerHTML=
+JSON.stringify(d.members,null,2);
+
+
+rooms.innerHTML=
+JSON.stringify(d.deal_rooms,null,2);
+
+
+reports.innerHTML=
+JSON.stringify(d.reports,null,2);
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
