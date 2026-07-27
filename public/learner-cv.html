@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Learner CV Profile</title>
+<meta charset="UTF-8">
+</head>
+
+
+<body>
+
+<h1>Professional Learner CV</h1>
+
+
+<div id="cv">
+Loading CV...
+</div>
+
+
+<script>
+
+let user_id=localStorage.getItem("user_id");
+
+
+fetch("/api/cv-profile?user_id="+user_id)
+.then(r=>r.json())
+.then(d=>{
+
+
+let p=d.profile||{};
+
+
+document.getElementById("cv").innerHTML=`
+
+<h2>${p.full_name||""}</h2>
+
+<h3>${p.headline||""}</h3>
+
+<p>${p.bio||""}</p>
+
+<hr>
+
+<h3>Contact</h3>
+${p.email||""}<br>
+${p.phone||""}<br>
+${p.city||""}, ${p.country||""}
+
+
+<h3>Education</h3>
+${p.education||""}
+
+
+<h3>Experience</h3>
+${p.experience||""}
+
+
+<h3>Skills</h3>
+${p.technical_skills||""}
+<br>
+${p.soft_skills||""}
+
+
+<h3>Projects</h3>
+${p.projects||""}
+
+
+<h3>Certificates</h3>
+${p.certifications||""}
+
+
+<h3>Languages</h3>
+${p.languages||""}
+
+
+<h3>Career Goal</h3>
+${p.career_goal||""}
+
+
+`;
+
+});
+
+</script>
+
+
+</body>
+</html>
+
