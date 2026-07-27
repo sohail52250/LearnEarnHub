@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment Analytics</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>📊 Investment Reports & Analytics</h1>
+
+
+<div id="report">
+
+Loading...
+
+</div>
+
+
+<script>
+
+
+let investor_id=
+
+localStorage.getItem("user_id");
+
+
+fetch(
+"/api/investment-analytics?investor_id="+investor_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+report.innerHTML=`
+
+<div class="card">
+
+<h3>Total Investment</h3>
+
+${d.report.total_investment}
+
+</div>
+
+
+<div class="card">
+
+<h3>Total Return</h3>
+
+${d.report.total_return}
+
+</div>
+
+
+<div class="card">
+
+<h3>ROI</h3>
+
+${d.report.roi_percent}%
+
+</div>
+
+
+<div class="card">
+
+<h3>Risk Level</h3>
+
+${d.report.risk_level}
+
+</div>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
