@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment Governance Center</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏛 Investment Governance Center</h1>
+
+
+<div class="card">
+
+<h2>Investor Approval</h2>
+
+<p id="approval">
+Loading...
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Funding Agreements</h2>
+
+<p id="agreements">
+Loading...
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Investment Documents</h2>
+
+<p id="documents">
+Loading...
+</p>
+
+</div>
+
+
+<script>
+
+let investment_id=
+new URLSearchParams(location.search)
+.get("investment_id");
+
+
+fetch(
+"/api/investment-governance?investment_id="+investment_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+approval.innerHTML=
+JSON.stringify(d.approvals||[]);
+
+agreements.innerHTML=
+JSON.stringify(d.agreements||[]);
+
+documents.innerHTML=
+JSON.stringify(d.documents||[]);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
