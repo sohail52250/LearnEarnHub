@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Analytics</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Enterprise Analytics Dashboard
+</h1>
+
+
+<div id="dashboard">
+
+Loading...
+
+</div>
+
+
+
+<script>
+
+
+let enterprise_id=
+localStorage.getItem("enterprise_id");
+
+
+fetch("/api/enterprise-analytics?enterprise_id="+enterprise_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+let a=d.analytics||{};
+
+
+dashboard.innerHTML=`
+
+<div class="card">
+
+<h2>
+Employees
+</h2>
+
+${a.employees}
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Assigned Courses
+</h2>
+
+${a.assigned_courses}
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Completed Courses
+</h2>
+
+${a.completed_courses}
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Training Completion Rate
+</h2>
+
+${a.completion_rate}%
+
+</div>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
