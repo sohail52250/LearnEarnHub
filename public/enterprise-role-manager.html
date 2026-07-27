@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Role Manager</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Enterprise User Roles
+</h1>
+
+
+<div class="card">
+
+<form id="roleForm">
+
+
+<input id="user_id"
+placeholder="User ID">
+
+
+<select id="role">
+
+<option>owner</option>
+<option>hr_manager</option>
+<option>trainer</option>
+<option>finance</option>
+<option>employee</option>
+
+</select>
+
+
+<input id="permissions"
+placeholder="Permissions">
+
+
+<button>
+Save Role
+</button>
+
+
+</form>
+
+</div>
+
+
+
+<script>
+
+
+roleForm.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+await fetch("/api/enterprise-roles",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+enterprise_id:
+localStorage.getItem("enterprise_id"),
+
+user_id:user_id.value,
+
+role:role.value,
+
+permissions:permissions.value
+
+})
+
+});
+
+
+alert("Role saved");
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
