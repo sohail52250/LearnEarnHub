@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Talent Matching</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+AI Talent Recommendations
+</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+
+<script>
+
+
+let job_id=
+new URLSearchParams(location.search)
+.get("job_id");
+
+
+fetch("/api/enterprise-ai-matching?job_id="+job_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+list.innerHTML=(d.matches||[])
+
+.map(m=>`
+
+<div class="card">
+
+<h3>
+${m.learner.name||"Learner"}
+</h3>
+
+
+<p>
+Match Score:
+${m.match_score}%
+</p>
+
+
+</div>
+
+`)
+
+.join("");
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
