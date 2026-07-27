@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investor AI Matching</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+🤖 Investor AI Matching Engine
+</h1>
+
+
+<div id="matches">
+Loading...
+</div>
+
+
+<script>
+
+
+let funding_id=
+
+new URLSearchParams(location.search)
+
+.get("funding_id");
+
+
+
+fetch(
+"/api/investor-ai-matching?funding_id="+funding_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+matches.innerHTML=
+
+(d.matches||[])
+
+.map(m=>`
+
+<div class="card">
+
+<h3>
+Investor Match
+</h3>
+
+<p>
+Match Score:
+${m.match_score}%
+</p>
+
+<p>
+${m.reason}
+</p>
+
+</div>
+
+`)
+
+.join("");
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
