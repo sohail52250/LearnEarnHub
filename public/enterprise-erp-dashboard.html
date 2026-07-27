@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise ERP Dashboard</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏢 Enterprise ERP Dashboard</h1>
+
+
+<div class="card">
+
+<h2>💰 Finance Overview</h2>
+
+<pre id="finance">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>📦 Inventory Tracking</h2>
+
+<pre id="inventory">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>🚚 Supplier Performance</h2>
+
+<pre id="suppliers">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Procurement Analytics</h2>
+
+<pre id="analytics">
+Loading...
+</pre>
+
+</div>
+
+
+
+<script>
+
+let organization_id =
+new URLSearchParams(location.search)
+.get("organization_id");
+
+
+fetch(
+"/api/enterprise-erp-dashboard?organization_id="+organization_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+finance.innerHTML=
+JSON.stringify(d.finance,null,2);
+
+
+inventory.innerHTML=
+JSON.stringify(d.inventory,null,2);
+
+
+suppliers.innerHTML=
+JSON.stringify(d.supplier_performance,null,2);
+
+
+analytics.innerHTML=
+JSON.stringify(d.procurement_analytics,null,2);
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
