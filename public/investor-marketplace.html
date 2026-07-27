@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investor Marketplace</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>💰 Investor Marketplace</h1>
+
+
+<div class="card">
+
+<h2>
+Create Funding Request
+</h2>
+
+
+<input id="business_id" placeholder="Business ID">
+
+<input id="funding_amount" placeholder="Funding Amount">
+
+
+<textarea id="purpose"
+placeholder="Funding Purpose"></textarea>
+
+
+<input id="equity_offered"
+placeholder="Equity Offered">
+
+
+<button onclick="createFunding()">
+Submit Request
+</button>
+
+
+</div>
+
+
+
+<h2>
+Open Opportunities
+</h2>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+
+<script>
+
+
+async function load(){
+
+
+let r=await fetch("/api/investor-marketplace");
+
+let d=await r.json();
+
+
+list.innerHTML=(d.funding_requests||[])
+
+.map(x=>`
+
+<div class="card">
+
+<h3>
+Funding Required: ${x.funding_amount}
+</h3>
+
+<p>
+${x.purpose||""}
+</p>
+
+<p>
+Status: ${x.status}
+</p>
+
+</div>
+
+`)
+
+.join("");
+
+}
+
+
+
+async function createFunding(){
+
+
+await fetch("/api/investor-marketplace",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+business_id:business_id.value,
+
+funding_amount:funding_amount.value,
+
+purpose:purpose.value,
+
+equity_offered:equity_offered.value
+
+})
+
+});
+
+
+alert("Funding request created");
+
+load();
+
+}
+
+
+load();
+
+</script>
+
+
+</body>
+
+</html>
