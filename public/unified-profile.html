@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Unified Profile</title>
+</head>
+<body>
+
+<h1>Unified Profile</h1>
+
+<form id="profileForm">
+
+<input id="full_name" placeholder="Full Name"><br><br>
+
+<input id="headline" placeholder="Professional Headline"><br><br>
+
+<textarea id="bio" placeholder="Bio"></textarea><br><br>
+
+<input id="skills" placeholder="Skills"><br><br>
+
+<input id="city" placeholder="City"><br><br>
+
+<input id="country" placeholder="Country"><br><br>
+
+<button>Save Profile</button>
+
+</form>
+
+<script>
+
+profileForm.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+await fetch("/api/unified-profile",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+user_id:localStorage.getItem("user_id"),
+
+full_name:full_name.value,
+
+headline:headline.value,
+
+bio:bio.value,
+
+skills:skills.value,
+
+city:city.value,
+
+country:country.value
+
+})
+
+});
+
+alert("Profile saved");
+
+};
+
+</script>
+
+</body>
+</html>
