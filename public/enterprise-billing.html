@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Enterprise Billing</title>
+</head>
+
+<body>
+
+
+<h1>
+Subscription & Billing
+</h1>
+
+
+<div id="billing">
+
+Loading...
+
+</div>
+
+
+<script>
+
+fetch("/api/enterprise-subscription?enterprise_id="
++localStorage.getItem("enterprise_id"))
+
+.then(r=>r.json())
+
+.then(d=>{
+
+billing.innerHTML=
+JSON.stringify(d);
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
