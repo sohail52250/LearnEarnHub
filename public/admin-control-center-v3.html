@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Admin Control Center V3
+</title>
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+LearnEarnHub Admin Control Center V3
+</h1>
+
+
+<div id="dashboard">
+
+Loading...
+
+</div>
+
+
+<script>
+
+
+fetch("/api/admin-control-center")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+dashboard.innerHTML=`
+
+<div class="card">
+<h2>Users</h2>
+${(d.users||[]).length}
+</div>
+
+
+<div class="card">
+<h2>Enterprises</h2>
+${(d.enterprises||[]).length}
+</div>
+
+
+<div class="card">
+<h2>Pending Approvals</h2>
+${(d.approvals||[]).length}
+</div>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
