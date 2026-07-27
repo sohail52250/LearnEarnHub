@@ -6,10 +6,19 @@ if(req.method==="GET"){
 
 const {data,error}=await db
 .from("users")
-.select("*");
+.select(`
+id,
+name,
+email,
+phone,
+language,
+points,
+created_at
+`);
 
 return res.json({
-data,error
+data,
+error
 });
 
 }
@@ -28,12 +37,26 @@ email,
 phone
 }
 ])
-.select();
+.select(`
+id,
+name,
+email,
+phone,
+language,
+points,
+created_at
+`);
 
 return res.json({
-data,error
+data,
+error
 });
 
 }
+
+
+return res.status(405).json({
+error:"Method not allowed"
+});
 
 };
