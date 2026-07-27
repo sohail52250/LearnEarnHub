@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Digital Transformation Suite</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🚀 Enterprise Digital Transformation Suite</h1>
+
+
+<div class="card">
+
+<h2>👥 Employees</h2>
+
+<pre id="employees">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>⚙️ Automated Workflows</h2>
+
+<pre id="workflows">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>🤝 CRM Customers</h2>
+
+<pre id="customers">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Customer Analytics</h2>
+
+<pre id="analytics">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧠 Business Process Intelligence</h2>
+
+<pre id="intelligence">
+Loading...
+</pre>
+
+</div>
+
+
+
+<script>
+
+let organization_id =
+new URLSearchParams(location.search)
+.get("organization_id");
+
+
+fetch(
+"/api/enterprise-digital-transformation?organization_id="+organization_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+employees.innerHTML=
+JSON.stringify(d.employees,null,2);
+
+workflows.innerHTML=
+JSON.stringify(d.workflows,null,2);
+
+customers.innerHTML=
+JSON.stringify(d.customers,null,2);
+
+analytics.innerHTML=
+JSON.stringify(d.customer_analytics,null,2);
+
+intelligence.innerHTML=
+JSON.stringify(d.process_intelligence,null,2);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
