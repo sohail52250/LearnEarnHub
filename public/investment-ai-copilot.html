@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment AI Copilot</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🤖 Investment AI Copilot</h1>
+
+
+<div class="card">
+
+<input id="question"
+placeholder="Ask about portfolio, deals, risk...">
+
+
+<button onclick="askAI()">
+Ask AI
+</button>
+
+
+</div>
+
+
+<div class="card">
+
+<h2>AI Response</h2>
+
+<pre id="answer">
+</pre>
+
+</div>
+
+
+
+<script>
+
+
+async function askAI(){
+
+
+let r=await fetch("/api/investment-ai-copilot",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+investor_id:
+localStorage.getItem("user_id"),
+
+question:
+question.value
+
+})
+
+});
+
+
+let d=await r.json();
+
+
+answer.innerHTML=d.response;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
