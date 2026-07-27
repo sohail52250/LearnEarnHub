@@ -15,7 +15,7 @@
   "create_account": "Gratis account maken",
   "popular_courses": "Populaire cursussen",
   "how_it_works": "Hoe het werkt",
-  "rewards": "Leerbeloningen",
+  "rewards": "Beloningen",
   "roadmap": "Leer → Verdien route",
   "career_dashboard": "Carrière dashboard",
   "home_title": "🚀 LearnEarnHub",
@@ -33,5 +33,7 @@
   "choose_path": "Kies je pad",
   "learner": "Leerling",
   "freelancer": "Freelancer",
-  "enterprise": "Onderneming"
+  "enterprise": "Onderneming",
+  "guide_title": "🚀 Hoe LearnEarnHub werkt",
+  "guides": "Handleidingen"
 }

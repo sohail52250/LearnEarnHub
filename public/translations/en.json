@@ -15,7 +15,7 @@
   "create_account": "Create Free Account",
   "popular_courses": "Popular Courses",
   "how_it_works": "How It Works",
-  "rewards": "Learning Rewards",
+  "rewards": "Rewards",
   "roadmap": "Learn → Earn Roadmap",
   "career_dashboard": "Career Dashboard",
   "home_title": "🚀 LearnEarnHub",
@@ -33,5 +33,7 @@
   "choose_path": "Choose Your Path",
   "learner": "Learner",
   "freelancer": "Freelancer",
-  "enterprise": "Enterprise"
+  "enterprise": "Enterprise",
+  "guide_title": "🚀 How LearnEarnHub Works",
+  "guides": "Guides"
 }

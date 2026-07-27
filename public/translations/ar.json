@@ -14,8 +14,8 @@
   "start_learning": "ابدأ التعلم",
   "create_account": "إنشاء حساب مجاني",
   "popular_courses": "الدورات المشهورة",
-  "how_it_works": "كيف يعمل",
-  "rewards": "مكافآت التعلم",
+  "how_it_works": "طريقة العمل",
+  "rewards": "المكافآت",
   "roadmap": "تعلم ← اكسب",
   "career_dashboard": "لوحة المسار المهني",
   "home_title": "🚀 LearnEarnHub",
@@ -33,5 +33,7 @@
   "choose_path": "اختر مسارك",
   "learner": "متعلم",
   "freelancer": "مستقل",
-  "enterprise": "مؤسسة"
+  "enterprise": "مؤسسة",
+  "guide_title": "🚀 كيف يعمل LearnEarnHub",
+  "guides": "الأدلة"
 }

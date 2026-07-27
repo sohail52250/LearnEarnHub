@@ -14,8 +14,8 @@
   "start_learning": "سیکھنا شروع کریں",
   "create_account": "مفت اکاؤنٹ بنائیں",
   "popular_courses": "مشہور کورسز",
-  "how_it_works": "یہ کیسے کام کرتا ہے",
-  "rewards": "سیکھنے کے انعامات",
+  "how_it_works": "طریقہ کار",
+  "rewards": "انعامات",
   "roadmap": "سیکھیں → کمائیں روڈ میپ",
   "career_dashboard": "کیریئر ڈیش بورڈ",
   "home_title": "🚀 لرن ارن حب",
@@ -33,5 +33,7 @@
   "choose_path": "اپنا راستہ منتخب کریں",
   "learner": "سیکھنے والا",
   "freelancer": "فری لانسر",
-  "enterprise": "ادارہ"
+  "enterprise": "ادارہ",
+  "guide_title": "🚀 LearnEarnHub کیسے کام کرتا ہے",
+  "guides": "رہنمائی"
 }
