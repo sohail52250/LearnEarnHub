@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Hiring Portal</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Enterprise Hiring Portal
+</h1>
+
+
+<div class="card">
+
+
+<h2>
+Post New Job
+</h2>
+
+
+<form id="jobForm">
+
+
+<input id="title"
+placeholder="Job Title">
+
+
+<textarea id="description"
+placeholder="Job Description"></textarea>
+
+
+<input id="skills"
+placeholder="Required Skills">
+
+
+<input id="location"
+placeholder="Location">
+
+
+<input id="employment_type"
+placeholder="Full Time / Remote">
+
+
+<button>
+Post Job
+</button>
+
+
+</form>
+
+
+</div>
+
+
+<div id="jobs">
+Loading...
+</div>
+
+
+
+<script>
+
+
+jobForm.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+await fetch("/api/enterprise-jobs",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+enterprise_id:
+localStorage.getItem("enterprise_id"),
+
+title:title.value,
+
+description:description.value,
+
+skills:skills.value,
+
+location:location.value,
+
+employment_type:employment_type.value
+
+})
+
+});
+
+
+alert("Job Posted");
+
+
+};
+
+
+
+</script>
+
+
+</body>
+
+</html>
