@@ -2,106 +2,104 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-img{
-  max-width:100%;
-  height:auto;
-}
-
-table{
-  display:block;
-  overflow-x:auto;
-  width:100%;
-}
-
-.card{
-  width:100%;
-  max-width:100%;
-}
-
-@media (max-width:768px){
-  body{
-    font-size:16px;
-  }
-
-  h1{
-    font-size:24px;
-  }
-
-  h2{
-    font-size:20px;
-  }
-}
-
-@media (max-width:480px){
-  h1{
-    font-size:20px;
-  }
-
-  h2{
-    font-size:18px;
-  }
-}
-</style>
 
 <title>AI Deal Room</title>
 
-<link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
 
-<link rel="manifest" href="/manifest.json"></head>
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
 
 <body>
 
+
+<h1>🤖 AI Deal Room</h1>
+
+
 <div class="card">
 
-<h1>🤝 AI Deal Room</h1>
+<h2>
+Deal Intelligence
+</h2>
 
-<p>
-Secure business communication through platform IDs.
-</p>
-
-<h2>Process</h2>
-
-<p>
-1. Deal request approved
-</p>
-
-<p>
-2. Anonymous room created
-</p>
-
-<p>
-3. Parties communicate securely
-</p>
-
-<p>
-4. AI assists conversation safety
-</p>
-
-<p>
-5. Meeting after mutual consent
-</p>
-
-<p>
-6. Deal completion tracking
-</p>
-
+<div id="summary">
+Loading...
+</div>
 
 </div>
+
+
+<div class="card">
+
+<h2>
+Due Diligence
+</h2>
+
+<div id="checks">
+Loading...
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Negotiations
+</h2>
+
+<div id="messages">
+Loading...
+</div>
+
+</div>
+
+
+
+<script>
+
+
+let deal_id=
+new URLSearchParams(location.search)
+.get("deal_id");
+
+
+fetch("/api/ai-deal-room?deal_id="+deal_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+summary.innerHTML=
+JSON.stringify(d.room||[]);
+
+
+checks.innerHTML=
+JSON.stringify(d.due_diligence||[]);
+
+
+messages.innerHTML=
+JSON.stringify(d.negotiations||[]);
+
+
+});
+
+
+</script>
+
 
 </body>
 
