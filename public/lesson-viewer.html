@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnEarnHub Lesson</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+<h1>Lesson Viewer</h1>
+
+<div id="lesson">
+Loading lesson...
+</div>
+
+
+<script>
+
+const params=new URLSearchParams(location.search);
+const course=params.get("course_id");
+
+
+fetch("/api/lessons?course_id="+course)
+.then(r=>r.json())
+.then(x=>{
+
+let html="";
+
+x.data.forEach(l=>{
+
+html+=`
+<h2>${l.title_en}</h2>
+<h3>${l.title_ur}</h3>
+
+<p>${l.content_en}</p>
+
+<p>${l.content_ur}</p>
+
+<hr>
+`;
+
+});
+
+document.getElementById("lesson").innerHTML=html;
+
+});
+
+</script>
+
+</body>
+</html>
