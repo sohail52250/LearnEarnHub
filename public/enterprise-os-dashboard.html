@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Operating System</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<h1>🏢 Enterprise Operating System V25</h1>
+
+
+<div class="card">
+<h2>Dashboard Summary</h2>
+<pre id="summary">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>HR Management</h2>
+<pre id="hr">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Accounting</h2>
+<pre id="accounting">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Projects</h2>
+<pre id="projects">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Documents</h2>
+<pre id="documents">Loading...</pre>
+</div>
+
+
+<div class="card">
+<h2>Security Center</h2>
+<pre id="security">Loading...</pre>
+</div>
+
+
+
+<script>
+
+let organization_id =
+new URLSearchParams(location.search)
+.get("organization_id");
+
+
+fetch(
+"/api/enterprise-os-dashboard?organization_id="+organization_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+summary.innerHTML=
+JSON.stringify(d.dashboard,null,2);
+
+hr.innerHTML=
+JSON.stringify(d.hr,null,2);
+
+accounting.innerHTML=
+JSON.stringify(d.accounting,null,2);
+
+projects.innerHTML=
+JSON.stringify(d.projects,null,2);
+
+documents.innerHTML=
+JSON.stringify(d.documents,null,2);
+
+security.innerHTML=
+JSON.stringify(d.security,null,2);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
