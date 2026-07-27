@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Investment Marketplace</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1>💼 Investment Marketplace</h1>
+
+
+<div id="rounds">
+Loading...
+</div>
+
+
+<script>
+
+fetch("/api/investment-marketplace")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+rounds.innerHTML=(d.rounds||[])
+
+.map(r=>`
+
+<div class="card">
+
+<h3>
+${r.round_name}
+</h3>
+
+<p>
+Target: ${r.target_amount}
+</p>
+
+<p>
+Raised: ${r.raised_amount}
+</p>
+
+<p>
+Status: ${r.status}
+</p>
+
+</div>
+
+`)
+
+.join("");
+
+});
+
+</script>
+
+
+</body>
+
+</html>
