@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Matched Opportunities</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Recommended Opportunities
+</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+
+<script>
+
+
+let user_id=localStorage.getItem("user_id");
+
+
+fetch("/api/opportunity-matches?user_id="+user_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+document.getElementById("list").innerHTML=
+
+
+(d.matches||[])
+.map(o=>`
+
+<div class="card">
+
+<h2>
+${o.title||o.title_en||"Opportunity"}
+</h2>
+
+<p>
+${o.description||o.description_en||""}
+</p>
+
+
+<h3>
+Match: ${o.match_score}%
+</h3>
+
+
+<button onclick="apply('${o.id}')">
+Apply
+</button>
+
+
+</div>
+
+`)
+.join("");
+
+
+});
+
+
+async function apply(id){
+
+
+await fetch("/api/opportunity-matches",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+user_id,
+
+opportunity_id:id,
+
+message:"Interested in this opportunity"
+
+})
+
+
+});
+
+
+alert("Application submitted");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+
