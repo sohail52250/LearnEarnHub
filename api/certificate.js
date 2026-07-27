@@ -1,3 +1,4 @@
+const {requireAuth}=require("./auth-middleware");
 const db = require("../database");
 
 module.exports = async (req,res)=>{
