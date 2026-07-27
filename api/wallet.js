@@ -7,14 +7,20 @@ module.exports=async(req,res)=>{
 
 if(req.method==="GET"){
 
+const user_id=req.query.user_id;
+
+
 const {data,error}=await db
-.from("earning_tasks")
+.from("wallets")
 .select("*")
-.eq("status","active");
+.eq("user_id",user_id)
+.single();
 
 
 return res.json({
-data,error
+success:!error,
+wallet:data,
+error
 });
 
 }
@@ -24,31 +30,30 @@ data,error
 if(req.method==="POST"){
 
 const {
-title_en,
-title_ur,
-description_en,
-description_ur,
-reward_points
+user_id,
+points,
+amount_pkr,
+description
 }=req.body;
 
 
 const {data,error}=await db
-.from("earning_tasks")
+.from("wallet_transactions")
 .insert([{
-title_en,
-title_ur,
-description_en,
-description_ur,
-reward_points
+user_id,
+type:"credit",
+points,
+amount_pkr,
+description
 }])
 .select();
 
 
 return res.json({
 success:!error,
-data,error
+data,
+error
 });
-
 
 }
 
