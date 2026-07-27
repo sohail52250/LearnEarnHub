@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notifications</title>
+</head>
+<body>
+<h1>Notifications</h1>
+<div id="list"></div>
+
+<script>
+fetch("/api/notifications?user_id="+localStorage.getItem("user_id"))
+.then(r=>r.json())
+.then(d=>{
+list.innerHTML=JSON.stringify(d.data||[]);
+});
+</script>
+
+</body>
+</html>
