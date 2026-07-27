@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Compliance Center</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Enterprise Compliance Center
+</h1>
+
+
+<div class="card">
+
+<h2>
+Upload Document Record
+</h2>
+
+
+<form id="docForm">
+
+<input id="document_name"
+placeholder="Document Name">
+
+
+<input id="document_type"
+placeholder="Document Type">
+
+
+<input id="document_url"
+placeholder="Document URL">
+
+
+<button>
+Submit Document
+</button>
+
+
+</form>
+
+</div>
+
+
+<div id="status">
+Ready
+</div>
+
+
+<script>
+
+
+docForm.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+let r=await fetch("/api/enterprise-compliance",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+enterprise_id:
+localStorage.getItem("enterprise_id"),
+
+document_name:
+document_name.value,
+
+document_type:
+document_type.value,
+
+document_url:
+document_url.value
+
+})
+
+});
+
+
+let d=await r.json();
+
+status.innerHTML=
+d.success?
+"Document submitted":
+"Error";
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
