@@ -25,13 +25,13 @@ if(code){
 const {data,error}=await db
 .from("certificates")
 .select(
-"certificate_code,certificate_title,issued_at,course_id,status"
+"certificate_code,certificate_title,issued_at,course_id"
 )
 .eq("certificate_code",code)
 .single();
 
 
-if(error || !data || data.status==="revoked"){
+if(error || !data){
 
 return res.status(404).json({
 valid:false,
@@ -66,7 +66,7 @@ error:"Login required"
 const {data,error}=await db
 .from("certificates")
 .select(
-"certificate_code,certificate_title,issued_at,course_id,status"
+"certificate_code,certificate_title,issued_at,course_id"
 )
 .eq("user_id",req.user.id);
 
