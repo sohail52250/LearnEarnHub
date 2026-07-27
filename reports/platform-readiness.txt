@@ -1,0 +1,22 @@
+LearnEarnHub Readiness Report
+
+Tables Found:
+95
+
+Core Learning:
+5
+
+Marketplace:
+8
+
+Business:
+19
+
+Referral:
+2
+
+Instructor:
+4
+
+Admin:
+5

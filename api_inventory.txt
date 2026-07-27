@@ -1,0 +1,58 @@
+FETCH: public/app.js:let r=await fetch("/api/ads",{
+FETCH: public/login-save.js:let r=await fetch("/api/auth",{
+FETCH: public/market.js:let r = await fetch("/api/ads");
+FETCH: public/learn.js:let r=await fetch("/api/courses");
+FETCH: public/service-worker.js:.then(response=>response || fetch(event.request))
+FETCH: public/referral.js:await fetch(`/translations/rewards-${lang}.json`);
+FETCH: public/badge-engine.js:await fetch(
+FETCH: public/badge-engine.js:await fetch(
+FETCH: public/badge-engine.js:await fetch(
+FETCH: public/badge-engine.js:await fetch(
+FETCH: public/language-switch.js:await fetch(
+FETCH: public/language-engine.js:const response = await fetch(
+FETCH: public/lesson-content-engine.js:const response = await fetch(url);
+FETCH: public/rewards-language.js:await fetch(`/translations/rewards-${lang}.json`);
+FETCH: public/reward-display.js:await fetch(`/translations/reward-box-${lang}.json`);
+FETCH: public/progress-summary.js:await fetch(`/translations/levels-${lang}.json`);
+FETCH: public/progress-summary.js:await fetch(`/translations/progress-summary-${lang}.json`);
+FETCH: public/skill-matching.js:await fetch("/data/skill-map.json");
+FETCH: public/career-language.js:await fetch(
+FETCH: public/course-skill-engine.js:const profile = await fetch(
+FETCH: public/course-skill-engine.js:await fetch(
+FETCH: public/referral-engine.js:const result = await fetch(
+FETCH: public/referral-engine.js:await fetch(
+FETCH: public/business-marketplace-engine.js:const offers = await fetch(
+FETCH: public/business-marketplace-engine.js:return await fetch(
+FETCH: public/admin-control.js:return await fetch(
+FETCH: public/admin-control.js:await fetch(
+FETCH: public/admin-control.js:return await fetch(
+FETCH: public/auth-role.js:const result = await fetch(
+FETCH: public/signup-role.js:await fetch(
+FETCH: public/profile-onboarding.js:await fetch(
+FETCH: public/profile-onboarding.js:await fetch(
+FETCH: public/business-learner-matching.js:await fetch(
+FETCH: public/business-learner-matching.js:await fetch(
+FETCH: public/business-referral-engine.js:return await fetch(
+FETCH: public/business-referral-engine.js:return await fetch(
+FETCH: public/business-referral-engine.js:await fetch(
+FETCH: public/private-referral-admin.js:await fetch(
+FETCH: public/referral-score.js:return await fetch(
+FETCH: public/language-loader.js:fetch("/language-selector.html")
+FETCH: public/global-translator.js:await fetch(`/translations/${lang}.json`);
+FETCH: public/business-matching.js:const learners = await fetch(
+FETCH: public/opportunity-matching-engine.js:await fetch(
+FETCH: public/opportunity-matching-engine.js:await fetch(
+FETCH: public/career-supabase.js:  const response = await fetch(
+FETCH: public/supabase-matching.js:const profile = await fetch(
+FETCH: public/supabase-matching.js:const opportunities = await fetch(
+FETCH: public/learner-auth-dashboard.js:const profile = await fetch(
+FETCH: public/sponsor-opportunity-engine.js:const data = await fetch(
+FETCH: public/sponsor-opportunity-engine.js:return await fetch(
+FETCH: public/course-tracker.js:await fetch(
+FETCH: public/course-tracker.js:await fetch(
+FETCH: public/course-tracker.js:await fetch(
+FETCH: public/course-tracker.js:await fetch(
+FETCH: public/skill-verification.js:await fetch(
+FETCH: public/skill-verification.js:await fetch(
+FETCH: public/admin-vacancies.js:await fetch("/api/admin-vacancies");
+FETCH: public/admin-apply.js:await fetch("/api/admin-apply",{

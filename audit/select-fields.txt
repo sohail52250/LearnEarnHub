@@ -1,0 +1,16 @@
+public/course-loader.js:<select id="rating-${course.id}">
+public/career-guide.html:<select id="career-goal">
+public/submit-advertisement.html:<select id="package">
+public/company-administrator-center.html:<select id="role">
+public/company-finance-center.html:<select id="type">
+public/deal-payment.html:<select id="package">
+public/meeting-request.html:<select id="type">
+public/business-payment-request.html:<select id="package">
+public/signup-role.html:<select id="role">
+public/create-course.html:<select id="level">
+public/business-ad-marketplace.html:<select id="categoryFilter" onchange="filterAds()">
+public/business-review.html:<select id="rating">
+public/company-team-management.html:<select id="role">
+public/entity-verification.html:<select id="entity_type">
+public/business-deal-request.html:<select id="type">
+public/register-v2.html:<select id="role">

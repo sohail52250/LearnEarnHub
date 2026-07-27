@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Portal</title>
+</head>
+<body>
+<h1>Government & Legal Authority Portal</h1>
+
+<form id="govRequestForm">
+
+<label>Department Name</label><br>
+<input type="text" name="department" required><br><br>
+
+<label>Officer Name</label><br>
+<input type="text" name="officer_name" required><br><br>
+
+<label>Officer ID</label><br>
+<input type="text" name="officer_id" required><br><br>
+
+<label>Official Email</label><br>
+<input type="email" name="official_email" required><br><br>
+
+<label>Country</label><br>
+<input type="text" name="country" required><br><br>
+
+<label>Request Type</label><br>
+<select name="request_type">
+<option>User Information</option>
+<option>Business Information</option>
+<option>Company Information</option>
+<option>Fraud Investigation</option>
+<option>Other</option>
+</select><br><br>
+
+<label>Case Reference</label><br>
+<input type="text" name="case_reference"><br><br>
+
+<label>Legal Basis</label><br>
+<textarea name="legal_basis"></textarea><br><br>
+
+<label>Upload Court Order</label><br>
+<input type="file" name="court_order"><br><br>
+
+<button type="submit">Submit Request</button>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+public/register.html:<input id="name" placeholder="Full Name">
+public/register.html:<input id="email" placeholder="Email">
+public/register.html:<input id="password" type="password" placeholder="Password">
+public/login.html:<input id="email" placeholder="Email">
+public/login.html:<input id="password" type="password" placeholder="Password">
+public/post-ad.html:<input name="title" placeholder="Title English"><br>
+public/post-ad.html:<input name="title_ur" placeholder="عنوان اردو"><br>
+public/post-ad.html:<input name="category" placeholder="Category"><br>
+public/post-ad.html:<input name="contact" placeholder="Phone / WhatsApp"><br>
+public/post-ad.html:<input name="location" placeholder="City"><br>
+public/add-course.html:<input id="title_en"
+public/add-course.html:<input id="title_ur"
+public/courses.html:<input id="search"
+public/lessons/excel-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/excel-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/excel-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/excel-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/excel-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/internet-browsing.html:<input type="radio" name="q1" value="correct">
+public/lessons/internet-browsing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/internet-browsing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/internet-browsing.html:<input type="radio" name="q2" value="correct">
+public/lessons/internet-browsing.html:<input type="radio" name="q2" value="wrong">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/windows-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/windows-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/windows-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/windows-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/windows-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/word-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/word-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/word-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/word-before-interactive.html:<input type="radio" name="q1" value="correct">
+public/lessons/word-before-interactive.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-before-interactive.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-before-interactive.html:<input type="radio" name="q2" value="correct">
+public/lessons/word-before-interactive.html:<input type="radio" name="q2" value="wrong">
+public/lessons/email-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/email-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/email-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/email-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/email-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/google-search.html:<input type="radio" name="q1" value="correct">
+public/lessons/google-search.html:<input type="radio" name="q1" value="wrong">
+public/lessons/google-search.html:<input type="radio" name="q1" value="wrong">
+public/lessons/google-search.html:<input type="radio" name="q2" value="correct">
+public/lessons/google-search.html:<input type="radio" name="q2" value="wrong">
+public/lessons/online-safety.html:<input type="radio" name="q1" value="correct">
+public/lessons/online-safety.html:<input type="radio" name="q1" value="wrong">
+public/lessons/online-safety.html:<input type="radio" name="q1" value="wrong">
+public/lessons/online-safety.html:<input type="radio" name="q2" value="correct">
+public/lessons/online-safety.html:<input type="radio" name="q2" value="wrong">
+public/lessons/cloud-storage.html:<input type="radio" name="q1" value="correct">
+public/lessons/cloud-storage.html:<input type="radio" name="q1" value="wrong">
+public/lessons/cloud-storage.html:<input type="radio" name="q1" value="wrong">
+public/lessons/cloud-storage.html:<input type="radio" name="q2" value="correct">
+public/lessons/cloud-storage.html:<input type="radio" name="q2" value="wrong">
+public/lessons/typing-practice.html:<input type="radio" name="q1" value="correct">
+public/lessons/typing-practice.html:<input type="radio" name="q1" value="wrong">
+public/lessons/typing-practice.html:<input type="radio" name="q1" value="wrong">
+public/lessons/typing-practice.html:<input type="radio" name="q2" value="correct">
+public/lessons/typing-practice.html:<input type="radio" name="q2" value="wrong">
+public/lessons/file-management.html:<input type="radio" name="q1" value="correct">
+public/lessons/file-management.html:<input type="radio" name="q1" value="wrong">
+public/lessons/file-management.html:<input type="radio" name="q1" value="wrong">
+public/lessons/file-management.html:<input type="radio" name="q2" value="correct">
+public/lessons/file-management.html:<input type="radio" name="q2" value="wrong">
+public/lessons/html-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/html-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/html-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/html-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/html-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/css-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/css-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/css-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/css-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/css-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/freelancing-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/freelancing-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/freelancing-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/freelancing-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/freelancing-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/digital-marketing.html:<input type="radio" name="q1" value="correct">
+public/lessons/digital-marketing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/digital-marketing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/digital-marketing.html:<input type="radio" name="q2" value="correct">
+public/lessons/digital-marketing.html:<input type="radio" name="q2" value="wrong">
+public/search.html:<input id="searchBox" type="text" placeholder="Search lessons..." onkeyup="searchPages()">
+public/learning-guide.html:<input type="checkbox" class="lessonCheck">
+public/learning-guide.html:<input type="checkbox" class="lessonCheck">
+public/learning-guide.html:<input type="checkbox" class="lessonCheck">
+public/learning-guide.html:<input type="checkbox" class="lessonCheck">
+public/learning-guide.html:<input type="checkbox" class="lessonCheck">
+public/student-dashboard.html:<input id="assistant-question"
+public/certificate.html:<input id="course-name"
+public/quiz.html:<input type="radio" name="q1" value="1">
+public/quiz.html:<input type="radio" name="q1" value="0">
+public/quiz.html:<input type="radio" name="q2" value="1">
+public/quiz.html:<input type="radio" name="q2" value="0">
+public/quiz.html:<input type="radio" name="q3" value="1">
+public/quiz.html:<input type="radio" name="q3" value="0">
+public/verify-certificate.html:<input id="certificate-id"
+public/feedback.html:<input id="feedback-name"
+public/feedback.html:<input id="feedback-email"
+public/referral.js:<input
+public/business.html:<input placeholder="Business Name">
+public/business.html:<input placeholder="Contact Email">
+public/post-job.html:<input id="job-title" placeholder="Job Title">
+public/post-job.html:<input id="job-skills"
+public/post-job.html:<input id="job-location"
+public/career-profile.html:<input id="career-name"
+public/career-profile.html:<input id="career-skills"
+public/career-profile.html:<input id="career-projects"
+public/business-register.html:<input id="business-name"
+public/business-register.html:<input id="business-type"
+public/business-register.html:<input id="industry"
+public/business-register.html:<input id="website"
+public/business-register.html:<input id="contact"
+public/post-opportunity.html:<input id="title"
+public/post-opportunity.html:<input id="type"
+public/post-opportunity.html:<input id="skills"
+public/post-opportunity.html:<input id="reward"
+public/business-marketplace.html:<input id="jobSearch"
+public/post-business-offer.html:<input id="product" placeholder="What do you sell?">
+public/post-business-offer.html:<input id="stock" placeholder="Stock available">
+public/post-business-offer.html:<input id="need" placeholder="Need buyers, resellers or distributors">
+public/post-business-offer.html:<input id="price" placeholder="Price / range">
+public/profile-onboarding.html:<input id="name" placeholder="Name / Company Name">
+public/profile-onboarding.html:<input id="category" placeholder="Category">
+public/profile-onboarding.html:<input id="skills" placeholder="Skills or Products">
+public/profile-onboarding.html:<input id="goal" placeholder="Goal / Requirement">
+public/forgot-password.html:<input id="email" placeholder="Email">
+public/reset-password.html:<input
+public/instructor-apply.html:<input id="name" placeholder="Full Name">
+public/instructor-apply.html:<input id="category" placeholder="Skill Category">
+public/instructor-apply.html:<input id="certificate" placeholder="Certificate URL">
+public/admin-apply.html:<input id="name" placeholder="Full Name">
+public/admin-apply.html:<input id="email" placeholder="Email">
+public/submit-advertisement.html:<input id="title" placeholder="Advertisement Title"><br><br>
+public/ai-ad-review-center.html:<input id="adId"
+public/sell-business.html:<input id="business_name" placeholder="Business / Company Name">
+public/sell-business.html:<input id="category" placeholder="Industry Category">
+public/sell-business.html:<input id="years"
+public/sell-business.html:<input id="price"
+public/holding-company-center.html:<input id="company_name"
+public/company-administrator-center.html:<input id="company_id"
+public/company-administrator-center.html:<input id="user_id"
+public/company-finance-center.html:<input id="company_id"
+public/company-finance-center.html:<input id="amount"
+public/company-finance-center.html:<input id="category"
+public/deal-negotiation.html:<input id="amount" placeholder="Offer amount">
+public/business-verification.html:<input id="name"
+public/business-verification.html:<input id="reg"
+public/business-verification.html:<input id="country"
+public/business-verification.html:<input id="document"
+public/sponsor-dashboard.html:<input id="title"
+public/sponsor-dashboard.html:<input id="skills"
+public/signup-role.html:<input id="email" placeholder="Email">
+public/signup-role.html:<input id="password" type="password" placeholder="Password">
+public/referral-business-submit.html:<input id="business"
+public/referral-business-submit.html:<input id="category"
+public/referral-business-submit.html:<input id="contact"
+public/create-course.html:<input id="title" placeholder="Course title">
+public/create-course.html:<input id="category"
+public/business-product-add.html:<input id="name" placeholder="Product Name"><br><br>
+public/business-product-add.html:<input id="category" placeholder="Category"><br><br>
+public/business-product-add.html:<input id="stock" type="number" placeholder="Available Stock"><br><br>
+public/business-product-add.html:<input id="price" type="number" placeholder="Price PKR"><br><br>
+public/business-product-add.html:<input id="image" placeholder="Image URL"><br><br>
+public/business-inquiry.html:<input id="business_id" placeholder="Business ID">
+public/business-review.html:<input id="business_id" placeholder="Business ID">
+public/add-business-product.html:<input id="product_name" placeholder="Product name">
+public/add-business-product.html:<input id="category" placeholder="Category">
+public/add-business-product.html:<input id="stock"
+public/add-business-product.html:<input id="price"
+public/add-business-product.html:<input id="image_url"
+public/business-product-manager.html:<input id="name" placeholder="Product Name">
+public/business-product-manager.html:<input id="category" placeholder="Category">
+public/business-product-manager.html:<input id="price" placeholder="Price">
+public/business-product-manager.html:<input id="stock" placeholder="Stock">
+public/ai-product-review-center.html:<input id="productId"
+public/company-asset-register.html:<input id="company_id"
+public/company-asset-register.html:<input id="asset_name"
+public/company-asset-register.html:<input id="asset_type"
+public/company-asset-register.html:<input id="value"
+public/company-team-management.html:<input id="company_id"
+public/company-team-management.html:<input id="employee_id"
+public/investor-management.html:<input id="company_id"
+public/investor-management.html:<input id="investor_name"
+public/investor-management.html:<input id="investment"
+public/investor-management.html:<input id="share"
+public/entity-verification.html:<input id="entity_name"
+public/deal-contract.html:<input id="title"
+public/business-deal-request.html:<input id="company"
+public/business-deal-request.html:<input id="industry"
+public/business-deal-request.html:<input id="value"
+public/login-v2.html:<input id="email" placeholder="Email">
+public/login-v2.html:<input id="password" type="password" placeholder="Password">
+public/register-v2.html:<input id="name">
+public/register-v2.html:<input id="email">
+public/signup-v2.html:<input id="email" placeholder="Email">
+public/signup-v2.html:<input id="password" type="password" placeholder="Password">
+public/post-earning-task.html:<input id="title" placeholder="Task title">
+public/post-earning-task.html:<input id="skill"
+public/post-earning-task.html:<input id="reward"

@@ -1,0 +1,379 @@
+public/index.html:Create verified company profiles, find investors, build partnerships and manage business reputation.
+public/index.html:<a href="/investor-profile.html">
+public/index.html:Investor Profile
+public/index.html:<h2>🛡 Enterprise Compliance</h2>
+public/index.html:Verification, trust, and business compliance management.
+public/index.html:<a href="/business-verification-request.html">
+public/index.html:Business Verification
+public/index.html:<a href="/admin-compliance-center.html">
+public/index.html:Admin Compliance Center
+public/index.html:<h2>👤 Profile & Verification</h2>
+public/index.html:<a href="/verification-request.html">
+public/index.html:<a href="/investor-profile.html">Investor Profile</a><br>
+public/index.html:<a href="/admin-compliance-center.html">Compliance</a>
+public/index.html:<a href="/verification-request.html">Verification</a>
+public/index.html:<p>✅ Verified Investors</p>
+public/register.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/market.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/dashboard.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/post-ad.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/learn.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/add-course.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/admin/index.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/privacy.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/terms.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/profile.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/about.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/contact.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/roadmap.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/glossary.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/freelancing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lesson-template.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/word-before-interactive.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/completion.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/learning-guide.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/computer-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/internet-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/digital-skills.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/backup-before-new-courses.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/student-dashboard.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/certificate.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/my-courses.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/quiz.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/verify-certificate.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/verify-certificate.html:<h1>🎓 Certificate Verification</h1>
+public/verify-certificate.html:<div id="verification-result">
+public/certificate-verify.js:"verification-result"
+public/admin-analytics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/marketplace.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/feedback.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/translations/verification-en.json:"pending":"Verification Pending"
+public/business-dashboard.js:Verification:
+public/business-dashboard.js:${business?.verification_status || "pending"}
+public/business-register.js:verification_status:"pending",
+public/business-register.js:verification_type:"referral",
+public/verification.js:async function loadVerification(){
+public/verification.js:"verification-status"
+public/verification.js:⏳ Verification pending
+public/verification.js:loadVerification
+public/admin-verification.html:<title>Admin Verification</title>
+public/admin-verification.html:<script src="/admin-verification.js"></script>
+public/admin-verification.html:🛡 Verification Center
+public/admin-verification.html:<div id="verification-list">
+public/admin-verification.js:async function loadVerificationRequests(){
+public/admin-verification.js:"verification-list"
+public/admin-verification.js:verification_status:"verified",
+public/admin-verification.js:verification_type:"referral",
+public/admin-verification.js:loadVerificationRequests
+public/learner-verification.html:<title>Learner Verification</title>
+public/learner-verification.html:<script src="/skill-verification.js"></script>
+public/learner-verification.html:await getLearnerVerification(user.id);
+public/admin-business-verification-v2.html:Business Verification Center
+public/admin-business-verification-v2.html:<script src="/admin-business-verification-v2.js"></script>
+public/admin-business-verification-v2.html:🏢 Business Verification Center
+public/admin-business-verification-v2.js:Verification:
+public/admin-business-verification-v2.js:${b.verification_status || "pending"}
+public/admin-business-verification-v2.js:verification_status:"approved",
+public/admin-business-verification-v2.js:verification_status:"rejected"
+public/business-trust-center.js:Verification:
+public/business-trust-center.js:${data?.verification_status || "pending"}
+public/platform-disclaimer.html:LearnEarnHub may review content for platform safety and policy compliance.
+public/business-trust-center-v2.js:Verification:
+public/business-trust-center-v2.js::"⏳ Pending Verification"}
+public/business-sale-disclaimer.html:Users should complete legal, financial, and verification checks before agreements.
+public/holding-company-center.html:<script src="/holding-company-center.js"></script>
+public/company-administrator-center.html:auditor
+public/business-verification.html:<title>Business Verification</title>
+public/business-verification.html:<button onclick="submitVerification()">
+public/business-verification.html:Submit Verification
+public/business-verification.html:<script src="/business-verification.js"></script>
+public/admin-business-verification.html:<title>Admin Verification</title>
+public/admin-business-verification.html:<h1>🛡 Business Verification Admin</h1>
+public/admin-business-verification.html:<script src="/admin-business-verification.js"></script>
+public/admin-business-verification.js:async function loadVerification(){
+public/admin-business-verification.js:.from("business_verification_requests")
+public/admin-business-verification.js:<p>Status: ${x.verification_status}</p>
+public/admin-business-verification.js:.from("business_verification_requests")
+public/admin-business-verification.js:verification_status:status
+public/admin-business-verification.js:loadVerification();
+public/admin-business-verification.js:loadVerification
+public/business-referral.js:verification_status:"pending",
+public/business-referral.js:verification_type:"referral",
+public/business-referral.js:verification_type:"referral_pending",
+public/referral-business-dashboard.js:Business Verification
+public/admin-control-center.html:<a href="/business-verification.html">
+public/admin-control-center.html:🏢 Business Verification
+public/admin-control-center.html:<a href="/admin-business-verification-v2.html">🏢 Business Verification Center</a>
+public/skill-verification.js:async function getLearnerVerification(userId){
+public/skill-verification.js:async function requestSkillVerification(
+public/skill-verification.js:`${SUPABASE_URL}/rest/v1/skill_verifications`,
+public/skill-verification.js:window.getLearnerVerification =
+public/skill-verification.js:getLearnerVerification;
+public/skill-verification.js:window.requestSkillVerification =
+public/skill-verification.js:requestSkillVerification;
+public/instructor-apply.js:"Application submitted. Await platform verification."
+public/business-trust-center.html:Verification, reputation and opportunity access.
+public/featured-businesses.js:${b.verified ? "✅ Verified" : "⏳ Pending Verification"}
+public/ai-product-approval-engine.js:let reason="AI verification passed";
+public/investor-management.html:<title>Investor Management</title>
+public/investor-management.html:<h1>📈 Investor & Shareholder Management</h1>
+public/investor-management.html:<input id="investor_name"
+public/investor-management.html:placeholder="Investor Name">
+public/investor-management.html:<button onclick="addInvestor()">
+public/investor-management.html:Add Investor
+public/investor-management.html:async function addInvestor(){
+public/investor-management.html:.from("company_investors")
+public/investor-management.html:investor_name:
+public/investor-management.html:document.getElementById("investor_name").value,
+public/investor-management.html:"✅ Investor added";
+public/company-financial-dashboard.html:<a href="/investor-management.html">
+public/company-financial-dashboard.html:Manage Investors
+public/entity-verification.html:<title>Entity Verification Center</title>
+public/entity-verification.html:<h1>🏢 Entity Verification Center</h1>
+public/entity-verification.html:<option value="investor">
+public/entity-verification.html:Investor
+public/entity-verification.html:<button onclick="submitVerification()">
+public/entity-verification.html:Submit Verification
+public/entity-verification.html:<script src="/entity-verification.js"></script>
+public/entity-verification.js:if(type==="investor")
+public/entity-verification.js:async function submitVerification(){
+public/entity-verification.js:.from("entity_verifications")
+public/entity-verification.js:verification_status:"pending"
+public/business-payment-packages.html:<p>Investor and partnership support</p>
+public/business-verification.js:async function submitVerification(){
+public/business-verification.js:.from("business_verification_requests")
+public/business-verification.js:"Verification request submitted";
+public/guides.html:<a href="/deal-verification.html">
+public/guides.html:Deal Verification
+public/guides.html:<a href="/investor-profile.html">
+public/guides.html:Investor Profile
+public/guides.html:Learn how companies create profiles, verify identity, connect with investors and build trust.
+public/guides.html:<a href="/investor-profile.html">
+public/guides.html:Investor Guide
+public/guides.html:<h2>🛡 Compliance Guide</h2>
+public/guides.html:<a href="/business-verification-request.html">
+public/guides.html:Verification Guide
+public/guides.html:<a href="/admin-compliance-center.html">
+public/guides.html:Admin Compliance Guide
+public/guides.html:Platform administrators manage verification, payments, deals and safety.
+public/guides.html:<a href="/verification-request.html">
+public/guides.html:Verification Guide
+public/ai-review-dashboard.html:<p>🏢 Business Verification</p>
+public/invoice-view.html:Payment status verification is handled by the platform.
+public/ai-deal-matching.sql:create table if not exists company_verification_records (
+public/ai-deal-matching.sql:verification_type text,
+public/ai-deal-matching.sql:verification_status text default 'pending',
+public/ai-deal-matching.sql:verification_notes text,
+public/company-profile.html:<p>Verification Status</p>
+public/compliance-center.js:async function submitVerification(data){
+public/compliance-center.js:.from("business_verification_requests")
+public/compliance-center.js:window.submitVerification =
+public/compliance-center.js:submitVerification;
+public/admin-control-dashboard.html:<li>📜 Audit Logs</li>
+public/verification-request.html:<title>Verification Request</title>
+public/verification-request.html:<h1>🛡 Account Verification</h1>
+public/verification-request.html:Submit documents for verification review.
+public/navigation-hub.html:<a href="/investor-profile.html">Investor Profile</a><br>
+public/navigation-hub.html:<h2>🛡 Compliance</h2>
+public/navigation-hub.html:<a href="/business-verification-request.html">Business Verification</a><br>
+public/navigation-hub.html:<a href="/admin-compliance-center.html">Compliance Center</a>
+public/ai-deal-matching.html:<h2>Verification</h2>
+public/enterprise-compliance.sql:create table if not exists business_verification_requests (
+public/enterprise-compliance.sql:verification_status text default 'pending',
+public/enterprise-compliance.sql:create table if not exists compliance_documents (
+public/enterprise-compliance.sql:verification_status text default 'pending',
+public/enterprise-compliance.sql:create table if not exists admin_audit_logs (
+public/enterprise-compliance.sql:create table if not exists verification_actions (
+public/enterprise-compliance.sql:create table if not exists compliance_reports (
+public/role-dashboard.html:<li>Investor Dashboard</li>
+public/register-v2.html:<option value="investor">
+public/register-v2.html:💰 Investor
+public/homepage-enhancement.html:<a href="/investor-profile.html">Investor Profile</a><br>
+public/homepage-enhancement.html:<a href="/admin-compliance-center.html">Compliance</a>
+public/homepage-enhancement.html:<a href="/verification-request.html">Verification</a>
+public/homepage-enhancement.html:<p>✅ Verified Investors</p>
+public/business-rules.html:<li>Complete verification when required</li>
+public/deal-verification.html:<title>Deal Verification</title>
+public/deal-verification.html:<h1>🛡 Deal Verification</h1>
+public/company-profile-system.sql:verification_status text default 'pending',
+public/company-profile-system.sql:create table if not exists investor_profiles (
+public/company-profile-system.sql:verification_score numeric default 0,
+public/company-profile-system.sql:create table if not exists verification_history (
+public/company-profile-system.sql:verification_action text,
+public/investor-profile.html:<title>Investor Profile</title>
+public/investor-profile.html:<h1>💰 Investor Profile</h1>
+public/investor-profile.html:Investors can define interests and partnership goals.
+public/company-trust-center.html:<li>Verification history</li>
+public/company-trust-center.html:<li>Compliance records</li>
+public/admin-compliance-center.html:<title>Admin Compliance Center</title>
+public/admin-compliance-center.html:<h1>🛡 Enterprise Compliance Center</h1>
+public/admin-compliance-center.html:Manage company verification, documents and audit records.
+public/admin-compliance-center.html:<li>Review verification requests</li>
+public/admin-compliance-center.html:<li>Maintain audit history</li>
+public/admin-compliance-center.html:<li>Create compliance reports</li>
+public/business-verification-request.html:<title>Business Verification</title>
+public/business-verification-request.html:<h1>🏢 Business Verification Request</h1>
+public/business-verification-request.html:Submit company information and required documents for verification.
+public/role-access-control.js:case "investor":
+public/role-access-control.js:window.location.href="/investor-profile.html";
+public/registration-system.sql:verification_status text default 'pending',
+public/auth-system.js:alert("Account created. Check email verification.");
+public/profile-completion.html:<li>Verification Documents</li>
+public/profile-completion.html:<a href="/verification-request.html">
+public/profile-completion.html:Submit Verification
+public/profile-system.js:async function submitVerification(data){
+public/profile-system.js:.from("user_verification_requests")
+public/profile-system.js:window.submitVerification=submitVerification;
+public/investor-verification.html:<title>Investor Verification</title>
+public/investor-verification.html:<h1>Investor Verification</h1>
+public/investor-verification.html:<input placeholder="Investor Name"><br>
+public/legal-request-center.html:<li>Government Requests</li>
+public/legal-request-center.html:<li>Compliance Review</li>
+public/legal-request-center.html:<li>Audit Logs</li>
+public/legal-request-center.html:<li>Verification Queue</li>
+public/safety-guide.html:verification and reporting systems.
+public/admin-control-dashboard.js:"verification"
+public/account-center.html:<li>💰 Investor</li>
+public/profile-verification-system.sql:create table if not exists user_verification_requests (
+public/profile-verification-system.sql:verification_type text,
+public/profile-verification-system.sql:verification_score integer default 0,
+public/platform-sitemap.html:<li>Compliance Center</li>
+public/learner-kyc.html:<title>Learner Verification</title>
+public/learner-kyc.html:<h1>Learner Verification</h1>
+public/learner-kyc.html:<form id="learnerKyc">
+public/government-request-portal.html:<title>Government Request Portal</title>
+public/government-request-portal.html:<h1>Government Request Portal</h1>
+public/government-portal.html:<title>Government Portal</title>
+public/government-portal.html:<h1>Government & Legal Authority Portal</h1>

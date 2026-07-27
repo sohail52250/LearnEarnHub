@@ -1,0 +1,9 @@
+public/business-registration-v2.html:27:<input type="file"><br>
+public/company-due-diligence.html:18:<input type="file"><br>
+public/company-due-diligence.html:21:<input type="file"><br>
+public/company-due-diligence.html:24:<input type="file"><br>
+public/investor-verification.html:19:<input type="file"><br>
+public/investor-verification.html:22:<input type="file"><br>
+public/learner-kyc.html:26:<input type="file" name="id_document"><br>
+public/government-request-portal.html:23:<input type="file"><br>
+public/government-portal.html:44:<input type="file" name="court_order"><br><br>

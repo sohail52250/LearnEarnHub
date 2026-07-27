@@ -1,603 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title><span data-key="title">Learn & Earn Hub</span> - Learn Digital Skills Free</title>
-
-<meta name="description" content="Learn computer skills, digital skills, Microsoft Office, freelancing basics and practical courses step by step.">
-
-<link rel="stylesheet" href="/style.css">
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="/supabase-config.js"></script>
-
-
-<script src="/language-switch.js"></script>
-
-<link rel="alternate" hreflang="en" href="https://learn-earnhub.vercel.app/">
-<link rel="alternate" hreflang="ur" href="https://learn-earnhub.vercel.app/">
-<link rel="alternate" hreflang="x-default" href="https://learn-earnhub.vercel.app/">
-
-<script src="/global-translator.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnEarnHub</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:1200px;margin:auto;padding:20px;line-height:1.5}
+.hero{text-align:center;padding:40px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{border:1px solid #ddd;padding:20px;border-radius:10px}
+.btn{display:inline-block;padding:10px 16px;text-decoration:none;border:1px solid #333;border-radius:6px;margin:5px}
+footer{text-align:center;margin-top:40px}
+</style>
 </head>
-
-
-
-
 <body>
 
-<div id="language-selector"></div>
+<div class="hero">
+<h1>🚀 LearnEarnHub</h1>
+<p>Learn Skills • Earn Opportunities • Grow Business</p>
 
-<script src="/language-loader.js"></script>
-
-
-<div id="instructor-menu"></div>
-<script>
-fetch("/instructor-nav.html").then(r=>r.text()).then(t=>document.getElementById("instructor-menu").innerHTML=t);
-</script>
-
-<div id="lang-buttons" class="card">
-
-<button onclick="setLanguage('en')">
-English
-</button>
-
-<button onclick="setLanguage('ur')">
-اردو
-</button>
-
+<a class="btn" href="/courses.html">📚 Start Learning</a>
+<a class="btn" href="/matched-opportunities.html">💼 Find Opportunities</a>
+<a class="btn" href="/business-marketplace.html">🏢 Business Marketplace</a>
+<a class="btn" href="/register-v2.html">👤 Join Now</a>
 </div>
 
+<h2>Choose Your Path</h2>
 
-
-
-<header class="card">
-
-<h1>🚀 <span data-key="title">Learn & Earn Hub</span></h1>
-
-<h2 data-en="Learn Skills. Build Your Future." data-ur="ہنر سیکھیں، اپنا مستقبل بنائیں۔">Learn Skills. Build Your Future.</h2>
-
-<p>
-Free beginner-friendly courses to improve computer,
-digital and online skills.
-</p>
-
-
-<a href="/courses.html">
-<button>
-<span data-key="start_learning">Start Learning</span><br>سیکھنا شروع کریں
-</button>
-</a>
-
-
-<a href="/register.html">
-<button>
-<span data-key="create_account">Create Free Account</span><br>مفت اکاؤنٹ بنائیں
-</button>
-</a>
-
-
-</header>
-
-
-
-<section class="card">
-
-<h2 data-en="Why <span data-key="title">Learn & Earn Hub</span>?" data-ur="ہمیں کیوں منتخب کریں؟">Why <span data-key="title">Learn & Earn Hub</span>?</h2>
-
-<ul>
-
-<li>✅ Beginner-friendly lessons</li>
-
-<li>✅ Step-by-step learning</li>
-
-<li>✅ Track your progress</li>
-
-<li>✅ Earn certificates</li>
-
-<li>✅ XP, levels and badges</li>
-
-</ul>
-
-</section>
-
-
-
-<section class="card">
-
-<h2><span data-key="popular_courses">Popular Courses</span><br>مشہور کورسز</h2>
-
-
-<div>
-
-<a href="/lessons/word-basics.html">
-<h3>📝 Microsoft Word</h3>
-<p>Create and format documents.</p>
-</a>
-
-
-<a href="/lessons/excel-basics.html">
-<h3>📊 Microsoft Excel</h3>
-<p>Learn spreadsheets and formulas.</p>
-</a>
-
-
-<a href="/lessons/powerpoint-basics.html">
-<h3>🎤 PowerPoint</h3>
-<p>Create professional presentations.</p>
-</a>
-
-
-<a href="/courses.html">
-<h3>💻 More Digital Skills</h3>
-<p>Explore all available courses.</p>
-</a>
-
-
-</div>
-
-</section>
-
-
-
-<section class="card">
-
-<h2 data-en="<span data-key="how_it_works">How It Works</span>" data-ur="یہ کیسے کام کرتا ہے؟"><span data-key="how_it_works">How It Works</span></h2>
-
-<p>
-1️⃣ Create your account
-</p>
-
-<p>
-2️⃣ Learn practical skills
-</p>
-
-<p>
-3️⃣ Complete lessons
-</p>
-
-<p>
-4️⃣ Earn certificates and rewards
-</p>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>🏆 <span data-key="rewards">Learning Rewards</span><br>سیکھنے کے انعامات</h2>
-
-<p>
-Complete lessons, gain XP, unlock badges,
-and track your learning journey.
-</p>
-
-</section>
-
-
-
-<section class="card">
-
-<h2>Ready to Start?<br>شروع کرنے کے لیے تیار ہیں؟</h2>
-
-<a href="/register.html">
-<button>
-Join <span data-key="title">Learn & Earn Hub</span>
-</button>
-</a>
-
-</section>
-
-
-
-<footer class="card">
-
-<p>
-© <span data-key="title">Learn & Earn Hub</span>
-</p>
-
-<a href="/about.html">About</a> |
-
-<a href="/contact.html">Contact</a> |
-
-<a href="/privacy.html">Privacy</a>
-
-<div id="business-stats"></div>
-<script src="/business-stats.js"></script>
-</footer>
-
+<div class="grid">
 
 <div class="card">
-<h2><span data-key="roadmap">Learn → Earn Roadmap</span></h2>
-<p>1. Learn Skills</p>
-<p>2. Complete Courses</p>
-<p>3. Build Career Profile</p>
-<p>4. Find Opportunities</p>
-<p>5. Start Earning</p>
+<h3>🎓 Learner</h3>
+<p>Learn skills, complete courses and earn certificates.</p>
+<a href="/courses.html">Open Courses</a>
 </div>
+
 <div class="card">
-<h2><span data-key="career_dashboard">Career Dashboard</span></h2>
-<a href="/learner-dashboard.html">Open My Learning Journey</a>
-</div>
-<div class="card">
-<h2>Business Matching</h2>
-<a href="/employer-dashboard.html">Find Skilled Learners</a>
-</div>
-<div class="card">
-<h2>Premium Opportunities</h2>
-<a href="/sponsor-opportunities.html">View Exclusive Opportunities</a>
-</div>
-<div class="card">
-<h2>Join <span data-key="title">Learn & Earn Hub</span></h2>
-<a href="/signup-role.html">Create Account</a>
-</div>
-<div class="card">
-<h2>Existing User</h2>
-<a href="/login.html">Login</a>
-</div>
-<div class="card">
-<h2>Complete Profile</h2>
-<a href="/profile-onboarding.html">Profile Setup</a>
-</div>
-<div class="card">
-<h2>Courses</h2>
-<a href="/course-progress.html">My Courses</a>
-</div>
-<div class="card">
-<h2>My Badges</h2>
-<a href="/my-badges.html">View Skill Certificates</a>
-</div>
-<div class="card">
-<h2>Recommended Opportunities</h2>
+<h3>💼 Freelancer</h3>
+<p>Find earning opportunities and build your profile.</p>
 <a href="/matched-opportunities.html">Find Matches</a>
 </div>
+
 <div class="card">
-<h2>Refer Business</h2>
-<a href="/referral-business-submit.html">Submit Business Lead</a>
+<h3>🏢 Business</h3>
+<p>Advertise services and connect with talent.</p>
+<a href="/business-marketplace.html">Business Hub</a>
 </div>
+
 <div class="card">
-<h2>Referral Score</h2>
-<a href="/referral-score.html">View Referral Performance</a>
+<h3>🤝 Enterprise</h3>
+<p>Partnerships, acquisitions and company exchange.</p>
+<a href="/business-exchange-dashboard.html">Enterprise Zone</a>
 </div>
-<div class="card"><a href="/instructor-dashboard.html">🎓 Instructor Studio</a></div>
-<div class="card"><a href="/admin-vacancies.html">🛡 Admin Careers</a></div>
-<div class="card"><a href="/admin-control-dashboard.html">🛡 Admin Control Center</a></div>
-<div class="card"><a href="/instructor-feedback.html">🎓 Instructor Quality Feedback</a></div>
-<div class="card"><a href="/course-marketplace.html">📚 Course Marketplace</a></div>
 
+</div>
 
-<section class="card">
+<h2>Popular Courses</h2>
 
-<h2>Platform Services</h2>
+<div class="grid">
 
-<a href="/learner-guide.html">
-📚 Learn Skills
-</a><br>
+<div class="card">
+<h3>Microsoft Word</h3>
+<a href="/lessons/word-basics.html">Open</a>
+</div>
 
-<a href="/earning-marketplace.html">
-💼 Earn Opportunities
-</a><br>
+<div class="card">
+<h3>Microsoft Excel</h3>
+<a href="/lessons/excel-basics.html">Open</a>
+</div>
 
-<a href="/business-marketplace.html">
-🏢 Business Marketplace
-</a><br>
+<div class="card">
+<h3>PowerPoint</h3>
+<a href="/lessons/powerpoint-basics.html">Open</a>
+</div>
 
-<a href="/advertisement-packages.html">
-📢 Advertisement Center
-</a><br>
+<div class="card">
+<h3>Digital Skills</h3>
+<a href="/courses.html">Explore</a>
+</div>
 
-<a href="/business-deal-marketplace.html">
-🤝 Business Deals
-</a><br>
+</div>
 
-<a href="/learner-career-passport.html">
-👤 Career Passport
-</a><br>
-
-<a href="/safety-guide.html">
-🛡 Trust & Safety
-</a><br>
-
-<a href="/payment-guide.html">
-💳 Payments
-</a><br>
-
-<a href="/guides.html">
-❓ Help Center
-</a>
-
-</section>
+<footer>
+<p>© LearnEarnHub</p>
+<p>
+<a href="/about.html">About</a> |
+<a href="/contact.html">Contact</a> |
+<a href="/privacy.html">Privacy</a>
+</p>
+</footer>
 
 </body>
-
 </html>
-
-<section class="card">
-<h2>🏢 Business Hub</h2>
-
-<p>Grow your business, find talent, advertise services and connect with customers.</p>
-
-<a href="/business-dashboard.html">
-<button>Business Dashboard</button>
-</a>
-
-<a href="/business-marketplace.html">
-<button>Business Marketplace</button>
-</a>
-
-<a href="/business-talent-search.html">
-<button>Find Skilled Learners</button>
-</a>
-
-<a href="/business-trust-center.html">
-<button>Trust Center</button>
-</a>
-
-</section>
-
-
-<div class="card">
-
-<h2>🏢 Enterprise Company Center</h2>
-
-<p>
-Create verified company profiles, find investors, build partnerships and manage business reputation.
-</p>
-
-<a href="/company-profile.html">
-Company Profile
-</a><br>
-
-<a href="/investor-profile.html">
-Investor Profile
-</a><br>
-
-<a href="/company-trust-center.html">
-Trust Center
-</a><br>
-
-<a href="/business-exchange-dashboard.html">
-Business Exchange
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🛡 Enterprise Compliance</h2>
-
-<p>
-Verification, trust, and business compliance management.
-</p>
-
-<a href="/business-verification-request.html">
-Business Verification
-</a><br>
-
-<a href="/admin-compliance-center.html">
-Admin Compliance Center
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🛡 Platform Administration</h2>
-
-<p>
-Secure management center for platform operations.
-</p>
-
-<a href="/admin-control-dashboard.html">
-Admin Control Dashboard
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>👤 Account Center</h2>
-
-<p>
-Create your profile and access your personalized dashboard.
-</p>
-
-<a href="/account-center.html">
-Account Center
-</a><br>
-
-<a href="/role-dashboard.html">
-Role Dashboard
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🔐 Secure Account Access</h2>
-
-<p>
-Your dashboard opens according to your account type.
-</p>
-
-<a href="/dashboard-router.html">
-Open My Dashboard
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🚀 Join LearnEarnHub</h2>
-
-<p>
-Choose your account type and start your journey.
-</p>
-
-<a href="/register-v2.html">
-Register Now
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🔐 Secure Login</h2>
-
-<p>
-Access your LearnEarnHub account securely.
-</p>
-
-<a href="/login-v2.html">
-Login
-</a><br>
-
-<a href="/signup-v2.html">
-Register
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>👤 Profile & Verification</h2>
-
-<p>
-Complete your profile and build platform trust.
-</p>
-
-<a href="/profile-completion.html">
-Complete Profile
-</a><br>
-
-<a href="/verification-request.html">
-Verify Account
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🗺 Platform Map</h2>
-
-<p>
-Explore all LearnEarnHub modules from one place.
-</p>
-
-<a href="/platform-sitemap.html">
-Open Platform Map
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h2>🚀 Navigation Hub</h2>
-
-<p>
-Access all LearnEarnHub services from one page.
-</p>
-
-<a href="/navigation-hub.html">
-Open Navigation Hub
-</a>
-
-</div>
-
-<div class="card">
-<h1>🚀 LearnEarnHub</h1>
-<p>Learn Skills • Earn Opportunities • Grow Business • Build Partnerships</p>
-
-<a href="/courses.html">📚 Learn</a> |
-<a href="/matched-opportunities.html">💼 Earn</a> |
-<a href="/business-marketplace.html">🏢 Business</a> |
-<a href="/business-exchange-dashboard.html">🤝 Enterprise</a> |
-<a href="/register-v2.html">👤 Join Now</a>
-</div>
-
-<div class="card">
-<h2>⚡ Quick Access</h2>
-
-<a href="/learner-guide.html">📚 Learn Skills</a><br>
-<a href="/matched-opportunities.html">💼 Earn Opportunities</a><br>
-<a href="/business-marketplace.html">🏢 Business Marketplace</a><br>
-<a href="/business-exchange-dashboard.html">🤝 Business Exchange</a><br>
-<a href="/learner-career-passport.html">👤 Career Passport</a><br>
-<a href="/payment-guide.html">💳 Payments</a>
-</div>
-
-<div class="card">
-<h2>🏢 Company Exchange</h2>
-
-<a href="/sell-company.html">Sell Company</a><br>
-<a href="/business-buy-marketplace.html">Buy Company</a><br>
-<a href="/merger-request.html">Merger Request</a><br>
-<a href="/partnership-request.html">Partnership Request</a><br>
-<a href="/acquisition-request.html">Acquisition Request</a><br>
-<a href="/ai-deal-room.html">AI Deal Room</a>
-</div>
-
-<div class="card">
-<h2>🏢 Enterprise Zone</h2>
-
-<a href="/company-profile.html">Company Profile</a><br>
-<a href="/investor-profile.html">Investor Profile</a><br>
-<a href="/company-trust-center.html">Trust Center</a><br>
-<a href="/business-exchange-dashboard.html">Business Exchange</a><br>
-<a href="/admin-compliance-center.html">Compliance</a>
-</div>
-
-<div class="card">
-<h2>👤 Account Area</h2>
-
-<a href="/login-v2.html">Login</a><br>
-<a href="/signup-v2.html">Register</a><br>
-<a href="/profile-completion.html">Complete Profile</a><br>
-<a href="/verification-request.html">Verification</a>
-</div>
-
-<div class="card">
-<h2>📊 Platform Statistics</h2>
-
-<p>👨‍🎓 Learners</p>
-<p>🏢 Businesses</p>
-<p>🏭 Companies Listed</p>
-<p>🤝 Deals Completed</p>
-<p>📢 Advertisements</p>
-<p>📚 Courses</p>
-<p>🏆 Certificates Issued</p>
-</div>
-
-<div class="card">
-<h2>🛡 Trust Indicators</h2>
-
-<p>✅ Verified Businesses</p>
-<p>✅ Verified Companies</p>
-<p>✅ Verified Investors</p>
-<p>✅ Verified Learners</p>
-</div>
-
-<div class="card">
-<h2>📖 Help & Navigation</h2>
-
-<a href="/guides.html">Guides</a><br>
-<a href="/platform-sitemap.html">Platform Map</a><br>
-<a href="/navigation-hub.html">Navigation Hub</a><br>
-<a href="/help-center.html">Help Center</a>
-</div>
