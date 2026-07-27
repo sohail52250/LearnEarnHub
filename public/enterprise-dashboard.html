@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise Dashboard</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Enterprise Dashboard
+</h1>
+
+
+<div id="app">
+Loading...
+</div>
+
+
+<script>
+
+let user_id=localStorage.getItem("user_id");
+
+
+fetch("/api/enterprise-dashboard?user_id="+user_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+let e=d.enterprise||{};
+
+
+app.innerHTML=`
+
+<div class="card">
+
+<h2>
+${e.company_name||"Enterprise"}
+</h2>
+
+<p>
+Industry:
+${e.industry||""}
+</p>
+
+<p>
+Verification:
+${e.verification_status||"pending"}
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Employees
+</h3>
+
+${d.employees.length}
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Assigned Training
+</h3>
+
+${d.training.length}
+
+</div>
+
+`;
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
