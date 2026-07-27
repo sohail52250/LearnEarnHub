@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+Security Center
+</title>
+
+<meta charset="UTF-8">
+
+</head>
+
+<body>
+
+
+<h1>
+LearnEarnHub Security Center
+</h1>
+
+
+<div id="status">
+
+Checking security...
+
+</div>
+
+
+<script>
+
+fetch("/api/security-health")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+status.innerHTML=
+
+"Security Status: "
+
++d.security_status;
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
