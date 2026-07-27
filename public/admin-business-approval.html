@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Business Approval</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+}
+
+button{
+margin:5px;
+padding:8px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+Business Verification Requests
+</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+<script>
+
+
+fetch("/api/admin-business-verification")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+list.innerHTML=(d.data||[])
+
+.map(b=>`
+
+<div class="card">
+
+<h3>
+${b.company_name}
+</h3>
+
+
+<p>
+Registration:
+${b.registration_number}
+</p>
+
+
+<p>
+Status:
+${b.status}
+</p>
+
+
+<button onclick="approve('${b.id}')">
+Approve
+</button>
+
+
+<button onclick="reject('${b.id}')">
+Reject
+</button>
+
+
+</div>
+
+`)
+
+.join("");
+
+
+});
+
+
+
+async function approve(id){
+
+await update(id,"approved",100);
+
+alert("Business Approved");
+
+location.reload();
+
+}
+
+
+
+async function reject(id){
+
+await update(id,"rejected",0);
+
+alert("Business Rejected");
+
+location.reload();
+
+}
+
+
+
+async function update(id,status,score){
+
+
+await fetch("/api/admin-business-verification",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+id,
+
+status,
+
+trust_score:score,
+
+admin_note:"Reviewed by admin"
+
+})
+
+});
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
