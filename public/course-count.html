@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Course Count</h2>
+<h2>Courses Table Count</h2>
 <div id="out">Loading...</div>
 
 <script src="/supabase-config.js"></script>
@@ -9,19 +9,18 @@
 
 <script>
 const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
+ SUPABASE_URL,
+ SUPABASE_ANON_KEY
 );
 
-client
-.from("courses")
-.select("*",{count:"exact"})
-.then(r=>{
-document.getElementById("out").innerHTML=
-"Total Courses: "+r.count;
-console.log(r);
-});
-</script>
+(async()=>{
+ const r=await client
+  .from("courses")
+  .select("*",{count:"exact"});
 
+ document.getElementById("out").innerHTML=
+  "Rows in courses table: "+r.count;
+})();
+</script>
 </body>
 </html>
