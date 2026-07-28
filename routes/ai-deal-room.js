@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { supabase } = require("../database");
+const requireAdmin = adminOnly;
 
 
 function adminOnly(req,res,next){
