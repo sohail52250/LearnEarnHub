@@ -2,20 +2,23 @@
 <html>
 <head>
 <title>Admin AI Deal Room</title>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/components/leh-design-system.css">
 </head>
 <body>
+
 <div class="card">
-<h1>AI Deal Requests</h1>
-<pre id="data">Loading...</pre>
+<h1>🤖 AI Deal Requests</h1>
+<div id="requests">Loading...</div>
 </div>
 
 <script>
-fetch('/api/admin/ai-deal-requests')
-.then(r=>r.text())
-.then(t=>{
-document.getElementById('data').textContent=t;
+fetch("/api/admin/ai-deal-requests")
+.then(r=>r.json())
+.then(data=>{
+document.getElementById("requests").innerHTML =
+JSON.stringify(data,null,2);
 });
 </script>
+
 </body>
 </html>
