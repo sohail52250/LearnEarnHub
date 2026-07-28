@@ -73,6 +73,38 @@ Connect companies interested in merging.
 
 </div>
 
+
+<div class="card">
+<h2>🤝 Company Merger Request</h2>
+
+<form action="/api/merger-request" method="POST">
+
+<label>Your Name</label><br>
+<input name="name" placeholder="Your name" required><br><br>
+
+<label>Email</label><br>
+<input name="email" type="email" placeholder="Email"><br><br>
+
+<label>Phone</label><br>
+<input name="phone" placeholder="Phone number"><br><br>
+
+<label>Your Company Name</label><br>
+<input name="company_name" placeholder="Company name"><br><br>
+
+<label>Industry</label><br>
+<input name="industry" placeholder="Industry type"><br><br>
+
+<label>Partner Company / Merger Interest</label><br>
+<input name="partner_company" placeholder="Company you want to merge with"><br><br>
+
+<label>Merger Details</label><br>
+<textarea name="details" placeholder="Describe merger proposal"></textarea><br><br>
+
+<button type="submit">Submit Merger Request</button>
+
+</form>
+</div>
+
 <div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
 </body>
 </html>
