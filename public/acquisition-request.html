@@ -73,6 +73,38 @@ Submit an interest request to acquire a company.
 
 </div>
 
+
+<div class="card">
+<h2>🏢 Company Acquisition Request</h2>
+
+<form action="/api/acquisition-request" method="POST">
+
+<label>Your Name</label><br>
+<input name="name" placeholder="Your name" required><br><br>
+
+<label>Email</label><br>
+<input name="email" type="email" placeholder="Email"><br><br>
+
+<label>Phone</label><br>
+<input name="phone" placeholder="Phone number"><br><br>
+
+<label>Company Interested In</label><br>
+<input name="company_name" placeholder="Company name"><br><br>
+
+<label>Industry</label><br>
+<input name="industry" placeholder="Business industry"><br><br>
+
+<label>Acquisition Budget (PKR)</label><br>
+<input name="budget" placeholder="Available acquisition budget"><br><br>
+
+<label>Message / Requirements</label><br>
+<textarea name="requirements" placeholder="Describe acquisition interest"></textarea><br><br>
+
+<button type="submit">Submit Acquisition Request</button>
+
+</form>
+</div>
+
 <div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
 </body>
 </html>
