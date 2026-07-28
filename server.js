@@ -20,7 +20,17 @@ app.get("/api/status",(req,res)=>{
 
 
 
-module.exports = app;
+
+    
+// Serve HTML pages from public folder
+app.use((req,res,next)=>{
+    if(req.method === "GET" && req.path.endsWith(".html")){
+        res.sendFile(__dirname + "/public" + req.path);
+    } else {
+        next();
+    }
+});
+\nmodule.exports = app;
 
 try{
 const aiDealRouter=require("./routes/ai-deal-room");
