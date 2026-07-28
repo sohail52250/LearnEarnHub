@@ -1,26 +1,28 @@
-require("dotenv").config();
+const db = require("../database");
 
-const { createClient } = require("@supabase/supabase-js");
+module.exports = async function(req,res){
 
-const supabase = createClient(
- process.env.SUPABASE_URL,
- process.env.SUPABASE_KEY
-);
+  try {
 
-module.exports = async (req,res)=>{
+    const { data, error } = await db
+      .from("courses")
+      .select("id,title_en,title_ur,description_en,description_ur,content_en,content_ur,points")
+      .order("created_at",{ascending:false});
 
- const {data,error}=await supabase
- .from("courses")
- .select("id,title_en,title_ur,points,description_en,description_ur")
- .order("created_at",{ascending:false});
+    if(error){
+      return res.status(500).json({
+        error:error.message
+      });
+    }
 
- if(error){
-   return res.status(500).json({
-     error:error.message
-   });
- }
+    res.status(200).json(data);
 
- res.setHeader("Content-Type","application/json");
- res.status(200).json(data);
+  } catch(err){
+
+    res.status(500).json({
+      error:err.message
+    });
+
+  }
 
 };
