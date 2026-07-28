@@ -23,3 +23,12 @@ const dbtest = require("./api/dbtest");
 app.get("/api/dbtest",dbtest);
 
 module.exports = app;
+
+try{
+const aiDealRouter=require("./routes/ai-deal-room");
+app.use("/api",aiDealRouter);
+console.log("AI Deal API loaded");
+}catch(e){
+console.log("AI Deal API error",e.message);
+}
+
