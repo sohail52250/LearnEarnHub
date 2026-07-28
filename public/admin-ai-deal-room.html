@@ -2,146 +2,20 @@
 <html>
 <head>
 <title>Admin AI Deal Room</title>
-
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
 <link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/components/leh-design-system.css">
-
 </head>
-
 <body>
-
-<div id="global-header"></div>
-
-
 <div class="card">
-
-<h1>🔐 Admin AI Deal Room</h1>
-
-<p>
-Review and control business deal access.
-</p>
-
-<button onclick="loadRequests()">
-Refresh Requests
-</button>
-
+<h1>AI Deal Requests</h1>
+<pre id="data">Loading...</pre>
 </div>
-
-
-<div id="requests"></div>
-
 
 <script>
-
-async function loadRequests(){
-
-let response = await fetch(
-"/api/admin/ai-deal-requests",
-{
-headers:{
-"Authorization":
-"Bearer "+localStorage.getItem("leh_token")
-}
-}
-);
-
-
-let data = await response.json();
-
-
-let html="";
-
-
-data.forEach(r=>{
-
-html += `
-
-<div class="card">
-
-<h2>${r.company || "No Company"}</h2>
-
-<p>
-Name: ${r.name}
-</p>
-
-<p>
-Email: ${r.email}
-</p>
-
-<p>
-Purpose:
-${r.purpose}
-</p>
-
-
-<p>
-Status:
-<b>${r.status}</b>
-</p>
-
-
-<button onclick="approve('${r.id}')">
-✅ Approve
-</button>
-
-
-<button onclick="reject('${r.id}')">
-❌ Reject
-</button>
-
-
-</div>
-
-`;
-
+fetch('/api/admin/ai-deal-requests')
+.then(r=>r.text())
+.then(t=>{
+document.getElementById('data').textContent=t;
 });
-
-
-document.getElementById("requests").innerHTML=html;
-
-}
-
-
-
-async function approve(id){
-
-await fetch(
-"/api/admin/ai-deal-approve/"+id,
-{
-method:"POST",
-headers:{
-"Authorization":
-"Bearer "+localStorage.getItem("leh_token")
-}
-}
-);
-
-loadRequests();
-
-}
-
-
-
-async function reject(id){
-
-alert(
-"Reject API can be connected next"
-);
-
-}
-
-
-
-loadRequests();
-
 </script>
-
-
-<div id="global-footer"></div>
-
-<script src="/global-layout.js"></script>
-
 </body>
 </html>

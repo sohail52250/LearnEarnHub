@@ -120,4 +120,23 @@ router.get("/ai-deal-test",(req,res)=>{
 });
 
 
+
+
+router.get("/ai-deal-access/:email", async(req,res)=>{
+  const { data, error } = await supabase
+    .from("ai_deal_access")
+    .select("*")
+    .eq("email", req.params.email)
+    .eq("access_granted", true);
+
+  if(error){
+    return res.status(500).json(error);
+  }
+
+  res.json({
+    access:data && data.length>0
+  });
+});
+
+
 module.exports=router;
