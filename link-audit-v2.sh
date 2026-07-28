@@ -26,7 +26,7 @@ do
         http*) continue ;;
     esac
 
-    CODE=$(curl -Ls -o /dev/null -w "%{http_code}" "$BASE$link")
+    CODE=$(curl -Ls -o /dev/null -w "%{http_code}" "${BASE}/${link}")
 
     if [ "$CODE" != "200" ]; then
         echo "BROKEN [$CODE] $link" | tee -a $REPORT

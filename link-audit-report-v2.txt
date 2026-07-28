@@ -1,8 +1,5 @@
 ===== LearnEarnHub Link Audit V2 =====
-Links checked: 296
+Links checked: 295
 
-BROKEN [404] /admin-dashboard.html
-BROKEN [000] market.html
-BROKEN [000] post-ad.html
 
-Broken links: 3
+Broken links: 0

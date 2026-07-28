@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnEarnHub Restore Center</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:Arial;background:#f5f5f5;padding:20px}
+.card{background:white;padding:20px;border-radius:12px;max-width:700px;margin:auto}
+button{padding:12px;background:#2563eb;color:white;border:0;border-radius:8px}
+pre{background:#111;color:#0f0;padding:15px}
+</style>
+</head>
+
+<body>
+<div class="card">
+<h2>🔐 LearnEarnHub Restore Center</h2>
+
+<button onclick="createBackup()">Create Checkpoint</button>
+
+<h3>Backup Status</h3>
+<pre id="result">Loading...</pre>
+
+</div>
+
+<script>
+async function createBackup(){
+ let r=await fetch('/api/admin/create-backup',{
+ method:'POST',
+ headers:{'Content-Type':'application/json'},
+ body:JSON.stringify({
+ name:'Production Stable Checkpoint'
+ })
+ });
+
+ document.getElementById('result').textContent=
+ await r.text();
+}
+
+async function load(){
+ let r=await fetch('/api/admin/backups');
+ document.getElementById('result').textContent=
+ await r.text();
+}
+
+load();
+</script>
+
+</body>
+</html>

@@ -28,7 +28,17 @@ app.use((req,res,next)=>{
         next();
     }
 });
+
+try{
+const restoreRouter=require("./routes/restore-center");
+app.use("/api",restoreRouter);
+console.log("Restore Center API loaded");
+}catch(e){
+console.log("Restore Center error",e.message);
+}
+
 module.exports = app;
+
 
 try{
 const aiDealRouter=require("./routes/ai-deal-room");

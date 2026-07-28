@@ -12,7 +12,6 @@
 /admin-course-publishing.html
 /admin-course-review-v2.html
 /admin-course-review.html
-/admin-dashboard.html
 /admin-vacancies.html
 /advertisement-guide.html
 /advertisement-packages-v2.html
