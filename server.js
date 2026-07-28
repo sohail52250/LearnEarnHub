@@ -30,7 +30,7 @@ app.use((req,res,next)=>{
         next();
     }
 });
-\nmodule.exports = app;
+module.exports = app;
 
 try{
 const aiDealRouter=require("./routes/ai-deal-room");
