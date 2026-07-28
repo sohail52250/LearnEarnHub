@@ -57,7 +57,7 @@ router.post("/ai-deal-request", async(req,res)=>{
 
 // Admin view requests
 router.get("/admin/ai-deal-requests",
-adminOnly,
+requireAdmin,
 async(req,res)=>{
 
 
@@ -82,7 +82,7 @@ res.json(data);
 
 // Admin approve access
 router.post("/admin/ai-deal-approve/:id",
-adminOnly,
+requireAdmin,
 async(req,res)=>{
 
 

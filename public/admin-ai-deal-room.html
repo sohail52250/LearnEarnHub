@@ -41,7 +41,8 @@ let response = await fetch(
 "/api/admin/ai-deal-requests",
 {
 headers:{
-"x-user-role":"admin"
+"Authorization":
+"Bearer "+localStorage.getItem("leh_token")
 }
 }
 );
@@ -111,7 +112,8 @@ await fetch(
 {
 method:"POST",
 headers:{
-"x-user-role":"admin"
+"Authorization":
+"Bearer "+localStorage.getItem("leh_token")
 }
 }
 );
