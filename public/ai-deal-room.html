@@ -1,108 +1,73 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>AI Deal Room</title>
-
-<meta charset="UTF-8">
-
-<style>
-
-.card{
-border:1px solid #ddd;
-padding:15px;
-margin:10px;
-border-radius:12px;
-}
-
-</style>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Deal Room - LearnEarnHub</title>
+<link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/components/leh-design-system.css">
 </head>
 
+<body>
 
-<body><div id="global-header"></div>
+<div id="global-header"></div>
 
+<div class="card">
 
 <h1>🤖 AI Deal Room</h1>
 
+<p>
+Connect companies, investors and entrepreneurs with AI-powered business matching.
+</p>
 
-<div class="card">
+<h2>How it works</h2>
 
-<h2>
-Deal Intelligence
-</h2>
+<ul>
+<li>Create your business deal request</li>
+<li>AI analyzes your requirements</li>
+<li>Find matching companies</li>
+<li>Connect securely</li>
+</ul>
 
-<div id="summary">
-Loading...
+
+<h2>Create Deal Request</h2>
+
+<form action="/api/ai-deal-request" method="POST">
+
+<label>Company Name</label><br>
+<input name="company_name" required><br><br>
+
+<label>Deal Type</label><br>
+<select name="deal_type">
+<option>Acquisition</option>
+<option>Merger</option>
+<option>Partnership</option>
+<option>Investment</option>
+<option>Joint Venture</option>
+</select>
+<br><br>
+
+<label>Industry</label><br>
+<input name="industry"><br><br>
+
+<label>Estimated Business Value (PKR)</label><br>
+<input name="business_value"><br><br>
+
+<label>Description</label><br>
+<textarea name="description"></textarea>
+<br><br>
+
+<button type="submit">
+Submit Deal Request
+</button>
+
+</form>
+
 </div>
 
-</div>
 
+<div id="global-footer"></div>
 
-<div class="card">
+<script src="/global-layout.js"></script>
 
-<h2>
-Due Diligence
-</h2>
-
-<div id="checks">
-Loading...
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>
-Negotiations
-</h2>
-
-<div id="messages">
-Loading...
-</div>
-
-</div>
-
-
-
-<script>
-
-
-let deal_id=
-new URLSearchParams(location.search)
-.get("deal_id");
-
-
-fetch("/api/ai-deal-room?deal_id="+deal_id)
-
-.then(r=>r.json())
-
-.then(d=>{
-
-
-summary.innerHTML=
-JSON.stringify(d.room||[]);
-
-
-checks.innerHTML=
-JSON.stringify(d.due_diligence||[]);
-
-
-messages.innerHTML=
-JSON.stringify(d.negotiations||[]);
-
-
-});
-
-
-</script>
-
-
-<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
 </body>
-
 </html>

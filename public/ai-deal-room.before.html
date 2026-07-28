@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Deal Room</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+<link rel="stylesheet" href="/components/leh-design-system.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<h1>🤖 AI Deal Room</h1>
+
+
+<div class="card">
+
+<h2>
+Deal Intelligence
+</h2>
+
+<div id="summary">
+Loading...
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Due Diligence
+</h2>
+
+<div id="checks">
+Loading...
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Negotiations
+</h2>
+
+<div id="messages">
+Loading...
+</div>
+
+</div>
+
+
+
+<script>
+
+
+let deal_id=
+new URLSearchParams(location.search)
+.get("deal_id");
+
+
+fetch("/api/ai-deal-room?deal_id="+deal_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+summary.innerHTML=
+JSON.stringify(d.room||[]);
+
+
+checks.innerHTML=
+JSON.stringify(d.due_diligence||[]);
+
+
+messages.innerHTML=
+JSON.stringify(d.negotiations||[]);
+
+
+});
+
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+</body>
+
+</html>
