@@ -5,7 +5,7 @@ const role=localStorage.getItem("role");
 switch(role){
 
 case "admin":
- location.href="/admin-dashboard.html";
+ location.href="/admin-control-dashboard.html";
  break;
 
 case "business":

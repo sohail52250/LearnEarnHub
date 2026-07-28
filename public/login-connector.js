@@ -61,7 +61,7 @@ async function loginUser(email,password){
 
         if(role==="admin"){
 
-            location.href="/admin-dashboard.html";
+            location.href="/admin-control-dashboard.html";
 
         }else if(role==="business"){
 
