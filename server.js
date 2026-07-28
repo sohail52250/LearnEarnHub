@@ -7,10 +7,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-  res.json({
-    app:"Learn & Earn Hub",
-    version:"1.0"
-  });
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.get("/api/status",(req,res)=>{
