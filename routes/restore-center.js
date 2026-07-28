@@ -2,6 +2,7 @@ const express=require("express");
 const router=express.Router();
 const supabase=require("../database");
 
+
 router.get("/admin/backups",async(req,res)=>{
 
 const {data,error}=await supabase
@@ -20,11 +21,11 @@ res.json(data);
 router.post("/admin/create-backup",async(req,res)=>{
 
 const backup={
-name:req.body.name || "Manual Checkpoint",
+name:req.body.name || "Manual Backup",
 git_commit:"current",
-deployment:"vercel-production",
+deployment:"vercel",
 status:"stable",
-audit_result:"verified"
+audit_result:"passed"
 };
 
 const {data,error}=await supabase
@@ -37,7 +38,7 @@ return res.status(500).json(error);
 
 res.json({
 success:true,
-backup:data
+data:data
 });
 
 });
