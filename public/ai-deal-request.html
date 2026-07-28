@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Deal Room Request</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/components/leh-design-system.css">
+</head>
+
+<body>
+
+<div id="global-header"></div>
+
+<div class="card">
+
+<h1>🤖 AI Deal Room Access Request</h1>
+
+<form id="dealRequest">
+
+<input id="company" placeholder="Company Name" required><br><br>
+
+<input id="email" placeholder="Email" required><br><br>
+
+<textarea id="purpose" placeholder="Deal purpose"></textarea><br><br>
+
+<button type="submit">
+Request Access
+</button>
+
+</form>
+
+<p id="msg"></p>
+
+</div>
+
+<div id="global-footer"></div>
+
+<script src="/global-layout.js"></script>
+
+<script>
+document.getElementById("dealRequest").onsubmit=async(e)=>{
+e.preventDefault();
+
+let data={
+company:company.value,
+email:email.value,
+purpose:purpose.value,
+status:"pending"
+};
+
+let r=await fetch("/api/ai-deal-request",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(data)
+});
+
+msg.innerHTML=await r.text();
+
+};
+</script>
+
+</body>
+</html>

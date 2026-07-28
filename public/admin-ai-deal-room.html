@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin AI Deal Requests</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<h1>🔐 Admin AI Deal Requests</h1>
+
+<div id="requests"></div>
+
+
+<script>
+
+async function load(){
+
+let r=await fetch("/api/admin/ai-deal-requests");
+
+let data=await r.json();
+
+requests.innerHTML=data.map(x=>`
+
+<div class="card">
+
+<h3>${x.company}</h3>
+
+<p>${x.email}</p>
+
+<p>${x.purpose}</p>
+
+<p>Status:
+${x.status}
+</p>
+
+
+<button onclick="approve('${x.id}')">
+Give Access
+</button>
+
+
+</div>
+
+`).join("");
+
+}
+
+
+async function approve(id){
+
+await fetch("/api/admin/ai-deal-approve/"+id,{
+method:"POST"
+});
+
+load();
+
+}
+
+load();
+
+</script>
+
+
+</body>
+</html>
