@@ -1,66 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin AI Deal Requests</title>
+<title>Admin AI Deal Room</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/components/leh-design-system.css">
+
 </head>
 
 <body>
 
-<h1>🔐 Admin AI Deal Requests</h1>
+<div id="global-header"></div>
+
+
+<div class="card">
+
+<h1>🔐 Admin AI Deal Room</h1>
+
+<p>
+Review and control business deal access.
+</p>
+
+<button onclick="loadRequests()">
+Refresh Requests
+</button>
+
+</div>
+
 
 <div id="requests"></div>
 
 
 <script>
 
-async function load(){
+async function loadRequests(){
 
-let r=await fetch("/api/admin/ai-deal-requests");
+let response = await fetch(
+"/api/admin/ai-deal-requests",
+{
+headers:{
+"x-user-role":"admin"
+}
+}
+);
 
-let data=await r.json();
 
-requests.innerHTML=data.map(x=>`
+let data = await response.json();
+
+
+let html="";
+
+
+data.forEach(r=>{
+
+html += `
 
 <div class="card">
 
-<h3>${x.company}</h3>
+<h2>${r.company || "No Company"}</h2>
 
-<p>${x.email}</p>
+<p>
+Name: ${r.name}
+</p>
 
-<p>${x.purpose}</p>
+<p>
+Email: ${r.email}
+</p>
 
-<p>Status:
-${x.status}
+<p>
+Purpose:
+${r.purpose}
 </p>
 
 
-<button onclick="approve('${x.id}')">
-Give Access
+<p>
+Status:
+<b>${r.status}</b>
+</p>
+
+
+<button onclick="approve('${r.id}')">
+✅ Approve
+</button>
+
+
+<button onclick="reject('${r.id}')">
+❌ Reject
 </button>
 
 
 </div>
 
-`).join("");
+`;
+
+});
+
+
+document.getElementById("requests").innerHTML=html;
 
 }
+
 
 
 async function approve(id){
 
-await fetch("/api/admin/ai-deal-approve/"+id,{
-method:"POST"
-});
+await fetch(
+"/api/admin/ai-deal-approve/"+id,
+{
+method:"POST",
+headers:{
+"x-user-role":"admin"
+}
+}
+);
 
-load();
+loadRequests();
 
 }
 
-load();
+
+
+async function reject(id){
+
+alert(
+"Reject API can be connected next"
+);
+
+}
+
+
+
+loadRequests();
 
 </script>
 
+
+<div id="global-footer"></div>
+
+<script src="/global-layout.js"></script>
 
 </body>
 </html>
