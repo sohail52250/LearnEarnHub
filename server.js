@@ -18,9 +18,7 @@ app.get("/api/status",(req,res)=>{
   });
 });
 
-const dbtest = require("./api/dbtest");
 
-app.get("/api/dbtest",dbtest);
 
 module.exports = app;
 
