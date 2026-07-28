@@ -111,4 +111,13 @@ message:"Access granted"
 });
 
 
+
+router.get("/ai-deal-test",(req,res)=>{
+  res.json({
+    success:true,
+    message:"AI Deal Room API working"
+  });
+});
+
+
 module.exports=router;
