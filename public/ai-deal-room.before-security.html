@@ -69,50 +69,5 @@ Submit Deal Request
 
 <script src="/global-layout.js"></script>
 
-
-<div class="card">
-<h2>🤖 Request AI Deal Room Access</h2>
-
-<form id="dealRequestForm">
-
-<input name="name" placeholder="Your Name" required><br><br>
-
-<input name="email" type="email" placeholder="Email" required><br><br>
-
-<input name="company" placeholder="Company Name"><br><br>
-
-<textarea name="purpose" placeholder="Explain your deal purpose"></textarea><br><br>
-
-<button type="submit">Request Access</button>
-
-</form>
-
-<p id="status"></p>
-
-</div>
-
-
-<script>
-document.getElementById("dealRequestForm").onsubmit=async(e)=>{
-e.preventDefault();
-
-let data=Object.fromEntries(new FormData(e.target));
-
-data.status="pending";
-
-let r=await fetch("/api/ai-deal-request",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(data)
-});
-
-document.getElementById("status").innerText=
-r.ok ? "Request submitted for admin review" :
-"Error submitting request";
-
-};
-</script>
 </body>
 </html>
