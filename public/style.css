@@ -459,17 +459,6 @@ body{
 /* Global LearnEarnHub Layout */
 
 
-.leh-header{
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-padding:15px;
-border-bottom:1px solid #ddd;
-flex-wrap:wrap;
-
-}
 
 
 .leh-logo{
@@ -509,11 +498,6 @@ border-top:1px solid #ddd;
 
 @media(max-width:700px){
 
-.leh-header{
-
-flex-direction:column;
-
-}
 
 
 .leh-nav{
@@ -524,3 +508,42 @@ justify-content:center;
 
 }
 
+
+/* LearnEarnHub Header Fix */
+.leh-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 20px;
+  border-bottom:1px solid #ddd;
+  flex-wrap:wrap;
+}
+
+.leh-nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.leh-nav a{
+  text-decoration:none;
+  color:#0f172a;
+  font-weight:600;
+}
+
+.leh-nav a:hover{
+  color:#2563eb;
+}
+
+@media(max-width:700px){
+  .leh-header{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .leh-nav{
+    justify-content:center;
+  }
+}
