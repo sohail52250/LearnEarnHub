@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+
+<title>Investor AI Matching</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+<link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<h1>
+🤖 Investor AI Matching Engine
+</h1>
+
+
+<div id="matches">
+Loading...
+</div>
+
+
+<script>
+
+
+let funding_id=
+
+new URLSearchParams(location.search)
+
+.get("funding_id");
+
+
+
+fetch(
+"/api/investor-ai-matching?funding_id="+funding_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+matches.innerHTML=
+
+(d.matches||[])
+
+.map(m=>`
+
+<div class="card">
+
+<h3>
+Investor Match
+</h3>
+
+<p>
+Match Score:
+${m.match_score}%
+</p>
+
+<p>
+${m.reason}
+</p>
+
+</div>
+
+`)
+
+.join("");
+
+});
+
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+
+</html>

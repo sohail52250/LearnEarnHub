@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Deal Room - LearnEarnHub</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/components/leh-design-system.css">
+</head>
+
+<body>
+
+<div id="global-header"></div>
+
+<div class="card">
+
+<h1>🤖 AI Deal Room</h1>
+
+<p>
+Connect companies, investors and entrepreneurs with AI-powered business matching.
+</p>
+
+<h2>How it works</h2>
+
+<ul>
+<li>Create your business deal request</li>
+<li>AI analyzes your requirements</li>
+<li>Find matching companies</li>
+<li>Connect securely</li>
+</ul>
+
+
+<h2>Create Deal Request</h2>
+
+<form action="/api/ai-deal-request" method="POST">
+
+<label>Company Name</label><br>
+<input name="company_name" required><br><br>
+
+<label>Deal Type</label><br>
+<select name="deal_type">
+<option>Acquisition</option>
+<option>Merger</option>
+<option>Partnership</option>
+<option>Investment</option>
+<option>Joint Venture</option>
+</select>
+<br><br>
+
+<label>Industry</label><br>
+<input name="industry"><br><br>
+
+<label>Estimated Business Value (PKR)</label><br>
+<input name="business_value"><br><br>
+
+<label>Description</label><br>
+<textarea name="description"></textarea>
+<br><br>
+
+<button type="submit">
+Submit Deal Request
+</button>
+
+</form>
+
+</div>
+
+
+<div id="global-footer"></div>
+
+<script src="/global-layout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+
+<title>Enterprise Digital Transformation Suite</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:20px;
+margin:10px;
+border-radius:12px;
+}
+
+</style>
+
+<link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<h1>🚀 Enterprise Digital Transformation Suite</h1>
+
+
+<div class="card">
+
+<h2>👥 Employees</h2>
+
+<pre id="employees">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>⚙️ Automated Workflows</h2>
+
+<pre id="workflows">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>🤝 CRM Customers</h2>
+
+<pre id="customers">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Customer Analytics</h2>
+
+<pre id="analytics">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧠 Business Process Intelligence</h2>
+
+<pre id="intelligence">
+Loading...
+</pre>
+
+</div>
+
+
+
+<script>
+
+let organization_id =
+new URLSearchParams(location.search)
+.get("organization_id");
+
+
+fetch(
+"/api/enterprise-digital-transformation?organization_id="+organization_id
+)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+employees.innerHTML=
+JSON.stringify(d.employees,null,2);
+
+workflows.innerHTML=
+JSON.stringify(d.workflows,null,2);
+
+customers.innerHTML=
+JSON.stringify(d.customers,null,2);
+
+analytics.innerHTML=
+JSON.stringify(d.customer_analytics,null,2);
+
+intelligence.innerHTML=
+JSON.stringify(d.process_intelligence,null,2);
+
+});
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+
+</html>
