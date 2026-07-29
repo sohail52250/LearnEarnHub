@@ -1,3 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+cat > public/partnerships.js <<'JS'
 document
 .getElementById("partnerForm")
 .addEventListener("submit", async function(e){
@@ -27,3 +30,6 @@ document.getElementById("status").innerHTML =
 document.getElementById("partnerForm").reset();
 
 });
+JS
+
+echo "Supabase partnership integration installed."
