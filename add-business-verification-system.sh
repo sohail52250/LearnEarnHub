@@ -1,270 +1,131 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-echo "======================================"
-echo " Business Verification System"
-echo "======================================"
+echo "Adding business verification system..."
 
+# Create SQL file for Supabase
 
-cat > database/business-verification.sql <<'SQL'
+cat > business-verification.sql <<'SQL'
+alter table partnership_requests
+add column if not exists verified boolean default false;
 
-CREATE TABLE IF NOT EXISTS business_verifications(
+alter table partnership_requests
+add column if not exists company_description text;
 
-id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+alter table partnership_requests
+add column if not exists logo_url text;
 
-user_id uuid,
-
+create table if not exists business_profiles (
+id uuid default gen_random_uuid() primary key,
+owner_id uuid references auth.users(id),
 company_name text,
-
-registration_number text,
-
-document_url text,
-
-status text DEFAULT 'pending',
-
-trust_score integer DEFAULT 0,
-
-admin_note text,
-
-created_at timestamp DEFAULT now(),
-
-updated_at timestamp DEFAULT now()
-
+email text,
+phone text,
+website text,
+description text,
+verified boolean default false,
+created_at timestamptz default now()
 );
+
+alter table business_profiles enable row level security;
+
+create policy "Public view verified businesses"
+on business_profiles
+for select
+to public
+using (verified=true);
+
+create policy "Authenticated business insert"
+on business_profiles
+for insert
+to authenticated
+with check (true);
 
 SQL
 
 
+# Create business profile page
 
-cat > api/business-verification.js <<'JS'
-
-const db=require("../database");
-
-
-module.exports=async(req,res)=>{
-
-
-if(req.method==="GET"){
-
-
-const user_id=req.query.user_id;
-
-
-const {data,error}=await db
-
-.from("business_verifications")
-
-.select("*")
-
-.eq("user_id",user_id);
-
-
-return res.json({
-
-success:true,
-
-data,
-
-error
-
-});
-
-
-}
-
-
-
-if(req.method==="POST"){
-
-
-const {
-
-user_id,
-
-company_name,
-
-registration_number,
-
-document_url
-
-}=req.body;
-
-
-const {data,error}=await db
-
-.from("business_verifications")
-
-.insert([{
-
-user_id,
-
-company_name,
-
-registration_number,
-
-document_url
-
-}])
-
-.select();
-
-
-return res.json({
-
-success:!error,
-
-data,
-
-error
-
-});
-
-
-}
-
-
-res.status(405).json({
-
-error:"Method not allowed"
-
-});
-
-
-};
-
-JS
-
-
-
-cat > public/business-verification.html <<'HTML'
-
+cat > public/business-profile.html <<'HTML'
 <!DOCTYPE html>
 <html>
 
 <head>
-
-<title>Business Verification</title>
-
-<meta charset="UTF-8">
-
+<title>Business Profile - LearnEarnHub</title>
+<link rel="stylesheet" href="/style.css">
 </head>
-
 
 <body>
 
+<div id="global-header"></div>
 
-<h1>
-Business Verification Request
-</h1>
+<div class="card">
 
+<h1>🏢 Business Profile</h1>
 
-<form id="verifyForm">
+<div id="profile">
+Loading...
+</div>
 
-
-<input id="company_name"
-placeholder="Company Name">
-
-
-<input id="registration_number"
-placeholder="Registration Number">
+</div>
 
 
-<input id="document_url"
-placeholder="Document URL">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
 
-
-<button>
-Submit Verification
-</button>
-
-
-</form>
-
-
-
-<script>
-
-
-verifyForm.onsubmit=async(e)=>{
-
-e.preventDefault();
-
-
-let body={
-
-user_id:localStorage.getItem("user_id"),
-
-company_name:company_name.value,
-
-registration_number:registration_number.value,
-
-document_url:document_url.value
-
-};
-
-
-let r=await fetch("/api/business-verification",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify(body)
-
-});
-
-
-alert("Verification submitted");
-
-
-};
-
-
-</script>
-
+<script src="/business-profile.js"></script>
 
 </body>
-
 </html>
-
 HTML
 
 
+cat > public/business-profile.js <<'JS'
 
-echo "Updating public profile badge..."
+async function loadBusinesses(){
 
-
-python - <<'PY'
-
-p="public/public-business-profile.html"
-
-try:
-
- s=open(p).read()
-
- s=s.replace(
- "${p.verification_status==\"verified\"?\n\"✅ Verified Business\":\n\"⏳ Verification Pending\"}",
- "${p.verification_status==\"verified\"?\n\"🏆 Verified Business\":\n\"⏳ Verification Pending\"}"
- )
-
- open(p,"w").write(s)
-
-except Exception as e:
- print(e)
-
-PY
+let {data,error}=await supabaseClient
+.from("business_profiles")
+.select("*")
+.eq("verified",true);
 
 
+if(error){
 
-git add .
+document.getElementById("profile").innerHTML=error.message;
+return;
 
-git commit -m "Add business verification and trust badge system" || true
-
-git push
+}
 
 
-echo "======================================"
-echo " Verification System Added"
-echo "======================================"
+document.getElementById("profile").innerHTML=data.map(b=>`
+
+<div class="card">
+
+<h2>
+${b.company_name}
+${b.verified ? "✅ Verified" : ""}
+</h2>
+
+<p>${b.description || ""}</p>
+
+<p>${b.email}</p>
+
+<a href="${b.website || '#'}">
+${b.website || ""}
+</a>
+
+</div>
+
+`).join("");
+
+}
+
+
+loadBusinesses();
+
+JS
+
+
+echo "Business verification files created."
+echo "Run SQL from business-verification.sql in Supabase dashboard."
 

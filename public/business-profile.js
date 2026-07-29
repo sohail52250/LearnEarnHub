@@ -1,41 +1,43 @@
-async function createBusiness(){
 
-const client=supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-);
+async function loadBusinesses(){
 
-
-const {data:userData}=await client.auth.getUser();
+let {data,error}=await supabaseClient
+.from("business_profiles")
+.select("*")
+.eq("verified",true);
 
 
-if(!userData.user){
+if(error){
 
-alert("Login required");
-
+document.getElementById("profile").innerHTML=error.message;
 return;
 
 }
 
 
-await client
-.from("business_profiles")
-.insert({
+document.getElementById("profile").innerHTML=data.map(b=>`
 
-user_id:userData.user.id,
+<div class="card">
 
-company_name:
-document.getElementById("company-name").value,
+<h2>
+${b.company_name}
+${b.verified ? "✅ Verified" : ""}
+</h2>
 
-description:
-document.getElementById("company-description").value
+<p>${b.description || ""}</p>
 
-});
+<p>${b.email}</p>
 
+<a href="${b.website || '#'}">
+${b.website || ""}
+</a>
 
-alert("Business profile created");
+</div>
+
+`).join("");
 
 }
 
 
-window.createBusiness=createBusiness;
+loadBusinesses();
+

@@ -1,3 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Upgrading admin partnership dashboard..."
+
+cat > public/admin-partnerships.js <<'JS'
 async function loadRequests(){
 
 const box=document.getElementById("requests");
@@ -159,4 +164,39 @@ a.click();
 }
 
 checkAdmin();
+
+JS
+
+
+python - <<'PY'
+p="public/admin-partnerships.html"
+
+s=open(p).read()
+
+if 'id="search"' not in s:
+
+s=s.replace(
+'<div id="requests">',
+'''
+<input id="search" placeholder="Search company/email" onkeyup="loadRequests()">
+
+<select id="filter" onchange="loadRequests()">
+<option value="">All</option>
+<option value="pending">Pending</option>
+<option value="approved">Approved</option>
+<option value="rejected">Rejected</option>
+</select>
+
+<button onclick="exportCSV()">Export CSV</button>
+
+<div id="requests">
+'''
+)
+
+open(p,"w").write(s)
+
+PY
+
+
+echo "Admin controls added successfully."
 
