@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+
+<title>AI Talent Matching</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+</style>
+
+<link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<h1>
+AI Talent Recommendations
+</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+
+<script>
+
+
+let job_id=
+new URLSearchParams(location.search)
+.get("job_id");
+
+
+fetch("/api/enterprise-ai-matching?job_id="+job_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+list.innerHTML=(d.matches||[])
+
+.map(m=>`
+
+<div class="card">
+
+<h3>
+${m.learner.name||"Learner"}
+</h3>
+
+
+<p>
+Match Score:
+${m.match_score}%
+</p>
+
+
+</div>
+
+`)
+
+.join("");
+
+});
+
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+
+</html>

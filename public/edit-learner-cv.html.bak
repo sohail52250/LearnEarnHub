@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+<title>Edit Learner CV</title>
+<meta charset="UTF-8">
+<style>
+body{font-family:Arial;padding:20px}
+input,textarea{width:100%;padding:10px;margin:6px 0}
+button{padding:12px;background:#222;color:white}
+</style>
+<link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+<body><div id="global-header"></div>
+
+<h1>Build Your Professional CV</h1>
+
+<form id="cvForm">
+
+<input id="full_name" placeholder="Full Name">
+
+<input id="headline" placeholder="Professional Headline">
+
+<input id="email" placeholder="Email">
+
+<input id="phone" placeholder="Phone">
+
+<input id="city" placeholder="City">
+
+<input id="country" placeholder="Country">
+
+<textarea id="bio" placeholder="About Me"></textarea>
+
+<textarea id="education" placeholder="Education"></textarea>
+
+<textarea id="experience" placeholder="Work Experience"></textarea>
+
+<textarea id="technical_skills" placeholder="Technical Skills"></textarea>
+
+<textarea id="soft_skills" placeholder="Soft Skills"></textarea>
+
+<textarea id="projects" placeholder="Projects / Portfolio"></textarea>
+
+<textarea id="certifications" placeholder="Certificates"></textarea>
+
+<textarea id="languages" placeholder="Languages"></textarea>
+
+<textarea id="career_goal" placeholder="Career Goal"></textarea>
+
+<input id="linkedin" placeholder="LinkedIn">
+
+<input id="github" placeholder="GitHub">
+
+<input id="portfolio" placeholder="Portfolio Website">
+
+
+<button>
+Save CV
+</button>
+
+
+</form>
+
+
+<script>
+
+const user_id=localStorage.getItem("user_id");
+
+
+document
+.getElementById("cvForm")
+.addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+
+let data={
+
+user_id,
+
+full_name:full_name.value,
+headline:headline.value,
+email:email.value,
+phone:phone.value,
+
+city:city.value,
+country:country.value,
+
+bio:bio.value,
+
+education:education.value,
+experience:experience.value,
+
+technical_skills:technical_skills.value,
+soft_skills:soft_skills.value,
+
+projects:projects.value,
+
+certifications:certifications.value,
+
+languages:languages.value,
+
+career_goal:career_goal.value,
+
+linkedin:linkedin.value,
+github:github.value,
+portfolio:portfolio.value
+
+};
+
+
+let r=await fetch("/api/cv-profile",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(data)
+
+});
+
+
+let result=await r.json();
+
+alert(
+result.success?
+"CV Saved Successfully":
+"Error Saving CV"
+);
+
+
+});
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+<div class="account-cta"><p>New to LearnEarnHub?</p><a href="/register.html" class="btn">🚀 Create Account / Join Now</a></div></body>
+</html>

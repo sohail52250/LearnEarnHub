@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+<title>Public Learner CV</title>
+<meta charset="UTF-8">
+
+<style>
+body{
+font-family:Arial;
+padding:20px;
+}
+
+.cv-box{
+border:1px solid #ddd;
+padding:20px;
+}
+
+button{
+padding:10px;
+}
+</style>
+
+<link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+<body><div id="global-header"></div>
+
+
+<h1>LearnEarnHub Learner CV</h1>
+
+<button onclick="window.print()">
+Download / Print CV
+</button>
+
+
+<div class="cv-box" id="cv">
+Loading...
+</div>
+
+
+
+<script>
+
+const params=new URLSearchParams(location.search);
+
+const user_id=params.get("user_id");
+
+
+fetch("/api/cv-profile?user_id="+user_id)
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+let p=d.profile || {};
+
+
+document.getElementById("cv").innerHTML=`
+
+<h2>${p.full_name||""}</h2>
+
+<h3>${p.headline||""}</h3>
+
+
+<p>
+${p.bio||""}
+</p>
+
+
+<h3>Education</h3>
+<p>${p.education||""}</p>
+
+
+<h3>Experience</h3>
+<p>${p.experience||""}</p>
+
+
+<h3>Technical Skills</h3>
+<p>${p.technical_skills||""}</p>
+
+
+<h3>Soft Skills</h3>
+<p>${p.soft_skills||""}</p>
+
+
+<h3>Projects</h3>
+<p>${p.projects||""}</p>
+
+
+<h3>Certificates</h3>
+<p>${p.certifications||""}</p>
+
+
+<h3>Languages</h3>
+<p>${p.languages||""}</p>
+
+
+<h3>Contact</h3>
+<p>
+${p.email||""}<br>
+${p.phone||""}
+</p>
+
+
+`;
+
+});
+
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+</html>

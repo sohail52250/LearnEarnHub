@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+table{
+  display:block;
+  overflow-x:auto;
+  width:100%;
+}
+
+.card{
+  width:100%;
+  max-width:100%;
+}
+
+@media (max-width:768px){
+  body{
+    font-size:16px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+}
+
+@media (max-width:480px){
+  h1{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+}
+</style>
+
+<title>AI Advertisement Review</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+<script src="/ai-ad-approval-engine.js"></script>
+
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+<div class="card">
+
+<h1>🤖 AI Advertisement Review Center</h1>
+
+
+<input id="adId"
+placeholder="Advertisement ID">
+
+
+<button onclick="reviewAd()">
+Run AI Check
+</button>
+
+
+<p id="result"></p>
+
+</div>
+
+
+<script>
+
+async function reviewAd(){
+
+let id=document
+.getElementById("adId")
+.value;
+
+
+let result=
+await runAIAdApproval(id);
+
+
+document.getElementById("result")
+.innerHTML=
+
+result
+?
+`
+Status: ${result.status}<br>
+Score: ${result.score}%<br>
+Reason: ${result.reason}
+`
+:
+"Review failed";
+
+
+}
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+</html>

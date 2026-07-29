@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+
+<title>Business Profile</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:5px;
+}
+
+button{
+padding:12px;
+}
+
+</style>
+
+<script src="/auth-guard.js"></script><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<h1>
+Complete Business Profile
+</h1>
+
+
+<form id="businessForm">
+
+
+<input id="company_name" placeholder="Company Name">
+
+<input id="logo" placeholder="Logo URL">
+
+<input id="owner_name" placeholder="Owner Name">
+
+<input id="email" placeholder="Email">
+
+<input id="phone" placeholder="Phone">
+
+
+<input id="category" placeholder="Business Category">
+
+
+<textarea id="description" placeholder="Short Description"></textarea>
+
+
+<textarea id="about_company" placeholder="About Company"></textarea>
+
+
+<textarea id="services" placeholder="Services"></textarea>
+
+
+<textarea id="products" placeholder="Products"></textarea>
+
+
+<textarea id="experience" placeholder="Business Experience"></textarea>
+
+
+<input id="team_size" placeholder="Team Size">
+
+
+<input id="city" placeholder="City">
+
+
+<input id="country" placeholder="Country">
+
+
+<input id="address" placeholder="Address">
+
+
+<input id="website" placeholder="Website">
+
+
+<input id="linkedin" placeholder="LinkedIn">
+
+
+<input id="facebook" placeholder="Facebook">
+
+
+<input id="registration_number" placeholder="Registration Number">
+
+
+<textarea id="portfolio" placeholder="Portfolio"></textarea>
+
+
+<button>
+Save Business Profile
+</button>
+
+
+</form>
+
+
+
+<script>
+
+
+businessForm.onsubmit=async(e)=>{
+
+e.preventDefault();
+
+
+let data={
+
+user_id:localStorage.getItem("user_id"),
+
+company_name:company_name.value,
+
+logo:logo.value,
+
+owner_name:owner_name.value,
+
+email:email.value,
+
+phone:phone.value,
+
+category:category.value,
+
+description:description.value,
+
+about_company:about_company.value,
+
+services:services.value,
+
+products:products.value,
+
+experience:experience.value,
+
+team_size:team_size.value,
+
+city:city.value,
+
+country:country.value,
+
+address:address.value,
+
+website:website.value,
+
+linkedin:linkedin.value,
+
+facebook:facebook.value,
+
+registration_number:registration_number.value,
+
+portfolio:portfolio.value
+
+};
+
+
+let r=await fetch("/api/business-profile-complete",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(data)
+
+});
+
+
+let result=await r.json();
+
+
+alert(
+result.success?
+"Business Profile Saved":
+"Error"
+);
+
+
+};
+
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+<div class="account-cta"><p>New to LearnEarnHub?</p><a href="/business-register.html" class="btn">🏢 Create Business Account</a></div></body>
+
+</html>
+

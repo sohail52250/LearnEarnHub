@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+table{
+  display:block;
+  overflow-x:auto;
+  width:100%;
+}
+
+.card{
+  width:100%;
+  max-width:100%;
+}
+
+@media (max-width:768px){
+  body{
+    font-size:16px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+}
+
+@media (max-width:480px){
+  h1{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+}
+</style>
+<title>Skill Quiz - Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="/certificate-system.js"></script>
+<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+
+<title>Skill Quiz - Learn & Earn Hub</title>
+
+<meta name="description" content="Learn quiz and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+
+<meta property="og:title" content="Skill Quiz - Learn & Earn Hub">
+<meta property="og:description" content="Learn quiz and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn-earnhub.vercel.app/quiz.html">
+
+<link rel="canonical" href="https://learn-earnhub.vercel.app/quiz.html">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Learn & Earn Hub",
+  "url": "https://learn-earnhub.vercel.app",
+  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+}
+</script>
+
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+<body><div id="global-header"></div>
+
+<nav>
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/practice.html">Practice</a>
+</nav>
+
+
+<div class="card">
+
+<h1>Computer Skills Quiz</h1>
+
+<p>Test your basic computer knowledge.</p>
+
+
+<form id="quiz">
+
+<h3>1. Which program is used to create documents?</h3>
+
+<input type="radio" name="q1" value="1">
+Microsoft Word<br>
+
+<input type="radio" name="q1" value="0">
+Paint<br>
+
+
+<h3>2. HTML is used for?</h3>
+
+<input type="radio" name="q2" value="1">
+Creating web pages<br>
+
+<input type="radio" name="q2" value="0">
+Editing photos<br>
+
+
+<h3>3. Excel is mainly used for?</h3>
+
+<input type="radio" name="q3" value="1">
+Tables and calculations<br>
+
+<input type="radio" name="q3" value="0">
+Playing videos<br>
+
+
+<br>
+
+<button type="button" onclick="checkQuiz()">
+Submit Quiz
+</button>
+
+</form>
+
+
+<h2 id="result"></h2>
+
+
+</div>
+
+
+<script>
+
+function checkQuiz(){
+
+let score=0;
+
+let answers=document.querySelectorAll(
+'input[type="radio"]:checked'
+);
+
+
+answers.forEach(function(a){
+
+score += Number(a.value);
+
+});
+
+
+if(score>=2){
+
+document.getElementById("result").innerHTML =
+"🎉 Passed! You can get your certificate.";
+
+localStorage.setItem(
+"certificate",
+"Computer Skills Certificate"
+);
+
+}else{
+
+document.getElementById("result").innerHTML =
+"Keep practicing and try again.";
+
+}
+
+}
+
+</script>
+
+
+<script src="/mobile-nav.js"></script>
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+</html>

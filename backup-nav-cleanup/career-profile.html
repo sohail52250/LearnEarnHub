@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Career Profile - Learn & Earn Hub</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="/supabase-config.js"></script>
+<script src="/career-profile.js"></script>
+
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<div class="card">
+
+<h1>
+🚀 My Career Profile
+</h1>
+
+<p>
+Your verified learning and earning identity.
+</p>
+
+
+<input id="career-name"
+placeholder="Your Name">
+
+
+<textarea id="career-about"
+placeholder="About yourself">
+</textarea>
+
+
+<input id="career-skills"
+placeholder="Skills (Excel, Design, Marketing...)">
+
+
+<input id="career-projects"
+placeholder="Projects / Portfolio">
+
+
+<button onclick="saveCareerProfile()">
+Save Profile
+</button>
+
+
+<p id="message"></p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+🏆 Verified Achievements
+</h2>
+
+
+<div id="achievements">
+
+Loading...
+
+</div>
+
+
+</div>
+
+
+<script src="/career-engine.js"></script>
+<script src="/opportunity-score.js"></script>
+<div class="card">
+<h2 data-en="Career Recommendations" data-ur="کیریئر تجاویز">Career Recommendations</h2>
+<ul id="careerRecommendations"></ul>
+<h2 data-en="Opportunity Score" data-ur="مواقع اسکور">Opportunity Score</h2>
+<h3 id="opportunityScore">0/100</h3>
+</div>
+<script>
+let learnerSkills=["excel","typing","internet"];
+let jobs=getRecommendations(learnerSkills);
+document.getElementById("careerRecommendations").innerHTML=jobs.map(j=>"<li>"+j+"</li>").join("");
+document.getElementById("opportunityScore").innerText=calculateOpportunityScore(learnerSkills)+"/100";
+</script>
+<script src="/career-supabase.js"></script>
+<script src="/opportunity-matching.js"></script>
+<div class="card" id="LearnEarnCareer">
+<h2 data-en="Your Learning To Earning Path" data-ur="آپ کا سیکھنے سے کمانے تک کا راستہ">Your Learning To Earning Path</h2>
+<p data-en="Your skills will be matched with opportunities." data-ur="آپ کی مہارتوں کو مواقع سے ملایا جائے گا۔">Your skills will be matched with opportunities.</p>
+</div>
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+
+</html>

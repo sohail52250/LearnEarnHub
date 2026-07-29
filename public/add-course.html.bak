@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+table{
+  display:block;
+  overflow-x:auto;
+  width:100%;
+}
+
+.card{
+  width:100%;
+  max-width:100%;
+}
+
+@media (max-width:768px){
+  body{
+    font-size:16px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+}
+
+@media (max-width:480px){
+  h1{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+}
+</style>
+<title>Add Course</title>
+<link rel="stylesheet" href="style.css">
+<script src="/adsense.js"></script>
+<script src="/certificate-system.js"></script>
+<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+
+<title>Add Course</title>
+
+<meta name="description" content="Learn add course and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+
+<meta property="og:title" content="Add Course">
+<meta property="og:description" content="Learn add course and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn-earnhub.vercel.app/add-course.html">
+
+<link rel="canonical" href="https://learn-earnhub.vercel.app/add-course.html">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Learn & Earn Hub",
+  "url": "https://learn-earnhub.vercel.app",
+  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+}
+</script>
+
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+<div class="card">
+
+<h2>Add Learning Content</h2>
+
+
+<input id="title_en"
+placeholder="Course title English">
+
+
+<input id="title_ur"
+placeholder="Course title Urdu">
+
+
+<textarea id="content_en"
+placeholder="English content">
+</textarea>
+
+
+<textarea id="content_ur"
+placeholder="Urdu content">
+</textarea>
+
+
+<button onclick="save()">
+Save Course
+</button>
+
+
+</div>
+
+
+
+<script>
+
+async function save(){
+
+let r=await fetch("/api/courses/create",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+title_en:title_en.value,
+title_ur:title_ur.value,
+
+content_en:content_en.value,
+content_ur:content_ur.value
+
+})
+
+});
+
+
+alert(await r.text());
+
+}
+
+</script>
+
+
+<script src="/mobile-nav.js"></script>
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+</html>

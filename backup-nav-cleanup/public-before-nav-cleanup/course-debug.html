@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body><div id="global-header"></div>
+<h2>Courses Debug</h2>
+<pre id="out">Loading...</pre>
+
+<script src="/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+(async()=>{
+ const {data,error,count}=await client
+ .from("courses")
+ .select("*",{count:"exact"});
+
+ document.getElementById("out").textContent=
+ JSON.stringify({
+ count,
+ rows:data?.length,
+ sample:data?.slice(0,20)
+ },null,2);
+})();
+</script>
+
+<script src="/assets/js/theme-helper.js"></script>
+<div id="global-footer"></div><script src="/global-layout.js"></script></body>
+</html>

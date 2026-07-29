@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="description" content="Learn & Earn Hub teaches practical computer skills, digital skills, freelancing basics and online learning for beginners.">
+
+<meta name="keywords" content="computer skills, digital skills, Microsoft Word, Excel, PowerPoint, freelancing, online learning">
+
+<meta name="author" content="Learn & Earn Hub">
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Learning Dashboard - Learn & Earn Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="/certificate-system.js"></script>
+<link rel="import" href="/seo-meta.html">
+<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+
+<title>Learning Dashboard - Learn & Earn Hub</title>
+
+<meta name="description" content="Learn learning guide and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+
+<meta property="og:title" content="Learning Dashboard - Learn & Earn Hub">
+<meta property="og:description" content="Learn learning guide and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn-earnhub.vercel.app/learning-guide.html">
+
+<link rel="canonical" href="https://learn-earnhub.vercel.app/learning-guide.html">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Learn & Earn Hub",
+  "url": "https://learn-earnhub.vercel.app",
+  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+}
+</script>
+
+
+<link rel="alternate" hreflang="en" href="https://learn-earnhub.vercel.app/">
+<link rel="alternate" hreflang="ur" href="https://learn-earnhub.vercel.app/">
+<link rel="alternate" hreflang="x-default" href="https://learn-earnhub.vercel.app/">
+
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<nav>
+
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a> |
+<a href="/learning-guide.html">Learning Guide</a>
+
+</nav>
+
+
+
+<section class="card">
+
+<h1>🎓 Learning Dashboard</h1>
+
+<h2>آپ کی سیکھنے کی پیش رفت</h2>
+
+
+<p>
+Complete lessons and track your progress.
+</p>
+
+<p>
+سبق مکمل کریں اور اپنی ترقی دیکھیں۔
+</p>
+
+
+<div class="progress-box">
+
+<div id="progressBar"></div>
+
+</div>
+
+
+<p id="progressText">
+0% Completed
+</p>
+
+
+</section>
+
+
+
+
+<section class="card">
+
+
+<h2>Beginner Learning Steps</h2>
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Computer Basics / کمپیوٹر بنیادیات
+
+</div>
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Microsoft Word
+
+</div>
+
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Microsoft Excel
+
+</div>
+
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Internet Safety
+
+</div>
+
+
+
+<div class="lesson">
+
+<input type="checkbox" class="lessonCheck">
+Freelancing Basics
+
+</div>
+
+
+</section>
+
+
+
+<script>
+
+
+let checks=document.querySelectorAll(".lessonCheck");
+
+
+function updateProgress(){
+
+
+let done=0;
+
+
+checks.forEach((c)=>{
+
+if(c.checked){
+done++;
+}
+
+});
+
+
+let percent=Math.round((done/checks.length)*100);
+
+
+document.getElementById("progressBar").style.width=percent+"%";
+
+
+document.getElementById("progressText").innerHTML=
+percent+"% Completed / مکمل";
+
+
+localStorage.setItem(
+"learningProgress",
+JSON.stringify(
+Array.from(checks).map(x=>x.checked)
+)
+);
+
+
+}
+
+
+
+let saved=JSON.parse(
+localStorage.getItem("learningProgress")
+);
+
+
+if(saved){
+
+checks.forEach((c,i)=>{
+
+c.checked=saved[i];
+
+});
+
+}
+
+
+checks.forEach(c=>{
+
+c.addEventListener(
+"change",
+updateProgress
+);
+
+});
+
+
+updateProgress();
+
+
+</script>
+
+
+
+<footer>
+
+<p>
+Learn & Earn Hub © 2026
+</p>
+
+</footer>
+
+
+<script src="/mobile-nav.js"></script>
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+
+</html>
