@@ -2,6 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+
+try{
+app.use("/api/courses", require("./routes/courses"));
+console.log("Courses API loaded");
+}catch(e){
+console.log("Courses API error:",e.message);
+}
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
