@@ -11,7 +11,7 @@ const payload = {
     details: document.getElementById("details").value
 };
 
-const { error } = await supabase
+const { error } = await supabaseClient
 .from("partnership_requests")
 .insert([payload]);
 
