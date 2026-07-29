@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Profile</title>
+<link rel="stylesheet" href="style.css">
+<script src="/certificate-system.js"></script>
+<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+
+<title>Student Profile</title>
+
+<meta name="description" content="Learn profile and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+
+<meta property="og:title" content="Student Profile">
+<meta property="og:description" content="Learn profile and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn-earnhub.vercel.app/profile.html">
+
+<link rel="canonical" href="https://learn-earnhub.vercel.app/profile.html">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Learn & Earn Hub",
+  "url": "https://learn-earnhub.vercel.app",
+  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+}
+</script>
+
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+<div id="instructor-menu"></div>
+<script>
+fetch("/instructor-nav.html").then(r=>r.text()).then(t=>document.getElementById("instructor-menu").innerHTML=t);
+</script>
+
+
+<nav>
+<a href="/">Home</a> |
+<a href="/courses.html">Courses</a>
+</nav>
+
+
+<section class="card">
+
+<h1>👨‍🎓 Student Profile</h1>
+
+<div id="profile-box">Loading profile...</div>
+
+<p>
+Welcome to your learning journey.
+</p>
+
+<p>
+آپ کے سیکھنے کا سفر شروع ہو گیا ہے۔
+</p>
+
+
+<a href="/learning-guide.html">
+<button>
+Open Learning Dashboard
+</button>
+</a>
+
+
+<br><br>
+
+
+<button onclick="logout()">
+Logout
+</button>
+
+
+</section>
+
+
+<script>
+
+let user=
+JSON.parse(localStorage.getItem("user"));
+
+
+if(user){
+
+document.getElementById("username").innerHTML=
+user.name;
+
+}
+
+
+function logout(){
+
+localStorage.removeItem("user");
+
+location.href="/login.html";
+
+}
+
+</script>
+
+
+<script src="/profile.js"></script>
+<script src="/mobile-nav.js"></script>
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+</html>

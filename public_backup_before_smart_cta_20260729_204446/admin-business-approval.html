@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+
+<title>Admin Business Approval</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+}
+
+button{
+margin:5px;
+padding:8px;
+}
+
+</style>
+
+<link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="theme-color" content="#0f172a">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+</head>
+
+
+<body><div id="global-header"></div>
+
+
+<h1>
+Business Verification Requests
+</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+<script>
+
+
+fetch("/api/admin-business-verification")
+
+.then(r=>r.json())
+
+.then(d=>{
+
+
+list.innerHTML=(d.data||[])
+
+.map(b=>`
+
+<div class="card">
+
+<h3>
+${b.company_name}
+</h3>
+
+
+<p>
+Registration:
+${b.registration_number}
+</p>
+
+
+<p>
+Status:
+${b.status}
+</p>
+
+
+<button onclick="approve('${b.id}')">
+Approve
+</button>
+
+
+<button onclick="reject('${b.id}')">
+Reject
+</button>
+
+
+</div>
+
+`)
+
+.join("");
+
+
+});
+
+
+
+async function approve(id){
+
+await update(id,"approved",100);
+
+alert("Business Approved");
+
+location.reload();
+
+}
+
+
+
+async function reject(id){
+
+await update(id,"rejected",0);
+
+alert("Business Rejected");
+
+location.reload();
+
+}
+
+
+
+async function update(id,status,score){
+
+
+await fetch("/api/admin-business-verification",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+id,
+
+status,
+
+trust_score:score,
+
+admin_note:"Reviewed by admin"
+
+})
+
+});
+
+
+}
+
+
+</script>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+
+</html>
