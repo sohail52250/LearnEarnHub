@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login - LearnEarnHub</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🔐 Admin Login</h1>
+
+<input id="email" placeholder="Admin Email">
+<br><br>
+
+<input id="password" type="password" placeholder="Password">
+<br><br>
+
+<button onclick="login()">Login</button>
+
+<p id="status"></p>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+<script>
+
+async function login(){
+
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+
+let {data,error}=await supabaseClient.auth.signInWithPassword({
+email,
+password
+});
+
+if(error){
+
+status.innerHTML="❌ "+error.message;
+return;
+
+}
+
+location.href="/admin-partnerships.html";
+
+}
+
+</script>
+
+</body>
+</html>
