@@ -850,3 +850,24 @@ button,
 
 }
 
+
+/* Force compact header */
+header.leh-header{
+    background:#ffffff !important;
+    background-image:none !important;
+    min-height:0 !important;
+    height:auto !important;
+    max-height:none !important;
+    padding:12px 20px !important;
+    margin:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    flex-wrap:wrap !important;
+    border-bottom:1px solid #e5e7eb !important;
+}
+
+header.leh-header *{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
