@@ -93,7 +93,7 @@ h1,h2,h3 {
 }
 
 .navbar,
-header {
+.site-header {
   backdrop-filter:blur(10px);
   position:sticky;
   top:0;
