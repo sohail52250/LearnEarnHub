@@ -1,5 +1,52 @@
+#!/data/data/com.termux/files/usr/bin/bash
 
-const adminEmail="it03347543200@gmail.co";
+echo "=== Creating LearnEarnHub Admin Verification Panel ==="
+
+# Create admin page
+
+cat > public/admin-business-verification.html <<'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Business Verification</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="stylesheet" href="/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🔐 Admin Business Verification</h1>
+
+<div id="status"></div>
+
+<div id="business-list">
+Loading...
+</div>
+
+</div>
+
+
+<script src="/admin-business-verification.js"></script>
+
+</body>
+</html>
+HTML
+
+
+
+# Create admin JS
+
+cat > public/admin-business-verification.js <<'JS'
+
+const adminEmail="YOUR_ADMIN_EMAIL_HERE";
 
 
 const user=JSON.parse(
@@ -116,4 +163,9 @@ document.addEventListener(
 "DOMContentLoaded",
 loadBusinesses
 );
+
+JS
+
+
+echo "=== Admin panel created ==="
 

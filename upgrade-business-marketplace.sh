@@ -1,3 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Upgrading Business Marketplace ==="
+
+cp public/business-marketplace.html public/business-marketplace.html.bak 2>/dev/null
+cp public/business-marketplace-v2.js public/business-marketplace-v2.js.bak 2>/dev/null
+
+
+cat > public/business-marketplace-v2.js <<'JS'
 let businesses=[];
 
 
@@ -113,4 +122,9 @@ document.addEventListener(
 "DOMContentLoaded",
 loadBusinesses
 );
+
+JS
+
+
+echo "Marketplace upgraded"
 

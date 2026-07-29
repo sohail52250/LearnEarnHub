@@ -1,3 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Connecting Business Registration Flow ==="
+
+# Backup files
+cp public/business-register.js public/business-register.js.bak 2>/dev/null
+cp public/business-register.html public/business-register.html.bak 2>/dev/null
+
+cat > public/business-register.js <<'JS'
 document
 .getElementById("businessRegisterForm")
 .addEventListener("submit", async function(e){
@@ -76,3 +85,16 @@ location.href="/business-dashboard.html";
 }
 
 });
+JS
+
+
+# Add Supabase scripts if missing
+
+grep -q "supabase-config.js" public/business-register.html || \
+sed -i '/<\/head>/i\
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\
+<script src="/supabase-config.js"></script>' public/business-register.html
+
+
+echo "=== Business registration connected ==="
+
