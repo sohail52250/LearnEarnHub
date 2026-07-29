@@ -1191,3 +1191,27 @@ transform:translateY(-2px);
 opacity:.9;
 }
 
+
+/* ===== Fix Transparent Buttons ===== */
+
+.leh-nav a,
+.btn,
+button,
+.account-cta .btn {
+    background:#2563eb !important;
+    color:#ffffff !important;
+    border:0 !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    text-shadow:none !important;
+}
+
+.leh-nav a:hover,
+.btn:hover,
+button:hover,
+.account-cta .btn:hover {
+    background:#1d4ed8 !important;
+    color:#ffffff !important;
+    opacity:1 !important;
+}
+
