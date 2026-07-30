@@ -6,6 +6,14 @@ router.post("/", async (req, res) => {
   try {
     const { user_id, completed_course_id } = req.body;
 
+    if (!/^[0-9a-fA-F-]{36}$/.test(user_id)) {
+      return res.json({
+        success:false,
+        error:"user_id must be valid UUID",
+        received:user_id
+      });
+    }
+
     if (!user_id || !completed_course_id) {
       return res.json({
         success:false,
