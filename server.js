@@ -30,10 +30,9 @@ try{
 
 
 
-app.post("/api/direct-test", (req,res)=>{
- res.json({ok:true,source:"direct-server"});
+
 });
-\napp.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 
