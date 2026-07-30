@@ -55,7 +55,53 @@ course.content_en || "Content coming soon";
 
 async function completeCourse(){
 
-alert("Course completion uses existing API");
+const userId="bef3e115-d642-412b-b034-a84c1a19d1ee";
+
+if(!course){
+ alert("Course not loaded");
+ return;
+}
+
+try{
+
+const res=await fetch("/api/unlock-course",{
+ method:"POST",
+ headers:{
+  "Content-Type":"application/json"
+ },
+ body:JSON.stringify({
+  user_id:userId,
+  completed_course_id:course.id
+ })
+});
+
+const data=await res.json();
+
+if(data.success){
+
+alert(
+"✅ Course completed!
+"+
+(data.message || "")+
+(data.course_id ? "
+Next Course ID: "+data.course_id : "")
+);
+
+}else{
+
+alert(
+"Unlock failed:
+"+
+(data.error || "Unknown error")
+);
+
+}
+
+}catch(e){
+
+alert("Network error: "+e.message);
+
+}
 
 }
 
