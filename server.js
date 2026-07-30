@@ -35,15 +35,6 @@ app.use(express.static("public"));
 
 
 
-app.post("/api/unlock-course",(req,res)=>{
-  res.json({
-    success:true,
-    message:"unlock route reached",
-    body:req.body
-  });
-});
-
-
 app.get("/api/status",(req,res)=>{
   res.json({
     name:"Learn & Earn Hub",
