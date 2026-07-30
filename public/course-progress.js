@@ -1,6 +1,13 @@
 async function loadProgress(){
 
-const userId="bef3e115-d642-412b-b034-a84c1a19d1ee";
+const { data:{ user } } = await supabase.auth.getUser();
+
+if(!user){
+ document.getElementById("courses").innerHTML="Please login first";
+ return;
+}
+
+const userId=user.id;
 
 try{
 
