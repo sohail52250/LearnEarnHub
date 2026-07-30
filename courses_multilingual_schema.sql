@@ -1,0 +1,16 @@
+
+ALTER TABLE courses
+ADD COLUMN IF NOT EXISTS title_en TEXT;
+
+ALTER TABLE courses
+ADD COLUMN IF NOT EXISTS title_ur TEXT;
+
+ALTER TABLE courses
+ADD COLUMN IF NOT EXISTS description_en TEXT;
+
+ALTER TABLE courses
+ADD COLUMN IF NOT EXISTS description_ur TEXT;
+
+ALTER TABLE courses
+ADD COLUMN IF NOT EXISTS language_group TEXT;
+

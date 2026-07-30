@@ -26,3 +26,15 @@ alert(
 
 window.completeCourse =
 completeCourse;
+
+
+// Learning Path Unlock Hook
+if(typeof unlockNextCourse === "function"){
+
+unlockNextCourse(
+localStorage.getItem("user_id"),
+courseId
+);
+
+}
+
