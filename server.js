@@ -22,7 +22,7 @@ app.post("/api/test-post",(req,res)=>{
 
 try{
   const unlockCourseRouter=require("./routes/unlock-course");
-  app.post("/api/unlock-course", unlockCourseRouter);
+  app.use("/api/unlock-course", unlockCourseRouter);
   console.log("Unlock Course API loaded");
 }catch(e){
   console.log("Unlock Course API error:",e.message);
