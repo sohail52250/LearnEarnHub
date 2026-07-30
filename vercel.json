@@ -12,7 +12,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/api/status",
+      "dest": "server.js"
+    },
+    {
+      "src": "/api/unlock-course",
       "dest": "server.js"
     },
     {
