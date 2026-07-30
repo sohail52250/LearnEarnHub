@@ -69,11 +69,13 @@ router.post("/", async (req, res) => {
 
     const { error: unlockError } = await db
       .from("course_unlocks")
-      .insert({
+      .upsert({
         user_id:user_id,
         course_id:next.course_id,
         unlocked:true,
         unlocked_at:new Date()
+      },{
+        onConflict:"user_id,course_id"
       });
 
     if (unlockError) {
