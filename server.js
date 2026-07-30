@@ -10,7 +10,16 @@ console.log("Courses API loaded");
 console.log("Courses API error:",e.message);
 }
 
+
 app.use(express.json());
+
+app.post("/api/test-post",(req,res)=>{
+  res.json({
+    success:true,
+    source:"server.js"
+  });
+});
+
 try{
   const unlockCourseRouter=require("./routes/unlock-course");
   app.use("/api/unlock-course", unlockCourseRouter);
