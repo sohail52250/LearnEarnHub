@@ -65,3 +65,4 @@ console.log("AI Deal API loaded");
 console.log("AI Deal API error",e.message);
 }
 
+module.exports = app;
