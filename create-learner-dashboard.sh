@@ -1,4 +1,47 @@
 
+#!/data/data/Termux/files/usr/bin/bash
+
+cat > public/learner-dashboard.html <<'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learner Dashboard - LearnEarnHub</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+<body>
+
+<h1>🎓 Learner Dashboard</h1>
+
+<h2>My Skills</h2>
+<div id="skills">Loading...</div>
+
+
+<h2>My Submitted Tasks</h2>
+<div id="tasks">Loading...</div>
+
+
+<h2>My Earnings</h2>
+<div id="earnings">Loading...</div>
+
+
+<h2>My Badges</h2>
+<div id="badges">Loading...</div>
+
+
+<script src="/learner-dashboard.js"></script>
+
+</body>
+</html>
+HTML
+
+
+
+cat > public/learner-dashboard.js <<'JS'
+
 const client=supabaseClient;
 
 
@@ -170,4 +213,9 @@ document.addEventListener(
 "DOMContentLoaded",
 loadDashboard
 );
+
+JS
+
+
+echo "Learner Dashboard created"
 

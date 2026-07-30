@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Create Task - LearnEarnHub Business</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+<h1>🏢 Create Earning Task</h1>
+
+
+<label>Task Title</label>
+<input id="title">
+
+
+<br>
+
+
+<label>Description</label>
+<textarea id="description"></textarea>
+
+
+<br>
+
+
+<label>Required Skill</label>
+<input id="skill">
+
+
+<br>
+
+
+<label>Reward Amount</label>
+<input id="reward" type="number">
+
+
+<br>
+
+
+<label>Currency</label>
+<input id="currency" value="PKR">
+
+
+<br>
+
+
+<button onclick="createTask()">
+Create Task
+</button>
+
+
+<script src="/business-task-create.js"></script>
+
+
+</body>
+
+</html>

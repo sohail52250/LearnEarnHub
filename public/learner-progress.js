@@ -1,18 +1,18 @@
 
-const client=supabaseClient;
+const client = supabaseClient;
 
 
-async function loadDashboard(){
+async function loadProgress(){
 
 
-const user=JSON.parse(
+const user = JSON.parse(
 localStorage.getItem("user") || "null"
 );
 
 
 if(!user){
 
-document.body.innerHTML=
+document.body.innerHTML =
 "Please login first";
 
 return;
@@ -36,7 +36,7 @@ loadBadges(user.id);
 
 async function loadSkills(uid){
 
-let {data}=await client
+const {data}=await client
 
 .from("learner_skills")
 
@@ -45,14 +45,18 @@ let {data}=await client
 .eq("user_id",uid);
 
 
+
 document.getElementById("skills").innerHTML=
 
 (data||[])
 .map(s=>`
+
 <p>
 ${s.skill}
- - ${s.level}
+-
+${s.level}
 </p>
+
 `)
 .join("")
 ||
@@ -63,10 +67,10 @@ ${s.skill}
 
 
 
-
 async function loadTasks(uid){
 
-let {data}=await client
+
+const {data}=await client
 
 .from("task_submissions")
 
@@ -75,22 +79,17 @@ let {data}=await client
 .eq("learner_id",uid);
 
 
+
 document.getElementById("tasks").innerHTML=
 
-(data||[])
-.map(t=>`
+`
 
 <p>
-Task ID: ${t.task_id}
-<br>
-Status: ${t.status}
+Completed/Submissions:
+${(data||[]).length}
 </p>
 
-`)
-.join("")
-||
-"No submitted tasks";
-
+`;
 
 }
 
@@ -100,7 +99,8 @@ Status: ${t.status}
 
 async function loadEarnings(uid){
 
-let {data}=await client
+
+const {data}=await client
 
 .from("learner_earnings")
 
@@ -110,23 +110,27 @@ let {data}=await client
 
 
 
+let total=0;
+
+
+(data||[]).forEach(e=>{
+
+total += Number(e.amount || 0);
+
+});
+
+
+
 document.getElementById("earnings").innerHTML=
 
-(data||[])
-.map(e=>`
+`
 
 <p>
-${e.amount} ${e.currency}
-<br>
-Status:
-${e.payment_status}
+Total Earned:
+${total}
 </p>
 
-`)
-.join("")
-||
-"No earnings yet";
-
+`;
 
 }
 
@@ -136,7 +140,8 @@ ${e.payment_status}
 
 async function loadBadges(uid){
 
-let {data}=await client
+
+const {data}=await client
 
 .from("learner_badges")
 
@@ -152,7 +157,7 @@ document.getElementById("badges").innerHTML=
 .map(b=>`
 
 <p>
-🏅 ${b.badge_name || "Badge"}
+🏅 ${b.badge_name || "Achievement"}
 </p>
 
 `)
@@ -165,9 +170,8 @@ document.getElementById("badges").innerHTML=
 
 
 
-
 document.addEventListener(
 "DOMContentLoaded",
-loadDashboard
+loadProgress
 );
 
