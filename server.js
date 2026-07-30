@@ -64,7 +64,7 @@ console.log("Restore Center API loaded");
 console.log("Restore Center error",e.message);
 }
 
-module.exports = app;
+
 
 
 try{
