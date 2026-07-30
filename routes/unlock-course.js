@@ -1,14 +1,8 @@
+const express = require("express");
+const router = express.Router();
 const db = require("../database");
 
-module.exports = async function handler(req, res) {
-
-  if (req.method !== "POST") {
-    return res.status(405).json({
-      success: false,
-      error: "Method not allowed"
-    });
-  }
-
+router.post("/", async (req, res) => {
   try {
     const { user_id, completed_course_id } = req.body;
 
@@ -27,8 +21,8 @@ module.exports = async function handler(req, res) {
 
     if (!current.data) {
       return res.json({
-        success:false,
-        error:"Course not found"
+        success: false,
+        error: "Course not found"
       });
     }
 
@@ -42,8 +36,8 @@ module.exports = async function handler(req, res) {
 
     if (!next.data) {
       return res.json({
-        success:true,
-        message:"Learning path completed"
+        success: true,
+        message: "Learning path completed"
       });
     }
 
@@ -52,21 +46,21 @@ module.exports = async function handler(req, res) {
       .insert({
         user_id,
         course_id: next.data.course_id,
-        unlocked:true,
-        unlocked_at:new Date()
+        unlocked: true,
+        unlocked_at: new Date()
       });
 
     if (error) {
       return res.json({
-        success:false,
-        error:error.message
+        success: false,
+        error: error.message
       });
     }
 
     res.json({
-      success:true,
-      message:"Next course unlocked",
-      course_id:next.data.course_id
+      success: true,
+      message: "Next course unlocked",
+      course_id: next.data.course_id
     });
 
   } catch (e) {
@@ -75,4 +69,6 @@ module.exports = async function handler(req, res) {
       error:e.message
     });
   }
-};
+});
+
+module.exports = router;
