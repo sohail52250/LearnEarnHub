@@ -13,7 +13,7 @@ console.log("Courses API error:",e.message);
 app.use(express.json());
 try{
   const unlockCourseRouter=require("./routes/unlock-course");
-  app.use(./routes/unlock-course",unlockCourseRouter);
+  app.use("/api/unlock-course", unlockCourseRouter);
   console.log("Unlock Course API loaded");
 }catch(e){
   console.log("Unlock Course API error:",e.message);
