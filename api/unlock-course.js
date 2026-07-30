@@ -1,105 +1,78 @@
-const express = require("express");
-const router = express.Router();
 const db = require("../database");
 
+module.exports = async function handler(req, res) {
 
-router.post("/", async (req,res)=>{
+  if (req.method !== "POST") {
+    return res.status(405).json({
+      success: false,
+      error: "Method not allowed"
+    });
+  }
 
-try{
+  try {
+    const { user_id, completed_course_id } = req.body;
 
-const {
-user_id,
-completed_course_id
-}=req.body;
+    if (!user_id || !completed_course_id) {
+      return res.json({
+        success: false,
+        error: "missing data"
+      });
+    }
 
+    const current = await db
+      .from("learning_path_courses")
+      .select("sequence_number")
+      .eq("course_id", completed_course_id)
+      .single();
 
-if(!user_id || !completed_course_id){
+    if (!current.data) {
+      return res.json({
+        success:false,
+        error:"Course not found"
+      });
+    }
 
-return res.json({
-success:false,
-error:"missing data"
-});
+    const next = await db
+      .from("learning_path_courses")
+      .select("*")
+      .gt("sequence_number", current.data.sequence_number)
+      .order("sequence_number")
+      .limit(1)
+      .single();
 
-}
+    if (!next.data) {
+      return res.json({
+        success:true,
+        message:"Learning path completed"
+      });
+    }
 
+    const { error } = await db
+      .from("course_unlocks")
+      .insert({
+        user_id,
+        course_id: next.data.course_id,
+        unlocked:true,
+        unlocked_at:new Date()
+      });
 
-// find next course in learning path
+    if (error) {
+      return res.json({
+        success:false,
+        error:error.message
+      });
+    }
 
-const {data:pathCourse}=await db
-.from("learning_path_courses")
-.select("*")
-.gt("sequence_number",
-(
-await db
-.from("learning_path_courses")
-.select("sequence_number")
-.eq("course_id",completed_course_id)
-.single()
-).data.sequence_number
-)
-.order("sequence_number")
-.limit(1)
-.single();
+    res.json({
+      success:true,
+      message:"Next course unlocked",
+      course_id:next.data.course_id
+    });
 
-
-if(!pathCourse){
-
-return res.json({
-success:true,
-message:"Learning path completed"
-});
-
-}
-
-
-// create unlock
-
-const {error}=await db
-.from("course_unlocks")
-.insert({
-
-user_id:user_id,
-course_id:pathCourse.course_id,
-unlocked:true,
-unlocked_at:new Date()
-
-});
-
-
-if(error){
-
-return res.json({
-success:false,
-error:error.message
-});
-
-}
-
-
-res.json({
-
-success:true,
-
-message:"Next course unlocked",
-
-course_id:pathCourse.course_id
-
-});
-
-
-}catch(e){
-
-res.status(500).json({
-
-success:false,
-
-error:e.message
-
-});
-
-}
-
-});
-
-
-module.exports=router;
+  } catch (e) {
+    res.status(500).json({
+      success:false,
+      error:e.message
+    });
+  }
+};
