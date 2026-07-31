@@ -59,14 +59,23 @@ let json=await res.json();
 
 course=json.data[0];
 
-document.getElementById("title").innerText=
-course.title_en+" / "+course.title_ur;
+const lang =
+localStorage.getItem("language") || "en";
 
-document.getElementById("description").innerText=
-course.description_en;
+document.getElementById("title").innerText =
+course["title_" + lang] ||
+course.title_en ||
+course.title;
 
-document.getElementById("content").innerText=
-course.content_en || "Content coming soon";
+document.getElementById("description").innerText =
+course["description_" + lang] ||
+course.description_en ||
+course.description;
+
+document.getElementById("content").innerText =
+course["content_" + lang] ||
+course.content_en ||
+"Content coming soon";
 
 }
 
