@@ -35,7 +35,7 @@ div.className="card";
 
 div.innerHTML=
 `
-<h3>${c.title_en || "Course"}</h3>
+<h3>${c["title_"+(localStorage.getItem("language")||"en")] || c.title_en || "Course"}</h3>
 <p>Status: ${c.unlocked ? "Unlocked ✅":"Locked 🔒"}</p>
 `;
 

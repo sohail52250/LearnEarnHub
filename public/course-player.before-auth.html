@@ -12,24 +12,6 @@
 <link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-
 </head>
 
 <body><div id="global-header"></div>
@@ -59,23 +41,14 @@ let json=await res.json();
 
 course=json.data[0];
 
-const lang =
-localStorage.getItem("language") || "en";
+document.getElementById("title").innerText=
+course.title_en+" / "+course.title_ur;
 
-document.getElementById("title").innerText =
-course["title_" + lang] ||
-course["title_"+(localStorage.getItem("language")||"en")] || course.title_en ||
-course.title;
+document.getElementById("description").innerText=
+course.description_en;
 
-document.getElementById("description").innerText =
-course["description_" + lang] ||
-course["description_"+(localStorage.getItem("language")||"en")] || course.description_en ||
-course.description;
-
-document.getElementById("content").innerText =
-course["content_" + lang] ||
-course.content_en ||
-"Content coming soon";
+document.getElementById("content").innerText=
+course.content_en || "Content coming soon";
 
 }
 
