@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+<meta charset="UTF-8">
+<title>LearnEarnHub Course Player</title>
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+
+</head>
+
+<body><div id="global-header"></div>
+
+<h1 id="title">Loading course...</h1>
+
+<h3 id="description"></h3>
+
+<div id="content">
+Loading lesson content...
+</div>
+
+<button onclick="completeCourse()">
+Complete Course / کورس مکمل کریں
+</button>
+
+<script>
+
+const API="/api/courses";
+
+let course=null;
+
+async function loadCourse(){
+
+let res=await fetch(API);
+let json=await res.json();
+
+course=json.data[0];
+
+const lang =
+localStorage.getItem("language") || "en";
+
+document.getElementById("title").innerText =
+course["title_" + lang] ||
+course["title_"+(localStorage.getItem("language")||"en")] || course.title_en ||
+course.title;
+
+document.getElementById("description").innerText =
+course["description_" + lang] ||
+course["description_"+(localStorage.getItem("language")||"en")] || course.description_en ||
+course.description;
+
+document.getElementById("content").innerText =
+course["content_" + lang] ||
+course.content_en ||
+"Content coming soon";
+
+}
+
+
+async function completeCourse(){
+
+const { data:{ user } } = await supabase.auth.getUser();
+
+if(!user){
+ alert("Please login first");
+ return;
+}
+
+const userId=user.id;
+
+if(!course){
+ alert("Course not loaded");
+ return;
+}
+
+try{
+
+const res=await fetch("/api/unlock-course",{
+ method:"POST",
+ headers:{
+  "Content-Type":"application/json"
+ },
+ body:JSON.stringify({
+  user_id:userId,
+  completed_course_id:course.id
+ })
+});
+
+const data=await res.json();
+
+if(data.success){
+
+alert(
+"✅ Course completed!
+"+
+(data.message || "")+
+(data.course_id ? "
+Next Course ID: "+data.course_id : "")
+);
+
+}else{
+
+alert(
+"Unlock failed:
+"+
+(data.error || "Unknown error")
+);
+
+}
+
+}catch(e){
+
+alert("Network error: "+e.message);
+
+}
+
+}
+
+
+loadCourse();
+
+</script>
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+</body>
+</html>

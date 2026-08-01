@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 try {
-  app.use("/api/courses", require("./routes/courses"));
+  app.use("/api/courses", require("./routes/courses"));\napp.use("/api/debug-lessons", require("./debug-lessons"));
   console.log("Courses API loaded");
 } catch(e) {
   console.log("Courses API error:", e.message);
