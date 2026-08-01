@@ -3,21 +3,27 @@ const db=require("./database");
 
 router.get("/", async(req,res)=>{
  try{
-  const {data,error}=await db
+
+  const all = await db
    .from("course_lessons")
    .select("id,course_id,title_en")
    .limit(5);
 
+  const one = await db
+   .from("course_lessons")
+   .select("id,course_id,title_en")
+   .eq("course_id",1);
+
   res.json({
-   ok:true,
-   error:error,
-   count:data ? data.length : 0,
-   sample:data
+   all_count: all.data ? all.data.length : 0,
+   all_error: all.error,
+   course1_count: one.data ? one.data.length : 0,
+   course1_error: one.error,
+   sample: one.data
   });
 
  }catch(e){
   res.status(500).json({
-   ok:false,
    message:e.message
   });
  }
