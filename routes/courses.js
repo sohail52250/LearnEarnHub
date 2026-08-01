@@ -35,7 +35,7 @@ res.json(data);
 });
 
 
-module.exports=router;
+
 
 
 // Course lessons API
@@ -57,3 +57,5 @@ router.get("/lessons/:course_id", async(req,res)=>{
 
 });
 
+
+module.exports=router;
