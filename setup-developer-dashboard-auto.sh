@@ -1,3 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating developer dashboard API ==="
+
+mkdir -p api/developer
+
+cat > api/developer/dashboard.js <<'JS'
 const {createClient}=require("@supabase/supabase-js");
 require("dotenv").config();
 
@@ -38,3 +45,34 @@ module.exports=async(req,res)=>{
   });
  }
 };
+JS
+
+echo "Dashboard API created"
+
+python - <<'PY'
+from pathlib import Path
+
+p=Path("server.js")
+s=p.read_text()
+
+if '"/api/developer/dashboard"' not in s:
+    s=s.replace(
+    'module.exports = app;',
+    '''
+app.get("/api/developer/dashboard",
+require("./api/developer/dashboard"));
+
+module.exports = app;
+'''
+    )
+    p.write_text(s)
+    print("Dashboard route added")
+else:
+    print("Dashboard route already exists")
+PY
+
+git add .
+git commit -m "Add developer dashboard stats API"
+git push
+
+echo "=== Completed ==="
