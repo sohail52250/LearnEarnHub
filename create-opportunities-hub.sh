@@ -1,3 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating Opportunities Hub ==="
+
+cat > public/opportunities.html <<'HTML'
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,3 +112,32 @@ load();
 
 </body>
 </html>
+HTML
+
+
+python - <<'PY'
+from pathlib import Path
+
+for p in Path("public").rglob("*.html"):
+    try:
+        s=p.read_text(errors="ignore")
+        if "Opportunities Hub" not in s and "</footer>" in s:
+            s=s.replace(
+            "</footer>",
+            '<a href="/opportunities.html">💼 Opportunities</a></footer>'
+            )
+            p.write_text(s)
+    except:
+        pass
+
+print("Opportunity links added")
+PY
+
+
+git add .
+git commit -m "Create unified opportunities hub" || true
+git push
+
+vercel --prod
+
+echo "=== Completed ==="
