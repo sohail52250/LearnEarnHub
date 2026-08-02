@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Developer Login - LearnEarnHub</title>
+<title>Developer Login</title>
 </head>
 <body>
 
-<h2>Developer Portal Login</h2>
+<h2>LearnEarnHub Developer Login</h2>
 
-<input id="key" placeholder="Developer API Key">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
 <button onclick="login()">Login</button>
 
 <p id="msg"></p>
 
-<script>
+<script type="module">
 
-function login(){
+import {createClient}
+from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
- let key=document.getElementById("key").value;
+const supabase=createClient(
+ "YOUR_SUPABASE_URL",
+ "YOUR_SUPABASE_ANON_KEY"
+);
 
- if(key){
 
-  localStorage.setItem("LEH_DEV_KEY",key);
+window.login=async()=>{
 
-  window.location="/developer/dashboard.html";
+ const email=document.getElementById("email").value;
+ const password=document.getElementById("password").value;
 
+ const {data,error}=await supabase.auth.signInWithPassword({
+  email,
+  password
+ });
+
+ if(error){
+  msg.innerHTML=error.message;
+  return;
  }
+
+ localStorage.setItem(
+ "LEH_SESSION",
+ data.session.access_token
+ );
+
+ location="/developer/dashboard.html";
 
 }
 
