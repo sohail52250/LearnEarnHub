@@ -1,37 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Developer Dashboard</title>
+<title>LearnEarnHub Developer Dashboard</title>
 </head>
 
 <body>
 
-<h1>LearnEarnHub Developer Dashboard</h1>
+<h1>Developer Dashboard</h1>
 
-<div id="content"></div>
+<button onclick="logout()">Logout</button>
 
-<script>
+<pre id="output">Loading...</pre>
 
-const key=localStorage.getItem("LEH_DEV_KEY");
+<script type="module">
 
-if(!key){
- window.location="/developer/login.html";
-}
+import {createClient}
+from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-async function load(){
 
-const r=await fetch(
-"/api/developer/key-control"
+const supabase=createClient(
+"YOUR_SUPABASE_URL",
+"YOUR_SUPABASE_ANON_KEY"
 );
 
-const data=await r.json();
 
-document.getElementById("content").innerHTML=
-JSON.stringify(data,null,2);
+async function checkSession(){
+
+ const {data}=await supabase.auth.getSession();
+
+ if(!data.session){
+
+   window.location="/developer/login.html";
+   return;
+
+ }
+
+ loadDashboard(data.session.access_token);
 
 }
 
-load();
+
+async function loadDashboard(token){
+
+ const r=await fetch(
+ "/api/developer/dashboard",
+ {
+  headers:{
+   Authorization:"Bearer "+token
+  }
+ });
+
+ const data=await r.json();
+
+ document.getElementById("output").textContent=
+ JSON.stringify(data,null,2);
+
+}
+
+
+window.logout=async()=>{
+
+ await supabase.auth.signOut();
+
+ localStorage.clear();
+
+ window.location="/developer/login.html";
+
+}
+
+
+checkSession();
 
 </script>
 
