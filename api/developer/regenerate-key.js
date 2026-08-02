@@ -3,7 +3,6 @@ require("dotenv").config();
 
 const crypto=require("crypto");
 
-
 const db=createClient(
 process.env.SUPABASE_URL,
 process.env.SUPABASE_SERVICE_KEY
@@ -14,9 +13,7 @@ module.exports=async(req,res)=>{
 
 try{
 
-
 const id=req.body.id;
-
 
 if(!id){
 
@@ -28,25 +25,36 @@ error:"Missing key id"
 
 
 
-const old =
-await db
+const {data:old,error:findError}=await db
 .from("api_partner_keys")
 .select("*")
 .eq("id",id)
-.single();
+.limit(1)
+.maybeSingle();
 
 
 
-if(old.error){
+if(findError){
 
-throw old.error;
+throw findError;
+
+}
+
+
+if(!old){
+
+return res.status(404).json({
+error:"API key not found"
+});
 
 }
 
 
 
 const newKey =
-"LEH_"+crypto.randomBytes(16).toString("hex").toUpperCase();
+"LEH_"+crypto.randomBytes(16)
+.toString("hex")
+.toUpperCase();
 
 
 
@@ -65,11 +73,11 @@ updated_at:new Date()
 
 
 
-await db
+const {data:newKeyRow,error:newError}=await db
 .from("api_partner_keys")
 .insert({
 
-partner_id:old.data.partner_id,
+partner_id:old.partner_id,
 
 api_key:newKey,
 
@@ -83,7 +91,18 @@ monthly_limit:100000,
 
 blocked:false
 
-});
+})
+.select()
+.limit(1)
+.maybeSingle();
+
+
+
+if(newError){
+
+throw newError;
+
+}
 
 
 
@@ -91,13 +110,13 @@ await db
 .from("api_key_actions")
 .insert({
 
-partner_id:old.data.partner_id,
+partner_id:old.partner_id,
 
-api_key_id:id,
+api_key_id:newKeyRow.id,
 
 action:"REGENERATED",
 
-old_key:old.data.api_key,
+old_key:old.api_key,
 
 new_key:newKey
 
@@ -125,6 +144,5 @@ error:e.message
 });
 
 }
-
 
 };
