@@ -12,7 +12,7 @@ module.exports=async function(req,res){
 try{
 
 const keys=await db
-.from("api_partner_keys")
+.from("api_key_dashboard")
 .select("*");
 
 
