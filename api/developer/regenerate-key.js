@@ -81,6 +81,7 @@ partner_id:old.partner_id,
 
 api_key:newKey,
 
+name:old.name || "Regenerated Developer Key",
 key_name:"Regenerated API Key",
 
 status:"active",
