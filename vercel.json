@@ -1,47 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "crons": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/developer/(.*)",
-      "dest": "server.js"
-    },
-    {
-      "src": "/partner/(.*)",
-      "dest": "/public/partner/$1"
-    },
-    {
-      "src": "/swagger/(.*)",
-      "dest": "/public/swagger/$1"
-    },
-    {
-      "src": "/developer/(.*)",
-      "dest": "/public/developer/$1"
-    },
-    {
-      "src": "/$",
-      "dest": "/public/index.html"
-    },
-    {
-      "src": "/(.*\\.(js|html|css|png|jpg|jpeg|svg|ico))",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
+      "path": "/api/cron/refresh-feeds",
+      "schedule": "0 */6 * * *"
     }
   ]
 }
