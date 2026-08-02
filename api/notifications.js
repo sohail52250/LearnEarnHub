@@ -6,7 +6,7 @@ module.exports=async function(req,res){
 try{
 
 
-if(req.body.action==="send"){
+if(req.body && (req.body?.action)==="send"){
 
 return res.json(
 await service.sendNotification(
@@ -18,7 +18,7 @@ req.body.data
 
 
 
-if(req.body.action==="read"){
+if(req.body && (req.body?.action)==="read"){
 
 return res.json(
 await service.markRead(
