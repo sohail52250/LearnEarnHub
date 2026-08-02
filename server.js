@@ -764,3 +764,16 @@ employerPosts
 const debugDb = require("./api/debug/check-db");
 
 app.get("/api/debug/check-db", debugDb);
+
+
+const partnerJobs=require("./api/partner/jobs");
+
+app.get(
+  "/api/partner/jobs",
+  partnerJobs
+);
+
+app.post(
+  "/api/partner/jobs",
+  partnerJobs
+);

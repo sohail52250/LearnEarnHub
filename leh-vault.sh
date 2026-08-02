@@ -1,57 +1,65 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-VAULT="$HOME/.learn-earnhub-vault"
+VAULT="$HOME/.leh_vault"
 
-save(){
-echo "$2" > "$VAULT/$1"
-echo "Saved: $1"
-}
+mkdir -p "$HOME"
 
-get(){
-if [ -f "$VAULT/$1" ]; then
-cat "$VAULT/$1"
-else
-echo "Not found: $1"
+if [ ! -f "$VAULT" ]; then
+touch "$VAULT"
+chmod 600 "$VAULT"
 fi
-}
 
-mkdir -p "$VAULT"
-chmod 700 "$VAULT"
+get_secret() {
+KEY="$1"
+
+VALUE=$(grep "^${KEY}=" "$VAULT" 2>/dev/null | cut -d= -f2-)
+
+if [ -z "$VALUE" ]; then
+echo
+read -p "Enter $KEY: " VALUE
+echo "${KEY}=${VALUE}" >> "$VAULT"
+fi
+
+echo "$VALUE"
+}
 
 case "$1" in
 
-save)
-save "$2" "$3"
+github)
+get_secret GITHUB_TOKEN
 ;;
 
-show)
-get "$2"
+vercel)
+get_secret VERCEL_TOKEN
 ;;
 
-list)
-echo "Stored values:"
-ls "$VAULT"
+supabase-url)
+get_secret SUPABASE_URL
 ;;
 
-delete)
-rm -f "$VAULT/$2"
-echo "Deleted: $2"
+supabase-key)
+get_secret SUPABASE_SERVICE_KEY
+;;
+
+email)
+get_secret EMAIL
+;;
+
+all)
+echo "EMAIL=$(get_secret EMAIL)"
+echo "GITHUB_TOKEN=$(get_secret GITHUB_TOKEN)"
+echo "VERCEL_TOKEN=$(get_secret VERCEL_TOKEN)"
+echo "SUPABASE_URL=$(get_secret SUPABASE_URL)"
+echo "SUPABASE_SERVICE_KEY=$(get_secret SUPABASE_SERVICE_KEY)"
 ;;
 
 *)
-echo "LearnEarnHub Vault"
-echo ""
-echo "Save:"
-echo " leh-vault.sh save NAME VALUE"
-echo ""
-echo "Show:"
-echo " leh-vault.sh show NAME"
-echo ""
-echo "List:"
-echo " leh-vault.sh list"
-echo ""
-echo "Delete:"
-echo " leh-vault.sh delete NAME"
+echo "Usage:"
+echo "./leh-vault.sh github"
+echo "./leh-vault.sh vercel"
+echo "./leh-vault.sh supabase-url"
+echo "./leh-vault.sh supabase-key"
+echo "./leh-vault.sh email"
+echo "./leh-vault.sh all"
 ;;
-
 esac

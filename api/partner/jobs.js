@@ -1,55 +1,72 @@
+const { createClient } = require("@supabase/supabase-js");
+require("dotenv").config();
 
-const express=require("express");
-
-const router=express.Router();
-
-const auth=require("../../middleware/api-key-auth");
-
-
-router.get(
-"/",
-auth,
-async(req,res)=>{
-
-
-const {createClient}=require("@supabase/supabase-js");
-
-
-const db=createClient(
-
-process.env.SUPABASE_URL,
-
-process.env.SUPABASE_SERVICE_KEY
-
+const db = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_KEY
 );
 
+module.exports = async (req,res)=>{
+  try{
 
+    if(req.method==="GET"){
+      const {data,error}=await db
+        .from("partner_jobs")
+        .select("*")
+        .eq("status","approved")
+        .order("created_at",{ascending:false});
 
-const {data}=await db
+      if(error) throw error;
 
-.from("imported_jobs")
+      return res.json({
+        success:true,
+        jobs:data||[]
+      });
+    }
 
-.select("*")
+    if(req.method==="POST"){
+      const {
+        company,
+        title,
+        description,
+        reward,
+        currency,
+        website,
+        country,
+        deadline
+      } = req.body;
 
-.eq("status","active")
+      const {data,error}=await db
+        .from("partner_jobs")
+        .insert({
+          company,
+          title,
+          description,
+          reward,
+          currency,
+          website,
+          country,
+          deadline,
+          status:"pending"
+        })
+        .select()
+        .single();
 
-.limit(100);
+      if(error) throw error;
 
+      return res.json({
+        success:true,
+        job:data
+      });
+    }
 
+    res.status(405).json({
+      error:"Method not allowed"
+    });
 
-res.json({
-
-partner:req.partner.name,
-
-count:data.length,
-
-jobs:data
-
-});
-
-
-});
-
-
-module.exports=router;
-
+  }catch(e){
+    res.status(500).json({
+      error:e.message
+    });
+  }
+};
