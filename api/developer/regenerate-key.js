@@ -26,7 +26,7 @@ error:"Missing key id"
 
 
 const {data:old,error:findError}=await db
-.from("api_partner_keys")
+.from("developer_keys")
 .select("*")
 .eq("id",id)
 .limit(1)
@@ -59,7 +59,7 @@ const newKey =
 
 
 await db
-.from("api_partner_keys")
+.from("developer_keys")
 .update({
 
 status:"revoked",
@@ -74,7 +74,7 @@ updated_at:new Date()
 
 
 const {data:newKeyRow,error:newError}=await db
-.from("api_partner_keys")
+.from("developer_keys")
 .insert({
 
 partner_id:old.partner_id,
