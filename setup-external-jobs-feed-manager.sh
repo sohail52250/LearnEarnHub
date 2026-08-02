@@ -1,3 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Adding External Jobs Feed Manager ==="
+
+mkdir -p api/external
+
+
+cat > api/external/jobs-feed.js <<'JS'
 module.exports=async(req,res)=>{
 
 try{
@@ -61,3 +69,41 @@ error:e.message
 }
 
 };
+JS
+
+
+python - <<'PY'
+from pathlib import Path
+
+p=Path("server.js")
+s=p.read_text()
+
+if "/api/external/jobs-feed" not in s:
+
+ s += '''
+
+const externalJobsFeed=require("./api/external/jobs-feed");
+
+app.get(
+ "/api/external/jobs-feed",
+ externalJobsFeed
+);
+'''
+
+ p.write_text(s)
+
+ print("External jobs feed route added")
+
+else:
+ print("Already exists")
+
+PY
+
+
+git add .
+git commit -m "Add external jobs feed manager" || true
+git push
+
+vercel --prod
+
+echo "=== Completed ==="
