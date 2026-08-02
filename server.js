@@ -72,6 +72,19 @@ try {
   console.log("AI Deal API error",e.message);
 }
 
+
+
+
+// Developer Dashboard API
+const developerDashboard =
+require("./api/developer/dashboard");
+
+app.get(
+"/api/developer/dashboard",
+developerDashboard
+);
+
+
 module.exports = app;
 
 

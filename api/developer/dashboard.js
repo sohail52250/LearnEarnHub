@@ -1,7 +1,5 @@
 const {createClient}=require("@supabase/supabase-js");
-
 require("dotenv").config();
-
 
 const db=createClient(
 process.env.SUPABASE_URL,
@@ -9,55 +7,37 @@ process.env.SUPABASE_SERVICE_KEY
 );
 
 
-
-module.exports=async(req,res)=>{
+module.exports=async function(req,res){
 
 try{
 
-
-const keys = await db
+const keys=await db
 .from("api_partner_keys")
-.select(
-"id,partner_id,status,request_limit,last_used_at"
-);
+.select("*");
 
 
-
-const events = await db
+const events=await db
 .from("api_dashboard_logs")
-.select(
-"id,action,created_at",
-{
-count:"exact"
-}
-);
-
+.select("*",{count:"exact"});
 
 
 res.json({
 
 success:true,
 
-api_keys:
-keys.data || [],
+api_keys:keys.data || [],
 
-total_events:
-events.count || 0
+total_events:events.count || 0
 
 });
 
 
-}
-
-catch(error){
+}catch(e){
 
 res.status(500).json({
-
-error:error.message
-
+error:e.message
 });
 
 }
-
 
 };
