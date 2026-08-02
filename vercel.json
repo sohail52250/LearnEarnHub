@@ -1,8 +1,14 @@
 {
-  "crons": [
+  "version": 2,
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
     {
-      "path": "/api/cron/refresh-feeds",
-      "schedule": "0 2 * * *"
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
     }
   ]
 }
