@@ -46,4 +46,20 @@ message:"External feed system active"
 });
 
 
+
+    
+// Developer Portal routes
+const devDashboard=require("../backend-api/developer/dashboard");
+const devUsage=require("../backend-api/developer/usage");
+const devSecurity=require("../backend-api/developer/security");
+const devKey=require("../backend-api/developer/key-control");
+const devRegenerate=require("../backend-api/developer/regenerate-key");
+
+app.use("/developer/dashboard",devDashboard);
+app.use("/developer/usage",devUsage);
+app.use("/developer/security",devSecurity);
+app.use("/developer/key-control",devKey);
+app.use("/developer/regenerate-key",devRegenerate);
+
+
 module.exports=app;
