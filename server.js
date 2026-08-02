@@ -123,6 +123,18 @@ keyControl
 );
 
 
+
+
+// API Key Regeneration
+const regenerateKey =
+require("./api/developer/regenerate-key");
+
+app.post(
+"/api/developer/regenerate-key",
+regenerateKey
+);
+
+
 module.exports = app;
 
 
