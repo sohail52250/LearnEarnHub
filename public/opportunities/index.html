@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnEarnHub Opportunities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:Arial;padding:20px}
+.card{border:1px solid #ddd;padding:15px;margin:10px;border-radius:10px}
+button{padding:10px}
+</style>
+</head>
+<body>
+
+<h1>Available Jobs & Tasks</h1>
+
+<div id="jobs">Loading...</div>
+
+<script>
+fetch("/api/external/jobs-feed")
+.then(r=>r.json())
+.then(data=>{
+let box=document.getElementById("jobs");
+
+box.innerHTML=data.jobs.map(j=>`
+<div class="card">
+<h3>${j.title}</h3>
+<p>Source: ${j.source}</p>
+<p>Category: ${j.category}</p>
+<p>Reward: ${j.reward}</p>
+<p>Verification: ⚠️ External Source</p>
+
+${j.apply_url?
+`<a href="${j.apply_url}" target="_blank">
+<button>Apply Now</button>
+</a>`
+:
+`<button disabled>No Apply Link</button>`
+}
+
+</div>
+`).join("");
+});
+</script>
+
+</body>
+</html>
