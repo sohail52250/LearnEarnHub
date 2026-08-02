@@ -1,44 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Learner Dashboard - LearnEarnHub</title>
+#!/data/data/com.termux/files/usr/bin/bash
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
+echo "=== Adding My Applied Jobs Section ==="
 
-</head>
+TARGET="public/learner-dashboard.html"
 
-<body>
+if [ ! -f "$TARGET" ]; then
+ echo "learner-dashboard.html not found"
+ exit 1
+fi
 
-<h1>🎓 Learner Dashboard</h1>
-<nav>
-<a href="/leaderboards.html">🏆 Leaderboards</a>
-<a href="/reputation-center.html">⭐ Reputation</a>
-<a href="/notifications.html">🔔 Notifications</a>
-<a href="/recommended-tasks.html">🎯 Recommended Tasks</a> |
-<a href="/learner-progress.html">📈 Progress Center</a> |
-<a href="/task-marketplace.html">📋 Task Marketplace</a>
-</nav>
+python - <<'PY'
+from pathlib import Path
 
-<h2>My Skills</h2>
-<div id="skills">Loading...</div>
+p=Path("public/learner-dashboard.html")
+s=p.read_text()
 
+if "my-applied-jobs" not in s:
 
-<h2>My Submitted Tasks</h2>
-<div id="tasks">Loading...</div>
-
-
-<h2>My Earnings</h2>
-<div id="earnings">Loading...</div>
-
-
-<h2>My Badges</h2>
-<div id="badges">Loading...</div>
-
-
-<script src="/learner-dashboard.js"></script>
-
-
+ addon=r'''
 
 <section id="my-applied-jobs">
 <h2>My Saved Opportunities</h2>
@@ -123,5 +102,23 @@ loadMyApplications();
 
 </script>
 
-</body>
-</html>
+'''
+
+ s=s.replace("</body>",addon+"</body>")
+ p.write_text(s)
+
+ print("Dashboard updated")
+
+else:
+ print("Already exists")
+
+PY
+
+
+git add .
+git commit -m "Add learner applied jobs dashboard" || true
+git push
+
+vercel --prod
+
+echo "=== Completed ==="
