@@ -1,3 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating Supabase Developer Login ==="
+
+cat > public/developer/login.html <<'HTML'
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,3 +71,28 @@ location.href="/developer/dashboard.html";
 
 </body>
 </html>
+HTML
+
+
+python - <<'PY'
+from pathlib import Path
+p=Path("public/developer/dashboard.html")
+s=p.read_text()
+
+s=s.replace(
+'"Authorization":"Bearer "+localStorage.getItem("dev_token")',
+'"Authorization":"Bearer "+localStorage.getItem("dev_token")'
+)
+
+p.write_text(s)
+print("Dashboard checked")
+PY
+
+
+git add .
+git commit -m "Connect developer portal with Supabase login"
+git push
+
+vercel --prod
+
+echo "=== Done ==="
