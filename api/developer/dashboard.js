@@ -15,19 +15,22 @@ module.exports=async(req,res)=>{
 try{
 
 
-const keys =
-await db
+const keys = await db
 .from("api_partner_keys")
 .select(
-"partner_id,status,request_limit,last_used_at"
+"id,partner_id,status,request_limit,last_used_at"
 );
 
 
 
-const logs =
-await db
+const events = await db
 .from("api_dashboard_logs")
-.select("*",{count:"exact"});
+.select(
+"id,action,created_at",
+{
+count:"exact"
+}
+);
 
 
 
@@ -35,26 +38,26 @@ res.json({
 
 success:true,
 
-keys:
+api_keys:
 keys.data || [],
 
-events:
-logs.count || 0
+total_events:
+events.count || 0
 
 });
 
 
 }
 
-catch(e){
+catch(error){
 
-res.status(500)
-.json({
+res.status(500).json({
 
-error:e.message
+error:error.message
 
 });
 
 }
+
 
 };
