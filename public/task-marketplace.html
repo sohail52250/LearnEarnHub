@@ -174,5 +174,58 @@ loadExternalJobs();
 
 </script>
 
+
+
+<script>
+
+async function applyExternalJob(job){
+
+let user_id=localStorage.getItem("user_id");
+
+if(!user_id){
+
+alert("Please login first");
+return;
+
+}
+
+
+let r=await fetch("/api/jobs/apply",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+job_title:job.title,
+source:job.source,
+apply_url:job.apply,
+user_id:user_id
+
+})
+
+});
+
+
+let data=await r.json();
+
+
+if(data.success){
+
+alert("Opportunity saved successfully");
+
+}else{
+
+alert(data.error || "Failed");
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
