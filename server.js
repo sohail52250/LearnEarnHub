@@ -801,3 +801,11 @@ app.get(
  "/api/jobs/my-applications",
  myApplications
 );
+
+
+const partnerApplicants=require("./api/partner/applicants");
+
+app.get(
+ "/api/partner/applicants",
+ partnerApplicants
+);
