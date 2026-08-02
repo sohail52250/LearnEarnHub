@@ -809,3 +809,11 @@ app.get(
  "/api/partner/applicants",
  partnerApplicants
 );
+
+
+const feedConnectors=require("./api/feeds/connectors");
+
+app.get(
+ "/api/feeds/connectors",
+ feedConnectors
+);
