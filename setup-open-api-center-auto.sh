@@ -1,0 +1,77 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== LearnEarnHub Open API Center Setup ==="
+
+mkdir -p public/api-center
+mkdir -p public/api-center/js
+
+cat > public/api-center/index.html <<'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnEarnHub Open API Center</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+<h1>LearnEarnHub Open API Integration</h1>
+
+<p>
+Partners can connect with LearnEarnHub through controlled APIs
+for jobs, opportunities and learner matching.
+</p>
+
+<h2>Partnership Model</h2>
+
+<ul>
+<li>Give and take data sharing</li>
+<li>Joint venture opportunities</li>
+<li>Limited API access</li>
+<li>Secure API keys</li>
+<li>Rate limits to prevent misuse</li>
+</ul>
+
+
+<h2>Disclaimer</h2>
+
+<p>
+API access is provided for approved partners only.
+Data must be used according to LearnEarnHub terms.
+Unauthorized scraping, resale or misuse is prohibited.
+</p>
+
+
+<h2>Available APIs</h2>
+
+<ul>
+<li>Opportunities API</li>
+<li>Jobs API</li>
+<li>Matching API</li>
+<li>Notifications API</li>
+</ul>
+
+
+<h2>Join Partnership</h2>
+
+<form>
+<input placeholder="Company / Organization">
+<br>
+<input placeholder="Email">
+<br>
+<textarea placeholder="Purpose of integration"></textarea>
+<br>
+<button>
+Request API Access
+</button>
+</form>
+
+
+</body>
+</html>
+HTML
+
+
+echo "API Center created:"
+echo "public/api-center/index.html"
+
