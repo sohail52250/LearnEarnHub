@@ -21,7 +21,7 @@ if(req.method==="GET"){
 
 const result =
 await db
-.from("api_partner_keys")
+.from("developer_keys")
 .select("*");
 
 
