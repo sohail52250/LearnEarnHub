@@ -25,9 +25,6 @@ await db
 .select("*");
 
 
-console.log("SUPABASE URL:", process.env.SUPABASE_URL);
-console.log("KEY RESULT:", result.data, result.error);
-
 return res.json({
 
 success:true,
