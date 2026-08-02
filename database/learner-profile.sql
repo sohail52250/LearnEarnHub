@@ -1,25 +1,48 @@
 
-CREATE TABLE IF NOT EXISTS learner_profiles(
-id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-user_id uuid UNIQUE,
-bio text,
-skills text,
-education text,
-experience text,
-city text,
-country text,
-level integer DEFAULT 1,
-created_at timestamp DEFAULT now(),
-updated_at timestamp DEFAULT now()
+CREATE TABLE IF NOT EXISTS learner_profiles (
+
+id BIGSERIAL PRIMARY KEY,
+
+user_id UUID UNIQUE NOT NULL,
+
+full_name TEXT,
+
+bio TEXT,
+
+profile_image TEXT,
+
+portfolio_url TEXT,
+
+location TEXT,
+
+created_at TIMESTAMP DEFAULT NOW(),
+
+updated_at TIMESTAMP DEFAULT NOW()
+
 );
 
 
-CREATE TABLE IF NOT EXISTS learner_badges(
-id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-user_id uuid,
-badge_name text,
-description text,
-created_at timestamp DEFAULT now()
+
+CREATE TABLE IF NOT EXISTS learner_reviews (
+
+id BIGSERIAL PRIMARY KEY,
+
+learner_id UUID NOT NULL,
+
+reviewer_id UUID,
+
+rating INTEGER CHECK(rating >=1 AND rating <=5),
+
+comment TEXT,
+
+created_at TIMESTAMP DEFAULT NOW()
+
 );
+
+
+
+CREATE INDEX IF NOT EXISTS learner_profile_user_idx
+
+ON learner_profiles(user_id);
 
 

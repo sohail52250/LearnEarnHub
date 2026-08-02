@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Certificate Verification</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+}
+
+input,button{
+
+width:100%;
+
+padding:10px;
+
+margin:5px;
+
+}
+
+button{
+
+background:#1565c0;
+
+color:white;
+
+border:0;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>🏆 Certificate Verification</h1>
+
+
+<input id="code" placeholder="Enter Certificate Code">
+
+
+<button onclick="verify()">
+
+Verify
+
+</button>
+
+
+<div id="result"></div>
+
+
+</div>
+
+
+
+<script>
+
+
+async function verify(){
+
+
+let r=
+await fetch(
+"/api/verify-certificate?code="+code.value
+);
+
+
+let d=
+await r.json();
+
+
+
+result.innerHTML=
+
+d.error ?
+
+"❌ Certificate not found"
+
+:
+
+`
+
+<h3>✅ VERIFIED</h3>
+
+Skill:
+${d.skill_name}
+
+<br>
+
+Status:
+${d.status}
+
+<br>
+
+Code:
+${d.verification_code}
+
+`;
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

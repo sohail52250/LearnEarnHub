@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Submit Completed Work</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
+
+.card{
+
+background:white;
+padding:20px;
+border-radius:12px;
+
+}
+
+textarea,input,button{
+
+width:100%;
+padding:10px;
+margin:5px;
+
+}
+
+button{
+
+background:#1565c0;
+color:white;
+border:0;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>✅ Submit Completed Task</h1>
+
+
+<input id="opportunity_id" placeholder="Opportunity ID">
+
+
+<input id="learner_id" placeholder="Learner ID">
+
+
+<textarea id="text" placeholder="Describe completed work"></textarea>
+
+
+<button onclick="submitWork()">
+
+Submit
+
+</button>
+
+
+<p id="msg"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function submitWork(){
+
+
+let r=
+await fetch(
+"/api/job-approval",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"submit",
+
+data:{
+
+opportunity_id:Number(opportunity_id.value),
+
+learner_id:learner_id.value,
+
+submission_text:text.value
+
+}
+
+})
+
+});
+
+
+let d=await r.json();
+
+
+msg.innerText=
+d.error || "Submitted ✅";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

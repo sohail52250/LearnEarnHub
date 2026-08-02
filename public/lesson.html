@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>LearnEarnHub Lesson</title>
+
+<script src="/js/lesson.js"></script>
+
+
+<style>
+
+body{
+font-family:Arial;
+padding:20px;
+background:#f5f7fb;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:12px;
+}
+
+button{
+padding:12px;
+background:#1565c0;
+color:white;
+border:0;
+border-radius:8px;
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<h1 id="title">
+Loading...
+</h1>
+
+
+<div id="content"></div>
+
+
+<button onclick="completeCurrentLesson()">
+✅ Complete Lesson
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+let params=
+new URLSearchParams(location.search);
+
+
+let user_id=params.get("user_id");
+let course_id=params.get("course_id");
+let lesson_order=params.get("lesson_order");
+
+let lesson;
+
+
+
+async function loadLesson(){
+
+
+let res=await fetch(
+`/api/lesson?course_id=${course_id}&lesson_order=${lesson_order}`
+);
+
+
+lesson=await res.json();
+
+
+title.innerText=
+lesson.title_en;
+
+
+content.innerText=
+lesson.content_en;
+
+
+}
+
+
+
+async function completeCurrentLesson(){
+
+
+await fetch("/api/lesson",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"complete",
+
+user_id,
+
+course_id,
+
+lesson_id:lesson.id
+
+})
+
+});
+
+
+alert("Lesson completed ✅");
+
+
+}
+
+
+
+loadLesson();
+
+
+</script>
+
+
+</body>
+
+</html>

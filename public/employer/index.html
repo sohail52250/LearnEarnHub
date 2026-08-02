@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Employer Dashboard</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:15px;
+
+margin:10px;
+
+border-radius:12px;
+
+}
+
+
+input,button{
+
+padding:10px;
+
+width:90%;
+
+margin:5px;
+
+}
+
+
+button{
+
+background:#1565c0;
+
+color:white;
+
+border:0;
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>🏢 Find Certified Learners</h1>
+
+
+<input id="skill" placeholder="Search skill">
+
+
+<button onclick="search()">
+Search
+</button>
+
+
+<div id="list"></div>
+
+
+
+<script>
+
+
+async function search(){
+
+
+let r=
+await fetch(
+"/api/employer-candidates?skill="+skill.value
+);
+
+
+
+let data=
+await r.json();
+
+
+
+list.innerHTML=
+data.map(c=>`
+
+<div class="card">
+
+<h3>
+${c.full_name || "Learner"}
+</h3>
+
+<p>
+${c.bio || ""}
+</p>
+
+
+</div>
+
+
+`).join("");
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

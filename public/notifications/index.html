@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Notifications</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:15px;
+
+margin:10px;
+
+border-radius:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🔔 Notifications</h1>
+
+
+<div id="list">
+
+Loading...
+
+</div>
+
+
+
+<script>
+
+
+const user_id=
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+async function load(){
+
+
+let r=
+await fetch(
+"/api/notifications?user_id="+user_id
+);
+
+
+let data=
+await r.json();
+
+
+
+list.innerHTML=
+data.map(n=>`
+
+<div class="card">
+
+<h3>${n.title}</h3>
+
+<p>${n.message}</p>
+
+<small>${n.type}</small>
+
+</div>
+
+`).join("");
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

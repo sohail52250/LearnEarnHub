@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Learner Portfolio</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+}
+
+input,textarea,button{
+
+width:100%;
+
+padding:10px;
+
+margin:5px;
+
+}
+
+button{
+
+background:#1565c0;
+
+color:white;
+
+border:0;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>🎓 Learner Portfolio</h1>
+
+
+<input id="user_id" placeholder="User ID">
+
+
+<input id="full_name" placeholder="Full Name">
+
+
+<textarea id="bio" placeholder="About your skills"></textarea>
+
+
+<input id="portfolio_url" placeholder="Portfolio URL">
+
+
+<button onclick="save()">
+
+Save Profile
+
+</button>
+
+
+<p id="msg"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function save(){
+
+
+let r=await fetch(
+"/api/profile",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"update",
+
+data:{
+
+user_id:user_id.value,
+
+full_name:full_name.value,
+
+bio:bio.value,
+
+portfolio_url:portfolio_url.value
+
+}
+
+})
+
+});
+
+
+let d=await r.json();
+
+
+msg.innerText=
+d.error || "Profile saved ✅";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Post Business Task</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
+
+.box{
+
+background:white;
+padding:20px;
+border-radius:12px;
+
+}
+
+input,textarea,button{
+
+width:100%;
+padding:10px;
+margin:5px;
+
+}
+
+button{
+
+background:#1565c0;
+color:white;
+border:0;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<h1>🏢 Post Opportunity</h1>
+
+
+<input id="title" placeholder="Task title">
+
+
+<input id="skill" placeholder="Required skill">
+
+
+<textarea id="description" placeholder="Description"></textarea>
+
+
+<input id="payment" placeholder="Payment">
+
+
+<button onclick="postTask()">
+
+Post Task
+
+</button>
+
+
+<p id="msg"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function postTask(){
+
+
+let r=await fetch(
+"/api/employer",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"post",
+
+data:{
+
+title:title.value,
+
+required_skill:skill.value,
+
+description:description.value,
+
+payment:payment.value
+
+}
+
+})
+
+});
+
+
+let d=await r.json();
+
+
+msg.innerText=
+d.error || "Task posted ✅";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

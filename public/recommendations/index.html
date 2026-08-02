@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Recommended Opportunities</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:15px;
+
+margin:10px;
+
+border-radius:12px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>🤖 Recommended For You</h1>
+
+
+<div id="list">
+
+Loading...
+
+</div>
+
+
+
+<script>
+
+
+const user_id=
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+async function load(){
+
+
+await fetch(
+"/api/recommendations",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"generate",
+
+user_id
+
+})
+
+});
+
+
+let r=
+await fetch(
+"/api/recommendations?user_id="+user_id
+);
+
+
+let data=
+await r.json();
+
+
+
+list.innerHTML=
+data.map(x=>`
+
+<div class="card">
+
+<h3>
+${x.external_opportunities.title}
+</h3>
+
+<p>
+Match Score:
+${x.final_score}%
+</p>
+
+<p>
+Skill:
+${x.external_opportunities.required_skill}
+</p>
+
+
+<a href="${x.external_opportunities.apply_url}">
+Apply
+</a>
+
+
+</div>
+
+`).join("");
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

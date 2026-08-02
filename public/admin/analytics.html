@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Analytics Dashboard</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:20px;
+
+margin:10px;
+
+border-radius:12px;
+
+display:inline-block;
+
+min-width:180px;
+
+box-shadow:0 2px 8px #ccc;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>📊 LearnEarnHub Analytics</h1>
+
+
+
+<div id="stats">
+
+Loading...
+
+</div>
+
+
+
+<h2>Course Categories</h2>
+
+<div id="categories"></div>
+
+
+
+<script>
+
+
+async function load(){
+
+
+let s=
+await fetch(
+"/api/analytics?action=stats"
+);
+
+
+let stats=
+await s.json();
+
+
+
+document.getElementById("stats")
+.innerHTML=`
+
+<div class="card">
+Users<br>
+<b>${stats.total_users}</b>
+</div>
+
+<div class="card">
+Courses<br>
+<b>${stats.total_courses}</b>
+</div>
+
+<div class="card">
+Lessons<br>
+<b>${stats.total_lessons}</b>
+</div>
+
+<div class="card">
+Completed Lessons<br>
+<b>${stats.completed_lessons}</b>
+</div>
+
+<div class="card">
+Certificates<br>
+<b>${stats.certificates}</b>
+</div>
+
+`;
+
+
+
+let c=
+await fetch(
+"/api/analytics?action=categories"
+);
+
+
+let categories=
+await c.json();
+
+
+
+document.getElementById("categories")
+.innerHTML=
+Object.entries(categories)
+.map(x=>`
+
+<div class="card">
+${x[0]}<br>
+<b>${x[1]}</b>
+</div>
+
+`).join("");
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

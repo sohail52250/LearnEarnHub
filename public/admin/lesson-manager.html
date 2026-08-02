@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Lesson Manager</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:12px;
+}
+
+input,textarea,button{
+width:100%;
+padding:10px;
+margin:5px;
+}
+
+button{
+background:#1565c0;
+color:white;
+border:0;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<h1>📖 Manage Lessons</h1>
+
+
+<input id="course_id" placeholder="Course ID">
+
+
+<input id="title" placeholder="Lesson Title">
+
+
+<input id="order" placeholder="Lesson Order">
+
+
+<textarea id="content" placeholder="Lesson Content"></textarea>
+
+
+<button onclick="createLesson()">
+Create Lesson
+</button>
+
+
+<p id="msg"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function createLesson(){
+
+
+let res=await fetch(
+"/api/admin-lesson",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"create",
+
+lesson:{
+
+course_id:Number(course_id.value),
+
+lesson_order:Number(order.value),
+
+title_en:title.value,
+
+content_en:content.value
+
+}
+
+})
+
+});
+
+
+let data=await res.json();
+
+
+msg.innerText=
+data.error || "Lesson created ✅";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,100 +1,140 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<title>Admin Panel</title>
-<link rel="stylesheet" href="../style.css">
-<script src="/certificate-system.js"></script>
-<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
 
-<title>Admin Panel</title>
+<title>LearnEarnHub Admin Panel</title>
 
-<meta name="description" content="Learn index and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
-<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+<style>
 
-<meta property="og:title" content="Admin Panel">
-<meta property="og:description" content="Learn index and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://learn-earnhub.vercel.app/admin/index.html">
+body{
 
-<link rel="canonical" href="https://learn-earnhub.vercel.app/admin/index.html">
+font-family:Arial;
 
+background:#f5f7fb;
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Learn & Earn Hub",
-  "url": "https://learn-earnhub.vercel.app",
-  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+padding:20px;
+
 }
-</script>
 
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
-<meta name="theme-color" content="#0f172a">
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+
+.card{
+
+display:inline-block;
+
+background:white;
+
+padding:20px;
+
+margin:10px;
+
+border-radius:12px;
+
+min-width:180px;
+
+}
+
+
+a{
+
+display:block;
+
+margin:10px;
+
+}
+
+</style>
+
 </head>
 
-<body><div id="global-header"></div>
 
-<div class="card">
+<body>
 
-<h2>Admin Approval Panel</h2>
 
-<div id="ads"></div>
+<h1>⚙️ LearnEarnHub Admin Panel</h1>
+
+
+<div id="stats">
+
+Loading...
 
 </div>
+
+
+
+<h2>Management</h2>
+
+
+<a href="/admin/users.html">
+👥 Users
+</a>
+
+
+<a href="/admin/analytics.html">
+📊 Analytics
+</a>
+
+
+<a href="/admin/course-manager.html">
+📚 Courses
+</a>
+
+
+<a href="/admin/lesson-manager.html">
+📖 Lessons
+</a>
+
+
+<a href="/admin/">
+🏢 Business
+</a>
+
 
 
 <script>
 
+
 async function load(){
 
-let r=await fetch("/api/admin/ads");
 
-let data=await r.json();
+let r=
+await fetch(
+"/api/admin-dashboard"
+);
 
-data.forEach(a=>{
 
-document.getElementById("ads").innerHTML += `
+let d=
+await r.json();
+
+
+
+stats.innerHTML=
+
+Object.entries(d)
+.map(x=>`
 
 <div class="card">
 
-<h3>${a.title_en}</h3>
+<b>${x[0]}</b>
 
-<p>${a.description_en}</p>
+<br>
 
-<button onclick="approve('${a.id}')">
-Approve
-</button>
+${x[1]}
 
 </div>
 
-`;
-
-});
-
-}
-
-
-async function approve(id){
-
-await fetch("/api/admin/approve/"+id,{
-method:"POST"
-});
-
-alert("Approved");
-
-location.reload();
+`).join("");
 
 }
 
 
 load();
 
+
 </script>
 
-<script src="/assets/js/theme-helper.js"></script>
-<div id="global-footer"></div><script src="/global-layout.js"></script></body>
+
+</body>
+
 </html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>User Management</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
+
+.card{
+
+background:white;
+padding:15px;
+margin:10px;
+border-radius:10px;
+
+}
+
+button{
+
+background:#1565c0;
+color:white;
+border:0;
+padding:8px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>👥 User Management</h1>
+
+
+<div id="users">
+Loading...
+</div>
+
+
+
+<script>
+
+
+async function loadUsers(){
+
+
+let res=
+await fetch(
+"/api/admin-users?action=users"
+);
+
+
+let users=
+await res.json();
+
+
+
+document.getElementById("users")
+.innerHTML=users.map(u=>`
+
+<div class="card">
+
+<b>
+${u.full_name || "User"}
+</b>
+
+<br>
+
+ID:
+${u.user_id}
+
+<br><br>
+
+
+<button onclick="makeAdmin('${u.user_id}')">
+
+Make Admin
+
+</button>
+
+
+</div>
+
+`).join("");
+
+}
+
+
+
+async function makeAdmin(id){
+
+
+await fetch(
+"/api/admin-users",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"update-role",
+
+user_id:id,
+
+role:"admin"
+
+})
+
+});
+
+
+alert("Role updated ✅");
+
+}
+
+
+
+loadUsers();
+
+
+</script>
+
+
+</body>
+
+</html>

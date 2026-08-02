@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Learner Ranking</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:15px;
+
+margin:10px;
+
+border-radius:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏆 Top Learners</h1>
+
+
+<div id="list">
+Loading...
+</div>
+
+
+
+<script>
+
+
+async function load(){
+
+
+let r=
+await fetch("/api/ranking");
+
+
+let users=
+await r.json();
+
+
+
+list.innerHTML=
+users.map((u,i)=>`
+
+<div class="card">
+
+<h3>
+#${i+1}
+</h3>
+
+Points:
+${u.total_points}
+
+<br>
+
+Level:
+🏅 ${u.level}
+
+</div>
+
+`).join("");
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

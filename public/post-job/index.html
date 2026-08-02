@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Post Opportunity</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+}
+
+
+input,textarea,button,select{
+
+width:90%;
+
+padding:10px;
+
+margin:6px;
+
+}
+
+
+button{
+
+background:#1565c0;
+
+color:white;
+
+border:0;
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>🏢 Post Job / Task</h1>
+
+
+<input id="employer_id" placeholder="Employer ID">
+
+
+<input id="title" placeholder="Job Title">
+
+
+<input id="company" placeholder="Company">
+
+
+<textarea id="description" placeholder="Description"></textarea>
+
+
+<input id="skills" placeholder="Required Skills">
+
+
+<select id="type">
+
+<option>job</option>
+
+<option>task</option>
+
+<option>freelance</option>
+
+<option>internship</option>
+
+</select>
+
+
+<button onclick="postJob()">
+
+Submit
+
+</button>
+
+
+<p id="msg"></p>
+
+
+</div>
+
+
+
+<script>
+
+
+async function postJob(){
+
+
+let r=
+await fetch(
+"/api/employer-posts",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"create",
+
+data:{
+
+employer_id:employer_id.value,
+
+title:title.value,
+
+company:company.value,
+
+description:description.value,
+
+required_skills:skills.value,
+
+job_type:type.value
+
+}
+
+})
+
+});
+
+
+let d=
+await r.json();
+
+
+msg.innerText=
+d.error || "Submitted for approval ✅";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

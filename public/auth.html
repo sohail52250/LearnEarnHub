@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>LearnEarnHub Login</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f3f6fb;
+padding:30px;
+}
+
+.box{
+background:white;
+max-width:400px;
+margin:auto;
+padding:25px;
+border-radius:12px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin:8px 0;
+}
+
+button{
+background:#1565c0;
+color:white;
+border:0;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+<h2>LearnEarnHub Account</h2>
+
+
+<input id="email"
+placeholder="Email">
+
+
+<input id="password"
+type="password"
+placeholder="Password">
+
+
+<button onclick="signup()">
+Create Account
+</button>
+
+
+<button onclick="login()">
+Login
+</button>
+
+
+<p id="msg"></p>
+
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+
+const SUPABASE_URL=
+"${SUPABASE_URL}";
+
+
+const SUPABASE_ANON_KEY=
+"${SUPABASE_ANON_KEY}";
+
+
+const client=supabase.createClient(
+SUPABASE_URL,
+SUPABASE_ANON_KEY
+);
+
+
+
+async function signup(){
+
+const email=
+document.getElementById("email").value;
+
+const password=
+document.getElementById("password").value;
+
+
+const {error}=await client.auth.signUp({
+
+email,
+password
+
+});
+
+
+msg.innerText=
+error ? error.message :
+"Account created. Check email.";
+
+}
+
+
+
+async function login(){
+
+
+const email=
+document.getElementById("email").value;
+
+
+const password=
+document.getElementById("password").value;
+
+
+const {data,error}=await client.auth.signInWithPassword({
+
+email,
+password
+
+});
+
+
+if(error){
+
+msg.innerText=error.message;
+
+return;
+
+}
+
+
+location.href=
+"/dashboard.html?user_id="
++data.user.id;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

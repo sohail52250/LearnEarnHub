@@ -1,16 +1,56 @@
+require("dotenv").config();
 
-module.exports=function(req,res,next){
 
-const role =
-req.headers["x-user-role"];
+const ADMIN_EMAILS = (
 
-if(role==="admin"){
-return next();
-}
+process.env.ADMIN_EMAILS || ""
 
-return res.status(403).json({
-error:"Admin access required"
+)
+.split(",")
+.map(x=>x.trim())
+.filter(Boolean);
+
+
+
+function adminAuth(req,res,next){
+
+
+const email =
+req.headers["x-user-email"];
+
+
+
+if(!email){
+
+return res.status(401).json({
+
+error:"Admin login required"
+
 });
 
-};
+}
+
+
+
+if(!ADMIN_EMAILS.includes(email)){
+
+
+return res.status(403).json({
+
+error:"Access denied"
+
+});
+
+}
+
+
+
+next();
+
+
+}
+
+
+
+module.exports=adminAuth;
 

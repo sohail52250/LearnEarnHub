@@ -1,38 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-<link rel="canonical" href="https://learn-earnhub.vercel.app/jobs.html">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jobs - Learn & Earn Hub</title>
-<meta name="description" content="Find skill based opportunities and jobs.">
+<title>Skill Jobs</title>
 
-<link rel="stylesheet" href="/style.css">
+<style>
 
-<script src="/supabase-config.js"></script>
-<script src="/jobs.js"></script>
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
 
-<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+.card{
+
+background:white;
+padding:15px;
+margin:10px;
+border-radius:12px;
+
+}
+
+button{
+
+background:#1565c0;
+color:white;
+border:0;
+padding:10px;
+
+}
+
+</style>
+
 </head>
 
-<body><div id="global-header"></div>
+
+<body>
+
+
+<h1>💼 Available Opportunities</h1>
+
+
+<div id="jobs">
+Loading...
+</div>
+
+
+
+<script>
+
+
+const user_id=
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+async function load(){
+
+
+let r=
+await fetch(
+"/api/marketplace-jobs?user_id="+user_id
+);
+
+
+let jobs=
+await r.json();
+
+
+
+document.getElementById("jobs")
+.innerHTML=
+jobs.map(j=>`
 
 <div class="card">
 
-<h1>💼 Opportunities</h1>
+<h3>${j.title}</h3>
+
+<p>${j.description || ""}</p>
 
 <p>
-Find jobs, freelance projects and skill-based opportunities.
+Skill:
+${j.required_skill}
 </p>
+
+
+<button onclick="apply(${j.id})">
+Apply
+</button>
+
 
 </div>
 
-<div id="jobs-list"></div>
+`).join("");
 
-<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
-<script src="/assets/js/theme-helper.js"></script>
+}
+
+
+
+async function apply(id){
+
+await fetch(
+"/api/marketplace-jobs",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"apply",
+
+user_id,
+
+opportunity_id:id
+
+})
+
+});
+
+
+alert("Application sent ✅");
+
+}
+
+
+
+load();
+
+
+</script>
+
+
 </body>
+
 </html>

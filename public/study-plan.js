@@ -124,7 +124,7 @@ document.getElementById(
 Complete this lesson to continue your earning journey.
 </p>
 
-<a href="/lessons/${next.slug}.html">
+<a href="/course-player.html?id=${next.slug}">
 
 <button>
 Start Learning

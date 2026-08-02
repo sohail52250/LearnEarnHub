@@ -168,7 +168,7 @@ ${career.courses.map(c=>
 
 `
 <li>
-<a href="/lessons/${c}">
+<a href="/course-player.html?id=${c}">
 Start Course
 </a>
 </li>

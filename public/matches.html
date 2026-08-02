@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Matched Opportunities</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:15px;
+
+margin:10px;
+
+border-radius:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🎯 Recommended Opportunities</h1>
+
+
+<div id="list">
+
+Loading...
+
+</div>
+
+
+
+<script>
+
+
+const user_id=
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+async function load(){
+
+
+await fetch(
+"/api/skill-matches",
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+action:"generate",
+
+user_id
+
+})
+
+});
+
+
+let r=
+await fetch(
+"/api/skill-matches?user_id="+user_id
+);
+
+
+let data=
+await r.json();
+
+
+
+list.innerHTML=
+data.map(m=>`
+
+<div class="card">
+
+<h3>
+${m.external_opportunities.title}
+</h3>
+
+<p>
+Skill Match:
+${m.match_score}%
+</p>
+
+<a href="${m.external_opportunities.apply_url}">
+Apply
+</a>
+
+</div>
+
+`).join("");
+
+}
+
+
+load();
+
+
+</script>
+
+</body>
+
+</html>

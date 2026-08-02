@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>My Verified Skills</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
+
+.card{
+
+background:white;
+padding:15px;
+margin:10px;
+border-radius:10px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏆 My Verified Skills</h1>
+
+
+<div id="skills">
+Loading...
+</div>
+
+
+
+<script>
+
+
+const user_id=
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+async function load(){
+
+
+let r=
+await fetch(
+"/api/skill-unlock?user_id="+user_id
+);
+
+
+let data=
+await r.json();
+
+
+
+skills.innerHTML=
+data.map(s=>`
+
+<div class="card">
+
+<h3>
+${s.skill_name}
+</h3>
+
+<p>
+Status: VERIFIED ✅
+</p>
+
+</div>
+
+`).join("");
+
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

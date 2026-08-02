@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>LearnEarnHub Certificates</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px;
+border-radius:12px;
+box-shadow:0 3px 10px #ccc;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏆 My Certificates</h1>
+
+
+<div id="list">
+
+Loading...
+
+</div>
+
+
+
+<script>
+
+
+const user_id=
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+async function load(){
+
+
+const res=await fetch(
+"/api/certificate-download?user_id="+user_id
+);
+
+
+const data=await res.json();
+
+
+
+list.innerHTML=
+data.length?
+
+data.map(c=>`
+
+<div class="card">
+
+<h2>
+${c.courses?.title_en || "Course"}
+</h2>
+
+<p>
+Certificate Code:
+${c.certificate_code}
+</p>
+
+<p>
+Issued:
+${c.issued_at}
+</p>
+
+</div>
+
+`).join("")
+
+:
+
+"No certificates yet";
+
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

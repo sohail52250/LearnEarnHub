@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>My Earnings</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f7fb;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>💰 My Earnings</h1>
+
+
+<div class="card" id="box">
+Loading...
+</div>
+
+
+
+<script>
+
+
+const learner_id=
+new URLSearchParams(location.search)
+.get("learner_id");
+
+
+
+async function load(){
+
+
+let r=
+await fetch(
+"/api/earnings?learner_id="+learner_id
+);
+
+
+let d=
+await r.json();
+
+
+
+box.innerHTML=
+
+`
+<h2>Total Earned: ${d.total || 0}</h2>
+<p>
+Completed records:
+${d.records?.length || 0}
+</p>
+`;
+
+}
+
+
+load();
+
+
+</script>
+
+
+</body>
+
+</html>

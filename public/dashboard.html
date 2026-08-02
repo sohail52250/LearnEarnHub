@@ -1,114 +1,209 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LearnEarnHub Dashboard</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
 
 body{
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
+font-family:Arial;
+background:#f4f7fb;
+padding:20px;
 }
 
-img{
-  max-width:100%;
-  height:auto;
-}
-
-table{
-  display:block;
-  overflow-x:auto;
-  width:100%;
+h1{
+text-align:center;
 }
 
 .card{
-  width:100%;
-  max-width:100%;
+background:white;
+padding:20px;
+margin:15px auto;
+max-width:700px;
+border-radius:12px;
+box-shadow:0 3px 10px #ccc;
 }
 
-@media (max-width:768px){
-  body{
-    font-size:16px;
-  }
-
-  h1{
-    font-size:24px;
-  }
-
-  h2{
-    font-size:20px;
-  }
+.progress{
+height:20px;
+background:#ddd;
+border-radius:10px;
+overflow:hidden;
 }
 
-@media (max-width:480px){
-  h1{
-    font-size:20px;
-  }
-
-  h2{
-    font-size:18px;
-  }
+.bar{
+height:100%;
+background:#1565c0;
+color:white;
+text-align:center;
 }
+
+.cert{
+background:#e8f5e9;
+padding:10px;
+border-radius:8px;
+margin:8px;
+}
+
 </style>
-<link rel="stylesheet" href="style.css">
-<title>Dashboard</title>
-<script src="/adsense.js"></script>
-<script src="/certificate-system.js"></script>
-<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
 
-<title>Dashboard</title>
-
-<meta name="description" content="Learn dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
-<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
-
-<meta property="og:title" content="Dashboard">
-<meta property="og:description" content="Learn dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://learn-earnhub.vercel.app/dashboard.html">
-
-<link rel="canonical" href="https://learn-earnhub.vercel.app/dashboard.html">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Learn & Earn Hub",
-  "url": "https://learn-earnhub.vercel.app",
-  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
-}
-</script>
-
-<script src="/global-translator.js"></script>
-<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
 </head>
 
-<body><div id="global-header"></div>
 
-<div class="card">
+<body>
 
-<h2>User Dashboard</h2>
 
-<p>
-Manage your profile, ads and points.
-</p>
+<h1>📚 LearnEarnHub Dashboard</h1>
 
-<a href="market.html">
-<button>View Marketplace</button>
-</a>
+
+<div id="courses" class="card">
+
+Loading courses...
 
 </div>
 
-<script src="/mobile-nav.js"></script>
-<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
-<script src="/assets/js/theme-helper.js"></script>
+
+
+<div id="certificates" class="card">
+
+Loading certificates...
+
+</div>
+
+
+
+<script>
+
+
+async function loadDashboard(){
+
+
+const user_id =
+new URLSearchParams(location.search)
+.get("user_id");
+
+
+
+if(!user_id){
+
+document.body.innerHTML=
+"<h2>User ID missing</h2>";
+
+return;
+
+}
+
+
+
+const res=await fetch(
+"/api/dashboard?user_id="+user_id
+);
+
+
+
+const data=await res.json();
+
+
+
+let html="<h2>My Courses</h2>";
+
+
+
+data.courses.forEach(c=>{
+
+
+html+=`
+
+<h3>${c.title}</h3>
+
+<p>${c.category}</p>
+
+<div class="progress">
+
+<div class="bar" style="width:${c.percentage}%">
+
+${c.percentage}%
+
+</div>
+
+</div>
+
+
+<p>
+${c.completed_lessons}/${c.total_lessons}
+Lessons Completed
+</p>
+
+
+<hr>
+
+`;
+
+});
+
+
+document.getElementById("courses")
+.innerHTML=html;
+
+
+
+let cert="";
+
+
+
+if(data.certificates.length){
+
+
+cert="<h2>🏆 Certificates</h2>";
+
+
+data.certificates.forEach(c=>{
+
+
+cert+=`
+
+<div class="cert">
+
+Certificate:
+${c.certificate_code || "Issued"}
+
+<br>
+
+Course ID:
+${c.course_id}
+
+</div>
+
+`;
+
+
+});
+
+
+}else{
+
+
+cert="<h2>No certificates yet</h2>";
+
+}
+
+
+
+document.getElementById("certificates")
+.innerHTML=cert;
+
+
+}
+
+
+loadDashboard();
+
+
+</script>
+
+
 </body>
+
 </html>

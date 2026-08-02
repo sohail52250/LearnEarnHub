@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
-<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
-<meta name="robots" content="index,follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LearnEarnHub">
-<meta property="og:description" content="Learn, Earn and Grow.">
-<link rel="canonical" href="https://learn-earnhub.vercel.app/">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Opportunities</title>
 
-<title>Opportunities - Learn & Earn Hub</title>
+<style>
 
-<link rel="stylesheet" href="/style.css">
+body{
+font-family:Arial;
+background:#f5f7fb;
+padding:20px;
+}
 
-<script src="/supabase-config.js"></script>
-<script src="/opportunities.js"></script>
+.card{
 
-<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+background:white;
+padding:15px;
+margin:10px;
+
+border-radius:12px;
+
+}
+
+</style>
+
 </head>
 
 
-<body><div id="global-header"></div>
+<body>
 
+
+<h1>🌍 Global Opportunities</h1>
+
+
+<div id="list">
+
+Loading...
+
+</div>
+
+
+
+<script>
+
+
+async function load(){
+
+
+let r=
+await fetch(
+"/api/global-opportunities"
+);
+
+
+let jobs=
+await r.json();
+
+
+
+list.innerHTML=
+jobs.map(j=>`
 
 <div class="card">
 
-<h1>
-💼 Opportunities
-</h1>
+<h3>${j.title}</h3>
+
+<p>${j.company || ""}</p>
 
 <p>
-Jobs, internships and projects for learners.
+Skill:
+${j.required_skill || ""}
 </p>
 
+<a href="${j.apply_url}" target="_blank">
+Apply
+</a>
+
 
 </div>
 
+`).join("");
 
-<div id="opportunity-list">
-
-Loading opportunities...
-
-</div>
+}
 
 
-<script src="/career-engine.js"></script>
-<div class="card">
-<h2 data-en="Recommended Opportunities" data-ur="تجویز کردہ مواقع">Recommended Opportunities</h2>
-<div id="recommendedJobs"></div>
-</div>
-<script>
-let recommended=getRecommendations(["excel","typing","internet"]);
-document.getElementById("recommendedJobs").innerHTML=recommended.map(j=>"✅ "+j).join("<br>");
+load();
+
+
 </script>
-<div class="card">
-<h2 data-en="Skill Match Score" data-ur="مہارت میچ اسکور">Skill Match Score</h2>
-<p>AI matching will connect your skills with suitable opportunities.</p>
-</div>
-<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
-<script src="/assets/js/theme-helper.js"></script>
+
+
 </body>
 
 </html>
