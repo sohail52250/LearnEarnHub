@@ -101,3 +101,24 @@ loadJobs
 
 
 window.applyJob=applyJob;
+
+
+async function loadExternalJobs(){
+ const r=await fetch('/api/external/jobs-feed');
+ const data=await r.json();
+
+ const box=document.getElementById('jobs');
+
+ if(box && data.jobs){
+ box.innerHTML=data.jobs.map(j=>`
+ <div class="job-card">
+ <h3>${j.title}</h3>
+ <p>${j.category}</p>
+ <p>${j.type}</p>
+ <p>${j.reward}</p>
+ </div>
+ `).join('');
+ }
+}
+
+loadExternalJobs();
