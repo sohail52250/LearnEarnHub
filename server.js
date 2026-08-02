@@ -144,6 +144,15 @@ app.get(
  require("./api/developer/protected-test")
 );
 
+
+const developerRole=require("./middleware/developer-role");
+
+app.get(
+ "/api/developer/secure-dashboard",
+ developerRole,
+ require("./api/developer/dashboard")
+);
+
 module.exports = app;
 
 

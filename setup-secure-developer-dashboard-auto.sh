@@ -1,0 +1,90 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Updating secure developer dashboard ==="
+
+cat > public/developer/dashboard.html <<'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnEarnHub Developer Dashboard</title>
+</head>
+
+<body>
+
+<h1>Developer Dashboard</h1>
+
+<button onclick="logout()">Logout</button>
+
+<pre id="output">Loading...</pre>
+
+<script type="module">
+
+import {createClient}
+from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+
+const supabase=createClient(
+"YOUR_SUPABASE_URL",
+"YOUR_SUPABASE_ANON_KEY"
+);
+
+
+async function checkSession(){
+
+ const {data}=await supabase.auth.getSession();
+
+ if(!data.session){
+
+   window.location="/developer/login.html";
+   return;
+
+ }
+
+ loadDashboard(data.session.access_token);
+
+}
+
+
+async function loadDashboard(token){
+
+ const r=await fetch(
+ "/api/developer/dashboard",
+ {
+  headers:{
+   Authorization:"Bearer "+token
+  }
+ });
+
+ const data=await r.json();
+
+ document.getElementById("output").textContent=
+ JSON.stringify(data,null,2);
+
+}
+
+
+window.logout=async()=>{
+
+ await supabase.auth.signOut();
+
+ localStorage.clear();
+
+ window.location="/developer/login.html";
+
+}
+
+
+checkSession();
+
+</script>
+
+</body>
+</html>
+HTML
+
+
+git add public/developer/dashboard.html
+git commit -m "Secure developer dashboard with Supabase session"
+git push
+
+echo "=== Completed ==="
