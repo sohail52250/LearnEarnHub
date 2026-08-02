@@ -793,3 +793,11 @@ app.post(
  "/api/jobs/apply",
  jobApply
 );
+
+
+const myApplications=require("./api/jobs/my-applications");
+
+app.get(
+ "/api/jobs/my-applications",
+ myApplications
+);
