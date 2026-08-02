@@ -88,11 +88,11 @@ box.innerHTML=jobs.map(j=>`
 
 <p>Reward: ${j.reward}</p>
 
-${j.url?
-`<a href="${j.url}" target="_blank">
-<button>Apply</button>
+${j.url && j.url.startsWith("http")?
+`<a href="${j.url}" target="_blank" rel="noopener">
+<button>Apply Now</button>
 </a>`:
-"<button disabled>Coming Soon</button>"
+"<button disabled>No application link available</button>"
 }
 
 </div>
