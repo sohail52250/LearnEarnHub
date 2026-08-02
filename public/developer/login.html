@@ -31,7 +31,7 @@ let token=document.getElementById("token").value;
 
 let r=await fetch("/api/developer/secure-dashboard",{
 headers:{
-"x-session-token":token
+"Authorization":"Bearer "+token
 }
 });
 

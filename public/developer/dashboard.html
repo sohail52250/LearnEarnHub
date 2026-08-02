@@ -13,7 +13,7 @@
 
 fetch("/api/developer/secure-dashboard",{
 headers:{
-"x-session-token":localStorage.getItem("dev_token")
+"Authorization":"Bearer "+localStorage.getItem("dev_token")
 }
 })
 .then(r=>r.json())
