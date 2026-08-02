@@ -1,3 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating Developer Portal UI ==="
+
+mkdir -p public/developer
+
+cat > public/developer/index.html <<'HTML'
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,3 +119,10 @@ loadKeys();
 
 </body>
 </html>
+HTML
+
+git add .
+git commit -m "Add developer portal UI"
+git push
+
+echo "=== Developer Portal Created ==="
