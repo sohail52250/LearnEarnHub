@@ -1,3 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating Developer Portal UI ==="
+
+mkdir -p public/developer
+
+cat > public/developer/login.html <<'HTML'
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,3 +56,46 @@ location.href="/developer/dashboard.html";
 
 </body>
 </html>
+HTML
+
+
+cat > public/developer/dashboard.html <<'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+<title>Developer Dashboard</title>
+</head>
+<body>
+
+<h1>LearnEarnHub Developer Dashboard</h1>
+
+<pre id="data">Loading...</pre>
+
+<script>
+
+fetch("/api/developer/secure-dashboard",{
+headers:{
+"x-session-token":localStorage.getItem("dev_token")
+}
+})
+.then(r=>r.json())
+.then(d=>{
+document.getElementById("data").innerText=
+JSON.stringify(d,null,2)
+})
+
+</script>
+
+</body>
+</html>
+HTML
+
+
+git add .
+git commit -m "Create developer portal login and dashboard UI"
+git push
+
+vercel --prod
+
+echo "=== Developer Portal Ready ==="
+
