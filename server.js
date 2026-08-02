@@ -742,3 +742,7 @@ employerPosts
 );
 
 
+
+const debugDb = require("./api/debug/check-db");
+
+app.get("/api/debug/check-db", debugDb);
