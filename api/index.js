@@ -62,4 +62,16 @@ app.use("/developer/key-control",devKey);
 app.use("/developer/regenerate-key",devRegenerate);
 
 
+
+
+// Jobs and opportunity feeds
+const externalJobs=require("../backend-api/external/jobs-feed");
+const sourceOpportunities=require("../backend-api/sources/opportunities");
+const partnerJobs=require("../backend-api/partner/jobs");
+
+app.use("/external/jobs-feed",externalJobs);
+app.use("/sources/opportunities",sourceOpportunities);
+app.use("/partner/jobs",partnerJobs);
+
+
 module.exports=app;
