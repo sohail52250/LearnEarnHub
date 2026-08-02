@@ -1,15 +1,24 @@
 const express=require("express");
+
 const app=express();
 
 app.use(express.json());
 
 
-app.get("/status",(req,res)=>{
+app.get("/",(req,res)=>{
 res.json({
 success:true,
-service:"LearnEarnHub API",
+service:"LearnEarnHub API Router"
+});
+});
+
+
+app.get("/status",(req,res)=>{
+res.json({
+name:"Learn & Earn Hub",
+status:"Running",
 database:"Supabase",
-mode:"single-router"
+mode:"Single API Router"
 });
 });
 
