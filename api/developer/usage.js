@@ -1,4 +1,3 @@
-
 const {createClient}=require("@supabase/supabase-js");
 
 require("dotenv").config();
@@ -10,26 +9,21 @@ process.env.SUPABASE_SERVICE_KEY
 );
 
 
-
 module.exports=async(req,res)=>{
-
 
 try{
 
-
-const data=await db
-
+const result =
+await db
 .from("api_usage_dashboard")
-
 .select("*");
-
 
 
 res.json({
 
 success:true,
 
-usage:data.data || []
+usage: result.data || []
 
 });
 
@@ -46,6 +40,4 @@ error:e.message
 
 }
 
-
 };
-
