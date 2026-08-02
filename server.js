@@ -785,3 +785,11 @@ app.get(
  "/api/external/jobs-feed",
  externalJobs
 );
+
+
+const jobApply=require("./api/jobs/apply");
+
+app.post(
+ "/api/jobs/apply",
+ jobApply
+);
