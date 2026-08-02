@@ -85,7 +85,19 @@ developerDashboard
 );
 
 
+
+
+const developerUsage =
+require("./api/developer/usage");
+
+app.get(
+"/api/developer/usage",
+developerUsage
+);
+
+
 module.exports = app;
+
 
 
 // ===== LearnEarnHub Learning APIs =====
