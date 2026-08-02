@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Developer Dashboard</title>
+</head>
+
+<body>
+
+<h1>LearnEarnHub Developer Dashboard</h1>
+
+<div id="content"></div>
+
+<script>
+
+const key=localStorage.getItem("LEH_DEV_KEY");
+
+if(!key){
+ window.location="/developer/login.html";
+}
+
+async function load(){
+
+const r=await fetch(
+"/api/developer/key-control"
+);
+
+const data=await r.json();
+
+document.getElementById("content").innerHTML=
+JSON.stringify(data,null,2);
+
+}
+
+load();
+
+</script>
+
+</body>
+</html>
