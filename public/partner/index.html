@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>LearnEarnHub API Partner Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+button{
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1>API Partner Dashboard</h1>
+
+
+<div class="card">
+
+<h2>Partner Status</h2>
+
+<pre id="status">
+Loading...
+</pre>
+
+</div>
+
+
+<div class="card">
+
+<h2>Developer Tools</h2>
+
+<a href="/swagger/">
+Swagger API Docs
+</a>
+
+<br><br>
+
+<a href="/developer/">
+Developer Portal
+</a>
+
+</div>
+
+
+<script>
+
+async function load(){
+
+let r=await fetch(
+"/api/developer/dashboard"
+);
+
+let d=await r.json();
+
+document.getElementById("status")
+.innerHTML=
+JSON.stringify(d,null,2);
+
+}
+
+
+load();
+
+</script>
+
+
+</body>
+</html>
