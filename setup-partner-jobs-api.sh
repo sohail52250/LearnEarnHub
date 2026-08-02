@@ -1,3 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating Partner Jobs API ==="
+
+mkdir -p api/partner
+
+cat > api/partner/jobs.js <<'JS'
 const { createClient } = require("@supabase/supabase-js");
 require("dotenv").config();
 
@@ -62,3 +69,38 @@ module.exports = async(req,res)=>{
   });
  }
 };
+JS
+
+python - <<'PY'
+from pathlib import Path
+
+p=Path("server.js")
+s=p.read_text()
+
+if 'api/partner/jobs' not in s:
+    s += '''
+
+const partnerJobs=require("./api/partner/jobs");
+
+app.get(
+ "/api/partner/jobs",
+ partnerJobs
+);
+
+app.post(
+ "/api/partner/jobs",
+ partnerJobs
+);
+'''
+    p.write_text(s)
+    print("Partner Jobs API registered")
+else:
+    print("Partner Jobs API already exists")
+PY
+
+git add .
+git commit -m "Add partner jobs API" || true
+git push
+vercel --prod
+
+echo "=== Completed ==="
