@@ -1,34 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
 
-<!DOCTYPE html>
+echo "=== Adding global important buttons ==="
 
-<html>
+python - <<'PY'
+from pathlib import Path
 
-<head>
-
-<title>
-LearnEarnHub API Usage Dashboard
-</title>
-
-<style>
-
-body{
-font-family:Arial;
-padding:30px;
-background:#f4f4f4;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-}
-
-</style>
-
-</head>
-
-
-<body>
+nav='''
 <div class="leh-global-nav">
 <a href="/index.html">🏠 Home</a>
 <a href="/learn.html">📚 Learn</a>
@@ -58,43 +35,25 @@ border:1px solid #ddd;
 font-size:14px;
 }
 </style>
+'''
 
+for p in Path("public").rglob("*.html"):
+    try:
+        s=p.read_text(errors="ignore")
+        if "leh-global-nav" not in s and "<body" in s:
+            s=s.replace("<body>", "<body>"+nav, 1)
+            p.write_text(s)
+            print("Updated:",p)
+    except:
+        pass
 
+print("Navigation added")
+PY
 
-<h1>
-API Usage Analytics
-</h1>
+git add .
+git commit -m "Add global important navigation buttons" || true
+git push
 
+vercel --prod
 
-<div class="card">
-
-<pre id="usage">
-Loading...
-</pre>
-
-</div>
-
-
-
-<script>
-
-fetch("/api/developer/usage")
-
-.then(r=>r.json())
-
-.then(d=>{
-
-document.getElementById("usage")
-.textContent=
-JSON.stringify(d,null,2);
-
-});
-
-
-</script>
-
-
-</body>
-
-</html>
-
+echo "=== Completed ==="
