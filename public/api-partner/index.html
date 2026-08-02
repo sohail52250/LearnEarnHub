@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Partner Dashboard - LearnEarnHub</title>
+<meta charset="UTF-8">
+<style>
+body{font-family:Arial;margin:30px}
+.card{border:1px solid #ddd;padding:20px;border-radius:12px}
+button{padding:10px 20px}
+</style>
+</head>
+
+<body>
+
+<h1>LearnEarnHub API Partner Center</h1>
+
+<div class="card">
+
+<h2>Request API Access</h2>
+
+<form id="form">
+
+<input id="company" placeholder="Company Name"><br><br>
+
+<input id="email" placeholder="Email"><br><br>
+
+<textarea id="purpose"
+placeholder="Integration purpose"></textarea>
+
+<br><br>
+
+<button>
+Submit Request
+</button>
+
+</form>
+
+<p id="result"></p>
+
+</div>
+
+
+<script>
+
+document.querySelector("#form")
+.addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+let r=await fetch("/api/api-partner/request",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+company_name:
+company.value,
+
+email:
+email.value,
+
+purpose:
+purpose.value
+
+})
+
+});
+
+
+let data=await r.json();
+
+result.innerHTML=
+JSON.stringify(data);
+
+});
+
+
+</script>
+
+
+</body>
+</html>
