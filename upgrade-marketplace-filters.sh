@@ -1,68 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Task Marketplace - LearnEarnHub</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-</head>
+#!/data/data/com.termux/files/usr/bin/bash
 
-<body>
+echo "=== Adding Marketplace Filters ==="
 
-<h1>🎯 Task Marketplace</h1>
+python - <<'PY'
+from pathlib import Path
 
-<p>Complete skills-based tasks and earn rewards.</p>
+p=Path("public/task-marketplace.html")
 
-<input id="search"
-placeholder="Search tasks..."
-onkeyup="searchTasks()">
+if not p.exists():
+    print("task-marketplace.html not found")
+    raise SystemExit()
 
-<div id="tasks">
-Loading tasks...
-</div>
+s=p.read_text()
 
-<script src="/task-marketplace.js"></script>
+if "job-search-filter" not in s:
 
-
-<h2>External Opportunities</h2>
-<div id="external-jobs-container">
-Loading opportunities...
-</div>
-
-<script>
-async function loadExternalJobs(){
-
- try{
-
-  const r = await fetch("/api/external/jobs-feed");
-  const data = await r.json();
-
-  const box=document.getElementById("external-jobs-container");
-
-  if(!data.jobs || !data.jobs.length){
-    box.innerHTML="<p>No opportunities available.</p>";
-    return;
-  }
-
-  box.innerHTML=data.jobs.map(job=>`
-    <div style="border:1px solid #ddd;padding:12px;margin:10px 0;border-radius:8px">
-      <h3>${job.title || "Opportunity"}</h3>
-      <p><b>Source:</b> ${job.source || ""}</p>
-      <p><b>Company:</b> ${job.company || "N/A"}</p>
-      ${job.apply ? `<a href="${job.apply}" target="_blank">Apply Now</a>` : ""}
-    </div>
-  `).join("");
-
- }catch(e){
-   document.getElementById("external-jobs-container").innerHTML =
-   "<p>Unable to load opportunities.</p>";
- }
-
-}
-
-loadExternalJobs();
-</script>
-
-
+    addon="""
 
 <h2>Find Opportunities</h2>
 
@@ -174,5 +127,22 @@ loadExternalJobs();
 
 </script>
 
-</body>
-</html>
+"""
+
+    s=s.replace("</body>",addon+"</body>")
+    p.write_text(s)
+
+    print("Filters added")
+
+else:
+    print("Already exists")
+
+PY
+
+git add .
+git commit -m "Add opportunity search filters" || true
+git push
+
+vercel --prod
+
+echo "=== Done ==="
