@@ -135,6 +135,15 @@ regenerateKey
 );
 
 
+
+const apiKeySecurity=require("./middleware/api-key-security");
+
+app.get(
+ "/api/developer/protected-test",
+ apiKeySecurity,
+ require("./api/developer/protected-test")
+);
+
 module.exports = app;
 
 
