@@ -777,3 +777,11 @@ app.post(
   "/api/partner/jobs",
   partnerJobs
 );
+
+
+const externalJobs=require("./api/external/jobs-feed");
+
+app.get(
+ "/api/external/jobs-feed",
+ externalJobs
+);
