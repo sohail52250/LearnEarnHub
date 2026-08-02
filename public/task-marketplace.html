@@ -180,7 +180,21 @@ loadExternalJobs();
 
 async function applyExternalJob(job){
 
-let user_id=localStorage.getItem("user_id");
+
+let user_id=null;
+
+try{
+
+const {data:{session}} = await supabaseClient.auth.getSession();
+
+if(session && session.user){
+    user_id=session.user.id;
+}
+
+}catch(e){
+    console.log("Session check failed");
+}
+
 
 if(!user_id){
 
