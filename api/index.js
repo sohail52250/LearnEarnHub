@@ -4,6 +4,13 @@ const app=express();
 
 app.use(express.json());
 
+app.use((req,res,next)=>{
+  if(req.url.startsWith("/api")){
+    req.url=req.url.replace(/^\/api/,"") || "/";
+  }
+  next();
+});
+
 
 app.get("/",(req,res)=>{
 res.json({
