@@ -1,4 +1,3 @@
-
 const {createClient}=require("@supabase/supabase-js");
 
 require("dotenv").config();
@@ -14,7 +13,7 @@ module.exports=async(req,res)=>{
 
 try{
 
-const data =
+const result =
 await db
 .from("api_security_analytics")
 .select("*");
@@ -24,7 +23,7 @@ res.json({
 
 success:true,
 
-security:data.data || []
+security: result.data || []
 
 });
 
@@ -42,4 +41,3 @@ error:e.message
 }
 
 };
-
