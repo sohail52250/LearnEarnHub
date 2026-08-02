@@ -6,10 +6,10 @@
 
 "title":"LearnEarnHub API",
 
-"version":"1.0",
+"version":"1.0.0",
 
 "description":
-"Jobs, opportunities, learning and matching API"
+"LearnEarnHub Jobs, Opportunities, Learning and AI Matching API"
 
 },
 
@@ -23,6 +23,34 @@
 ],
 
 
+"security":[
+
+{
+"ApiKeyAuth":[]
+}
+
+],
+
+
+"components":{
+
+"securitySchemes":{
+
+"ApiKeyAuth":{
+
+"type":"apiKey",
+
+"name":"X-API-Key",
+
+"in":"header"
+
+}
+
+}
+
+},
+
+
 "paths":{
 
 
@@ -30,7 +58,7 @@
 
 "get":{
 
-"summary":"Analytics statistics",
+"summary":"Platform Analytics",
 
 "parameters":[
 
@@ -46,7 +74,17 @@
 
 }
 
-]
+],
+
+"responses":{
+
+"200":{
+
+"description":"Analytics result"
+
+}
+
+}
 
 }
 
@@ -57,12 +95,42 @@
 
 "get":{
 
-"summary":"List opportunities"
+"summary":"Global Opportunities",
+
+"responses":{
+
+"200":{
+
+"description":"Opportunity list"
 
 }
 
 }
 
+}
+
+},
+
+
+"/api/employer-posts":{
+
+"get":{
+
+"summary":"Employer Jobs",
+
+"responses":{
+
+"200":{
+
+"description":"Job list"
+
+}
+
+}
+
+}
+
+}
 
 }
 
