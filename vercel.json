@@ -12,6 +12,18 @@
   ],
   "routes": [
     {
+      "src": "/partner/(.*)",
+      "dest": "/public/partner/$1"
+    },
+    {
+      "src": "/swagger/(.*)",
+      "dest": "/public/swagger/$1"
+    },
+    {
+      "src": "/developer/(.*)",
+      "dest": "/public/developer/$1"
+    },
+    {
       "src": "/$",
       "dest": "/public/index.html"
     },
