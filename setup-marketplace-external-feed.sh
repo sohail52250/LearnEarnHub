@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Task Marketplace - LearnEarnHub</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/supabase-config.js"></script>
-</head>
+#!/data/data/com.termux/files/usr/bin/bash
 
-<body>
+echo "=== Connecting Marketplace to External Feed ==="
 
-<h1>🎯 Task Marketplace</h1>
+TARGET="public/task-marketplace.html"
 
-<p>Complete skills-based tasks and earn rewards.</p>
+if [ ! -f "$TARGET" ]; then
+  echo "task-marketplace.html not found"
+  exit 1
+fi
 
-<input id="search"
-placeholder="Search tasks..."
-onkeyup="searchTasks()">
+python - <<'PY'
+from pathlib import Path
 
-<div id="tasks">
-Loading tasks...
-</div>
+p=Path("public/task-marketplace.html")
+s=p.read_text()
 
-<script src="/task-marketplace.js"></script>
+if 'external-jobs-container' not in s:
 
-
+    widget = """
 <h2>External Opportunities</h2>
 <div id="external-jobs-container">
 Loading opportunities...
@@ -61,6 +56,21 @@ async function loadExternalJobs(){
 
 loadExternalJobs();
 </script>
+"""
 
-</body>
-</html>
+    if "</body>" in s:
+        s=s.replace("</body>",widget+"\n</body>")
+
+    p.write_text(s)
+    print("Marketplace updated")
+
+else:
+    print("Already connected")
+PY
+
+git add .
+git commit -m "Connect marketplace to external opportunities" || true
+git push
+vercel --prod
+
+echo "=== Completed ==="
