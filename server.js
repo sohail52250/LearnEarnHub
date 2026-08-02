@@ -96,7 +96,19 @@ developerUsage
 );
 
 
+
+
+const developerSecurity =
+require("./api/developer/security");
+
+app.get(
+"/api/developer/security",
+developerSecurity
+);
+
+
 module.exports = app;
+
 
 
 
