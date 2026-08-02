@@ -6,7 +6,7 @@ module.exports=async function(req,res){
 try{
 
 
-if(req.body.action==="create"){
+if(req.body && req.body.action==="create"){
 
 return res.json(
 await service.createJob(

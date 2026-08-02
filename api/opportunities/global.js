@@ -6,7 +6,7 @@ module.exports=async function(req,res){
 try{
 
 
-if(req.body.action==="add"){
+if(req.body && req.body.action==="add"){
 
 return res.json(
 await service.addOpportunity(

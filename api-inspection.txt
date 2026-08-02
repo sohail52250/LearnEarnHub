@@ -1,0 +1,151 @@
+===== ANALYTICS =====
+const service=require("../services/analytics-service");
+
+
+module.exports=async function(req,res){
+
+try{
+
+
+if(req.query.action==="stats"){
+
+return res.json(
+await service.dashboardStats()
+);
+
+}
+
+
+
+if(req.query.action==="categories"){
+
+return res.json(
+await service.categoryReport()
+);
+
+}
+
+
+
+res.status(400).json({
+error:"Invalid action"
+});
+
+
+}catch(e){
+
+res.status(500).json({
+error:e.message
+});
+
+}
+
+};
+
+
+===== EMPLOYER POSTS =====
+const service=require("../../services/employer-post-service");
+
+
+module.exports=async function(req,res){
+
+try{
+
+
+if(req.body.action==="create"){
+
+return res.json(
+await service.createJob(
+req.body.data
+)
+);
+
+}
+
+
+
+return res.json(
+await service.listJobs()
+);
+
+
+
+}catch(e){
+
+res.status(500).json({
+
+error:e.message
+
+});
+
+}
+
+};
+
+
+===== OPPORTUNITIES =====
+const service=require("../../services/opportunity-service");
+
+
+module.exports=async function(req,res){
+
+try{
+
+
+if(req.body.action==="add"){
+
+return res.json(
+await service.addOpportunity(
+req.body.data
+)
+);
+
+}
+
+
+
+return res.json(
+await service.listOpportunities()
+);
+
+
+
+}catch(e){
+
+res.status(500).json({
+
+error:e.message
+
+});
+
+}
+
+};
+
+
+===== SERVER ROUTES =====
+332:const analytics=require("./api/analytics");
+335:"/api/analytics",
+336:analytics
+391:const employer=require("./api/employer");
+395:"/api/employer",
+396:employer
+401:"/api/employer",
+402:employer
+506:const globalOpportunities=require("./api/opportunities/global");
+510:"/api/global-opportunities",
+516:"/api/global-opportunities",
+564:const employerCandidates=
+565:require("./api/employers/candidates");
+569:"/api/employer-candidates",
+570:employerCandidates
+575:"/api/employer-candidates",
+576:employerCandidates
+663:const employerPosts=
+664:require("./api/employer-posts");
+668:"/api/employer-posts",
+669:employerPosts
+674:"/api/employer-posts",
+675:employerPosts
+
+===== END =====
