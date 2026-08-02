@@ -1,71 +1,11 @@
-<!DOCTYPE html>
+#!/data/data/com.termux/files/usr/bin/bash
 
-<html>
+echo "=== Adding Mobile Bottom Navigation ==="
 
-<head>
+python - <<'PY'
+from pathlib import Path
 
-<title>LearnEarnHub Dashboard</title>
-
-<script src="/js/auth-session.js"></script>
-
-<style>
-
-body{
-
-font-family:Arial;
-background:#f5f7fb;
-padding:20px;
-
-}
-
-.card{
-
-background:white;
-padding:20px;
-border-radius:12px;
-
-}
-
-button{
-
-padding:10px;
-background:#d32f2f;
-color:white;
-border:0;
-
-}
-
-</style>
-
-</head>
-
-
-<body onload="checkSession()">
-
-
-<div class="card">
-
-
-<h1>
-🎓 LearnEarnHub Dashboard
-</h1>
-
-
-<p>
-Welcome Learner
-</p>
-
-
-<button onclick="logout()">
-Logout
-</button>
-
-
-</div>
-
-
-
-
+nav=r'''
 <div class="leh-bottom-nav">
 <a href="/index.html">🏠<span>Home</span></a>
 <a href="/learn.html">📚<span>Learn</span></a>
@@ -107,6 +47,30 @@ padding-bottom:70px;
 }
 }
 </style>
-</body>
+'''
 
-</html>
+count=0
+
+for p in Path("public").rglob("*.html"):
+    try:
+        s=p.read_text(errors="ignore")
+
+        if "<body" in s and "leh-bottom-nav" not in s:
+            s=s.replace("</body>",nav+"</body>",1)
+            p.write_text(s)
+            count+=1
+            print("Updated:",p)
+
+    except:
+        pass
+
+print("Total updated:",count)
+PY
+
+git add .
+git commit -m "Add mobile bottom navigation" || true
+git push
+
+vercel --prod
+
+echo "=== Completed ==="

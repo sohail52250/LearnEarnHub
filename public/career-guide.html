@@ -121,6 +121,48 @@ Choose your career goal.
 
 <div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
 <script src="/assets/js/theme-helper.js"></script>
+
+<div class="leh-bottom-nav">
+<a href="/index.html">🏠<span>Home</span></a>
+<a href="/learn.html">📚<span>Learn</span></a>
+<a href="/jobs.html">💼<span>Jobs</span></a>
+<a href="/task-marketplace.html">💰<span>Earn</span></a>
+<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
+</div>
+
+<style>
+.leh-bottom-nav{
+display:none;
+}
+
+@media(max-width:700px){
+.leh-bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-around;
+background:white;
+border-top:1px solid #ddd;
+padding:8px 4px;
+z-index:9999;
+}
+
+.leh-bottom-nav a{
+text-align:center;
+text-decoration:none;
+font-size:12px;
+}
+
+.leh-bottom-nav span{
+display:block;
+}
+body{
+padding-bottom:70px;
+}
+}
+</style>
 </body>
 
 </html>
