@@ -107,7 +107,24 @@ developerSecurity
 );
 
 
+
+
+const keyControl =
+require("./api/developer/key-control");
+
+app.get(
+"/api/developer/key-control",
+keyControl
+);
+
+app.post(
+"/api/developer/key-control",
+keyControl
+);
+
+
 module.exports = app;
+
 
 
 
