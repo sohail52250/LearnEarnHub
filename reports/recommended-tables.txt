@@ -1,9 +1,0 @@
-learner_kyc
-business_verification
-investor_verification
-company_due_diligence
-government_requests
-audit_logs
-entity_verification
-payment_transactions
-compliance_cases
