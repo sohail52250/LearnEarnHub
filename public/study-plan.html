@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,14 +28,14 @@
 
 <body>
 <div class="leh-global-nav">
-<a href="/index.html">ðŸ  Home</a>
-<a href="/learn.html">ðŸ“š Learn</a>
-<a href="/jobs.html">ðŸ’¼ Jobs</a>
-<a href="/task-marketplace.html">ðŸ’° Tasks</a>
-<a href="/marketplace.html">ðŸª Marketplace</a>
-<a href="/post-job.html">ðŸ“ Post Job</a>
-<a href="/login.html">ðŸ” Login</a>
-<a href="/developer/login.html">ðŸ›  Developer</a>
+<a href="/index.html">🏠 Home</a>
+<a href="/learn.html">📚 Learn</a>
+<a href="/jobs.html">💼 Jobs</a>
+<a href="/task-marketplace.html">💰 Tasks</a>
+<a href="/marketplace.html">🏪 Marketplace</a>
+<a href="/post-job.html">📝 Post Job</a>
+<a href="/login.html">🔐 Login</a>
+<a href="/developer/login.html">🛠 Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -61,14 +61,14 @@ font-size:14px;
 
 <div class="card">
 
-<h1 data-en="ðŸ“š My Study Plan"
-data-ur="ðŸ“š Ù…ÛŒØ±Ø§ Ù…Ø·Ø§Ù„Ø¹Ø§ØªÛŒ Ù…Ù†ØµÙˆØ¨Û">
-ðŸ“š My Study Plan
+<h1 data-en="📚 My Study Plan"
+data-ur="📚 میرا مطالعاتی منصوبہ">
+📚 My Study Plan
 </h1>
 
 
 <p data-en="Your guided path from learning to earning."
-data-ur="Ø³ÛŒÚ©Ú¾Ù†Û’ Ø³Û’ Ú©Ù…Ø§Ù†Û’ ØªÚ© Ø¢Ù¾ Ú©Ø§ Ø±ÛÙ†Ù…Ø§Ø¦ÛŒ ÙˆØ§Ù„Ø§ Ø±Ø§Ø³ØªÛÛ”">
+data-ur="سیکھنے سے کمانے تک آپ کا رہنمائی والا راستہ۔">
 
 Your guided path from learning to earning.
 
@@ -82,7 +82,7 @@ Your guided path from learning to earning.
 <div class="card">
 
 <h2 data-en="Learning Roadmap"
-data-ur="Ø³ÛŒÚ©Ú¾Ù†Û’ Ú©Ø§ Ø±Ø§Ø³ØªÛ">
+data-ur="سیکھنے کا راستہ">
 
 Learning Roadmap
 
@@ -103,7 +103,7 @@ Loading...
 <div class="card">
 
 <h2 data-en="Next Recommended Step"
-data-ur="Ø§Ú¯Ù„Ø§ ØªØ¬ÙˆÛŒØ² Ú©Ø±Ø¯Û Ù‚Ø¯Ù…">
+data-ur="اگلا تجویز کردہ قدم">
 
 Next Recommended Step
 
@@ -125,11 +125,11 @@ Loading...
 <script src="/assets/js/theme-helper.js"></script>
 
 <div class="leh-bottom-nav">
-<a href="/index.html">ðŸ <span>Home</span></a>
-<a href="/learn.html">ðŸ“š<span>Learn</span></a>
-<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
-<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
-<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
+<a href="/index.html">🏠<span>Home</span></a>
+<a href="/learn.html">📚<span>Learn</span></a>
+<a href="/jobs.html">💼<span>Jobs</span></a>
+<a href="/task-marketplace.html">💰<span>Earn</span></a>
+<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -166,10 +166,10 @@ padding-bottom:70px;
 }
 </style>
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -177,7 +177,10 @@ padding-bottom:70px;
     }
   });
 </script>
-</body>
+<script src="/auth-system.js"></script>`r`n</body>
 
 </html>
+
+
+
 

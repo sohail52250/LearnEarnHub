@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LearnEarnHub">
+<meta property="og:description" content="Learn, Earn and Grow.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/">
+<title>Apply Opportunity</title>
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/components/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+<script src="/language-config.js"></script>
+</head>
+<body>
+<div class="leh-global-nav">
+<a href="/index.html">ðŸ  Home</a>
+<a href="/learn.html">ðŸ“š Learn</a>
+<a href="/jobs.html">ðŸ’¼ Jobs</a>
+<a href="/task-marketplace.html">ðŸ’° Tasks</a>
+<a href="/marketplace.html">ðŸª Marketplace</a>
+<a href="/post-job.html">ðŸ“ Post Job</a>
+<a href="/login.html">ðŸ” Login</a>
+<a href="/developer/login.html">ðŸ›  Developer</a>
+</div>
+<style>
+.leh-global-nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+padding:12px;
+background:#f5f5f5;
+border-radius:10px;
+margin:10px 0;
+}
+.leh-global-nav a{
+padding:8px 12px;
+border-radius:8px;
+text-decoration:none;
+background:white;
+border:1px solid #ddd;
+font-size:14px;
+}
+</style>
+<div id="global-header"></div>
+<h1>Apply Opportunity / Ù…ÙˆÙ‚Ø¹ Ú©Û’ Ù„Ø¦Û’ Ø¯Ø±Ø®ÙˆØ§Ø³Øª</h1>
+<p>Please login and apply.</p>
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+
+<div class="leh-bottom-nav">
+<a href="/index.html">ðŸ <span>Home</span></a>
+<a href="/learn.html">ðŸ“š<span>Learn</span></a>
+<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
+<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
+<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
+</div>
+
+<style>
+.leh-bottom-nav{
+display:none;
+}
+
+@media(max-width:700px){
+.leh-bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-around;
+background:white;
+border-top:1px solid #ddd;
+padding:8px 4px;
+z-index:9999;
+}
+
+.leh-bottom-nav a{
+text-align:center;
+text-decoration:none;
+font-size:12px;
+}
+
+.leh-bottom-nav span{
+display:block;
+}
+body{
+padding-bottom:70px;
+}
+}
+</style>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+<script src="/auth-system.js"></script>`r`n</body>
+</html>
+
+
+

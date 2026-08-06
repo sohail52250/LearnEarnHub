@@ -5,3 +5,4 @@ uploads/
 .vercel
 backups/
 .env*
+google-oauth-config.txt

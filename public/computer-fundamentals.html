@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Computer Fundamentals - LearnEarnHub</title>
@@ -6,7 +6,7 @@
 <link rel="canonical" href="https://learn-earnhub.vercel.app/computer-fundamentals.html">
 </head>
 <body>
-<h1>ðŸ’» Computer Fundamentals - Start Here</h1>
+<h1>💻 Computer Fundamentals - Start Here</h1>
 
 <p>This is the first step for beginners before learning digital skills, freelancing and earning skills.</p>
 
@@ -25,10 +25,10 @@
 </ul>
 
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -36,6 +36,9 @@
     }
   });
 </script>
-</body>
+<script src="/auth-system.js"></script>`r`n</body>
 </html>
+
+
+
 

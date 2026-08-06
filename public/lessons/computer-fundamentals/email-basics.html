@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Email Basics - Computer Fundamentals</title>
@@ -17,10 +17,10 @@
 <a href="/computer-fundamentals.html">Back to Computer Fundamentals</a>
 
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -28,7 +28,7 @@
     }
   });
 </script>
-</body>
+<script src="/auth-system.js"></script>`r`n</body>
 </html>
 
 <script src="/js/lesson-progress.js"></script>
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 let btn=document.createElement("button");
 
-btn.innerText="âœ… Complete Lesson";
+btn.innerText="✅ Complete Lesson";
 
 btn.onclick=async()=>{
 
@@ -56,5 +56,8 @@ document.body.appendChild(btn);
 });
 
 </script>
+
+
+
 
 

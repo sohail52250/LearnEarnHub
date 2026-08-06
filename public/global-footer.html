@@ -1,11 +1,11 @@
-﻿<footer class="leh-footer">
+<footer class="leh-footer">
 
 <p>
-ðŸš€ LearnEarnHub
+🚀 LearnEarnHub
 </p>
 
 <p>
-Learn Skills â€¢ Earn Opportunities â€¢ Build Business
+Learn Skills • Earn Opportunities • Build Business
 </p>
 
 
@@ -23,18 +23,18 @@ Learn Skills â€¢ Earn Opportunities â€¢ Build Business
 
 
 <p>
-Â© LearnEarnHub
+© LearnEarnHub
 </p>
 
 
 <a href="/developer/login.html">Developer Portal</a>
-<a href="/opportunities.html">ðŸ’¼ Opportunities</a></footer>
+<a href="/opportunities.html">💼 Opportunities</a></footer>
 
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -42,3 +42,8 @@ Learn Skills â€¢ Earn Opportunities â€¢ Build Business
     }
   });
 </script>
+
+
+
+
+

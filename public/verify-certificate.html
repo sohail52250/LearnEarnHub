@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -48,14 +48,14 @@ margin-top:20px;
 
 <body>
 <div class="leh-global-nav">
-<a href="/index.html">ðŸ  Home</a>
-<a href="/learn.html">ðŸ“š Learn</a>
-<a href="/jobs.html">ðŸ’¼ Jobs</a>
-<a href="/task-marketplace.html">ðŸ’° Tasks</a>
-<a href="/marketplace.html">ðŸª Marketplace</a>
-<a href="/post-job.html">ðŸ“ Post Job</a>
-<a href="/login.html">ðŸ” Login</a>
-<a href="/developer/login.html">ðŸ›  Developer</a>
+<a href="/index.html">🏠 Home</a>
+<a href="/learn.html">📚 Learn</a>
+<a href="/jobs.html">💼 Jobs</a>
+<a href="/task-marketplace.html">💰 Tasks</a>
+<a href="/marketplace.html">🏪 Marketplace</a>
+<a href="/post-job.html">📝 Post Job</a>
+<a href="/login.html">🔐 Login</a>
+<a href="/developer/login.html">🛠 Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -81,7 +81,7 @@ font-size:14px;
 
 <div class="box">
 
-<h1>ðŸ” Verify LearnEarnHub Certificate</h1>
+<h1>🔍 Verify LearnEarnHub Certificate</h1>
 
 
 <input id="code"
@@ -139,7 +139,7 @@ const data=await res.json();
 if(data.valid){
 
 document.getElementById("result").innerHTML=
-"âœ… Valid Certificate<br>Code: "
+"✅ Valid Certificate<br>Code: "
 +data.certificate.certificate_code;
 
 
@@ -147,7 +147,7 @@ document.getElementById("result").innerHTML=
 
 
 document.getElementById("result").innerHTML=
-"âŒ Certificate Not Found";
+"❌ Certificate Not Found";
 
 
 }
@@ -161,11 +161,11 @@ document.getElementById("result").innerHTML=
 
 
 <div class="leh-bottom-nav">
-<a href="/index.html">ðŸ <span>Home</span></a>
-<a href="/learn.html">ðŸ“š<span>Learn</span></a>
-<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
-<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
-<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
+<a href="/index.html">🏠<span>Home</span></a>
+<a href="/learn.html">📚<span>Learn</span></a>
+<a href="/jobs.html">💼<span>Jobs</span></a>
+<a href="/task-marketplace.html">💰<span>Earn</span></a>
+<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -202,10 +202,10 @@ padding-bottom:70px;
 }
 </style>
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -213,7 +213,10 @@ padding-bottom:70px;
     }
   });
 </script>
-</body>
+<script src="/auth-system.js"></script>`r`n</body>
 
 </html>
+
+
+
 

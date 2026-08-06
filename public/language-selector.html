@@ -1,32 +1,32 @@
-﻿<div class="card" id="language-box">
+<div class="card" id="language-box">
 
 <h3>
-ðŸŒ Language / Ø²Ø¨Ø§Ù† / Ø§Ù„Ù„ØºØ© / Taal
+🌐 Language / زبان / اللغة / Taal
 </h3>
 
 <button onclick="setLanguage('en')">
-ðŸ‡¬ðŸ‡§ English
+🇬🇧 English
 </button>
 
 <button onclick="setLanguage('ur')">
-ðŸ‡µðŸ‡° Ø§Ø±Ø¯Ùˆ
+🇵🇰 اردو
 </button>
 
 <button onclick="setLanguage('ar')">
-ðŸ‡¸ðŸ‡¦ Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©
+🇸🇦 العربية
 </button>
 
 <button onclick="setLanguage('nl')">
-ðŸ‡³ðŸ‡± Nederlands
+🇳🇱 Nederlands
 </button>
 
 </div>
 
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -34,3 +34,8 @@
     }
   });
 </script>
+
+
+
+
+

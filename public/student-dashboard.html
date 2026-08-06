@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -109,14 +109,14 @@ table{
 
 <body>
 <div class="leh-global-nav">
-<a href="/index.html">ðŸ  Home</a>
-<a href="/learn.html">ðŸ“š Learn</a>
-<a href="/jobs.html">ðŸ’¼ Jobs</a>
-<a href="/task-marketplace.html">ðŸ’° Tasks</a>
-<a href="/marketplace.html">ðŸª Marketplace</a>
-<a href="/post-job.html">ðŸ“ Post Job</a>
-<a href="/login.html">ðŸ” Login</a>
-<a href="/developer/login.html">ðŸ›  Developer</a>
+<a href="/index.html">🏠 Home</a>
+<a href="/learn.html">📚 Learn</a>
+<a href="/jobs.html">💼 Jobs</a>
+<a href="/task-marketplace.html">💰 Tasks</a>
+<a href="/marketplace.html">🏪 Marketplace</a>
+<a href="/post-job.html">📝 Post Job</a>
+<a href="/login.html">🔐 Login</a>
+<a href="/developer/login.html">🛠 Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -144,7 +144,7 @@ font-size:14px;
 
 <div class="card dashboard">
 
-<h1>ðŸŽ“ Student Dashboard</h1>
+<h1>🎓 Student Dashboard</h1>
 <h3 id="username"></h3>
 
 <p>
@@ -233,11 +233,11 @@ if(localStorage.getItem(item)=="completed"){
 
 completed++;
 
-output += "âœ… "+item+"<br>";
+output += "✅ "+item+"<br>";
 
 }else{
 
-output += "â¬œ "+item+"<br>";
+output += "⬜ "+item+"<br>";
 
 }
 
@@ -268,17 +268,17 @@ showUser();
 
 <div class="card">
 
-<h2>ðŸ† Achievements</h2>
+<h2>🏆 Achievements</h2>
 
 <ul>
 
-<li>ðŸŽ¯ First Lesson Completed</li>
+<li>🎯 First Lesson Completed</li>
 
-<li>ðŸ“š Learning Explorer</li>
+<li>📚 Learning Explorer</li>
 
-<li>ðŸ’» Digital Skills Beginner</li>
+<li>💻 Digital Skills Beginner</li>
 
-<li>ðŸŽ“ Certificate Earned</li>
+<li>🎓 Certificate Earned</li>
 
 </ul>
 
@@ -287,7 +287,7 @@ showUser();
 
 <div class="card">
 
-<h2 data-reward-key="rewards_title">ðŸ† My Achievements</h2>
+<h2 data-reward-key="rewards_title">🏆 My Achievements</h2>
 
 
 <div class="card">
@@ -311,7 +311,7 @@ Loading rewards...
 
 <div class="card">
 
-<h2>ðŸ“Š Course Progress</h2>
+<h2>📊 Course Progress</h2>
 
 <div id="course-progress">
 Loading...
@@ -325,7 +325,7 @@ Loading...
 
 <div class="card">
 
-<h2>ðŸ¤– Learning Assistant</h2>
+<h2>🤖 Learning Assistant</h2>
 
 <input id="assistant-question"
 placeholder="Ask what to learn next">
@@ -346,7 +346,7 @@ Your learning guide will appear here.
 <script src="/mobile-nav.js"></script>
 
 <div class="card">
-<h2 data-reward-key="invite">ðŸŽ Invite Friends</h2>
+<h2 data-reward-key="invite">🎁 Invite Friends</h2>
 <div id="referral-box">
 Loading referral link...
 </div>
@@ -356,7 +356,7 @@ Loading referral link...
 
 
 <div class="card">
-<h2>â­ Your XP</h2>
+<h2>⭐ Your XP</h2>
 <p id="xp-display">Loading...</p>
 </div>
 
@@ -365,7 +365,7 @@ Loading referral link...
 
 <div class="card">
 
-<h2>ðŸ† Your Level</h2>
+<h2>🏆 Your Level</h2>
 
 <div id="level-display">
 Loading...
@@ -378,7 +378,7 @@ Loading...
 
 <div class="card">
 
-<h2>ðŸ… Your Badges</h2>
+<h2>🏅 Your Badges</h2>
 
 <div id="badge-display">
 Loading...
@@ -408,7 +408,7 @@ Loading career recommendations...
 
 <div class="card">
 
-<h2>ðŸš€ Career Profile</h2>
+<h2>🚀 Career Profile</h2>
 
 <p>
 Create your verified skill profile for opportunities.
@@ -428,11 +428,11 @@ View Career Profile
 <script src="/assets/js/theme-helper.js"></script>
 
 <div class="leh-bottom-nav">
-<a href="/index.html">ðŸ <span>Home</span></a>
-<a href="/learn.html">ðŸ“š<span>Learn</span></a>
-<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
-<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
-<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
+<a href="/index.html">🏠<span>Home</span></a>
+<a href="/learn.html">📚<span>Learn</span></a>
+<a href="/jobs.html">💼<span>Jobs</span></a>
+<a href="/task-marketplace.html">💰<span>Earn</span></a>
+<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -469,10 +469,10 @@ padding-bottom:70px;
 }
 </style>
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
-    supabase.auth.signIn({ provider: 'google' });
+  ', '  document.getElementById('google-signin').onclick = () => {
+    googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
@@ -480,7 +480,7 @@ padding-bottom:70px;
     }
   });
 </script>
-</body>
+<script src="/auth-system.js"></script>`r`n</body>
 
 
 
@@ -491,4 +491,7 @@ padding-bottom:70px;
 
 
 </html>
+
+
+
 
