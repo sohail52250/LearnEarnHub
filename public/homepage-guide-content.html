@@ -1,4 +1,4 @@
-<section class="leh-card leh-center">
+﻿<section class="leh-card leh-center">
 
 <h2>What is LearnEarnHub?</h2>
 
@@ -12,22 +12,22 @@ find opportunities, build businesses, and grow enterprises.
 <section class="leh-grid">
 
 <div class="leh-card">
-<h3>🎓 Students</h3>
+<h3>ðŸŽ“ Students</h3>
 <p>Learn digital skills, complete courses, earn certificates, and build your career.</p>
 </div>
 
 <div class="leh-card">
-<h3>💼 Freelancers</h3>
+<h3>ðŸ’¼ Freelancers</h3>
 <p>Create a profile, find opportunities, and connect with businesses.</p>
 </div>
 
 <div class="leh-card">
-<h3>🏢 Businesses</h3>
+<h3>ðŸ¢ Businesses</h3>
 <p>Promote services, recruit talent, and expand your network.</p>
 </div>
 
 <div class="leh-card">
-<h3>🤝 Enterprises</h3>
+<h3>ðŸ¤ Enterprises</h3>
 <p>Manage teams, training, analytics, and business growth.</p>
 </div>
 
@@ -38,8 +38,21 @@ find opportunities, build businesses, and grow enterprises.
 <h2>How Rewards Work</h2>
 
 <p>
-Learn → Complete Courses → Earn Certificates →
-Build Profile → Apply Opportunities → Grow Income
+Learn â†’ Complete Courses â†’ Earn Certificates â†’
+Build Profile â†’ Apply Opportunities â†’ Grow Income
 </p>
 
 </section>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>

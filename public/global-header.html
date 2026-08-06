@@ -1,7 +1,7 @@
-<header class="leh-header">
+﻿<header class="leh-header">
 
 <div class="leh-logo">
-🚀 LearnEarnHub
+ðŸš€ LearnEarnHub
 </div>
 
 
@@ -16,11 +16,11 @@
 
 
 <a href="/business-register.html">
-🏢 Register Your Business
+ðŸ¢ Register Your Business
 </a>
 
 <a href="/business-marketplace.html">
-🤝 Business Marketplace
+ðŸ¤ Business Marketplace
 </a>
 
 </nav>
@@ -29,10 +29,10 @@
 <select id="language-select"
 onchange="loadLanguage(this.value)">
 
-<option value="en">🇬🇧 English</option>
-<option value="ur">🇵🇰 اردو</option>
-<option value="ar">🇸🇦 العربية</option>
-<option value="nl">🇳🇱 Nederlands</option>
+<option value="en">ðŸ‡¬ðŸ‡§ English</option>
+<option value="ur">ðŸ‡µðŸ‡° Ø§Ø±Ø¯Ùˆ</option>
+<option value="ar">ðŸ‡¸ðŸ‡¦ Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©</option>
+<option value="nl">ðŸ‡³ðŸ‡± Nederlands</option>
 
 </select>
 
@@ -40,3 +40,16 @@ onchange="loadLanguage(this.value)">
 <link rel="stylesheet" href="/assets/css/leh-ai-chat.css">
 </header>
 <script src="/assets/js/leh-ai-chat.js"></script>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>

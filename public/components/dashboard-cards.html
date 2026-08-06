@@ -1,16 +1,29 @@
-<div class="card">
-  <h2>📚 Learning Progress</h2>
+﻿<div class="card">
+  <h2>ðŸ“š Learning Progress</h2>
   <div id="learning-progress"></div>
 </div>
 
 <div class="card">
-  <h2>🏆 Achievements</h2>
+  <h2>ðŸ† Achievements</h2>
   <div id="achievement-summary"></div>
 </div>
 
 <div class="card">
-  <h2>⚡ Quick Actions</h2>
+  <h2>âš¡ Quick Actions</h2>
   <a href="/courses.html">Courses</a><br>
   <a href="/profile.html">Profile</a><br>
   <a href="/certificate.html">Certificates</a>
 </div>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>

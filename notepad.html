@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head><title>Notepad and WordPad</title></head>
 <body>
 <h1>Notepad and WordPad</h1>
 <p>Create and edit simple text files.</p>
-<h2>اردو</h2>
-<p>سادہ ٹیکسٹ فائلیں بنانا اور تبدیل کرنا سیکھیں۔</p>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ø³Ø§Ø¯Û Ù¹ÛŒÚ©Ø³Ù¹ ÙØ§Ø¦Ù„ÛŒÚº Ø¨Ù†Ø§Ù†Ø§ Ø§ÙˆØ± ØªØ¨Ø¯ÛŒÙ„ Ú©Ø±Ù†Ø§ Ø³ÛŒÚ©Ú¾ÛŒÚºÛ”</p>
 <a href="/learning-guide.html">Back</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

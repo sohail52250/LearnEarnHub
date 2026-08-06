@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -79,14 +79,14 @@ table{
 
 <body>
 <div class="leh-global-nav">
-<a href="/index.html">🏠 Home</a>
-<a href="/learn.html">📚 Learn</a>
-<a href="/jobs.html">💼 Jobs</a>
-<a href="/task-marketplace.html">💰 Tasks</a>
-<a href="/marketplace.html">🏪 Marketplace</a>
-<a href="/post-job.html">📝 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">🛠 Developer</a>
+<a href="/index.html">ðŸ  Home</a>
+<a href="/learn.html">ðŸ“š Learn</a>
+<a href="/jobs.html">ðŸ’¼ Jobs</a>
+<a href="/task-marketplace.html">ðŸ’° Tasks</a>
+<a href="/marketplace.html">ðŸª Marketplace</a>
+<a href="/post-job.html">ðŸ“ Post Job</a>
+<a href="/login.html">ðŸ” Login</a>
+<a href="/developer/login.html">ðŸ›  Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -117,11 +117,11 @@ English
 </button>
 
 <button onclick="setLanguage('ur')">
-اردو
+Ø§Ø±Ø¯Ùˆ
 </button>
 
 <button onclick="setLanguage('ar')">
-العربية
+Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©
 </button>
 
 <button onclick="setLanguage('nl')">
@@ -140,7 +140,7 @@ Learn, earn, grow and connect worldwide.
 
 
 <h2>
-📚 Learn Guide
+ðŸ“š Learn Guide
 </h2>
 
 <p>
@@ -149,7 +149,7 @@ Learn courses, complete lessons and improve skills.
 
 
 <h2>
-💼 Earn Guide
+ðŸ’¼ Earn Guide
 </h2>
 
 <p>
@@ -158,7 +158,7 @@ Find opportunities, complete tasks and grow income.
 
 
 <h2>
-🏢 Business Guide
+ðŸ¢ Business Guide
 </h2>
 
 <p>
@@ -167,7 +167,7 @@ Promote business, products and partnerships.
 
 
 <h2>
-🤝 Deal Guide
+ðŸ¤ Deal Guide
 </h2>
 
 <p>
@@ -176,7 +176,7 @@ Secure company sale, merger and collaboration process.
 
 
 <h2>
-🛡 Safety Guide
+ðŸ›¡ Safety Guide
 </h2>
 
 <p>
@@ -191,11 +191,11 @@ Keep communication inside the platform and follow rules.
 <script src="/assets/js/theme-helper.js"></script>
 
 <div class="leh-bottom-nav">
-<a href="/index.html">🏠<span>Home</span></a>
-<a href="/learn.html">📚<span>Learn</span></a>
-<a href="/jobs.html">💼<span>Jobs</span></a>
-<a href="/task-marketplace.html">💰<span>Earn</span></a>
-<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
+<a href="/index.html">ðŸ <span>Home</span></a>
+<a href="/learn.html">ðŸ“š<span>Learn</span></a>
+<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
+<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
+<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -231,6 +231,18 @@ padding-bottom:70px;
 }
 }
 </style>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 
 </html>
@@ -239,24 +251,24 @@ padding-bottom:70px;
 
 <h2>Platform Guides</h2>
 
-<a href="/learner-guide.html">📚 Learner Guide</a><br>
+<a href="/learner-guide.html">ðŸ“š Learner Guide</a><br>
 
-<a href="/business-guide.html">🏢 Business Guide</a><br>
+<a href="/business-guide.html">ðŸ¢ Business Guide</a><br>
 
-<a href="/advertisement-guide.html">📢 Advertisement Guide</a><br>
+<a href="/advertisement-guide.html">ðŸ“¢ Advertisement Guide</a><br>
 
-<a href="/deal-guide.html">🤝 Deal Guide</a><br>
+<a href="/deal-guide.html">ðŸ¤ Deal Guide</a><br>
 
-<a href="/safety-guide.html">🛡 Safety Guide</a><br>
+<a href="/safety-guide.html">ðŸ›¡ Safety Guide</a><br>
 
-<a href="/payment-guide.html">💳 Payment Guide</a>
+<a href="/payment-guide.html">ðŸ’³ Payment Guide</a>
 
 </div>
 
 
 <div class="card">
 
-<h2>❓ Help Center</h2>
+<h2>â“ Help Center</h2>
 
 <a href="/help-center.html">Help Center</a><br>
 <a href="/faq.html">FAQ</a><br>
@@ -270,18 +282,18 @@ padding-bottom:70px;
 
 <div class="card">
 
-<h2>💰 Revenue Services</h2>
+<h2>ðŸ’° Revenue Services</h2>
 
 <a href="/business-premium.html">
-⭐ Business Premium
+â­ Business Premium
 </a><br>
 
 <a href="/advertisement-packages-v2.html">
-📢 Advertisement Packages
+ðŸ“¢ Advertisement Packages
 </a><br>
 
 <a href="/payment-history.html">
-💳 Payment History
+ðŸ’³ Payment History
 </a>
 
 </div>
@@ -289,7 +301,7 @@ padding-bottom:70px;
 
 <div class="card">
 
-<h2>🛒 Marketplace</h2>
+<h2>ðŸ›’ Marketplace</h2>
 
 <a href="/marketplace-orders.html">
 Orders
@@ -312,7 +324,7 @@ Platform Chat
 
 <div class="card">
 
-<h2>🛍 Shopping & Selling</h2>
+<h2>ðŸ› Shopping & Selling</h2>
 
 <a href="/seller-dashboard.html">
 Seller Dashboard
@@ -331,7 +343,7 @@ Order Tracking
 
 <div class="card">
 
-<h2>🏢 Business Exchange</h2>
+<h2>ðŸ¢ Business Exchange</h2>
 
 <a href="/business-sale-marketplace.html">
 Sell Business
@@ -362,7 +374,7 @@ Due Diligence
 
 <div class="card">
 
-<h2>🏢 Business Exchange Center</h2>
+<h2>ðŸ¢ Business Exchange Center</h2>
 
 <a href="/business-exchange-dashboard.html">
 Business Exchange Dashboard
@@ -393,7 +405,7 @@ Partnership Request
 
 <div class="card">
 
-<h2>🤝 AI Deal Room</h2>
+<h2>ðŸ¤ AI Deal Room</h2>
 
 <a href="/ai-deal-room.html">
 Open AI Deal Room
@@ -408,7 +420,7 @@ Deal Safety Rules
 
 <div class="card">
 
-<h2>🤖 AI Business Matching</h2>
+<h2>ðŸ¤– AI Business Matching</h2>
 
 <a href="/ai-deal-matching.html">
 AI Deal Matching
@@ -423,7 +435,7 @@ Deal Verification
 
 <div class="card">
 
-<h2>🏢 Enterprise Profiles</h2>
+<h2>ðŸ¢ Enterprise Profiles</h2>
 
 <a href="/company-profile.html">
 Company Profile
@@ -442,7 +454,7 @@ Trust Center
 
 <div class="card">
 
-<h2>🏢 Enterprise Company Guide</h2>
+<h2>ðŸ¢ Enterprise Company Guide</h2>
 
 <p>
 Learn how companies create profiles, verify identity, connect with investors and build trust.
@@ -465,7 +477,7 @@ Trust & Reputation Guide
 
 <div class="card">
 
-<h2>🛡 Compliance Guide</h2>
+<h2>ðŸ›¡ Compliance Guide</h2>
 
 <p>
 Learn how businesses are verified and protected.
@@ -484,7 +496,7 @@ Admin Compliance Guide
 
 <div class="card">
 
-<h2>🛡 Admin Guide</h2>
+<h2>ðŸ›¡ Admin Guide</h2>
 
 <p>
 Platform administrators manage verification, payments, deals and safety.
@@ -499,7 +511,7 @@ Admin Control Dashboard
 
 <div class="card">
 
-<h2>👤 Account Guide</h2>
+<h2>ðŸ‘¤ Account Guide</h2>
 
 <p>
 Learn how accounts, roles and dashboards work.
@@ -518,7 +530,7 @@ Dashboard Guide
 
 <div class="card">
 
-<h2>🔐 Login & Dashboard Guide</h2>
+<h2>ðŸ” Login & Dashboard Guide</h2>
 
 <p>
 LearnEarnHub automatically connects users to their correct dashboard.
@@ -533,7 +545,7 @@ Dashboard Access Guide
 
 <div class="card">
 
-<h2>🚀 Registration Guide</h2>
+<h2>ðŸš€ Registration Guide</h2>
 
 <p>
 Create an account, select your role and complete onboarding.
@@ -548,7 +560,7 @@ Registration
 
 <div class="card">
 
-<h2>🔐 Authentication Guide</h2>
+<h2>ðŸ” Authentication Guide</h2>
 
 <p>
 Learn how to create accounts, login and recover passwords.
@@ -567,7 +579,7 @@ Registration Guide
 
 <div class="card">
 
-<h2>👤 Profile Guide</h2>
+<h2>ðŸ‘¤ Profile Guide</h2>
 
 <p>
 Complete your profile, add skills and verify your identity.
@@ -586,7 +598,7 @@ Verification Guide
 
 <div class="card">
 
-<h2>🗺 Platform Navigation Guide</h2>
+<h2>ðŸ—º Platform Navigation Guide</h2>
 
 <p>
 View all platform modules and services.
@@ -601,7 +613,7 @@ Open Platform Map
 
 <div class="card">
 
-<h2>🚀 Navigation Hub Guide</h2>
+<h2>ðŸš€ Navigation Hub Guide</h2>
 
 <a href="/navigation-hub.html">
 Open Navigation Hub
@@ -609,5 +621,18 @@ Open Navigation Hub
 
 </div>
 <script src="/assets/js/theme-helper.js"></script>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

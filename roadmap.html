@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title>Learning Roadmap - Learn & Earn Hub</title>
@@ -19,13 +19,26 @@
 <li>Online Work Skills</li>
 </ol>
 
-<h2>اردو</h2>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
 
 <p>
-کمپیوٹر سیکھنے کا آسان راستہ۔ بنیادی مہارتوں سے شروع کریں اور آگے بڑھیں۔
+Ú©Ù…Ù¾ÛŒÙˆÙ¹Ø± Ø³ÛŒÚ©Ú¾Ù†Û’ Ú©Ø§ Ø¢Ø³Ø§Ù† Ø±Ø§Ø³ØªÛÛ” Ø¨Ù†ÛŒØ§Ø¯ÛŒ Ù…ÛØ§Ø±ØªÙˆÚº Ø³Û’ Ø´Ø±ÙˆØ¹ Ú©Ø±ÛŒÚº Ø§ÙˆØ± Ø¢Ú¯Û’ Ø¨Ú‘Ú¾ÛŒÚºÛ”
 </p>
 
 <a href="/">Home</a>
 
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

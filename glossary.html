@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title>Computer Glossary</title>
@@ -17,12 +17,25 @@
 <li>Internet - Global Network</li>
 </ul>
 
-<h2>اردو</h2>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
 <p>
-کمپیوٹر کے اہم الفاظ اور ان کے آسان معنی۔
+Ú©Ù…Ù¾ÛŒÙˆÙ¹Ø± Ú©Û’ Ø§ÛÙ… Ø§Ù„ÙØ§Ø¸ Ø§ÙˆØ± Ø§Ù† Ú©Û’ Ø¢Ø³Ø§Ù† Ù…Ø¹Ù†ÛŒÛ”
 </p>
 
 <a href="/">Home</a>
 
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

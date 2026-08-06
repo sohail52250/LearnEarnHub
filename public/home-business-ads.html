@@ -1,9 +1,22 @@
-<div class="card">
+﻿<div class="card">
 
-<h2>🔥 Featured Businesses</h2>
+<h2>ðŸ”¥ Featured Businesses</h2>
 
 <a href="/business-ad-marketplace.html">
 View Business Offers
 </a>
 
 </div>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>

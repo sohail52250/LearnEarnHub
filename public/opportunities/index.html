@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title>LearnEarnHub Opportunities</title>
@@ -28,7 +28,7 @@ box.innerHTML=data.jobs.map(j=>`
 <p>Source: ${j.source}</p>
 <p>Category: ${j.category}</p>
 <p>Reward: ${j.reward}</p>
-<p>Verification: ⚠️ External Source</p>
+<p>Verification: âš ï¸ External Source</p>
 
 ${j.apply_url?
 `<a href="${j.apply_url}" target="_blank">
@@ -43,5 +43,18 @@ ${j.apply_url?
 });
 </script>
 
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

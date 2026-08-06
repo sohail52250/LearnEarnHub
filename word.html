@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head><title>Microsoft Word Basics</title></head>
 <body>
@@ -9,9 +9,22 @@
 <p>Create a new document.</p>
 <p>Type text and save the file.</p>
 
-<h2>اردو</h2>
-<p>مائیکروسافٹ ورڈ خطوط، درخواستوں اور دستاویزات لکھنے کے لیے استعمال ہوتا ہے۔</p>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ù…Ø§Ø¦ÛŒÚ©Ø±ÙˆØ³Ø§ÙÙ¹ ÙˆØ±Úˆ Ø®Ø·ÙˆØ·ØŒ Ø¯Ø±Ø®ÙˆØ§Ø³ØªÙˆÚº Ø§ÙˆØ± Ø¯Ø³ØªØ§ÙˆÛŒØ²Ø§Øª Ù„Ú©Ú¾Ù†Û’ Ú©Û’ Ù„ÛŒÛ’ Ø§Ø³ØªØ¹Ù…Ø§Ù„ ÛÙˆØªØ§ ÛÛ’Û”</p>
 
 <a href="/learning-guide.html">Back</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

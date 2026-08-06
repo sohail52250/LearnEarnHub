@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head><title>Microsoft Paint</title></head>
 <body>
 <h1>Microsoft Paint</h1>
 <p>Draw shapes and edit simple images.</p>
-<h2>اردو</h2>
-<p>تصاویر بنانا اور ترمیم کرنا سیکھیں۔</p>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>ØªØµØ§ÙˆÛŒØ± Ø¨Ù†Ø§Ù†Ø§ Ø§ÙˆØ± ØªØ±Ù…ÛŒÙ… Ú©Ø±Ù†Ø§ Ø³ÛŒÚ©Ú¾ÛŒÚºÛ”</p>
 <a href="/learning-guide.html">Back</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

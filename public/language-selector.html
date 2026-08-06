@@ -1,23 +1,36 @@
-<div class="card" id="language-box">
+﻿<div class="card" id="language-box">
 
 <h3>
-🌐 Language / زبان / اللغة / Taal
+ðŸŒ Language / Ø²Ø¨Ø§Ù† / Ø§Ù„Ù„ØºØ© / Taal
 </h3>
 
 <button onclick="setLanguage('en')">
-🇬🇧 English
+ðŸ‡¬ðŸ‡§ English
 </button>
 
 <button onclick="setLanguage('ur')">
-🇵🇰 اردو
+ðŸ‡µðŸ‡° Ø§Ø±Ø¯Ùˆ
 </button>
 
 <button onclick="setLanguage('ar')">
-🇸🇦 العربية
+ðŸ‡¸ðŸ‡¦ Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©
 </button>
 
 <button onclick="setLanguage('nl')">
-🇳🇱 Nederlands
+ðŸ‡³ðŸ‡± Nederlands
 </button>
 
 </div>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>

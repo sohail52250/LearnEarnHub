@@ -1,12 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head><title>Microsoft Excel Basics</title></head>
 <body>
 <h1>Microsoft Excel Basics</h1>
 <p>Excel is used for calculations, tables and records.</p>
 <p>Learn rows, columns and formulas.</p>
-<h2>اردو</h2>
-<p>ایکسل حساب کتاب اور ریکارڈ رکھنے کے لیے استعمال ہوتا ہے۔</p>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ø§ÛŒÚ©Ø³Ù„ Ø­Ø³Ø§Ø¨ Ú©ØªØ§Ø¨ Ø§ÙˆØ± Ø±ÛŒÚ©Ø§Ø±Úˆ Ø±Ú©Ú¾Ù†Û’ Ú©Û’ Ù„ÛŒÛ’ Ø§Ø³ØªØ¹Ù…Ø§Ù„ ÛÙˆØªØ§ ÛÛ’Û”</p>
 <a href="/learning-guide.html">Back</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+

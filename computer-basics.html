@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title>Computer Basics | Learn & Earn Hub</title>
@@ -14,10 +14,10 @@ A computer is an electronic machine used to process information,
 create documents, browse the internet, and perform many tasks.
 </p>
 
-<h2>اردو</h2>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
 <p>
-کمپیوٹر ایک الیکٹرانک مشین ہے جو معلومات پر کام کرتی ہے،
-دستاویزات بناتی ہے اور انٹرنیٹ استعمال کرنے میں مدد دیتی ہے۔
+Ú©Ù…Ù¾ÛŒÙˆÙ¹Ø± Ø§ÛŒÚ© Ø§Ù„ÛŒÚ©Ù¹Ø±Ø§Ù†Ú© Ù…Ø´ÛŒÙ† ÛÛ’ Ø¬Ùˆ Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ù¾Ø± Ú©Ø§Ù… Ú©Ø±ØªÛŒ ÛÛ’ØŒ
+Ø¯Ø³ØªØ§ÙˆÛŒØ²Ø§Øª Ø¨Ù†Ø§ØªÛŒ ÛÛ’ Ø§ÙˆØ± Ø§Ù†Ù¹Ø±Ù†ÛŒÙ¹ Ø§Ø³ØªØ¹Ù…Ø§Ù„ Ú©Ø±Ù†Û’ Ù…ÛŒÚº Ù…Ø¯Ø¯ Ø¯ÛŒØªÛŒ ÛÛ’Û”
 </p>
 
 <h2>Main Parts of a Computer</h2>
@@ -46,5 +46,18 @@ create documents, browse the internet, and perform many tasks.
 
 <p><a href="/">Back Home</a></p>
 
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
 </body>
 </html>
+
