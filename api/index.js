@@ -30,6 +30,8 @@ mode:"Single API Router"
 });
 
 
+app.use("/courses", require("../routes/courses"));
+
 app.get("/jobs",(req,res)=>{
 res.json({
 success:true,
