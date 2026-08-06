@@ -1,8 +1,0 @@
-public/post-ad.html:93:<form id="adForm">
-public/quiz.html:105:<form id="quiz">
-public/business-registration-v2.html:12:<form>
-public/company-due-diligence.html:12:<form>
-public/investor-verification.html:12:<form>
-public/learner-kyc.html:11:<form id="learnerKyc">
-public/government-request-portal.html:12:<form>
-public/government-portal.html:11:<form id="govRequestForm">
