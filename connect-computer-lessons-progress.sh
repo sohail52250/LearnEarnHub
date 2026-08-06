@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Windows Basics - Computer Fundamentals</title>
-</head>
+#!/data/data/com.termux/files/usr/bin/bash
 
-<body>
-<h1>Windows Basics</h1>
+echo "Connecting Computer Fundamentals lessons to progress engine..."
 
-<p>Welcome to LearnEarnHub Computer Fundamentals.</p>
+for file in public/lessons/computer-fundamentals/*.html
+do
 
-<p>This beginner lesson teaches basic computer knowledge step by step.</p>
+if ! grep -q "lesson-progress.js" "$file"; then
 
-<h2>Practice Task</h2>
-<p>Complete this lesson and continue to the next lesson.</p>
-
-<a href="/computer-fundamentals.html">Back to Computer Fundamentals</a>
-
-</body>
-</html>
+cat >> "$file" <<'HTML'
 
 <script src="/js/lesson-progress.js"></script>
 
@@ -45,3 +35,14 @@ document.body.appendChild(btn);
 
 </script>
 
+HTML
+
+fi
+
+done
+
+git add .
+git commit -m "Connect Computer Fundamentals lessons with progress engine" || true
+git push
+
+echo "DONE"

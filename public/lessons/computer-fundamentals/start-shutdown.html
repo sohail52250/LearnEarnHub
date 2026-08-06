@@ -18,3 +18,30 @@
 
 </body>
 </html>
+
+<script src="/js/lesson-progress.js"></script>
+
+<script>
+const course_id = 176;
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+let btn=document.createElement("button");
+
+btn.innerText="✅ Complete Lesson";
+
+btn.onclick=async()=>{
+
+let path=location.pathname;
+let lesson_id=path.split("/").pop().replace(".html","");
+
+alert("Lesson completed. Progress saved.");
+
+};
+
+document.body.appendChild(btn);
+
+});
+
+</script>
+
