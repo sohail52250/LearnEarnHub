@@ -1,0 +1,74 @@
+/* LearnEarnHub AI Chat */
+
+.leh-ai-button{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#2563eb;
+color:white;
+font-size:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+z-index:9999;
+}
+
+.leh-ai-box{
+position:fixed;
+right:20px;
+bottom:90px;
+width:330px;
+max-width:90%;
+height:420px;
+background:white;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+display:none;
+flex-direction:column;
+overflow:hidden;
+z-index:9999;
+}
+
+.leh-ai-header{
+background:#2563eb;
+color:white;
+padding:15px;
+font-weight:bold;
+}
+
+.leh-ai-body{
+flex:1;
+padding:15px;
+overflow:auto;
+font-size:14px;
+}
+
+.leh-ai-input{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.leh-ai-input input{
+flex:1;
+padding:12px;
+border:0;
+}
+
+.leh-ai-input button{
+background:#2563eb;
+color:white;
+border:0;
+padding:12px;
+}
+
+@media(max-width:600px){
+.leh-ai-box{
+right:5%;
+width:90%;
+}
+}

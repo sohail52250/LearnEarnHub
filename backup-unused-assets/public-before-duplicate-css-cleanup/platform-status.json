@@ -1,0 +1,25 @@
+{
+"name":"LearnEarnHub",
+"type":"Learning Employment Business Network",
+"modules":[
+"Courses",
+"Instructors",
+"Learners",
+"Certificates",
+"Badges",
+"Opportunities",
+"Applications",
+"Business Marketplace",
+"Enterprise",
+"Translations",
+"Admin"
+],
+"languages":[
+"English",
+"Urdu",
+"Arabic",
+"Dutch"
+],
+"cleanup":"Safe refinement completed",
+"deleted":false
+}
