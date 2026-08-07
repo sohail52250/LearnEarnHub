@@ -355,3 +355,96 @@ td{
 
 }
 
+
+
+/* ===== Visual QA Phase 1 ===== */
+
+.hero,
+.banner,
+.jumbotron{
+ background:linear-gradient(135deg,var(--leh-primary),var(--leh-primary-hover));
+ color:white;
+ padding:48px 32px;
+ border-radius:18px;
+ margin-bottom:32px;
+}
+
+
+.section-title,
+.page-title,
+.heading{
+ color:var(--leh-text);
+ font-size:32px;
+ font-weight:800;
+ margin-bottom:24px;
+}
+
+
+.feature-card,
+.info-card,
+.course-card,
+.market-card{
+ background:var(--leh-card);
+ border:1px solid var(--leh-border);
+ border-radius:var(--leh-radius);
+ padding:24px;
+ margin-bottom:24px;
+ transition:.2s ease;
+}
+
+
+.feature-card:hover,
+.info-card:hover,
+.course-card:hover,
+.market-card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 12px 25px rgba(15,23,42,.12);
+}
+
+
+.cta,
+.call-to-action{
+ background:white;
+ border:1px solid var(--leh-border);
+ border-radius:18px;
+ padding:32px;
+ margin:32px 0;
+}
+
+
+.badge,
+.tag{
+ display:inline-flex;
+ padding:6px 12px;
+ border-radius:999px;
+ background:#e2e8f0;
+ color:#334155;
+ font-weight:700;
+}
+
+
+.empty-state{
+ text-align:center;
+ padding:40px;
+ background:white;
+ border-radius:16px;
+ border:1px dashed var(--leh-border);
+}
+
+
+@media(max-width:768px){
+
+.hero,
+.banner,
+.jumbotron{
+ padding:28px 18px;
+}
+
+.section-title,
+.page-title,
+.heading{
+ font-size:24px;
+}
+
+}
+
