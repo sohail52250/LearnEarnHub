@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+table{
+  display:block;
+  overflow-x:auto;
+  width:100%;
+}
+
+.card{
+  width:100%;
+  max-width:100%;
+}
+
+@media (max-width:768px){
+  body{
+    font-size:16px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+}
+
+@media (max-width:480px){
+  h1{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+}
+</style>
+<title>Student Dashboard - Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="/js/lesson-progress.js">showUser();
+
+</script>
+<script src="/account.js">showUser();
+
+</script>
+<script src="/js/supabase-config.js"></script>
+<script src="/auth-cloud.js"></script>
+<script src="/certificate-system.js"></script>
+<script src="/student-dashboard.js"></script>
+<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+
+<title>Student Dashboard - Learn & Earn Hub</title>
+
+<meta name="description" content="Learn student dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+
+<meta property="og:title" content="Student Dashboard - Learn & Earn Hub">
+<meta property="og:description" content="Learn student dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learn-earnhub.vercel.app/student-dashboard.html">
+
+<link rel="canonical" href="https://learn-earnhub.vercel.app/student-dashboard.html">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Learn & Earn Hub",
+  "url": "https://learn-earnhub.vercel.app",
+  "description": "Free online platform for learning computer skills, digital skills, and beginner courses."
+}
+</script>
+
+
+<link rel="alternate" hreflang="en" href="https://learn-earnhub.vercel.app/">
+<link rel="alternate" hreflang="ur" href="https://learn-earnhub.vercel.app/">
+<link rel="alternate" hreflang="x-default" href="https://learn-earnhub.vercel.app/">
+
+<link rel="manifest" href="/manifest.json"><script src="/auth-guard.js"></script><link rel="stylesheet" href="/assets/css/leh-design-system.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+<script src="/language-config.js"></script>
+
+
+</head>
+
+
+<body>
+<div class="leh-global-nav">
+<a href="/index.html">🏠 Home</a>
+<a href="/learn.html">📚 Learn</a>
+<a href="/jobs.html">💼 Jobs</a>
+<a href="/task-marketplace.html">💰 Tasks</a>
+<a href="/marketplace.html">🏪 Marketplace</a>
+<a href="/post-job.html">📝 Post Job</a>
+<a href="/login.html">🔐 Login</a>
+<a href="/developer/login.html">🛠 Developer</a>
+</div>
+<style>
+.leh-global-nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+padding:12px;
+background:#f5f5f5;
+border-radius:10px;
+margin:10px 0;
+}
+.leh-global-nav a{
+padding:8px 12px;
+border-radius:8px;
+text-decoration:none;
+background:white;
+border:1px solid #ddd;
+font-size:14px;
+}
+</style>
+<div id="global-header"></div>
+
+
+
+
+<div class="card dashboard">
+
+<h1>🎓 Student Dashboard</h1>
+<h3 id="username"></h3>
+
+<p>
+Track your learning progress and achievements.
+</p>
+
+
+<h2>Learning Progress</h2>
+
+<div class="progress-box">
+<div id="progress"></div>
+</div>
+
+<p id="progress-text">
+Checking progress...
+</p>
+
+
+<h2>Quick Learning</h2>
+
+<ul>
+
+<li>
+<a href="/courses.html">
+Browse Courses
+</a>
+</li>
+
+
+<li>
+<a href="/practice.html">
+Practice Skills
+</a>
+</li>
+
+
+<li>
+<a href="/quiz.html">
+Take Quiz
+</a>
+</li>
+
+
+<li>
+<a href="/certificate.html">
+View Certificate
+</a>
+</li>
+
+</ul>
+
+
+<h2>Completed Lessons</h2>
+
+<div id="lessons">
+Loading...
+</div>
+
+
+</div>
+
+
+<script>
+
+let lessons=[
+
+"word-basics",
+"excel-basics",
+"powerpoint-basics",
+"html-basics",
+"css-basics",
+"email-basics"
+
+];
+
+
+let completed=0;
+
+
+let output="";
+
+
+lessons.forEach(function(item){
+
+if(localStorage.getItem(item)=="completed"){
+
+completed++;
+
+output += "✅ "+item+"<br>";
+
+}else{
+
+output += "⬜ "+item+"<br>";
+
+}
+
+});
+
+
+document.getElementById("lessons").innerHTML=output;
+
+
+let percent=Math.round(
+(completed/lessons.length)*100
+);
+
+
+document.getElementById("progress").style.width=
+percent+"%";
+
+
+document.getElementById("progress-text").innerHTML=
+percent+"% Completed";
+
+
+showUser();
+
+</script>
+
+
+
+<div class="card">
+
+<h2>🏆 Achievements</h2>
+
+<ul>
+
+<li>🎯 First Lesson Completed</li>
+
+<li>📚 Learning Explorer</li>
+
+<li>💻 Digital Skills Beginner</li>
+
+<li>🎓 Certificate Earned</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2 data-reward-key="rewards_title">🏆 My Achievements</h2>
+
+
+<div class="card">
+
+<div id="progress-summary">
+Loading progress...
+</div>
+
+</div>
+
+<script src="/progress-summary.js"></script>
+
+<div id="reward-box">
+Loading rewards...
+</div>
+
+</div>
+
+<script src="/rewards.js"></script>
+
+
+<div class="card">
+
+<h2>📊 Course Progress</h2>
+
+<div id="course-progress">
+Loading...
+</div>
+
+</div>
+
+
+<script src="/progress-dashboard.js"></script>
+
+
+<div class="card">
+
+<h2>🤖 Learning Assistant</h2>
+
+<input id="assistant-question"
+placeholder="Ask what to learn next">
+
+<button class="btn btn-primary" onclick="askAssistant()">
+Ask
+</button>
+
+<p id="assistant-answer">
+Your learning guide will appear here.
+</p>
+
+</div>
+
+
+<script src="/learning-assistant.js"></script>
+
+<script src="/mobile-nav.js"></script>
+
+<div class="card">
+<h2 data-reward-key="invite">🎁 Invite Friends</h2>
+<div id="referral-box">
+Loading referral link...
+</div>
+</div>
+
+<script src="/referral.js"></script>
+
+
+<div class="card">
+<h2>⭐ Your XP</h2>
+<p id="xp-display">Loading...</p>
+</div>
+
+<script src="/xp.js"></script>
+<script src="/referral-rewards.js"></script>
+
+<div class="card">
+
+<h2>🏆 Your Level</h2>
+
+<div id="level-display">
+Loading...
+</div>
+
+</div>
+
+<script src="/level-system.js"></script>
+
+
+<div class="card">
+
+<h2>🏅 Your Badges</h2>
+
+<div id="badge-display">
+Loading...
+</div>
+
+</div>
+
+<script src="/badges.js"></script>
+
+<script src="/badge-engine.js"></script>
+
+<script src="/rewards-language.js"></script>
+<script src="/reward-display.js"></script>
+
+
+<div class="card">
+
+<div id="skill-recommendations">
+Loading career recommendations...
+</div>
+
+</div>
+
+<script src="/skill-matching.js"></script>
+
+
+
+<div class="card">
+
+<h2>🚀 Career Profile</h2>
+
+<p>
+Create your verified skill profile for opportunities.
+</p>
+
+<a href="/career-profile.html">
+
+<button class="btn btn-primary">
+View Career Profile
+</button>
+
+</a>
+
+</div>
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+
+<div class="leh-bottom-nav">
+<a href="/index.html">🏠<span>Home</span></a>
+<a href="/learn.html">📚<span>Learn</span></a>
+<a href="/jobs.html">💼<span>Jobs</span></a>
+<a href="/task-marketplace.html">💰<span>Earn</span></a>
+<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
+</div>
+
+<style>
+.leh-bottom-nav{
+display:none;
+}
+
+@media(max-width:700px){
+.leh-bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-around;
+background:white;
+border-top:1px solid #ddd;
+padding:8px 4px;
+z-index:9999;
+}
+
+.leh-bottom-nav a{
+text-align:center;
+text-decoration:none;
+font-size:12px;
+}
+
+.leh-bottom-nav span{
+display:block;
+}
+body{
+padding-bottom:70px;
+}
+}
+</style>
+<button id="google-signin" class="btn btn-primary">Sign in with Google</button>
+<script>
+  document.getElementById('google-signin')?.addEventListener('click', function(){
+    googleLogin();
+  });
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+<script src="/auth-system.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+</html>
+
+
