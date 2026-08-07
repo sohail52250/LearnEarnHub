@@ -1432,3 +1432,52 @@ justify-content:center;
 
 }
 
+
+/* Professional Header Auth Upgrade */
+
+.leh-auth{
+display:flex;
+align-items:center;
+gap:10px;
+margin-left:auto;
+}
+
+.leh-auth a{
+background:#2563eb;
+color:white!important;
+padding:10px 18px;
+border-radius:12px;
+font-weight:600;
+text-decoration:none;
+}
+
+.leh-auth a:hover{
+opacity:.85;
+}
+
+#logout-btn{
+background:#dc2626;
+color:white;
+padding:10px 18px;
+border-radius:12px;
+font-weight:600;
+border:none;
+cursor:pointer;
+}
+
+#logout-btn:hover{
+opacity:.85;
+}
+
+@media(max-width:768px){
+.leh-header{
+flex-direction:column;
+align-items:stretch;
+}
+
+.leh-auth{
+width:100%;
+justify-content:center;
+}
+}
+
