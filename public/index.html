@@ -401,16 +401,17 @@ padding-bottom:70px;
 <button id="google-signin" style="display:block !important; padding:10px 16px; font-size:16px; cursor:pointer;">🔐 Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  ', '  document.getElementById('google-signin').onclick = () => {
+  document.getElementById('google-signin')?.addEventListener('click', function(){
     googleLogin();
-  };
+  });
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
       window.location.href = 'dashboard.html';
     }
   });
 </script>
-<script src="/auth-system.js"></script>`r`n</body>
+<script src="/auth-system.js"></script>`r`n<script src="/google-login.js"></script>
+</body>
 </html>
 
 <section>

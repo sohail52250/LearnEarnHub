@@ -104,9 +104,9 @@ padding-bottom:70px;
 <button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  ', '  document.getElementById('google-signin').onclick = () => {
+  document.getElementById('google-signin')?.addEventListener('click', function(){
     googleLogin();
-  };
+  });
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
       window.location.href = 'dashboard.html';
