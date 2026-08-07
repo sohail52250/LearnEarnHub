@@ -16,7 +16,11 @@ el.innerHTML=await r.text();
 loadPart(
 "global-header",
 "/global-header.html"
-);
+).then(()=>{
+  if(typeof updateAuthUI==="function"){
+    updateAuthUI();
+  }
+});
 
 
 loadPart(
