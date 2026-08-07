@@ -4,9 +4,7 @@
 ðŸš€ LearnEarnHub
 </div>
 
-<button onclick="logout()" class="logout-btn">
-Logout
-</button>
+
 
 <nav class="leh-nav">
 
@@ -21,6 +19,8 @@ Logout
 <a href="/business-register.html">
 ðŸ¢ Register Your Business
 </a>
+
+
 
 <a href="/business-marketplace.html">
 ðŸ¤ Business Marketplace
@@ -41,6 +41,29 @@ onchange="loadLanguage(this.value)">
 
 
 <link rel="stylesheet" href="/assets/css/leh-ai-chat.css">
+
+<div id="auth-actions">
+<button id="google-login-btn" onclick="googleLogin()">
+Sign in with Google
+</button>
+
+<button id="logout-btn" onclick="logout()" style="display:none">
+Logout
+</button>
+</div>
+
+<script>
+if(typeof supabase !== "undefined"){
+supabase.auth.getSession().then(({data:{session}})=>{
+    if(session){
+        document.getElementById("google-login-btn").style.display="none";
+        document.getElementById("logout-btn").style.display="inline-block";
+    }
+});
+}
+</script>
+
+<script src="/logout.js"></script>
 </header>
 <script src="/assets/js/leh-ai-chat.js"></script>
 
@@ -62,6 +85,12 @@ onchange="loadLanguage(this.value)">
 
 
 
+
+
+
+
+
+<script src="/logout.js"></script>
 
 
 
