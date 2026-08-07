@@ -247,3 +247,111 @@ section{
 
 }
 
+
+
+/* ===== Visual QA Phase 1 ===== */
+
+
+/* Hero sections */
+.hero,
+.banner,
+.jumbotron{
+ background:linear-gradient(135deg,#2563eb,#1d4ed8);
+ color:white;
+ padding:48px 32px;
+ border-radius:18px;
+ margin-bottom:32px;
+}
+
+
+/* Section titles */
+.section-title,
+.page-title,
+.heading{
+ color:var(--leh-text);
+ font-size:32px;
+ font-weight:800;
+ margin-bottom:24px;
+}
+
+
+/* Feature cards */
+.feature-card{
+ min-height:180px;
+}
+
+
+/* CTA areas */
+.cta,
+.call-to-action{
+ background:white;
+ border:1px solid var(--leh-border);
+ border-radius:18px;
+ padding:32px;
+ margin:32px 0;
+}
+
+
+/* Badges */
+.badge,
+.tag{
+ display:inline-flex;
+ padding:6px 12px;
+ border-radius:999px;
+ background:#e2e8f0;
+ color:#334155;
+ font-size:13px;
+ font-weight:700;
+}
+
+
+/* Empty states */
+.empty-state{
+ text-align:center;
+ padding:40px;
+ background:white;
+ border-radius:16px;
+ border:1px dashed var(--leh-border);
+}
+
+
+/* Tables */
+table{
+ width:100%;
+ border-collapse:collapse;
+ background:white;
+ border-radius:14px;
+ overflow:hidden;
+}
+
+
+th{
+ background:#f1f5f9;
+ padding:14px;
+ text-align:left;
+}
+
+
+td{
+ padding:14px;
+ border-bottom:1px solid var(--leh-border);
+}
+
+
+/* Mobile */
+@media(max-width:768px){
+
+.hero,
+.banner,
+.jumbotron{
+ padding:28px 18px;
+}
+
+.section-title,
+.page-title,
+.heading{
+ font-size:24px;
+}
+
+}
+
