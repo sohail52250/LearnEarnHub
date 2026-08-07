@@ -135,144 +135,7 @@ Complete Business Profile
 <textarea id="portfolio" placeholder="Portfolio"></textarea>
 
 
-<button>
-Save Business Profile
-</button>
-
-
-</form>
-
-
-
-<script>
-
-
-businessForm.onsubmit=async(e)=>{
-
-e.preventDefault();
-
-
-let data={
-
-user_id:localStorage.getItem("user_id"),
-
-company_name:company_name.value,
-
-logo:logo.value,
-
-owner_name:owner_name.value,
-
-email:email.value,
-
-phone:phone.value,
-
-category:category.value,
-
-description:description.value,
-
-about_company:about_company.value,
-
-services:services.value,
-
-products:products.value,
-
-experience:experience.value,
-
-team_size:team_size.value,
-
-city:city.value,
-
-country:country.value,
-
-address:address.value,
-
-website:website.value,
-
-linkedin:linkedin.value,
-
-facebook:facebook.value,
-
-registration_number:registration_number.value,
-
-portfolio:portfolio.value
-
-};
-
-
-let r=await fetch("/api/business-profile-complete",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify(data)
-
-});
-
-
-let result=await r.json();
-
-
-alert(
-result.success?
-"Business Profile Saved":
-"Error"
-);
-
-
-};
-
-
-</script>
-
-
-<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
-<script src="/assets/js/theme-helper.js"></script>
-<div class="account-cta"><p>New to LearnEarnHub?</p><a href="/business-register.html" class="btn">ðŸ¢ Create Business Account</a></div>
-<div class="leh-bottom-nav">
-<a href="/index.html">ðŸ <span>Home</span></a>
-<a href="/learn.html">ðŸ“š<span>Learn</span></a>
-<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
-<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
-<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
-</div>
-
-<style>
-.leh-bottom-nav{
-display:none;
-}
-
-@media(max-width:700px){
-.leh-bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-display:flex;
-justify-content:space-around;
-background:white;
-border-top:1px solid #ddd;
-padding:8px 4px;
-z-index:9999;
-}
-
-.leh-bottom-nav a{
-text-align:center;
-text-decoration:none;
-font-size:12px;
-}
-
-.leh-bottom-nav span{
-display:block;
-}
-body{
-padding-bottom:70px;
-}
-}
-</style>
-<button id="google-signin" style="padding:10px; font-size:16px;"><button type="button" onclick="googleLogin()">Sign in with Google</button>
+<button type="button" onclick="googleLogin()">Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   ', '  document.getElementById('google-signin').onclick = () => {
@@ -287,6 +150,7 @@ padding-bottom:70px;
 <script src="/auth-system.js"></script>`r`n<script src="/google-login.js"></script>`r`n</body>
 
 </html>
+
 
 
 

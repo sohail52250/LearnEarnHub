@@ -112,126 +112,7 @@ font-size:14px;
 
 <div class="card">
 
-<button onclick="setLanguage('en')">
-English
-</button>
-
-<button onclick="setLanguage('ur')">
-Ø§Ø±Ø¯Ùˆ
-</button>
-
-<button onclick="setLanguage('ar')">
-Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©
-</button>
-
-<button onclick="setLanguage('nl')">
-Nederlands
-</button>
-
-
-<h1 data-key="title">
-Learn Skills. Build Your Future.
-</h1>
-
-
-<p data-key="intro">
-Learn, earn, grow and connect worldwide.
-</p>
-
-
-<h2>
-ðŸ“š Learn Guide
-</h2>
-
-<p>
-Learn courses, complete lessons and improve skills.
-</p>
-
-
-<h2>
-ðŸ’¼ Earn Guide
-</h2>
-
-<p>
-Find opportunities, complete tasks and grow income.
-</p>
-
-
-<h2>
-ðŸ¢ Business Guide
-</h2>
-
-<p>
-Promote business, products and partnerships.
-</p>
-
-
-<h2>
-ðŸ¤ Deal Guide
-</h2>
-
-<p>
-Secure company sale, merger and collaboration process.
-</p>
-
-
-<h2>
-ðŸ›¡ Safety Guide
-</h2>
-
-<p>
-Keep communication inside the platform and follow rules.
-</p>
-
-
-</div>
-
-
-<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
-<script src="/assets/js/theme-helper.js"></script>
-
-<div class="leh-bottom-nav">
-<a href="/index.html">ðŸ <span>Home</span></a>
-<a href="/learn.html">ðŸ“š<span>Learn</span></a>
-<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
-<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
-<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
-</div>
-
-<style>
-.leh-bottom-nav{
-display:none;
-}
-
-@media(max-width:700px){
-.leh-bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-display:flex;
-justify-content:space-around;
-background:white;
-border-top:1px solid #ddd;
-padding:8px 4px;
-z-index:9999;
-}
-
-.leh-bottom-nav a{
-text-align:center;
-text-decoration:none;
-font-size:12px;
-}
-
-.leh-bottom-nav span{
-display:block;
-}
-body{
-padding-bottom:70px;
-}
-}
-</style>
-<button id="google-signin" style="padding:10px; font-size:16px;"><button type="button" onclick="googleLogin()">Sign in with Google</button>
+<button type="button" onclick="googleLogin()">Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   ', '  document.getElementById('google-signin').onclick = () => {
@@ -621,7 +502,7 @@ Open Navigation Hub
 
 </div>
 <script src="/assets/js/theme-helper.js"></script>
-<button id="google-signin" style="padding:10px; font-size:16px;"><button type="button" onclick="googleLogin()">Sign in with Google</button>
+<button type="button" onclick="googleLogin()">Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   ', '  document.getElementById('google-signin').onclick = () => {
@@ -635,6 +516,7 @@ Open Navigation Hub
 </script>
 <script src="/auth-system.js"></script>`r`n<script src="/google-login.js"></script>`r`n</body>
 </html>
+
 
 
 
