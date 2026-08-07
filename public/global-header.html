@@ -38,23 +38,41 @@ onchange="loadLanguage(this.value)">
 
 
 <link rel="stylesheet" href="/assets/css/leh-ai-chat.css">
-</header>
-<script src="/assets/js/leh-ai-chat.js"></script>
 
-<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<div id="auth-area" style="margin-left:15px;">
+  <a id="login-link" href="/login.html">🔐 Login</a>
+  <a id="register-link" href="/register.html">📝 Register</a>
+  <button id="logout-btn" style="display:none;">🚪 Logout</button>
+</div>
+
+</header>
+
 <script>
-  document.getElementById('google-signin')?.addEventListener('click', function(){
-    googleLogin();
-  });
-  supabase.auth.getSession().then(({ data: { session } }) => {
-    if (session) {
-      window.location.href = 'dashboard.html';
+async function updateAuthUI(){
+  if(typeof supabase === "undefined") return;
+
+  const {data:{session}} = await supabase.auth.getSession();
+
+  const login=document.getElementById("login-link");
+  const register=document.getElementById("register-link");
+  const logout=document.getElementById("logout-btn");
+
+  if(session){
+    if(login) login.style.display="none";
+    if(register) register.style.display="none";
+    if(logout){
+      logout.style.display="inline-block";
+      logout.onclick=async()=>{
+        await supabase.auth.signOut();
+        localStorage.removeItem("user");
+        window.location.href="/index.html";
+      };
     }
-  });
+  }
+}
+
+setTimeout(updateAuthUI,500);
 </script>
 
-
-
-
+<script src="/assets/js/leh-ai-chat.js"></script>
 
