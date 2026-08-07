@@ -142,3 +142,108 @@ section{
 .p-2{padding:16px}
 .p-3{padding:24px}
 .p-4{padding:32px}
+
+
+/* ===== LearnEarnHub Component System ===== */
+
+
+.container{
+ max-width:1200px;
+ margin:auto;
+ padding:24px;
+}
+
+
+.grid{
+ display:grid;
+ gap:24px;
+}
+
+
+.grid-2{
+ grid-template-columns:repeat(2,1fr);
+}
+
+
+.grid-3{
+ grid-template-columns:repeat(3,1fr);
+}
+
+
+.card:hover,
+.panel:hover,
+.box:hover{
+ box-shadow:0 12px 30px rgba(15,23,42,.12);
+ transform:translateY(-2px);
+}
+
+
+/* Unified dashboard cards */
+
+.dashboard-card,
+.course-card,
+.market-card,
+.business-card,
+.profile-card,
+.feature-card{
+ background:var(--leh-card);
+ border:1px solid var(--leh-border);
+ border-radius:var(--leh-radius);
+ padding:24px;
+ margin-bottom:24px;
+ transition:.2s;
+}
+
+
+.dashboard-card:hover,
+.course-card:hover,
+.market-card:hover,
+.business-card:hover,
+.profile-card:hover,
+.feature-card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 12px 25px rgba(15,23,42,.1);
+}
+
+
+/* Action colors */
+
+.action-primary{
+ background:var(--leh-primary);
+ color:white;
+}
+
+
+.action-success{
+ background:var(--leh-success);
+ color:white;
+}
+
+
+.action-danger{
+ background:var(--leh-danger);
+ color:white;
+}
+
+
+.action-secondary{
+ background:#475569;
+ color:white;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.grid-2,
+.grid-3{
+ grid-template-columns:1fr;
+}
+
+.container{
+ padding:16px;
+}
+
+}
+
