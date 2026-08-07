@@ -1,0 +1,144 @@
+:root{
+  --leh-primary:#2563eb;
+  --leh-primary-hover:#1d4ed8;
+  --leh-success:#16a34a;
+  --leh-danger:#dc2626;
+  --leh-warning:#d97706;
+
+  --leh-bg:#f8fafc;
+  --leh-card:#ffffff;
+  --leh-border:#e2e8f0;
+
+  --leh-text:#0f172a;
+  --leh-muted:#64748b;
+
+  --leh-radius:14px;
+
+  --leh-space-1:8px;
+  --leh-space-2:16px;
+  --leh-space-3:24px;
+  --leh-space-4:32px;
+}
+
+
+/* Global */
+body{
+ background:var(--leh-bg);
+ color:var(--leh-text);
+ font-family:Inter,Arial,sans-serif;
+}
+
+
+/* Cards */
+.card,
+.panel,
+.box{
+ background:var(--leh-card);
+ border:1px solid var(--leh-border);
+ border-radius:var(--leh-radius);
+ padding:24px;
+ margin-bottom:24px;
+ box-shadow:0 8px 20px rgba(15,23,42,.06);
+}
+
+
+/* Buttons */
+button,
+.btn,
+a.button{
+ border:none;
+ border-radius:12px;
+ padding:12px 22px;
+ min-height:44px;
+ font-weight:700;
+ cursor:pointer;
+ transition:.2s;
+}
+
+
+/* Primary */
+.btn-primary,
+button.primary{
+ background:var(--leh-primary);
+ color:white;
+}
+
+.btn-primary:hover,
+button.primary:hover{
+ background:var(--leh-primary-hover);
+}
+
+
+/* Success */
+.btn-success{
+ background:var(--leh-success);
+ color:white;
+}
+
+
+/* Danger */
+.btn-danger{
+ background:var(--leh-danger);
+ color:white;
+}
+
+
+/* Secondary */
+.btn-secondary{
+ background:#475569;
+ color:white;
+}
+
+
+/* Default buttons */
+button:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-secondary){
+ background:#e2e8f0;
+ color:#0f172a;
+}
+
+
+/* Hover */
+button:hover,
+.btn:hover,
+a.button:hover{
+ transform:translateY(-2px);
+ opacity:.9;
+}
+
+
+/* Inputs */
+input,
+textarea,
+select{
+ width:100%;
+ padding:12px 14px;
+ border-radius:10px;
+ border:1px solid var(--leh-border);
+ background:white;
+ margin-bottom:16px;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus{
+ outline:2px solid #93c5fd;
+}
+
+
+/* Sections */
+section{
+ margin-bottom:32px;
+}
+
+
+/* Spacing helpers */
+.mt-1{margin-top:8px}
+.mt-2{margin-top:16px}
+.mt-3{margin-top:24px}
+.mt-4{margin-top:32px}
+
+.p-1{padding:8px}
+.p-2{padding:16px}
+.p-3{padding:24px}
+.p-4{padding:32px}
