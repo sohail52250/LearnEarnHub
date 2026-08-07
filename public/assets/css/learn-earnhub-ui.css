@@ -1280,3 +1280,90 @@ article a,
     padding:0 !important;
 }
 
+
+
+/* ===== LearnEarnHub Final Professional Polish ===== */
+
+.leh-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+padding:15px 25px;
+background:white;
+border-bottom:1px solid #e2e8f0;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.leh-logo{
+font-size:24px;
+font-weight:800;
+color:#2563eb;
+white-space:nowrap;
+}
+
+.leh-nav{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.leh-nav a{
+text-decoration:none;
+font-weight:600;
+color:#334155;
+padding:8px 12px;
+border-radius:10px;
+}
+
+.leh-nav a:hover{
+background:#eff6ff;
+color:#2563eb;
+}
+
+#auth-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+#auth-area a,
+#logout-btn{
+padding:10px 16px;
+border-radius:12px;
+font-weight:600;
+}
+
+#logout-btn{
+background:#dc2626;
+color:white;
+border:0;
+cursor:pointer;
+}
+
+button,
+.btn,
+a.button{
+min-height:42px;
+}
+
+@media(max-width:768px){
+
+.leh-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.leh-nav{
+width:100%;
+}
+
+#auth-area{
+width:100%;
+justify-content:flex-start;
+}
+
+}
