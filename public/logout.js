@@ -1,7 +1,7 @@
-async function logout(){
+﻿async function logout(){
 
     if(typeof supabase === "undefined"){
-        console.error("Supabase missing");
+        console.error("Supabase library missing");
         return;
     }
 
@@ -10,9 +10,15 @@ async function logout(){
         SUPABASE_ANON_KEY
     );
 
-    await client.auth.signOut();
+    const { error } = await client.auth.signOut();
 
-    window.location.href="/login-v2.html";
+    if(error){
+        console.error(error);
+        alert(error.message);
+        return;
+    }
+
+    window.location.href = "/login-v2.html";
 }
 
 window.logout = logout;

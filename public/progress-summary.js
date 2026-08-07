@@ -1,4 +1,4 @@
-
+﻿
 
 
 async function getUserLevel(xp){
@@ -37,22 +37,6 @@ number=5;
 }
 
 return `Level ${number} - ${t[key] || key}`;
-
-}
-
-if(xp < 500){
-return "Level 2 - Learner";
-}
-
-if(xp < 1000){
-return "Level 3 - Explorer";
-}
-
-if(xp < 2500){
-return "Level 4 - Skill Builder";
-}
-
-return "Level 5 - Expert";
 
 }
 
@@ -126,18 +110,18 @@ if(box){
 box.innerHTML=`
 
 <h2>
-🏆 ${t.title || "Learning Progress Summary"}
+ðŸ† ${t.title || "Learning Progress Summary"}
 </h2>
 
 
 <p>
-⭐ ${t.xp || "Experience Points"}:
+â­ ${t.xp || "Experience Points"}:
 ${profile?.xp || 0}
 </p>
 
 
 <p>
-🏅 ${t.level || "Current Level"}:
+ðŸ… ${t.level || "Current Level"}:
 <span id="summary-level">
 Loading...
 </span>
@@ -145,19 +129,19 @@ Loading...
 
 
 <p>
-🎖️ ${t.badges || "Badges"}:
+ðŸŽ–ï¸ ${t.badges || "Badges"}:
 ${badges?.length || 0}
 </p>
 
 
 <p>
-📜 ${t.certificates || "Certificates"}:
+ðŸ“œ ${t.certificates || "Certificates"}:
 ${certificates?.length || 0}
 </p>
 
 
 <p>
-📚 ${t.courses || "Courses Progress"}:
+ðŸ“š ${t.courses || "Courses Progress"}:
 ${progress?.length || 0}
 </p>
 
@@ -182,3 +166,6 @@ document.addEventListener(
 "DOMContentLoaded",
 loadProgressSummary
 );
+
+
+

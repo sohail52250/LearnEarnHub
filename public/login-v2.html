@@ -124,7 +124,7 @@ font-size:14px;
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/config.js"></script>
 <script>
-  ', '  document.getElementById('google-signin').onclick = () => {
+  document.getElementById('google-signin')?.onclick = () => {
     googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
@@ -137,6 +137,7 @@ font-size:14px;
 <script src="/config.js"></script>`n<script src="/logout.js"></script>`n</body>
 
 </html>
+
 
 
 
