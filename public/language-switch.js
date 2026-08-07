@@ -18,7 +18,12 @@ await loadLanguage();
 
 
 
-async function loadLanguage(){
+async function loadLanguage(lang){
+
+if(lang){
+currentLanguage=lang;
+localStorage.setItem("language",lang);
+}
 
 const response =
 await fetch(
