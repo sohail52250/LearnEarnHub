@@ -1,9 +1,18 @@
+async function logout(){
 
-function logout(){
+    if(typeof supabase === "undefined"){
+        console.error("Supabase missing");
+        return;
+    }
 
-logoutUser();
+    const client = supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
 
+    await client.auth.signOut();
+
+    window.location.href="/login-v2.html";
 }
 
-window.logout=logout;
-
+window.logout = logout;
