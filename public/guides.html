@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -79,14 +79,14 @@ table{
 
 <body>
 <div class="leh-global-nav">
-<a href="/index.html">ðŸ  Home</a>
+<a href="/index.html">🏠 Home</a>
 <a href="/learn.html">📚 Learn</a>
 <a href="/jobs.html">💼 Jobs</a>
 <a href="/task-marketplace.html">💰 Tasks</a>
-<a href="/marketplace.html">ðŸª Marketplace</a>
-<a href="/post-job.html">📄 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">ðŸ›  Developer</a>
+<a href="/marketplace.html">🏪 Marketplace</a>
+<a href="/post-job.html">📝 Post Job</a>
+<a href="/login.html">🔐 Login</a>
+<a href="/developer/login.html">🛠 Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -112,10 +112,129 @@ font-size:14px;
 
 <div class="card">
 
-<button type="button" onclick="googleLogin()">Sign in with Google</button>
+<button onclick="setLanguage('en')">
+English
+</button>
+
+<button onclick="setLanguage('ur')">
+اردو
+</button>
+
+<button onclick="setLanguage('ar')">
+العربية
+</button>
+
+<button onclick="setLanguage('nl')">
+Nederlands
+</button>
+
+
+<h1 data-key="title">
+Learn Skills. Build Your Future.
+</h1>
+
+
+<p data-key="intro">
+Learn, earn, grow and connect worldwide.
+</p>
+
+
+<h2>
+📚 Learn Guide
+</h2>
+
+<p>
+Learn courses, complete lessons and improve skills.
+</p>
+
+
+<h2>
+💼 Earn Guide
+</h2>
+
+<p>
+Find opportunities, complete tasks and grow income.
+</p>
+
+
+<h2>
+🏢 Business Guide
+</h2>
+
+<p>
+Promote business, products and partnerships.
+</p>
+
+
+<h2>
+🤝 Deal Guide
+</h2>
+
+<p>
+Secure company sale, merger and collaboration process.
+</p>
+
+
+<h2>
+🛡 Safety Guide
+</h2>
+
+<p>
+Keep communication inside the platform and follow rules.
+</p>
+
+
+</div>
+
+
+<div id="global-footer"></div><script src="/global-layout.js"></script><script src="/js/role-guard.js"></script>
+<script src="/assets/js/theme-helper.js"></script>
+
+<div class="leh-bottom-nav">
+<a href="/index.html">🏠<span>Home</span></a>
+<a href="/learn.html">📚<span>Learn</span></a>
+<a href="/jobs.html">💼<span>Jobs</span></a>
+<a href="/task-marketplace.html">💰<span>Earn</span></a>
+<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
+</div>
+
+<style>
+.leh-bottom-nav{
+display:none;
+}
+
+@media(max-width:700px){
+.leh-bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-around;
+background:white;
+border-top:1px solid #ddd;
+padding:8px 4px;
+z-index:9999;
+}
+
+.leh-bottom-nav a{
+text-align:center;
+text-decoration:none;
+font-size:12px;
+}
+
+.leh-bottom-nav span{
+display:block;
+}
+body{
+padding-bottom:70px;
+}
+}
+</style>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  document.getElementById('google-signin')?.onclick = () => {
+  ', '  document.getElementById('google-signin').onclick = () => {
     googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
@@ -124,9 +243,7 @@ font-size:14px;
     }
   });
 </script>
-<script src="/auth-system.js"></script>
-<script src="/config.js"></script>`n<script src="/google-login.js"></script>
-<script src="/config.js"></script>`n<script src="/logout.js"></script>`n</body>
+<script src="/auth-system.js"></script>`r`n</body>
 
 </html>
 
@@ -136,22 +253,22 @@ font-size:14px;
 
 <a href="/learner-guide.html">📚 Learner Guide</a><br>
 
-<a href="/business-guide.html">ðŸ¢ Business Guide</a><br>
+<a href="/business-guide.html">🏢 Business Guide</a><br>
 
-<a href="/advertisement-guide.html">📄¢ Advertisement Guide</a><br>
+<a href="/advertisement-guide.html">📢 Advertisement Guide</a><br>
 
-<a href="/deal-guide.html">🤝 Deal Guide</a><br>
+<a href="/deal-guide.html">🤝 Deal Guide</a><br>
 
-<a href="/safety-guide.html">ðŸ›¡ Safety Guide</a><br>
+<a href="/safety-guide.html">🛡 Safety Guide</a><br>
 
-<a href="/payment-guide.html">💼³ Payment Guide</a>
+<a href="/payment-guide.html">💳 Payment Guide</a>
 
 </div>
 
 
 <div class="card">
 
-<h2>â“ Help Center</h2>
+<h2>❓ Help Center</h2>
 
 <a href="/help-center.html">Help Center</a><br>
 <a href="/faq.html">FAQ</a><br>
@@ -168,15 +285,15 @@ font-size:14px;
 <h2>💰 Revenue Services</h2>
 
 <a href="/business-premium.html">
-â­ Business Premium
+⭐ Business Premium
 </a><br>
 
 <a href="/advertisement-packages-v2.html">
-📄¢ Advertisement Packages
+📢 Advertisement Packages
 </a><br>
 
 <a href="/payment-history.html">
-💼³ Payment History
+💳 Payment History
 </a>
 
 </div>
@@ -184,7 +301,7 @@ font-size:14px;
 
 <div class="card">
 
-<h2>ðŸ›’ Marketplace</h2>
+<h2>🛒 Marketplace</h2>
 
 <a href="/marketplace-orders.html">
 Orders
@@ -207,7 +324,7 @@ Platform Chat
 
 <div class="card">
 
-<h2>ðŸ› Shopping & Selling</h2>
+<h2>🛍 Shopping & Selling</h2>
 
 <a href="/seller-dashboard.html">
 Seller Dashboard
@@ -226,7 +343,7 @@ Order Tracking
 
 <div class="card">
 
-<h2>ðŸ¢ Business Exchange</h2>
+<h2>🏢 Business Exchange</h2>
 
 <a href="/business-sale-marketplace.html">
 Sell Business
@@ -257,7 +374,7 @@ Due Diligence
 
 <div class="card">
 
-<h2>ðŸ¢ Business Exchange Center</h2>
+<h2>🏢 Business Exchange Center</h2>
 
 <a href="/business-exchange-dashboard.html">
 Business Exchange Dashboard
@@ -288,7 +405,7 @@ Partnership Request
 
 <div class="card">
 
-<h2>🤝 AI Deal Room</h2>
+<h2>🤝 AI Deal Room</h2>
 
 <a href="/ai-deal-room.html">
 Open AI Deal Room
@@ -303,7 +420,7 @@ Deal Safety Rules
 
 <div class="card">
 
-<h2>🤝– AI Business Matching</h2>
+<h2>🤖 AI Business Matching</h2>
 
 <a href="/ai-deal-matching.html">
 AI Deal Matching
@@ -318,7 +435,7 @@ Deal Verification
 
 <div class="card">
 
-<h2>ðŸ¢ Enterprise Profiles</h2>
+<h2>🏢 Enterprise Profiles</h2>
 
 <a href="/company-profile.html">
 Company Profile
@@ -337,7 +454,7 @@ Trust Center
 
 <div class="card">
 
-<h2>ðŸ¢ Enterprise Company Guide</h2>
+<h2>🏢 Enterprise Company Guide</h2>
 
 <p>
 Learn how companies create profiles, verify identity, connect with investors and build trust.
@@ -360,7 +477,7 @@ Trust & Reputation Guide
 
 <div class="card">
 
-<h2>ðŸ›¡ Compliance Guide</h2>
+<h2>🛡 Compliance Guide</h2>
 
 <p>
 Learn how businesses are verified and protected.
@@ -379,7 +496,7 @@ Admin Compliance Guide
 
 <div class="card">
 
-<h2>ðŸ›¡ Admin Guide</h2>
+<h2>🛡 Admin Guide</h2>
 
 <p>
 Platform administrators manage verification, payments, deals and safety.
@@ -413,7 +530,7 @@ Dashboard Guide
 
 <div class="card">
 
-<h2>🔐 Login & Dashboard Guide</h2>
+<h2>🔐 Login & Dashboard Guide</h2>
 
 <p>
 LearnEarnHub automatically connects users to their correct dashboard.
@@ -443,7 +560,7 @@ Registration
 
 <div class="card">
 
-<h2>🔐 Authentication Guide</h2>
+<h2>🔐 Authentication Guide</h2>
 
 <p>
 Learn how to create accounts, login and recover passwords.
@@ -481,7 +598,7 @@ Verification Guide
 
 <div class="card">
 
-<h2>ðŸ—º Platform Navigation Guide</h2>
+<h2>🗺 Platform Navigation Guide</h2>
 
 <p>
 View all platform modules and services.
@@ -504,10 +621,10 @@ Open Navigation Hub
 
 </div>
 <script src="/assets/js/theme-helper.js"></script>
-<button type="button" onclick="googleLogin()">Sign in with Google</button>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  document.getElementById('google-signin')?.onclick = () => {
+  ', '  document.getElementById('google-signin').onclick = () => {
     googleLogin();
   };
   supabase.auth.getSession().then(({ data: { session } }) => {
@@ -516,18 +633,8 @@ Open Navigation Hub
     }
   });
 </script>
-<script src="/auth-system.js"></script>
-<script src="/config.js"></script>`n<script src="/google-login.js"></script>
-<script src="/config.js"></script>`n<script src="/logout.js"></script>`n</body>
+<script src="/auth-system.js"></script>`r`n</body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
