@@ -156,3 +156,91 @@ img {
 body {
   border-top: 10px solid red !important;
 }
+
+/* LEARNEARNHUB FINAL UX/UI SYSTEM */
+
+:root {
+  --leh-primary:#2563eb;
+  --leh-secondary:#7c3aed;
+  --leh-success:#10b981;
+  --leh-bg:#f8fafc;
+  --leh-card:#ffffff;
+  --leh-text:#0f172a;
+  --leh-radius:16px;
+}
+
+/* Page alignment */
+.container,
+.leh-center {
+  width:min(1200px,94%) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Navigation */
+.leh-global-nav,
+.leh-bottom-nav {
+  width:100% !important;
+  border-radius:16px !important;
+}
+
+/* Buttons */
+.btn,
+.btn-primary {
+  background:var(--leh-primary) !important;
+  color:#fff !important;
+  border:none !important;
+  border-radius:14px !important;
+  padding:12px 22px !important;
+  font-weight:600 !important;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  opacity:.9 !important;
+}
+
+/* Cards */
+.card,
+.leh-card,
+.box {
+  background:#fff !important;
+  border-radius:16px !important;
+  padding:20px !important;
+}
+
+/* Grid */
+.grid,
+.leh-grid {
+  display:grid !important;
+  gap:20px !important;
+}
+
+/* Mobile fit */
+img {
+  max-width:100% !important;
+}
+
+body {
+  overflow-x:hidden !important;
+}
+
+@media(max-width:768px){
+
+ .container,
+ .leh-center {
+   width:94% !important;
+ }
+
+ .grid,
+ .leh-grid {
+   grid-template-columns:1fr !important;
+ }
+
+ .btn,
+ .btn-primary {
+   width:auto !important;
+ }
+
+}
+
