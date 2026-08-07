@@ -1,3 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "=== Creating unified language engine ==="
+
+cat > public/language-switcher.js <<'JS'
 async function loadLanguage(lang){
 
 if(!lang){
@@ -52,3 +57,37 @@ loadLanguage();
 });
 
 window.loadLanguage=loadLanguage;
+JS
+
+
+echo "=== Adding UTF-8 headers ==="
+
+cat > vercel.json <<'JSON'
+{
+ "version":2,
+ "rewrites":[
+  {
+   "source":"/api/(.*)",
+   "destination":"/api/index.js"
+  }
+ ],
+ "headers":[
+  {
+   "source":"/(.*)",
+   "headers":[
+    {
+     "key":"Content-Type",
+     "value":"text/html; charset=utf-8"
+    }
+   ]
+  }
+ ]
+}
+JSON
+
+
+git add .
+git commit -m "Unified language system and UTF8 fix"
+git push
+
+echo "DONE"

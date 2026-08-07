@@ -1,9 +1,20 @@
 {
-  "version": 2,
-  "rewrites": [
+ "version":2,
+ "rewrites":[
+  {
+   "source":"/api/(.*)",
+   "destination":"/api/index.js"
+  }
+ ],
+ "headers":[
+  {
+   "source":"/(.*)",
+   "headers":[
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+     "key":"Content-Type",
+     "value":"text/html; charset=utf-8"
     }
-  ]
+   ]
+  }
+ ]
 }
