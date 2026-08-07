@@ -448,3 +448,125 @@ td{
 
 }
 
+
+/* ===== Visual QA Phase 2 ===== */
+
+*{
+ box-sizing:border-box;
+}
+
+body{
+ background:var(--leh-bg);
+ color:var(--leh-text);
+ line-height:1.6;
+}
+
+.container{
+ width:min(1200px,92%);
+ margin:auto;
+ padding:24px 0;
+}
+
+.card,
+.panel,
+.box,
+.feature-card,
+.course-card,
+.market-card,
+.info-card{
+ background:var(--leh-card);
+ border:1px solid var(--leh-border);
+ border-radius:16px;
+ padding:24px;
+ margin-bottom:24px;
+ box-shadow:0 4px 12px rgba(15,23,42,.06);
+}
+
+.card:hover,
+.panel:hover,
+.box:hover,
+.feature-card:hover,
+.course-card:hover,
+.market-card:hover{
+ box-shadow:0 14px 30px rgba(15,23,42,.12);
+ transform:translateY(-3px);
+}
+
+input,
+textarea,
+select{
+ width:100%;
+ padding:12px 16px;
+ border-radius:12px;
+ border:1px solid var(--leh-border);
+ background:white;
+ color:var(--leh-text);
+ margin-bottom:16px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+ outline:none;
+ border-color:var(--leh-primary);
+ box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+button,
+.btn,
+a.button{
+ border-radius:12px;
+ min-height:44px;
+ padding:12px 22px;
+ font-weight:700;
+ transition:.2s ease;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover{
+ transform:translateY(-2px);
+ filter:brightness(.95);
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ background:white;
+ border-radius:14px;
+ overflow:hidden;
+}
+
+td,th{
+ padding:14px;
+ border-bottom:1px solid var(--leh-border);
+}
+
+footer{
+ margin-top:40px;
+ padding:32px;
+ background:#0f172a;
+ color:white;
+ border-radius:18px;
+}
+
+@media(max-width:768px){
+
+.container{
+ width:94%;
+}
+
+.card,
+.panel,
+.box{
+ padding:18px;
+}
+
+button,
+.btn,
+a.button{
+ width:100%;
+}
+
+}
+
