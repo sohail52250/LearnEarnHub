@@ -94,3 +94,60 @@ select {
   display:block;
  }
 }
+
+/* FINAL UX OVERRIDE */
+
+body {
+  overflow-x: hidden !important;
+}
+
+.container,
+.wrapper,
+.page-container,
+main {
+  width: min(1200px, 94%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+button,
+.btn,
+.button,
+input[type="submit"],
+a.btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
+  padding: 12px 22px !important;
+}
+
+.card,
+.panel,
+.box,
+.content-card {
+  border-radius: 16px !important;
+}
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+@media(max-width:768px){
+  body {
+    width:100% !important;
+  }
+
+  .container,
+  .wrapper,
+  .page-container {
+    width:96% !important;
+  }
+
+  button,
+  .btn,
+  .button {
+    max-width:100% !important;
+  }
+}
+
