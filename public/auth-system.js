@@ -132,36 +132,5 @@ window.resetPassword=resetPassword;
 
 
 
-async function googleLogin(){
 
-const client =
-supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-);
-
-
-const {data,error}=await client.auth.signInWithOAuth({
-
-provider:"google",
-
-options:{
-redirectTo:window.location.origin+"/dashboard-router.html"
-}
-
-});
-
-
-if(error){
-
-alert(error.message);
-
-}
-
-return data;
-
-}
-
-
-window.googleLogin=googleLogin;
 
