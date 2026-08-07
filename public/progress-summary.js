@@ -135,13 +135,13 @@ ${badges?.length || 0}
 
 
 <p>
-ðŸ“œ ${t.certificates || "Certificates"}:
+📄œ ${t.certificates || "Certificates"}:
 ${certificates?.length || 0}
 </p>
 
 
 <p>
-ðŸ“š ${t.courses || "Courses Progress"}:
+📚 ${t.courses || "Courses Progress"}:
 ${progress?.length || 0}
 </p>
 
