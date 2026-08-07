@@ -713,3 +713,141 @@ a.button{
 
 }
 
+
+
+/* ===== Visual QA Phase 3 Dashboard System ===== */
+
+
+.dashboard,
+.dashboard-container,
+.admin-panel,
+.marketplace,
+.profile-section{
+ background:var(--leh-bg);
+ padding:32px;
+ border-radius:18px;
+}
+
+
+.dashboard-card,
+.stat-card,
+.metric-card,
+.profile-card,
+.list-card{
+ background:white;
+ border:1px solid var(--leh-border);
+ border-radius:16px;
+ padding:24px;
+ margin-bottom:24px;
+ transition:.2s ease;
+}
+
+
+.dashboard-card:hover,
+.stat-card:hover,
+.metric-card:hover,
+.profile-card:hover,
+.list-card:hover{
+ transform:translateY(-3px);
+ box-shadow:0 15px 30px rgba(15,23,42,.12);
+}
+
+
+
+.stat-number{
+ font-size:32px;
+ font-weight:800;
+ color:var(--leh-primary);
+}
+
+
+.stat-label{
+ color:var(--leh-muted);
+ font-weight:600;
+}
+
+
+
+.nav-card,
+.menu-card{
+ background:white;
+ border-radius:14px;
+ border:1px solid var(--leh-border);
+ padding:18px;
+ transition:.2s;
+}
+
+
+.nav-card:hover,
+.menu-card:hover{
+ background:#f8fafc;
+ border-color:var(--leh-primary);
+}
+
+
+
+.alert,
+.notification,
+.message-box{
+ padding:16px 20px;
+ border-radius:12px;
+ margin-bottom:16px;
+ border:1px solid var(--leh-border);
+}
+
+
+.success{
+ background:#dcfce7;
+ color:#166534;
+}
+
+
+.warning{
+ background:#fef3c7;
+ color:#92400e;
+}
+
+
+.error{
+ background:#fee2e2;
+ color:#991b1b;
+}
+
+
+
+.badge-primary{
+ background:#dbeafe;
+ color:#1d4ed8;
+}
+
+
+.badge-success{
+ background:#dcfce7;
+ color:#15803d;
+}
+
+
+.badge-danger{
+ background:#fee2e2;
+ color:#b91c1c;
+}
+
+
+
+@media(max-width:768px){
+
+.dashboard,
+.dashboard-container,
+.admin-panel,
+.marketplace{
+ padding:18px;
+}
+
+.dashboard-card,
+.stat-card,
+.metric-card{
+ padding:18px;
+}
+
+}
+
