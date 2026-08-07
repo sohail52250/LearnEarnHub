@@ -129,7 +129,7 @@ Loading...
 
 
 <p>
-ðŸŽ–ï¸ ${t.badges || "Badges"}:
+🎓–ï¸ ${t.badges || "Badges"}:
 ${badges?.length || 0}
 </p>
 
