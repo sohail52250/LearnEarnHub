@@ -13,6 +13,7 @@ module.exports = async function(req, res) {
         const action = String(body.action || "").trim();
         const email = String(body.email || "").trim();
         const password = String(body.password || "");
+          const name = String(body.name || "").trim();
 
         if (!email || !password) {
             return res.status(400).json({
@@ -22,7 +23,7 @@ module.exports = async function(req, res) {
         }
 
         if (action === "signup") {
-            const user = await service.signup(email, password);
+            const user = await service.signup(email, password, name);
 
             return res.status(200).json({
                 success: true,

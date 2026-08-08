@@ -10,7 +10,7 @@ if (!SUPABASE_URL) {
     console.warn("WARNING: SUPABASE_URL is not configured.");
 }
 
-async function signup(email, password) {
+async function signup(email, password, name) {
     const adminClient = createClient(
         SUPABASE_URL,
         SUPABASE_SERVICE_KEY
@@ -26,7 +26,41 @@ async function signup(email, password) {
         throw error;
     }
 
-    return data?.user || null;
+    const user = data?.user || null;
+
+    if (!user?.id) {
+        throw new Error("Account was created but no user ID was returned.");
+    }
+
+    try {
+        const { error: profileError } = await adminClient
+            .from("profiles")
+            .insert({
+                id: user.id,
+                name: String(name || "").trim() || email.split("@")[0],
+                email
+            });
+
+        if (profileError) {
+            throw profileError;
+        }
+    } catch (profileError) {
+        try {
+            await adminClient.auth.admin.deleteUser(user.id);
+        } catch (rollbackError) {
+            console.error(
+                "AUTH ROLLBACK FAILED:",
+                rollbackError?.message || rollbackError
+            );
+        }
+
+        throw new Error(
+            "Account creation could not complete profile setup: " +
+            (profileError?.message || "Profile creation failed.")
+        );
+    }
+
+    return user;
 }
 
 async function login(email, password) {
