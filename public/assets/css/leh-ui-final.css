@@ -1008,3 +1008,96 @@ button:hover{
     font-size:.76rem!important;
   }
 }
+
+/* =========================================================
+   LEARNEARNHUB — CLEAN FOOTER
+========================================================= */
+
+#global-footer {
+  width:100%;
+  margin:32px 0 0;
+}
+
+#global-footer footer,
+#global-footer .global-footer {
+  width:100%;
+  box-sizing:border-box;
+  margin:0;
+  padding:24px 16px 82px;
+  text-align:center;
+  border-top:1px solid rgba(100,116,139,.18);
+  background:linear-gradient(
+    180deg,
+    rgba(248,250,252,.96),
+    rgba(241,245,249,.98)
+  );
+  color:#475569;
+}
+
+#global-footer a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:3px 4px;
+  padding:5px 8px;
+  border-radius:7px;
+  color:#315f7d;
+  text-decoration:none;
+  font-size:.86rem;
+  font-weight:600;
+}
+
+#global-footer a:hover {
+  background:#e6f0f5;
+  color:#174b68;
+}
+
+#global-footer h1,
+#global-footer h2,
+#global-footer h3 {
+  margin:0 0 7px;
+  color:#263f52;
+}
+
+#global-footer p {
+  margin:6px 0;
+  line-height:1.5;
+}
+
+#global-footer small {
+  color:#64748b;
+}
+
+@media(max-width:700px){
+
+  #global-footer {
+    margin-top:24px;
+  }
+
+  #global-footer footer,
+  #global-footer .global-footer {
+    padding:20px 12px 88px;
+  }
+
+  #global-footer a {
+    font-size:.78rem;
+    padding:4px 6px;
+    margin:2px;
+  }
+}
+
+/* Prevent mobile bottom navigation from visually merging
+   with the footer. */
+@media(max-width:700px){
+  .leh-bottom-nav {
+    height:58px;
+    box-sizing:border-box;
+    padding:6px 4px;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(10px);
+  }
+
+  body {
+    padding-bottom:74px!important;
+  }
+}
