@@ -1,593 +1,85 @@
-/*
-====================================================
- LearnEarnHub Professional Global UI
- Responsive / Mobile / Tablet / Desktop
-====================================================
-*/
-
 :root{
-  --leh-primary:#2563eb;
-  --leh-primary-dark:#1d4ed8;
-  --leh-secondary:#7c3aed;
-  --leh-success:#059669;
-  --leh-danger:#dc2626;
-  --leh-warning:#d97706;
-
-  --leh-bg:#f5f7fb;
-  --leh-surface:#ffffff;
-  --leh-surface-2:#f8fafc;
-
-  --leh-text:#0f172a;
-  --leh-text-soft:#475569;
-  --leh-border:#e2e8f0;
-
-  --leh-radius:16px;
-  --leh-radius-small:10px;
-
-  --leh-shadow:
-    0 10px 30px rgba(15,23,42,.08);
-
-  --leh-shadow-hover:
-    0 18px 40px rgba(15,23,42,.14);
-
-  --leh-transition:
-    .25s ease;
+--primary:#2563eb;
+--primary2:#3b82f6;
+--secondary:#7c3aed;
+--bg:#f5f7fb;
+--surface:#ffffff;
+--text:#0f172a;
+--border:#e2e8f0;
+--radius:16px;
 }
-
-/* ==============================
-   DARK MODE
-============================== */
-
 @media (prefers-color-scheme:dark){
-
-  :root{
-    --leh-bg:#0b1120;
-    --leh-surface:#111827;
-    --leh-surface-2:#1e293b;
-
-    --leh-text:#f8fafc;
-    --leh-text-soft:#cbd5e1;
-    --leh-border:#334155;
-
-    --leh-shadow:
-      0 10px 30px rgba(0,0,0,.30);
-
-    --leh-shadow-hover:
-      0 18px 40px rgba(0,0,0,.45);
-  }
-
-}
-
-/* ==============================
-   RESET
-============================== */
-
-*,
-*::before,
-*::after{
-  box-sizing:border-box;
-}
-
-html{
-  width:100%;
-  max-width:100%;
-  scroll-behavior:smooth;
-  -webkit-text-size-adjust:100%;
-}
-
+:root{
+--bg:#0b1120;
+--surface:#111827;
+--text:#f8fafc;
+--border:#334155;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  width:100%;
-  max-width:100%;
-  min-height:100vh;
-  margin:0;
-  background:var(--leh-bg)!important;
-  color:var(--leh-text)!important;
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
+margin:0!important;
+background:var(--bg)!important;
+color:var(--text)!important;
+font-family:Inter,Arial,sans-serif!important;
+overflow-x:hidden!important;
 }
-
-/* ==============================
-   RESPONSIVE CONTAINERS
-============================== */
-
-.container,
-.leh-container{
-  width:min(94%,1400px);
-  max-width:1400px;
-  margin-left:auto;
-  margin-right:auto;
+.container,.leh-container{
+width:min(95%,1400px)!important;
+margin:auto!important;
 }
-
-/* ==============================
-   TYPOGRAPHY
-============================== */
-
-h1{
-  font-size:clamp(2rem,5vw,4rem);
-  line-height:1.12;
+.leh-global-nav,.leh-nav{
+background:var(--surface)!important;
+position:sticky!important;
+top:0!important;
+z-index:999!important;
+box-shadow:0 4px 20px rgba(0,0,0,.08)!important;
 }
-
-h2{
-  font-size:clamp(1.55rem,4vw,3rem);
-  line-height:1.2;
+.leh-global-nav a,.leh-nav a{
+padding:10px 14px!important;
+border-radius:10px!important;
+text-decoration:none!important;
+font-weight:600!important;
 }
-
-h3{
-  font-size:clamp(1.2rem,3vw,2rem);
+.btn,.btn-primary,button{
+background:linear-gradient(135deg,var(--primary),var(--primary2))!important;
+border:none!important;
+color:#fff!important;
+padding:12px 22px!important;
+border-radius:12px!important;
+font-weight:700!important;
+cursor:pointer!important;
+transition:.25s!important;
 }
-
-h4{
-  font-size:clamp(1.05rem,2vw,1.4rem);
+.btn:hover,.btn-primary:hover,button:hover{
+transform:translateY(-2px)!important;
 }
-
-p,
-li{
-  font-size:clamp(.95rem,1.5vw,1.08rem);
+.card,.leh-card,.quiz-box,.account-cta{
+background:var(--surface)!important;
+border:1px solid var(--border)!important;
+border-radius:18px!important;
+box-shadow:0 10px 25px rgba(0,0,0,.08)!important;
 }
-
-a{
-  color:var(--leh-primary);
-  transition:var(--leh-transition);
+.grid,.leh-grid{
+display:grid!important;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important;
+gap:20px!important;
 }
-
-a:hover{
-  color:var(--leh-primary-dark);
+img,video,iframe{
+max-width:100%!important;
+height:auto!important;
 }
-
-/* ==============================
-   IMAGES / MEDIA
-============================== */
-
-img,
-svg,
-video,
-canvas{
-  max-width:100%;
+input,select,textarea{
+width:100%!important;
+padding:12px!important;
+border:1px solid var(--border)!important;
+border-radius:10px!important;
 }
-
-img{
-  height:auto;
-}
-
-iframe{
-  max-width:100%;
-}
-
-/* ==============================
-   GLOBAL NAVIGATION
-============================== */
-
-.leh-global-nav,
-.leh-nav,
-.leh-header{
-  width:100%;
-  max-width:100%;
-  background:var(--leh-surface)!important;
-  color:var(--leh-text)!important;
-  border-bottom:1px solid var(--leh-border)!important;
-  box-shadow:0 4px 20px rgba(15,23,42,.07)!important;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.leh-global-nav{
-  min-height:64px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-  padding:10px clamp(12px,3vw,28px);
-}
-
-.leh-global-nav a,
-.leh-nav a{
-  text-decoration:none;
-  color:var(--leh-text)!important;
-  font-weight:600;
-  border-radius:10px;
-  padding:8px 12px;
-}
-
-.leh-global-nav a:hover,
-.leh-nav a:hover{
-  background:rgba(37,99,235,.10)!important;
-  color:var(--leh-primary)!important;
-}
-
-/* ==============================
-   BOTTOM NAVIGATION
-============================== */
-
-.leh-bottom-nav{
-  background:var(--leh-surface)!important;
-  color:var(--leh-text)!important;
-  border-top:1px solid var(--leh-border)!important;
-  box-shadow:0 -5px 20px rgba(15,23,42,.08)!important;
-}
-
-/* ==============================
-   BUTTON SYSTEM
-============================== */
-
-button,
-.btn,
-.btn-primary,
-input[type="submit"],
-input[type="button"]{
-  appearance:none;
-  -webkit-appearance:none;
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  min-height:44px;
-
-  padding:
-    11px
-    clamp(16px,3vw,24px);
-
-  border:1px solid transparent!important;
-  border-radius:12px!important;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--leh-primary),
-      #3b82f6
-    )!important;
-
-  color:#fff!important;
-
-  font-family:inherit;
-  font-size:clamp(.9rem,1.5vw,1rem);
-  font-weight:700;
-
-  line-height:1.2;
-  text-align:center;
-  text-decoration:none!important;
-
-  cursor:pointer;
-
-  box-shadow:
-    0 7px 18px rgba(37,99,235,.22);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    filter .2s ease;
-}
-
-button:hover,
-.btn:hover,
-.btn-primary:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.04);
-  box-shadow:
-    0 12px 25px rgba(37,99,235,.30);
-}
-
-button:active,
-.btn:active,
-.btn-primary:active{
-  transform:translateY(0);
-}
-
-button:focus-visible,
-.btn:focus-visible,
-.btn-primary:focus-visible{
-  outline:3px solid rgba(37,99,235,.30);
-  outline-offset:3px;
-}
-
-/* ==============================
-   CARDS
-============================== */
-
-.card,
-.leh-card,
-.course-card,
-.task-card,
-.feature-card,
-.account-cta,
-.progress-box,
-.quiz-box{
-  background:var(--leh-surface)!important;
-  color:var(--leh-text)!important;
-
-  border:1px solid var(--leh-border)!important;
-  border-radius:var(--leh-radius)!important;
-
-  box-shadow:var(--leh-shadow)!important;
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    border-color .25s ease;
-}
-
-.card:hover,
-.leh-card:hover,
-.course-card:hover,
-.task-card:hover,
-.feature-card:hover{
-  transform:translateY(-3px);
-  box-shadow:var(--leh-shadow-hover)!important;
-}
-
-/* ==============================
-   GRID
-============================== */
-
-.grid,
-.leh-grid{
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(min(100%,280px),1fr));
-  gap:clamp(14px,2.5vw,24px);
-}
-
-/* ==============================
-   FLEX
-============================== */
-
-.flex{
-  display:flex;
-  flex-wrap:wrap;
-  gap:clamp(10px,2vw,20px);
-}
-
-/* ==============================
-   FORMS
-============================== */
-
-input,
-select,
-textarea{
-  width:100%;
-  max-width:100%;
-
-  min-height:44px;
-
-  padding:11px 13px;
-
-  background:var(--leh-surface)!important;
-  color:var(--leh-text)!important;
-
-  border:1px solid var(--leh-border)!important;
-  border-radius:var(--leh-radius-small)!important;
-
-  font:inherit;
-
-  outline:none;
-
-  transition:
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:var(--leh-primary)!important;
-  box-shadow:
-    0 0 0 3px rgba(37,99,235,.12);
-}
-
-/* ==============================
-   TABLES
-============================== */
-
-table{
-  width:100%;
-  max-width:100%;
-  border-collapse:collapse;
-}
-
-th,
-td{
-  padding:12px;
-  border-bottom:1px solid var(--leh-border);
-  color:var(--leh-text);
-}
-
-th{
-  font-weight:700;
-}
-
-/* ==============================
-   HERO
-============================== */
-
-.hero{
-  width:100%;
-  padding:
-    clamp(35px,7vw,90px)
-    clamp(16px,4vw,40px);
-
-  border-radius:
-    clamp(16px,3vw,28px);
-
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #7c3aed
-    );
-
-  color:#fff;
-  overflow:hidden;
-}
-
-/* ==============================
-   BADGES
-============================== */
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:5px 10px;
-
-  border-radius:999px;
-
-  font-size:.8rem;
-  font-weight:700;
-
-  background:rgba(37,99,235,.12);
-  color:var(--leh-primary);
-}
-
-/* ==============================
-   MOBILE
-============================== */
-
+h1{font-size:clamp(2rem,5vw,4rem)}
+h2{font-size:clamp(1.5rem,4vw,3rem)}
+h3{font-size:clamp(1.2rem,3vw,2rem)}
 @media(max-width:768px){
-
-  .container,
-  .leh-container{
-    width:94%;
-  }
-
-  .leh-global-nav{
-    justify-content:center;
-    padding:9px 10px;
-  }
-
-  .leh-global-nav a,
-  .leh-nav a{
-    font-size:.9rem;
-    padding:7px 9px;
-  }
-
-  .grid,
-  .leh-grid{
-    grid-template-columns:1fr;
-  }
-
-  .flex{
-    flex-direction:column;
-  }
-
-  .btn,
-  .btn-primary,
-  button,
-  input[type="submit"],
-  input[type="button"]{
-    width:100%;
-  }
-
-  .card,
-  .leh-card{
-    border-radius:14px!important;
-  }
-}
-
-/* ==============================
-   SMALL PHONES
-============================== */
-
-@media(max-width:420px){
-
-  html{
-    font-size:15px;
-  }
-
-  .container,
-  .leh-container{
-    width:92%;
-  }
-
-  .leh-global-nav{
-    gap:6px;
-  }
-
-  .leh-global-nav a{
-    padding:6px 7px;
-    font-size:.82rem;
-  }
-
-  .card,
-  .leh-card{
-    padding:16px!important;
-  }
-}
-
-/* ==============================
-   LARGE SCREENS
-============================== */
-
-@media(min-width:1600px){
-
-  .container,
-  .leh-container{
-    max-width:1500px;
-  }
-}
-
-/* ==============================
-   ACCESSIBILITY
-============================== */
-
-@media(prefers-reduced-motion:reduce){
-
-  *,
-  *::before,
-  *::after{
-    scroll-behavior:auto!important;
-    transition:none!important;
-    animation:none!important;
-  }
-}
-
-/* ==============================
-   PREVENT BAD OVERFLOW
-============================== */
-
-pre,
-code{
-  max-width:100%;
-  overflow-x:auto;
-}
-
-section,
-main,
-header,
-footer{
-  max-width:100%;
-}
-
-/* ==============================
-   GLOBAL COLOR INHERIT
-============================== */
-
-main,
-section,
-article,
-aside,
-footer,
-header{
-  color:inherit;
-}
-
-/* ==============================
-   PROFESSIONAL SELECTION
-============================== */
-
-::selection{
-  background:#2563eb;
-  color:#fff;
+.grid,.leh-grid{grid-template-columns:1fr!important}
+.btn,.btn-primary,button{width:100%!important}
+.leh-global-nav{flex-wrap:wrap!important}
 }
