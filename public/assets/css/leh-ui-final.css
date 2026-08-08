@@ -923,3 +923,88 @@ button:hover{
     font-size:1.4rem!important;
   }
 }
+
+/* =========================================================
+   AUTH BUTTONS — UNIFIED HEADER SIZE
+========================================================= */
+
+/* Login / Register / Logout */
+#global-header a[href*="login"],
+#global-header a[href*="register"],
+#global-header a[href*="logout"],
+#global-header button[id*="logout"],
+#global-header .logout,
+#global-header .login,
+#global-header .register{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+
+  width:auto!important;
+  min-width:0!important;
+  min-height:36px!important;
+
+  padding:6px 11px!important;
+
+  margin:0!important;
+
+  border-radius:8px!important;
+
+  font-size:.82rem!important;
+  font-weight:600!important;
+  line-height:1.2!important;
+
+  box-shadow:none!important;
+}
+
+/* Login */
+#global-header a[href*="login"]{
+  background:#eaf4fc!important;
+  color:#245f91!important;
+  border:1px solid #cfe3f1!important;
+}
+
+/* Register */
+#global-header a[href*="register"]{
+  background:#e8f7f6!important;
+  color:#167477!important;
+  border:1px solid #c9e7e5!important;
+}
+
+/* Logout */
+#global-header a[href*="logout"],
+#global-header button[id*="logout"],
+#global-header .logout{
+  background:#fff0f0!important;
+  color:#a53d3d!important;
+  border:1px solid #f0cccc!important;
+}
+
+/* Hover */
+#global-header a[href*="login"]:hover{
+  background:#dceefb!important;
+}
+
+#global-header a[href*="register"]:hover{
+  background:#d9f1ef!important;
+}
+
+#global-header a[href*="logout"]:hover,
+#global-header button[id*="logout"]:hover,
+#global-header .logout:hover{
+  background:#ffe3e3!important;
+}
+
+/* Mobile */
+@media(max-width:700px){
+
+  #global-header a[href*="login"],
+  #global-header a[href*="register"],
+  #global-header a[href*="logout"],
+  #global-header button[id*="logout"],
+  #global-header .logout{
+    min-height:34px!important;
+    padding:5px 9px!important;
+    font-size:.76rem!important;
+  }
+}
