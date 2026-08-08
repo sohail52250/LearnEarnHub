@@ -606,3 +606,120 @@ svg{
     animation:none!important;
   }
 }
+
+/* =========================================================
+   HEADER / FOOTER SPACE FIX
+========================================================= */
+
+/* Header stays compact */
+header,
+.leh-header,
+.leh-global-nav,
+.leh-nav{
+  box-sizing:border-box!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+
+/* Don't let generic sections create header-sized spacing */
+header{
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+
+/* Navigation compact */
+.leh-global-nav,
+.leh-nav{
+  min-height:54px!important;
+  padding:6px 12px!important;
+}
+
+/* Footer is independent from header */
+footer,
+.leh-footer{
+  width:100%!important;
+  max-width:none!important;
+
+  margin-top:40px!important;
+  margin-bottom:0!important;
+
+  padding:
+    24px
+    clamp(14px,4vw,32px)
+    22px!important;
+
+  background:#eef5f8!important;
+
+  color:#536b7c!important;
+
+  border-top:1px solid #d9e5eb!important;
+
+  box-shadow:none!important;
+
+  text-align:center!important;
+}
+
+/* Footer headings */
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+.leh-footer h1,
+.leh-footer h2,
+.leh-footer h3,
+.leh-footer h4{
+  color:#29445a!important;
+  margin-top:0!important;
+  margin-bottom:8px!important;
+}
+
+/* Footer paragraphs */
+footer p,
+.leh-footer p{
+  color:#63798a!important;
+  margin:5px 0!important;
+}
+
+/* Footer links */
+footer a,
+.leh-footer a{
+  color:#2878c8!important;
+  text-decoration:none!important;
+}
+
+footer a:hover,
+.leh-footer a:hover{
+  color:#1f5f9f!important;
+  text-decoration:underline!important;
+}
+
+/* Footer navigation doesn't become huge */
+footer nav,
+.leh-footer nav{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  flex-wrap:wrap!important;
+  gap:8px 16px!important;
+}
+
+/* Mobile footer */
+@media(max-width:768px){
+
+  .leh-global-nav,
+  .leh-nav{
+    min-height:50px!important;
+    padding:5px 8px!important;
+  }
+
+  footer,
+  .leh-footer{
+    margin-top:30px!important;
+    padding:20px 12px!important;
+  }
+
+  footer nav,
+  .leh-footer nav{
+    gap:6px 12px!important;
+  }
+}
