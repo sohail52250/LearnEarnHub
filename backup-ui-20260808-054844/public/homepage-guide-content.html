@@ -1,0 +1,61 @@
+<section class="leh-card leh-center">
+
+<h2>What is LearnEarnHub?</h2>
+
+<p>
+LearnEarnHub is a platform that helps people learn skills,
+find opportunities, build businesses, and grow enterprises.
+</p>
+
+</section>
+
+<section class="leh-grid">
+
+<div class="leh-card">
+<h3>🎓 Students</h3>
+<p>Learn digital skills, complete courses, earn certificates, and build your career.</p>
+</div>
+
+<div class="leh-card">
+<h3>💼 Freelancers</h3>
+<p>Create a profile, find opportunities, and connect with businesses.</p>
+</div>
+
+<div class="leh-card">
+<h3>🏢 Businesses</h3>
+<p>Promote services, recruit talent, and expand your network.</p>
+</div>
+
+<div class="leh-card">
+<h3>🤝 Enterprises</h3>
+<p>Manage teams, training, analytics, and business growth.</p>
+</div>
+
+</section>
+
+<section class="leh-card">
+
+<h2>How Rewards Work</h2>
+
+<p>
+Learn → Complete Courses → Earn Certificates →
+Build Profile → Apply Opportunities → Grow Income
+</p>
+
+</section>
+
+<button id="google-signin" class="btn btn-primary">Sign in with Google</button>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.getElementById('google-signin')?.addEventListener('click', function(){
+    googleLogin();
+  });
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+
+
+
