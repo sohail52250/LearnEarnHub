@@ -1,8 +1,12 @@
+document.getElementById('google-signin')?.addEventListener('click', function(){
+    googleLogin();
+  });
 <!DOCTYPE html>
 
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LearnEarnHub Login</title>
@@ -220,9 +224,7 @@ padding-bottom:70px;
 <button id="google-signin" class="btn btn-primary">🔐 Sign in with Google</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  document.getElementById('google-signin')?.addEventListener('click', function(){
-    googleLogin();
-  });
+  
   supabase.auth.getSession().then(({ data: { session } }) => {
     if (session) {
       window.location.href = 'dashboard.html';
@@ -233,9 +235,7 @@ padding-bottom:70px;
 <script src="/auth-system.js"></script>
 <script src="/google-login.js"></script>
 <script>
-  document.getElementById('google-signin')?.addEventListener('click', function(){
-    googleLogin();
-  });
+  
 </script>
 
 <script src="/global-layout.js"></script>
