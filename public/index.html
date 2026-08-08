@@ -205,6 +205,7 @@ h1,h2,h3,p{
     <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
+  <link rel="stylesheet" href="/css/leh-global-spacing.css">
 </head>
 
 <body>
@@ -396,16 +397,7 @@ padding-bottom:70px;
 <a href="/computer-fundamentals.html">💻 Start Computer Fundamentals</a>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  document.getElementById('google-signin')?.addEventListener('click', function(){
-    googleLogin();
-  });
-  supabase.auth.getSession().then(({ data: { session } }) => {
-    if (session) {
-      window.location.href = 'dashboard.html';
-    }
-  });
-</script>
+
 <script src="/config.js"></script>
 <script src="/auth-system.js"></script>
 <script src="/google-login.js"></script>

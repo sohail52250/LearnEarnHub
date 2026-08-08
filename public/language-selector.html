@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/leh-global-spacing.css">
 <div class="card" id="language-box">
 
 <h3>
@@ -22,18 +23,5 @@
 
 </div>
 
-<button id="google-signin" class="btn btn-primary">Sign in with Google</button>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  document.getElementById('google-signin')?.addEventListener('click', function(){
-    googleLogin();
-  });
-  supabase.auth.getSession().then(({ data: { session } }) => {
-    if (session) {
-      window.location.href = 'dashboard.html';
-    }
-  });
-</script>
-
-
-
