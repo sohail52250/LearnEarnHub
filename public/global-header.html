@@ -49,33 +49,78 @@ onchange="loadLanguage(this.value)">
 </header>
 
 <script>
-async function updateAuthUI(){
-  if(typeof supabase === "undefined"){
-  setTimeout(updateAuthUI,500);
-  return;
-}
-
-  const {data:{session}} = await supabase.auth.getSession();
-
-  const login=document.getElementById("login-link");
-  const register=document.getElementById("register-link");
-  const logout=document.getElementById("logout-btn");
-
-  if(session){
-    if(login) login.style.display="none";
-    if(register) register.style.display="none";
-    if(logout){
-      logout.style.display="inline-block";
-      logout.onclick=async()=>{
-        await supabase.auth.signOut();
-        localStorage.removeItem("user");
-        window.location.href="/index.html";
-      };
+async function updateAuthUI() {
+  try {
+    if (typeof supabase === "undefined") {
+      setTimeout(updateAuthUI, 500);
+      return;
     }
+
+    const { data: { session } } = await supabase.auth.getSession();
+
+    const login = document.getElementById("login-link");
+    const register = document.getElementById("register-link");
+    const logout = document.getElementById("logout-btn");
+
+    if (session) {
+      if (login) {
+        login.style.display = "none";
+      }
+
+      if (register) {
+        register.style.display = "none";
+      }
+
+      if (logout) {
+        logout.style.display = "inline-block";
+
+        logout.onclick = async function () {
+          try {
+            await supabase.auth.signOut();
+          } catch (error) {
+            console.error("Supabase logout failed:", error);
+          }
+
+          try {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            localStorage.removeItem("role");
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("access_token");
+            localStorage.removeItem("refresh_token");
+          } catch (error) {
+            console.error("Logout storage cleanup failed:", error);
+          }
+
+          window.location.href = "/index.html";
+        };
+      }
+    } else {
+      if (login) {
+        login.style.display = "";
+      }
+
+      if (register) {
+        register.style.display = "";
+      }
+
+      if (logout) {
+        logout.style.display = "none";
+        logout.onclick = null;
+      }
+    }
+  } catch (error) {
+    console.error("Auth navigation update failed:", error);
   }
 }
 
-setTimeout(updateAuthUI,500);
+setTimeout(updateAuthUI, 500);
+
+if (typeof supabase !== "undefined" && supabase.auth) {
+  supabase.auth.onAuthStateChange(function () {
+    setTimeout(updateAuthUI, 0);
+  });
+}
 </script>
 
 <script src="/assets/js/leh-ai-chat.js"></script>
