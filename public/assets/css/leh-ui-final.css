@@ -723,3 +723,203 @@ footer nav,
     gap:6px 12px!important;
   }
 }
+
+/* =========================================================
+   LEARNEARNHUB — SINGLE GLOBAL LAYOUT
+========================================================= */
+
+html,
+body{
+  width:100%;
+  min-width:0;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#f4f8fb!important;
+  color:#334b60!important;
+  overflow-x:hidden!important;
+}
+
+/* Global header loaded by global-layout.js */
+#global-header{
+  width:100%;
+  margin:0!important;
+  padding:0!important;
+  background:#fff;
+}
+
+/* Header navigation */
+#global-header nav,
+#global-header .leh-global-nav,
+#global-header .leh-nav{
+  width:100%!important;
+  max-width:1180px!important;
+  min-height:54px!important;
+  margin:0 auto!important;
+  padding:6px 12px!important;
+
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:5px!important;
+
+  background:#fff!important;
+  border:0!important;
+  border-bottom:1px solid #dce7ef!important;
+  border-radius:0!important;
+
+  box-shadow:0 2px 8px rgba(30,60,85,.05)!important;
+}
+
+#global-header a{
+  color:#40586b!important;
+  text-decoration:none!important;
+  font-weight:600!important;
+  border-radius:9px!important;
+}
+
+#global-header a:hover{
+  color:#1f5f9f!important;
+  background:#eaf4fc!important;
+}
+
+/* Main content */
+main{
+  width:100%!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+  padding:
+    clamp(18px,3vw,30px)
+    clamp(12px,3vw,28px)
+    30px!important;
+}
+
+/* Hero */
+.hero{
+  margin-top:4px!important;
+  margin-bottom:22px!important;
+  background:linear-gradient(135deg,#edf7fd,#eef9f7)!important;
+  border:1px solid #d8ebf0!important;
+  border-radius:18px!important;
+  box-shadow:none!important;
+}
+
+/* Cards */
+.card,
+.leh-card,
+.quiz-box,
+.account-cta{
+  background:#fff!important;
+  border:1px solid #dce7ef!important;
+  border-radius:14px!important;
+  box-shadow:0 2px 9px rgba(35,65,90,.05)!important;
+}
+
+/* Buttons */
+.btn,
+.btn-primary,
+button,
+input[type="submit"],
+input[type="button"]{
+  min-height:42px!important;
+  border-radius:10px!important;
+  background:#2878c8!important;
+  border:1px solid #2878c8!important;
+  color:#fff!important;
+  box-shadow:0 2px 6px rgba(40,120,200,.13)!important;
+}
+
+.btn:hover,
+.btn-primary:hover,
+button:hover{
+  background:#1f5f9f!important;
+}
+
+/* Global footer loaded by global-layout.js */
+#global-footer{
+  width:100%!important;
+  margin:35px 0 0!important;
+  padding:0!important;
+  background:#eef5f8!important;
+  border-top:1px solid #d9e5eb!important;
+}
+
+#global-footer footer,
+#global-footer .leh-footer{
+  width:100%!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+  padding:25px clamp(14px,4vw,30px)!important;
+  background:#eef5f8!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-align:center!important;
+}
+
+/* Don't recreate the old fixed bottom navigation */
+.leh-bottom-nav,
+.mobile-nav{
+  display:none!important;
+}
+
+/* Mobile */
+@media(max-width:700px){
+
+  #global-header nav,
+  #global-header .leh-global-nav,
+  #global-header .leh-nav{
+    min-height:48px!important;
+    padding:5px 7px!important;
+    gap:3px!important;
+  }
+
+  #global-header a{
+    font-size:.8rem!important;
+    padding:6px 7px!important;
+  }
+
+  main{
+    padding:
+      14px
+      12px
+      22px!important;
+  }
+
+  .hero{
+    padding:25px 15px!important;
+  }
+
+  .grid,
+  .leh-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  #global-footer{
+    margin-top:25px!important;
+  }
+
+  #global-footer footer,
+  #global-footer .leh-footer{
+    padding:20px 12px!important;
+  }
+}
+
+/* Very small phones */
+@media(max-width:420px){
+
+  #global-header a{
+    font-size:.74rem!important;
+    padding:5px 6px!important;
+  }
+
+  h1{
+    font-size:1.7rem!important;
+  }
+
+  h2{
+    font-size:1.4rem!important;
+  }
+}
