@@ -164,7 +164,7 @@ font-size:14px;
 <br><br>
 
 
-<button class="btn btn-primary" onclick="registerUser()">
+<button class="btn btn-primary" onclick="signup()">
 Register
 </button>
 
@@ -236,6 +236,88 @@ padding-bottom:70px;
 </script>
 <script src="/config.js"></script>
 <script src="/auth-system.js"></script>
+<script>
+
+async function signup() {
+    const emailEl = document.getElementById("email");
+    const passwordEl = document.getElementById("password");
+    const nameEl = document.getElementById("name");
+    const msgEl = document.getElementById("msg");
+
+    const email = emailEl ? emailEl.value.trim() : "";
+    const password = passwordEl ? passwordEl.value : "";
+    const name = nameEl ? nameEl.value.trim() : "";
+
+    if (!email || !password) {
+        if (msgEl) {
+            msgEl.innerText =
+                "Email and password are required.";
+        }
+        return;
+    }
+
+    try {
+        if (msgEl) {
+            msgEl.innerText = "Creating account...";
+        }
+
+        const response = await fetch("/api/auth", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                action: "signup",
+                email,
+                password,
+                name
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || data.error) {
+            if (msgEl) {
+                msgEl.innerText =
+                    data.error || "Registration failed.";
+            }
+            return;
+        }
+
+        if (data.user) {
+            localStorage.setItem(
+                "user",
+                JSON.stringify(data.user)
+            );
+
+            if (data.user.id) {
+                localStorage.setItem(
+                    "user_id",
+                    data.user.id
+                );
+            }
+        }
+
+        if (msgEl) {
+            msgEl.innerText =
+                "Account created successfully. Redirecting to login...";
+        }
+
+        setTimeout(function() {
+            window.location.href = "/login.html";
+        }, 800);
+
+    } catch (error) {
+        console.error("SIGNUP ERROR:", error);
+
+        if (msgEl) {
+            msgEl.innerText =
+                "Server error. Please try again.";
+        }
+    }
+}
+</script>
+
 <script src="/google-login.js"></script>
 <script>
   

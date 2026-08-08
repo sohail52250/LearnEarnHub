@@ -30,6 +30,10 @@ mode:"Single API Router"
 });
 
 
+// Authentication API
+const auth = require("./auth");
+app.post("/auth", auth);
+
 app.use("/courses", require("../routes/courses"));
 
 app.get("/jobs",(req,res)=>{
