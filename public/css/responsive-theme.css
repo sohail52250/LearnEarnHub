@@ -1,176 +1,113 @@
-/* ===================================
-   LearnEarnHub Global Responsive Theme
-   =================================== */
-
-/* Dynamic Colors */
 :root{
-  --bg:#ffffff;
-  --bg2:#f5f7fa;
-  --text:#222222;
-  --primary:#2563eb;
-  --secondary:#10b981;
-  --card:#ffffff;
-  --border:#e5e7eb;
-  --shadow:0 4px 15px rgba(0,0,0,.08);
-}
-
-/* Auto Dark Mode */
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0f172a;
-    --bg2:#1e293b;
-    --text:#f8fafc;
-    --primary:#60a5fa;
-    --secondary:#34d399;
-    --card:#1e293b;
-    --border:#334155;
-  }
+ --primary:#2563eb;
+ --primary-hover:#1d4ed8;
+ --secondary:#10b981;
+ --bg:#f8fafc;
+ --card:#ffffff;
+ --text:#0f172a;
+ --radius:16px;
+ --shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  font-size:16px;
-  scroll-behavior:smooth;
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
 }
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:system-ui,sans-serif;
-  overflow-x:hidden;
-  line-height:1.6;
+ background:var(--bg);
+ color:var(--text);
+ font-family:Inter,Arial,sans-serif;
+ overflow-x:hidden;
 }
 
-/* Containers */
-.container,
-.leh-container{
-  width:min(95%,1400px);
-  margin:auto;
+.container{
+ width:min(1200px,95%);
+ margin:auto;
 }
 
-/* Responsive Typography */
+.btn,
+button{
+ background:linear-gradient(135deg,#2563eb,#3b82f6);
+ color:white;
+ border:none;
+ border-radius:14px;
+ padding:12px 22px;
+ cursor:pointer;
+ font-weight:600;
+ transition:.3s;
+ box-shadow:var(--shadow);
+}
+
+.btn:hover,
+button:hover{
+ transform:translateY(-3px);
+}
+
+.card{
+ background:var(--card);
+ border-radius:20px;
+ padding:24px;
+ box-shadow:var(--shadow);
+}
+
+img{
+ max-width:100%;
+ height:auto;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:
+ repeat(auto-fit,minmax(280px,1fr));
+ gap:24px;
+}
+
+.leh-global-nav{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ padding:15px 20px;
+ background:white;
+ box-shadow:0 2px 10px rgba(0,0,0,.06);
+ position:sticky;
+ top:0;
+ z-index:1000;
+}
+
+.leh-global-nav a{
+ text-decoration:none;
+ color:var(--text);
+ font-weight:600;
+ padding:10px 15px;
+ border-radius:10px;
+}
+
+.leh-global-nav a:hover{
+ background:#eff6ff;
+ color:#2563eb;
+}
+
 h1{
-  font-size:clamp(2rem,5vw,4rem);
+ font-size:clamp(2rem,5vw,4rem);
 }
 
 h2{
-  font-size:clamp(1.5rem,4vw,3rem);
+ font-size:clamp(1.5rem,4vw,3rem);
 }
 
-h3{
-  font-size:clamp(1.2rem,3vw,2rem);
+p{
+ font-size:clamp(.95rem,1.5vw,1.1rem);
 }
 
-p,li,a,span{
-  font-size:clamp(.95rem,1.5vw,1.1rem);
-}
-
-/* Images */
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-/* Videos */
-video,
-iframe{
-  max-width:100%;
-}
-
-/* Buttons */
-button,
-.btn,
-input[type=submit]{
-  background:var(--primary);
-  color:#fff;
-  border:none;
-  padding:clamp(.7rem,2vw,1rem)
-          clamp(1rem,4vw,2rem);
-  border-radius:12px;
-  cursor:pointer;
-  font-size:clamp(.9rem,1.5vw,1rem);
-  transition:.3s;
-}
-
-button:hover,
-.btn:hover{
-  transform:translateY(-2px);
-  opacity:.9;
-}
-
-/* Cards */
-.card,
-.course-card,
-.task-card,
-.feature-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  padding:1.25rem;
-}
-
-/* Responsive Grid */
-.grid{
-  display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-}
-
-/* Flex Layout */
-.flex{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-/* Tables */
-table{
-  width:100%;
-  overflow-x:auto;
-  display:block;
-}
-
-/* Inputs */
-input,
-select,
-textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:10px;
-}
-
-/* Navigation */
-nav,
-.leh-global-nav{
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-}
-
-/* Mobile */
 @media(max-width:768px){
+ .leh-global-nav{
+   flex-direction:column;
+ }
 
-  .mobile-stack{
-    flex-direction:column;
-  }
-
-  nav ul{
-    flex-direction:column;
-    width:100%;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
+ .grid{
+   grid-template-columns:1fr;
+ }
 }
