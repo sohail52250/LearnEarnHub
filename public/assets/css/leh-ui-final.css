@@ -1,29 +1,41 @@
 /* =========================================================
-   LearnEarnHub — Clean, Light & Readable UI
+   LearnEarnHub — COOL BREEZE UI
+   Calm • Modern • Readable • Responsive
 ========================================================= */
 
 :root{
-  --leh-primary:#2563eb;
-  --leh-primary-dark:#1d4ed8;
-  --leh-success:#15803d;
-  --leh-danger:#dc2626;
+  --leh-bg:#f4f8fb;
+  --leh-surface:#ffffff;
+  --leh-surface-soft:#f8fbfd;
 
-  --leh-bg:#f8fafc;
-  --leh-card:#ffffff;
+  --leh-primary:#2878c8;
+  --leh-primary-dark:#1f5f9f;
+  --leh-primary-soft:#eaf4fc;
 
-  --leh-text:#172033;
-  --leh-heading:#0f172a;
-  --leh-muted:#64748b;
+  --leh-teal:#159a9c;
+  --leh-teal-soft:#e8f7f6;
 
-  --leh-border:#e2e8f0;
+  --leh-green:#23845a;
+  --leh-green-soft:#eaf7f0;
 
-  --leh-radius:12px;
-  --leh-shadow:0 2px 8px rgba(15,23,42,.06);
+  --leh-orange:#d97706;
+  --leh-orange-soft:#fff7e8;
+
+  --leh-red:#c24141;
+  --leh-red-soft:#fff0f0;
+
+  --leh-heading:#19324a;
+  --leh-text:#334b60;
+  --leh-muted:#718397;
+
+  --leh-border:#dce7ef;
+
+  --leh-radius:14px;
 }
 
-/* =========================
-   BASE
-========================= */
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   box-sizing:border-box;
@@ -36,10 +48,10 @@ html{
 }
 
 body{
-  width:100%;
-  min-width:0;
   margin:0!important;
   padding:0!important;
+  width:100%;
+  min-width:0;
 
   background:var(--leh-bg)!important;
   color:var(--leh-text)!important;
@@ -50,25 +62,28 @@ body{
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
+    Roboto,
     Arial,
     sans-serif!important;
 
   font-size:16px!important;
-  line-height:1.6!important;
+  line-height:1.65!important;
 
   overflow-x:hidden!important;
 }
 
-/* =========================
-   CONTENT WIDTH
-========================= */
+/* =========================================================
+   WIDTH / SCREEN FIT
+========================================================= */
 
 main,
 section,
+header,
+footer,
 .container,
 .leh-container{
   width:100%;
-  max-width:1200px;
+  max-width:1180px;
   margin-left:auto!important;
   margin-right:auto!important;
 }
@@ -78,9 +93,9 @@ main{
   padding-right:clamp(12px,3vw,28px);
 }
 
-/* =========================
+/* =========================================================
    HEADINGS
-========================= */
+========================================================= */
 
 h1,
 h2,
@@ -90,7 +105,8 @@ h5,
 h6{
   color:var(--leh-heading)!important;
   font-weight:700!important;
-  line-height:1.3!important;
+  line-height:1.28!important;
+  letter-spacing:-.01em!important;
 }
 
 h1{
@@ -102,42 +118,55 @@ h2{
 }
 
 h3{
-  font-size:clamp(1.15rem,2.5vw,1.6rem)!important;
+  font-size:clamp(1.15rem,2.5vw,1.55rem)!important;
 }
 
 p{
   color:var(--leh-text);
-  line-height:1.65;
+  line-height:1.7;
 }
 
 small{
   color:var(--leh-muted);
 }
 
-/* =========================
+/* =========================================================
+   LINKS
+========================================================= */
+
+a{
+  color:var(--leh-primary);
+  transition:color .15s ease,background .15s ease;
+}
+
+a:hover{
+  color:var(--leh-primary-dark);
+}
+
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 .leh-global-nav,
 .leh-nav{
   width:100%!important;
 
-  min-height:58px!important;
+  min-height:60px!important;
 
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
   flex-wrap:wrap!important;
 
-  gap:4px!important;
+  gap:5px!important;
 
-  padding:7px 12px!important;
+  padding:8px 12px!important;
 
-  background:#ffffff!important;
+  background:rgba(255,255,255,.96)!important;
 
   border-bottom:1px solid var(--leh-border)!important;
 
-  box-shadow:0 1px 5px rgba(15,23,42,.05)!important;
+  box-shadow:0 2px 10px rgba(40,70,95,.05)!important;
 
   position:sticky!important;
   top:0!important;
@@ -146,31 +175,27 @@ small{
 
 .leh-global-nav a,
 .leh-nav a{
-  color:#334155!important;
+  color:#3d5569!important;
 
   text-decoration:none!important;
 
   font-size:.92rem!important;
   font-weight:600!important;
 
-  padding:7px 11px!important;
+  padding:8px 12px!important;
 
-  border-radius:8px!important;
-
-  transition:
-    background .15s ease,
-    color .15s ease!important;
+  border-radius:9px!important;
 }
 
 .leh-global-nav a:hover,
 .leh-nav a:hover{
   color:var(--leh-primary)!important;
-  background:#eff6ff!important;
+  background:var(--leh-primary-soft)!important;
 }
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .btn,
 .btn-primary,
@@ -188,61 +213,68 @@ input[type="button"]{
   padding:9px 17px!important;
 
   background:var(--leh-primary)!important;
-
-  color:#ffffff!important;
+  color:#fff!important;
 
   border:1px solid var(--leh-primary)!important;
-  border-radius:9px!important;
+  border-radius:10px!important;
 
   font-family:inherit!important;
-  font-size:.95rem!important;
+  font-size:.94rem!important;
   font-weight:650!important;
 
   line-height:1.3!important;
-
   text-align:center!important;
   text-decoration:none!important;
 
   cursor:pointer!important;
 
-  box-shadow:none!important;
+  box-shadow:0 2px 6px rgba(40,120,200,.14)!important;
 
   transition:
-    background .15s ease,
-    border-color .15s ease,
-    transform .1s ease!important;
+    background .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease!important;
 }
 
 .btn:hover,
 .btn-primary:hover,
 button:hover{
   background:var(--leh-primary-dark)!important;
-  border-color:var(--leh-primary-dark)!important;
-  transform:none!important;
+
+  box-shadow:
+    0 4px 12px rgba(40,120,200,.20)!important;
+
+  transform:translateY(-1px)!important;
 }
 
-/* =========================
-   SUCCESS / EARNING BUTTONS
-========================= */
+/* =========================================================
+   SPECIAL ACTIONS
+========================================================= */
 
 .btn-success,
 .success,
 .earn,
 .earning{
-  background:var(--leh-success)!important;
-  border-color:var(--leh-success)!important;
+  background:var(--leh-green)!important;
+  border-color:var(--leh-green)!important;
   color:#fff!important;
 }
 
-/* =========================
+.btn-secondary{
+  background:var(--leh-teal)!important;
+  border-color:var(--leh-teal)!important;
+  color:#fff!important;
+}
+
+/* =========================================================
    CARDS
-========================= */
+========================================================= */
 
 .card,
 .leh-card,
 .quiz-box,
 .account-cta{
-  background:var(--leh-card)!important;
+  background:var(--leh-surface)!important;
 
   color:var(--leh-text)!important;
 
@@ -250,14 +282,30 @@ button:hover{
 
   border-radius:var(--leh-radius)!important;
 
-  box-shadow:var(--leh-shadow)!important;
+  box-shadow:
+    0 2px 10px rgba(35,65,90,.055)!important;
 
-  padding:clamp(15px,2.5vw,22px)!important;
+  padding:clamp(16px,2.5vw,23px)!important;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease!important;
 }
 
-/* =========================
+.card:hover,
+.leh-card:hover{
+  border-color:#c9dce9!important;
+
+  box-shadow:
+    0 5px 16px rgba(35,65,90,.08)!important;
+
+  transform:translateY(-1px)!important;
+}
+
+/* =========================================================
    GRID
-========================= */
+========================================================= */
 
 .grid,
 .leh-grid{
@@ -271,24 +319,29 @@ button:hover{
   gap:18px!important;
 }
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
   width:100%!important;
 
-  padding:clamp(24px,5vw,48px)!important;
+  padding:clamp(25px,5vw,48px)!important;
 
   margin-bottom:22px!important;
 
-  background:#eff6ff!important;
+  background:
+    linear-gradient(
+      135deg,
+      #edf7fd 0%,
+      #eef9f7 100%
+    )!important;
 
   color:var(--leh-text)!important;
 
-  border:1px solid #dbeafe!important;
+  border:1px solid #d8ebf0!important;
 
-  border-radius:16px!important;
+  border-radius:18px!important;
 
   box-shadow:none!important;
 
@@ -298,44 +351,90 @@ button:hover{
 .hero h1,
 .hero h2,
 .hero h3{
-  color:#1e3a8a!important;
+  color:var(--leh-heading)!important;
 }
 
 .hero p{
-  color:#475569!important;
+  color:#587083!important;
 }
 
-/* =========================
+/* =========================================================
+   OPTIONAL HERO ACCENT
+========================================================= */
+
+.hero::after{
+  content:"";
+  display:block;
+
+  width:54px;
+  height:3px;
+
+  margin:18px auto 0;
+
+  border-radius:99px;
+
+  background:var(--leh-teal);
+}
+
+/* =========================================================
    PROGRESS / BARS
-========================= */
+========================================================= */
 
 .progress,
 .progress-box,
 .bar{
   width:100%!important;
-
-  overflow:hidden!important;
-
-  border-radius:999px!important;
+  max-width:100%!important;
 }
 
 .progress{
-  height:10px!important;
+  height:9px!important;
 
-  background:#e2e8f0!important;
+  overflow:hidden!important;
+
+  background:#e5edf3!important;
+
+  border-radius:99px!important;
 }
 
 .progress-bar{
   height:100%!important;
 
-  background:var(--leh-primary)!important;
+  background:
+    linear-gradient(
+      90deg,
+      var(--leh-primary),
+      var(--leh-teal)
+    )!important;
 
-  border-radius:999px!important;
+  border-radius:99px!important;
 }
 
-/* =========================
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge{
+  display:inline-flex!important;
+
+  align-items:center!important;
+
+  padding:4px 9px!important;
+
+  border-radius:999px!important;
+
+  background:var(--leh-primary-soft)!important;
+
+  color:var(--leh-primary-dark)!important;
+
+  font-size:.8rem!important;
+
+  font-weight:650!important;
+}
+
+/* =========================================================
    FORMS
-========================= */
+========================================================= */
 
 input,
 select,
@@ -347,19 +446,23 @@ textarea{
 
   padding:9px 12px!important;
 
-  background:#ffffff!important;
+  background:#fff!important;
 
   color:var(--leh-text)!important;
 
-  border:1px solid #cbd5e1!important;
+  border:1px solid #cbd9e3!important;
 
-  border-radius:8px!important;
+  border-radius:9px!important;
 
   font-family:inherit!important;
 
   font-size:.95rem!important;
 
   outline:none!important;
+
+  transition:
+    border-color .15s ease,
+    box-shadow .15s ease!important;
 }
 
 input:focus,
@@ -367,46 +470,42 @@ select:focus,
 textarea:focus{
   border-color:var(--leh-primary)!important;
 
-  box-shadow:0 0 0 2px rgba(37,99,235,.10)!important;
+  box-shadow:
+    0 0 0 3px rgba(40,120,200,.09)!important;
 }
 
-/* =========================
-   LINKS
-========================= */
+/* =========================================================
+   TABLES
+========================================================= */
 
-a{
-  color:var(--leh-primary);
+table{
+  width:100%;
+  max-width:100%;
+  border-collapse:collapse;
 }
 
-a:hover{
-  color:var(--leh-primary-dark);
+th,
+td{
+  padding:10px;
+  border-bottom:1px solid var(--leh-border);
+  text-align:left;
 }
 
-/* =========================
-   BADGES
-========================= */
+/* =========================================================
+   MEDIA
+========================================================= */
 
-.badge{
-  display:inline-flex!important;
-
-  align-items:center!important;
-
-  padding:4px 9px!important;
-
-  border-radius:999px!important;
-
-  background:#eff6ff!important;
-
-  color:#1d4ed8!important;
-
-  font-size:.8rem!important;
-
-  font-weight:650!important;
+img,
+video,
+iframe,
+svg{
+  max-width:100%!important;
+  height:auto;
 }
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:768px){
 
@@ -431,7 +530,6 @@ a:hover{
   .leh-global-nav a,
   .leh-nav a{
     font-size:.82rem!important;
-
     padding:6px 8px!important;
   }
 
@@ -450,14 +548,14 @@ a:hover{
   }
 
   .hero{
-    padding:25px 16px!important;
+    padding:27px 16px!important;
     text-align:center!important;
   }
 }
 
-/* =========================
+/* =========================================================
    SMALL PHONES
-========================= */
+========================================================= */
 
 @media(max-width:420px){
 
@@ -485,26 +583,26 @@ a:hover{
   }
 }
 
-/* =========================
+/* =========================================================
    ACCESSIBILITY
-========================= */
+========================================================= */
 
 :focus-visible{
-  outline:3px solid rgba(37,99,235,.30)!important;
+  outline:3px solid rgba(40,120,200,.25)!important;
   outline-offset:2px!important;
 }
 
-/* Prevent accidental oversized elements */
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-img,
-video,
-iframe,
-svg{
-  max-width:100%!important;
-}
+@media(prefers-reduced-motion:reduce){
 
-table{
-  max-width:100%!important;
-  overflow-x:auto;
-  display:block;
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
 }
