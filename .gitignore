@@ -6,3 +6,10 @@ uploads/
 backups/
 .env*
 google-oauth-config.txt
+backup-ui-*/
+backup-ui-*
+public/*.before-*
+public/*.html.before-*
+public/*before-structure-fix*
+public/*before-google-fix*
+public/*before-main-google-cleanup*
