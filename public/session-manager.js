@@ -24,12 +24,13 @@ function saveSession(data){
 
 
 function logout(){
-
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("role");
-
-    location.href="/index.html";
+localStorage.removeItem("token");
+localStorage.removeItem("user");
+localStorage.removeItem("role");
+localStorage.removeItem("user_id");
+localStorage.removeItem("access_token");
+localStorage.removeItem("refresh_token");
+location.href="/index.html";
 }
 
 
