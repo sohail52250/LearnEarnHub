@@ -65,6 +65,10 @@ margin:8px;
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
   <link rel="stylesheet" href="/css/leh-global-spacing.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+
 </head>
 
 
@@ -124,128 +128,133 @@ Loading certificates...
 <script>
 
 
-async function loadDashboard(){
 
+async function loadDashboard() {
+  try {
+    if (
+      !window.supabase ||
+      !window.SUPABASE_URL ||
+      !window.SUPABASE_ANON_KEY
+    ) {
+      throw new Error("Supabase configuration is not loaded.");
+    }
 
-const user_id =
-new URLSearchParams(location.search)
-.get("user_id");
+    const client = window.supabase.createClient(
+      window.SUPABASE_URL,
+      window.SUPABASE_ANON_KEY
+    );
 
+    const { data: authData, error: authError } =
+      await client.auth.getUser();
 
+    if (authError || !authData || !authData.user) {
+      window.location.replace("/login.html");
+      return;
+    }
 
-if(!user_id){
+    const user = authData.user;
+    const user_id = user.id;
 
-document.body.innerHTML=
-"<h2>User ID missing</h2>";
+    try {
+      localStorage.setItem("user_id", user_id);
+      localStorage.setItem("user", JSON.stringify(user));
+    } catch (_) {}
 
-return;
+    const res = await fetch(
+      "/api/dashboard?user_id=" +
+      encodeURIComponent(user_id)
+    );
 
+    if (!res.ok) {
+      throw new Error(
+        "Dashboard API returned HTTP " + res.status
+      );
+    }
+
+    const data = await res.json();
+
+    let html = "My Courses";
+
+    (data.courses || []).forEach(c => {
+      const percentage = Number(c.percentage) || 0;
+
+      html += `
+        <h3>${c.title || ""}</h3>
+        <p>${c.category || ""}</p>
+        <div class="progress">
+          <div class="bar" style="width:${percentage}%">
+            ${percentage}%
+          </div>
+        </div>
+        <p>
+          ${Number(c.completed_lessons) || 0}/
+          ${Number(c.total_lessons) || 0}
+          Lessons Completed
+        </p>
+        <hr>
+      `;
+    });
+
+    const coursesElement =
+      document.getElementById("courses");
+
+    if (coursesElement) {
+      coursesElement.innerHTML = html;
+    }
+
+    let cert = "";
+
+    if (
+      Array.isArray(data.certificates) &&
+      data.certificates.length
+    ) {
+      cert = "🏆 Certificates";
+
+      data.certificates.forEach(c => {
+        cert += `
+          <div class="cert">
+            Certificate:
+            ${c.certificate_code || "Issued"}
+            <br>
+            Course ID:
+            ${c.course_id || ""}
+          </div>
+        `;
+      });
+    } else {
+      cert = "No certificates yet";
+    }
+
+    const certificatesElement =
+      document.getElementById("certificates");
+
+    if (certificatesElement) {
+      certificatesElement.innerHTML = cert;
+    }
+
+  } catch (error) {
+    console.error("Dashboard load failed:", error);
+
+    const coursesElement =
+      document.getElementById("courses");
+
+    if (coursesElement) {
+      coursesElement.innerHTML =
+        "Unable to load your dashboard right now.";
+    }
+
+    const certificatesElement =
+      document.getElementById("certificates");
+
+    if (certificatesElement) {
+      certificatesElement.innerHTML =
+        "Please sign in again if the problem continues.";
+    }
+  }
 }
-
-
-
-const res=await fetch(
-"/api/dashboard?user_id="+user_id
-);
-
-
-
-const data=await res.json();
-
-
-
-let html="<h2>My Courses</h2>";
-
-
-
-data.courses.forEach(c=>{
-
-
-html+=`
-
-<h3>${c.title}</h3>
-
-<p>${c.category}</p>
-
-<div class="progress">
-
-<div class="bar" style="width:${c.percentage}%">
-
-${c.percentage}%
-
-</div>
-
-</div>
-
-
-<p>
-${c.completed_lessons}/${c.total_lessons}
-Lessons Completed
-</p>
-
-
-<hr>
-
-`;
-
-});
-
-
-document.getElementById("courses")
-.innerHTML=html;
-
-
-
-let cert="";
-
-
-
-if(data.certificates.length){
-
-
-cert="<h2>🏆 Certificates</h2>";
-
-
-data.certificates.forEach(c=>{
-
-
-cert+=`
-
-<div class="cert">
-
-Certificate:
-${c.certificate_code || "Issued"}
-
-<br>
-
-Course ID:
-${c.course_id}
-
-</div>
-
-`;
-
-
-});
-
-
-}else{
-
-
-cert="<h2>No certificates yet</h2>";
-
-}
-
-
-
-document.getElementById("certificates")
-.innerHTML=cert;
-
-
-}
-
 
 loadDashboard();
+
 
 
 </script>
@@ -293,8 +302,6 @@ padding-bottom:70px;
 }
 }
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="/auth-system.js"></script>
 <script src="/global-layout.js"></script>

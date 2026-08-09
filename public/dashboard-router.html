@@ -66,7 +66,7 @@ table{
 </style>
 
 <title>Dashboard Router</title>
-<script src="/role-access-control.js"></script>
+
 
 <link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/assets/css/leh-design-system.css">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -84,6 +84,17 @@ table{
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
   <link rel="stylesheet" href="/css/leh-global-spacing.css">
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/role-access-control.js"></script>
 </head>
 
 
@@ -132,11 +143,7 @@ Checking account permissions...
 
 <script>
 
-const user=getCurrentUser();
 
-if(user){
-
-redirectByRole(user.role);
 
 }
 
@@ -188,10 +195,34 @@ padding-bottom:70px;
 }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script src="/auth-system.js"></script>
     <script src="/mobile-nav.js"></script>
+
+
+
+
+<script>
+(async function () {
+  "use strict";
+
+  try {
+    const user = await getCurrentUser();
+
+    if (user) {
+      redirectByRole(user.role);
+    }
+  } catch (error) {
+    console.error(
+      "Dashboard authentication routing failed:",
+      error
+    );
+
+    window.location.replace("/login.html");
+  }
+})();
+</script>
 </body>
 
 </html>
