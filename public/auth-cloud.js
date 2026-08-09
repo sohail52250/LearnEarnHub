@@ -27,17 +27,6 @@ alert(error.message);
 return;
 
 }
-
-
-await client.from("profiles").insert({
-
-id:data.user.id,
-name:name,
-email:email
-
-});
-
-
 alert("Account created successfully!");
 
 window.location="/login.html";

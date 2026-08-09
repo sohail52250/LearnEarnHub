@@ -1,97 +1,66 @@
+async function registerUser() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const passwordElement = document.getElementById("password");
+    const password = passwordElement ? passwordElement.value : "";
+    const roleElement = document.getElementById("role");
+    const role = roleElement ? roleElement.value : "student";
 
-async function registerUser(){
+    if (!name || !email || !password) {
+        alert("Please enter your name, email and password.");
+        return;
+    }
 
-const name =
-document.getElementById("name").value;
+    const client = supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
 
+    const { data, error } = await client.auth.signUp({
+        email,
+        password,
+        options: {
+            data: {
+                name,
+                full_name: name,
+                role
+            }
+        }
+    });
 
-const email =
-document.getElementById("email").value;
+    if (error) {
+        console.error("Registration error:", error);
+        alert(error.message);
+        return;
+    }
 
+    if (!data.user) {
+        alert("Registration started. Please check your email to confirm your account.");
+        return;
+    }
 
-const role =
-document.getElementById("role").value;
+    /*
+     * The database trigger creates:
+     *   profiles
+     *   user_profiles
+     *   user_roles
+     *
+     * automatically after auth.users is created.
+     */
 
+    localStorage.setItem(
+        "user",
+        JSON.stringify({
+            id: data.user.id,
+            role
+        })
+    );
 
-
-const client =
-supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-);
-
-
-
-const {data:user,error:userError} =
-await client
-.from("user_profiles")
-.insert({
-
-full_name:name,
-
-profile_type:role
-
-})
-.select()
-.single();
-
-
-
-if(userError){
-
-console.log(userError);
-
-return;
-
+    if (data.session) {
+        window.location.href = "/dashboard-router.html";
+    } else {
+        alert("Registration successful. Please check your email to confirm your account.");
+    }
 }
 
-
-
-await client
-.from("user_roles")
-.insert({
-
-user_id:user.user_id,
-
-role_name:role
-
-});
-
-
-
-await client
-.from("onboarding_progress")
-.insert({
-
-user_id:user.user_id,
-
-account_type:role,
-
-step:"registration_completed"
-
-});
-
-
-
-localStorage.setItem(
-"user",
-JSON.stringify({
-
-id:user.user_id,
-
-role:role
-
-})
-);
-
-
-
-window.location.href="/dashboard-router.html";
-
-
-}
-
-
-
-window.registerUser=registerUser;
-
+window.registerUser = registerUser;

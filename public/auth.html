@@ -141,20 +141,8 @@ SUPABASE_ANON_KEY
 
 
 
-async function signup(){
-
-const email=
-document.getElementById("email").value;
-
-const password=
-document.getElementById("password").value;
-
-
-const {error}=await client.auth.signUp({
-
-email,
-password
-
+function signup() {
+    window.location.href = "/register-v2.html";
 });
 
 

@@ -238,21 +238,9 @@ padding-bottom:70px;
 <script src="/auth-system.js"></script>
 <script>
 
-async function signup() {
-    const emailEl = document.getElementById("email");
-    const passwordEl = document.getElementById("password");
-    const nameEl = document.getElementById("name");
-    const msgEl = document.getElementById("msg");
-
-    const email = emailEl ? emailEl.value.trim() : "";
-    const password = passwordEl ? passwordEl.value : "";
-    const name = nameEl ? nameEl.value.trim() : "";
-
-    if (!email || !password) {
-        if (msgEl) {
-            msgEl.innerText =
-                "Email and password are required.";
-        }
+function signup() {
+    window.location.href = "/register-v2.html";
+}
         return;
     }
 
