@@ -44,7 +44,37 @@
           window.SUPABASE_ANON_KEY
         );
 
-        const { data, error } = await client.auth.getUser();
+        
+            /*
+             * Restore the session created by login.html.
+             * login.html stores the Supabase access/refresh tokens
+             * after successful /api/auth authentication.
+             */
+            try {
+              const accessToken = localStorage.getItem("access_token");
+              const refreshToken = localStorage.getItem("refresh_token");
+
+              if (accessToken && refreshToken) {
+                const { error: sessionError } = await client.auth.setSession({
+                  access_token: accessToken,
+                  refresh_token: refreshToken
+                });
+
+                if (sessionError) {
+                  console.warn(
+                    "Saved Supabase session could not be restored:",
+                    sessionError
+                  );
+                }
+              }
+            } catch (sessionError) {
+              console.warn(
+                "Supabase session restoration failed:",
+                sessionError
+              );
+            }
+
+            const { data, error } = await client.auth.getUser();
 
         if (!error && data && data.user) {
           return {
