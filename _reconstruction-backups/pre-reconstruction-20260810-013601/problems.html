@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>Computer Problem Solving</title></head>
+<body>
+<h1>Computer Problem Solving</h1>
+<p>Learn basic troubleshooting techniques.</p>
+<ul>
+<li>Restart computer</li>
+<li>Check internet connection</li>
+<li>Update software</li>
+<li>Clear browser cache</li>
+</ul>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ú©Ù…Ù¾ÛŒÙˆÙ¹Ø± Ú©Û’ Ø¹Ø§Ù… Ù…Ø³Ø§Ø¦Ù„ Ø­Ù„ Ú©Ø±Ù†Ø§ Ø³ÛŒÚ©Ú¾ÛŒÚºÛ”</p>
+<a href="/learning-guide.html">Back</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

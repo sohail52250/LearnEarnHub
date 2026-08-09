@@ -1,0 +1,43 @@
+{
+  "word-basics": {
+    "skill": "Microsoft Word",
+    "jobs": [
+      "Office Assistant",
+      "Document Specialist",
+      "Virtual Assistant"
+    ]
+  },
+
+  "excel-basics": {
+    "skill": "Microsoft Excel",
+    "jobs": [
+      "Data Entry Assistant",
+      "Excel Assistant",
+      "Reporting Assistant"
+    ]
+  },
+
+  "internet-browsing": {
+    "skill": "Internet Skills",
+    "jobs": [
+      "Virtual Assistant",
+      "Online Research Assistant"
+    ]
+  },
+
+  "digital-marketing": {
+    "skill": "Digital Marketing",
+    "jobs": [
+      "Social Media Assistant",
+      "Marketing Assistant"
+    ]
+  },
+
+  "freelancing-basics": {
+    "skill": "Freelancing",
+    "jobs": [
+      "Freelance Assistant",
+      "Online Service Provider"
+    ]
+  }
+}

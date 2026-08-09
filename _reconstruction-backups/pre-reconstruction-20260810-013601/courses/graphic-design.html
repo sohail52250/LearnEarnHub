@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Graphic Design Fundamentals</title>
+</head>
+<body>
+<h1>Graphic Design Fundamentals</h1>
+
+<p>
+Graphic design combines creativity and communication through visual elements.
+Designers create logos, marketing materials, and digital content.
+</p>
+
+<a href="/courses.html">Back to Courses</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

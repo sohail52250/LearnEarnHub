@@ -1,0 +1,16 @@
+﻿LearnEarnHub Production Preservation Checkpoint
+
+Timestamp: 20260810-022104
+Production URL: https://learn-earnhub.vercel.app
+Git HEAD: db1940714408135fb90627ecabebeb9b6523c93e
+Backup tag: production-backup-20260810-022104
+Backup branch: production-backup-20260810-022104
+
+Live API:
+{"name":"Learn & Earn Hub","status":"Running","database":"Supabase","mode":"Single API Router"}
+
+Pages PASS: 15
+Pages FAIL: 0
+
+This checkpoint is the rollback baseline for the reconstruction migration.
+Supabase production data must remain unchanged.

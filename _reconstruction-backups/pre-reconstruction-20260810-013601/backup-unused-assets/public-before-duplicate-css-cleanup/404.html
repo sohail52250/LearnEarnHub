@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 - Page Not Found | LearnEarnHub</title>
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+<link rel="stylesheet" href="/assets/css/leh-design-system.css">
+<link rel="stylesheet" href="/assets/css/leh-design-system.css">
+</head>
+<body>
+<div id="global-header"></div>
+<h1>404 - Page Not Found</h1>
+<p>The page you are looking for does not exist.</p>
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/courses.html">Courses</a></li>
+<li><a href="/jobs.html">Jobs</a></li>
+<li><a href="/marketplace.html">Marketplace</a></li>
+</ul>
+<button class="btn btn-primary" type="button" onclick="googleLogin()">Sign in with Google</button>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.getElementById('google-signin')?.onclick = () => {
+    googleLogin();
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+<script src="/auth-system.js"></script>
+<script src="/config.js"></script>
+
+<script src="/logout.js"></script>
+<script src="/global-layout.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

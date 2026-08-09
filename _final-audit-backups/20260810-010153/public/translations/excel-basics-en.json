@@ -1,0 +1,13 @@
+{
+  "title": "Microsoft Excel Basics",
+  "intro": "Learn how to create spreadsheets, organize data, use formulas and manage information professionally.",
+  "topic1": "Understanding Excel Interface",
+  "topic1_text": "Learn about worksheets, rows, columns, cells, ribbons and basic Excel tools.",
+  "topic2": "Entering and Formatting Data",
+  "topic2_text": "Learn how to enter information, adjust cell formatting and make your spreadsheet easier to read.",
+  "topic3": "Using Basic Formulas",
+  "topic3_text": "Learn simple formulas like SUM, AVERAGE and basic calculations to work faster.",
+  "topic4": "Creating Simple Tables",
+  "topic4_text": "Organize your information into tables and manage data efficiently.",
+  "practice": "Practice creating a personal budget sheet using Excel."
+}

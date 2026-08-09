@@ -1,0 +1,862 @@
+public/index.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/index.html:<meta name="description" content="Learn computer skills, digital skills, Microsoft Office, freelancing basics and practical courses step by step.">
+public/register.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/register.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/register.html:<meta name="description" content="Learn register and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/register.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/login.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/market.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/market.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/market.html:<meta name="description" content="Learn market and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/market.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/dashboard.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/dashboard.html:<meta name="description" content="Learn dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/dashboard.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/post-ad.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/post-ad.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/post-ad.html:<meta name="description" content="Learn post ad and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/post-ad.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/post-ad.html:<input name="title" placeholder="Title English"><br>
+public/post-ad.html:<input name="title_ur" placeholder="عنوان اردو"><br>
+public/post-ad.html:<textarea name="description" placeholder="Description English"></textarea><br>
+public/post-ad.html:<textarea name="description_ur" placeholder="تفصیل اردو"></textarea><br>
+public/post-ad.html:<input name="category" placeholder="Category"><br>
+public/post-ad.html:<input name="contact" placeholder="Phone / WhatsApp"><br>
+public/post-ad.html:<input name="location" placeholder="City"><br>
+public/learn.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/learn.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/learn.html:<meta name="description" content="Learn learn and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/learn.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/add-course.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/add-course.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/add-course.html:<meta name="description" content="Learn add course and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/add-course.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/admin/index.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/admin/index.html:<meta name="description" content="Learn index and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/admin/index.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/privacy.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/privacy.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/privacy.html:<meta name="description" content="Learn privacy and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/privacy.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/terms.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/terms.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/terms.html:<meta name="description" content="Learn terms and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/terms.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/profile.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/profile.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/profile.html:<meta name="description" content="Learn profile and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/profile.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/about.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/about.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/about.html:<meta name="description" content="Learn about and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/about.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/courses.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/contact.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/contact.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/contact.html:<meta name="description" content="Learn contact and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/contact.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/faq.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/roadmap.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/roadmap.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/roadmap.html:<meta name="description" content="Learn roadmap and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/roadmap.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/glossary.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/glossary.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/glossary.html:<meta name="description" content="Learn glossary and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/glossary.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/freelancing.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/freelancing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/freelancing.html:<meta name="description" content="Learn freelancing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/freelancing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lesson-template.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lesson-template.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lesson-template.html:<meta name="description" content="Learn lesson template and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lesson-template.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/excel-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/excel-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/excel-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/excel-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/excel-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/internet-browsing.html:<input type="radio" name="q1" value="correct">
+public/lessons/internet-browsing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/internet-browsing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/internet-browsing.html:<input type="radio" name="q2" value="correct">
+public/lessons/internet-browsing.html:<input type="radio" name="q2" value="wrong">
+public/lessons/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/powerpoint-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/windows-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/windows-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/windows-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/windows-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/windows-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/word-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/word-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/word-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/word-before-interactive.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/word-before-interactive.html:<meta name="description" content="Learn word before interactive and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/word-before-interactive.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/word-before-interactive.html:<input type="radio" name="q1" value="correct">
+public/lessons/word-before-interactive.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-before-interactive.html:<input type="radio" name="q1" value="wrong">
+public/lessons/word-before-interactive.html:<input type="radio" name="q2" value="correct">
+public/lessons/word-before-interactive.html:<input type="radio" name="q2" value="wrong">
+public/lessons/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/email-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/email-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/email-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/email-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/email-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/google-search.html:<input type="radio" name="q1" value="correct">
+public/lessons/google-search.html:<input type="radio" name="q1" value="wrong">
+public/lessons/google-search.html:<input type="radio" name="q1" value="wrong">
+public/lessons/google-search.html:<input type="radio" name="q2" value="correct">
+public/lessons/google-search.html:<input type="radio" name="q2" value="wrong">
+public/lessons/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/online-safety.html:<input type="radio" name="q1" value="correct">
+public/lessons/online-safety.html:<input type="radio" name="q1" value="wrong">
+public/lessons/online-safety.html:<input type="radio" name="q1" value="wrong">
+public/lessons/online-safety.html:<input type="radio" name="q2" value="correct">
+public/lessons/online-safety.html:<input type="radio" name="q2" value="wrong">
+public/lessons/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/cloud-storage.html:<input type="radio" name="q1" value="correct">
+public/lessons/cloud-storage.html:<input type="radio" name="q1" value="wrong">
+public/lessons/cloud-storage.html:<input type="radio" name="q1" value="wrong">
+public/lessons/cloud-storage.html:<input type="radio" name="q2" value="correct">
+public/lessons/cloud-storage.html:<input type="radio" name="q2" value="wrong">
+public/lessons/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/typing-practice.html:<input type="radio" name="q1" value="correct">
+public/lessons/typing-practice.html:<input type="radio" name="q1" value="wrong">
+public/lessons/typing-practice.html:<input type="radio" name="q1" value="wrong">
+public/lessons/typing-practice.html:<input type="radio" name="q2" value="correct">
+public/lessons/typing-practice.html:<input type="radio" name="q2" value="wrong">
+public/lessons/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/file-management.html:<input type="radio" name="q1" value="correct">
+public/lessons/file-management.html:<input type="radio" name="q1" value="wrong">
+public/lessons/file-management.html:<input type="radio" name="q1" value="wrong">
+public/lessons/file-management.html:<input type="radio" name="q2" value="correct">
+public/lessons/file-management.html:<input type="radio" name="q2" value="wrong">
+public/lessons/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/html-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/html-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/html-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/html-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/html-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/css-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/css-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/css-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/css-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/css-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/freelancing-basics.html:<input type="radio" name="q1" value="correct">
+public/lessons/freelancing-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/freelancing-basics.html:<input type="radio" name="q1" value="wrong">
+public/lessons/freelancing-basics.html:<input type="radio" name="q2" value="correct">
+public/lessons/freelancing-basics.html:<input type="radio" name="q2" value="wrong">
+public/lessons/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons/digital-marketing.html:<input type="radio" name="q1" value="correct">
+public/lessons/digital-marketing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/digital-marketing.html:<input type="radio" name="q1" value="wrong">
+public/lessons/digital-marketing.html:<input type="radio" name="q2" value="correct">
+public/lessons/digital-marketing.html:<input type="radio" name="q2" value="wrong">
+public/lessons.before-quiz-upgrade/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/email-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/google-search.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/online-safety.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/cloud-storage.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/typing-practice.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/file-management.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/html-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/css-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/freelancing-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-quiz-upgrade/digital-marketing.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-quiz-upgrade/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-quiz-upgrade/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-quiz-upgrade/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/email-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/google-search.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/online-safety.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/cloud-storage.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/typing-practice.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/file-management.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/html-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/css-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/freelancing-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-content-expansion/digital-marketing.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-content-expansion/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-content-expansion/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-content-expansion/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/admin.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/lessons.before-progress/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-progress/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-progress/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-progress/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-progress/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-progress/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-progress/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-progress/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-progress/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-progress/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-progress/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-projects/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-projects/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-projects/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-projects/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-projects/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-projects/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-projects/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-projects/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-projects/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-projects/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-projects/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/completion.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/completion.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/completion.html:<meta name="description" content="Learn completion and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/completion.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/search.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/search.html:<meta name="description" content="Learn search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/learning-guide.html:<meta name="description" content="Learn & Earn Hub teaches practical computer skills, digital skills, freelancing basics and online learning for beginners.">
+public/learning-guide.html:<meta name="keywords" content="computer skills, digital skills, Microsoft Word, Excel, PowerPoint, freelancing, online learning">
+public/learning-guide.html:<meta name="author" content="Learn & Earn Hub">
+public/learning-guide.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/learning-guide.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/learning-guide.html:<meta name="description" content="Learn learning guide and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/learning-guide.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/computer-basics.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/computer-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/computer-basics.html:<meta name="description" content="Learn computer basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/computer-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/internet-safety.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/internet-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/internet-safety.html:<meta name="description" content="Learn internet safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/internet-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/digital-skills.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/digital-skills.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/digital-skills.html:<meta name="description" content="Learn digital skills and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/digital-skills.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/email-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/google-search.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/online-safety.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/cloud-storage.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/typing-practice.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/file-management.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/html-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/css-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/freelancing-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/digital-marketing.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/excel-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/internet-browsing.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/powerpoint-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/windows-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/word-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/email-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/google-search.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/online-safety.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/cloud-storage.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/typing-practice.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/file-management.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/html-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/css-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/freelancing-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-complete-learning/lessons/digital-marketing.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-complete-learning/lessons/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-complete-learning/lessons/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-complete-learning/lessons/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-interactive-upgrade/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-interactive-upgrade/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-interactive-upgrade/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-learning-content/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-learning-content/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-learning-content/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/excel-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/excel-basics.html:<meta name="description" content="Learn excel basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/excel-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/internet-browsing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/internet-browsing.html:<meta name="description" content="Learn internet browsing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/internet-browsing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/powerpoint-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/powerpoint-basics.html:<meta name="description" content="Learn powerpoint basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/powerpoint-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/windows-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/windows-basics.html:<meta name="description" content="Learn windows basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/windows-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/word-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/word-basics.html:<meta name="description" content="Learn word basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/word-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/backup-before-new-courses.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/backup-before-new-courses.html:<meta name="description" content="Learn backup before new courses and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/backup-before-new-courses.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/email-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/email-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/email-basics.html:<meta name="description" content="Learn email basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/email-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/google-search.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/google-search.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/google-search.html:<meta name="description" content="Learn google search and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/google-search.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/online-safety.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/online-safety.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/online-safety.html:<meta name="description" content="Learn online safety and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/online-safety.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/cloud-storage.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/cloud-storage.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/cloud-storage.html:<meta name="description" content="Learn cloud storage and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/cloud-storage.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/typing-practice.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/typing-practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/typing-practice.html:<meta name="description" content="Learn typing practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/typing-practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/file-management.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/file-management.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/file-management.html:<meta name="description" content="Learn file management and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/file-management.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/html-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/html-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/html-basics.html:<meta name="description" content="Learn html basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/html-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/css-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/css-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/css-basics.html:<meta name="description" content="Learn css basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/css-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/freelancing-basics.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/freelancing-basics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/freelancing-basics.html:<meta name="description" content="Learn freelancing basics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/freelancing-basics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/lessons.before-full-content/digital-marketing.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/lessons.before-full-content/digital-marketing.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/lessons.before-full-content/digital-marketing.html:<meta name="description" content="Learn digital marketing and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/lessons.before-full-content/digital-marketing.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/student-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/student-dashboard.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/student-dashboard.html:<meta name="description" content="Learn student dashboard and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/student-dashboard.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/certificate.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/certificate.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/certificate.html:<meta name="description" content="Learn certificate and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/certificate.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/practice.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/practice.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/practice.html:<meta name="description" content="Learn practice and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/practice.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/my-courses.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/my-courses.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/my-courses.html:<meta name="description" content="Learn my courses and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/my-courses.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/quiz.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/quiz.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/quiz.html:<meta name="description" content="Learn quiz and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/quiz.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/quiz.html:<input type="radio" name="q1" value="1">
+public/quiz.html:<input type="radio" name="q1" value="0">
+public/quiz.html:<input type="radio" name="q2" value="1">
+public/quiz.html:<input type="radio" name="q2" value="0">
+public/quiz.html:<input type="radio" name="q3" value="1">
+public/quiz.html:<input type="radio" name="q3" value="0">
+public/auth-cloud.js:const name=document.getElementById("name").value;
+public/quiz.js:'input[name="answer"]:checked'
+public/verify-certificate.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/verify-certificate.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/verify-certificate.html:<meta name="description" content="Learn verify certificate and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/verify-certificate.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/admin-analytics.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-analytics.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/admin-analytics.html:<meta name="description" content="Learn admin analytics and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/admin-analytics.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/seo-meta.html:<meta name="description"
+public/seo-meta.html:<meta name="keywords"
+public/marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/marketplace.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/marketplace.html:<meta name="description" content="Learn marketplace and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/marketplace.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/feedback.js:const name=document.getElementById("feedback-name").value;
+public/feedback.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/feedback.html:<meta name="google-site-verification" content="Y2BUy8sqyn60btWaxWaRoW82IIMb_-RnKLafC5xHoYI" />
+public/feedback.html:<meta name="description" content="Learn feedback and improve your computer and digital skills with Learn & Earn Hub. Free beginner-friendly lessons.">
+public/feedback.html:<meta name="keywords" content="computer skills, digital skills, online learning, beginner courses, Learn Earn Hub">
+public/opportunities.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/employer-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/jobs.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/jobs.html:<meta name="description" content="Find skill based opportunities and jobs.">
+public/post-job.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/career-profile.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-dashboard.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/candidate-profile.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/study-plan.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-register.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/businesses.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/post-opportunity.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/applications.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/employer-applications.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/learner-profile-view.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-verification.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/career-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-marketplace.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/post-business-offer.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-matching.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/opportunity-matches.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/run-matching.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/profile-onboarding.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/my-badges.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/learner-verification.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-talent-search.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/referral-performance.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/referral-score.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/forgot-password.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/reset-password.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/course-categories.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/instructor-apply.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-apply.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-course-review.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/instructor-feedback.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-course-publishing.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-business-verification-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-applications-center.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/business-inventory-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-ad-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-orders.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-revenue-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/featured-businesses.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/advertisement-packages.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/submit-advertisement.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-advertisement-review.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/platform-disclaimer.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-trust-center-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-ad-payment.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-advertisement-status-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-inquiry-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-featured.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/ai-ad-review-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/sell-business.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-sale-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-sale-disclaimer.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/holding-company-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-administrator-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-finance-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-chat.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/platform-id.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-payment.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/meeting-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/ai-deal-summary.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-deal-control.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-negotiation.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-business-deals.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-payment-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-verification.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-business-verification.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/referral-business-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-ambassador.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/learner-dashboard.html:<meta name="viewport" content="width=device-width,initial-scale=1">
+public/referral-manager-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/sponsor-opportunities.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/sponsor-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-control-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/signup-role.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/course-progress.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/matched-opportunities.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/referral-business-submit.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-referral-control.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/instructors.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/instructor-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/create-course.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-vacancies.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-ai-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/course-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-course-review-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/learner-career-passport.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-trust-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-reviews.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-product-add.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/product-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-terms.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-ad-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-inquiry.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-review.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-business-investigation.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-premium.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-analytics-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/add-business-product.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-stock-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-product-control.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-product-manager.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-disclaimer.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/ai-product-review-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-sale-inquiry.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-transfer-history.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-management-disclaimer.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-asset-register.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-team-management.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-management-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/investor-management.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-financial-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/ai-deal-room.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/entity-verification.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-proposal.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-certificate.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-contract.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-deal-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-deal-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-payment-packages.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/guides.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-control-center-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/ai-review-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/invoice-view.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/advertisement-packages-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/payment-history.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/due-diligence-room.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-contract.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-profile.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-control-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/login-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/verification-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/navigation-hub.html:<meta name="viewport" content="width=device-width, initial-scale=1">
+public/earning-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/account-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/merger-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/ai-deal-matching.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/role-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/register-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/user-rules.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-rules.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/reporting-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/marketplace-orders.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/marketplace-review.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/marketplace-chat.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/buyer-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/order-tracking.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/sell-company.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/acquisition-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-exchange-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-safety-rules.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-verification.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/investor-profile.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/company-trust-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-compliance-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-verification-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/signup-v2.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/profile-completion.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/post-earning-task.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/learner-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/advertisement-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/safety-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/payment-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/help-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/payment-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/admin-payment-review.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/product-inquiry.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/seller-dashboard.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/business-buy-marketplace.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/partnership-request.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/deal-progress.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/account-center.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/dashboard-router.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/onboarding-guide.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+public/platform-sitemap.html:<meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -1,0 +1,7 @@
+﻿{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LearnEarnHub",
+  "url": "https://learn-earnhub.vercel.app/",
+  "description": "A platform connecting learning, business opportunities, corporate business exchange and developer opportunities."
+}

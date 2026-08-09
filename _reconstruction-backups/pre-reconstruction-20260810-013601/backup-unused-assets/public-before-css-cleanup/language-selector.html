@@ -1,0 +1,39 @@
+<div class="card" id="language-box">
+
+<h3>
+🌐 Language / زبان / اللغة / Taal
+</h3>
+
+<button class="btn btn-primary" onclick="setLanguage('en')">
+🇬🇧 English
+</button>
+
+<button class="btn btn-primary" onclick="setLanguage('ur')">
+🇵🇰 اردو
+</button>
+
+<button class="btn btn-primary" onclick="setLanguage('ar')">
+🇸🇦 العربية
+</button>
+
+<button class="btn btn-primary" onclick="setLanguage('nl')">
+🇳🇱 Nederlands
+</button>
+
+</div>
+
+<button id="google-signin" class="btn btn-primary">Sign in with Google</button>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.getElementById('google-signin')?.addEventListener('click', function(){
+    googleLogin();
+  });
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+
+
+

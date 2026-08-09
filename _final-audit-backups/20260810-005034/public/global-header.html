@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="/css/leh-global-spacing.css">
+<header class="leh-header">
+
+<div class="leh-logo">
+🚀 LearnEarnHub
+</div>
+
+
+<nav class="leh-nav" aria-label="Main navigation">
+
+<a href="/index.html">Home</a>
+<a href="/courses.html">Learning</a>
+<a href="/matched-opportunities.html">Opportunities</a>
+<a href="/business-marketplace.html">Business</a>
+<a href="/guides.html">Guides</a>
+<a href="/contact.html">Contact</a>
+
+
+<a href="/business-register.html">
+🏢 Register Your Business
+</a>
+
+<a href="/business-marketplace.html">
+🤝 Business Marketplace
+</a>
+
+</nav>
+
+
+<select id="language-select"
+onchange="loadLanguage(this.value)">
+
+<option value="en">🇬🇧 English</option>
+<option value="ur">🇵🇰 اردو</option>
+<option value="ar">🇸🇦 العربية</option>
+<option value="nl">🇳🇱 Nederlands</option>
+
+</select>
+
+
+<link rel="stylesheet" href="/assets/css/leh-ai-chat.css">
+
+<div id="auth-area" class="leh-auth">
+  <a id="login-link" href="/login.html">🔐 Login</a>
+  <a id="register-link" href="/register-v2.html">📝 Register</a>
+  <button id="logout-btn">🚪 Logout</button>
+</div>
+
+</header>
+
+<script>
+async function updateAuthUI() {
+  try {
+    if (typeof supabase === "undefined") {
+      setTimeout(updateAuthUI, 500);
+      return;
+    }
+
+    const { data: { session } } = await supabase.auth.getSession();
+
+    const login = document.getElementById("login-link");
+    const register = document.getElementById("register-link");
+    const logout = document.getElementById("logout-btn");
+
+    if (session) {
+      if (login) {
+        login.style.display = "none";
+      }
+
+      if (register) {
+        register.style.display = "none";
+      }
+
+      if (logout) {
+        logout.style.display = "inline-block";
+
+        logout.onclick = async function () {
+          try {
+            await supabase.auth.signOut();
+          } catch (error) {
+            console.error("Supabase logout failed:", error);
+          }
+
+          try {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            localStorage.removeItem("role");
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("access_token");
+            localStorage.removeItem("refresh_token");
+          } catch (error) {
+            console.error("Logout storage cleanup failed:", error);
+          }
+
+          window.location.href = "/index.html";
+        };
+      }
+    } else {
+      if (login) {
+        login.style.display = "";
+      }
+
+      if (register) {
+        register.style.display = "";
+      }
+
+      if (logout) {
+        logout.style.display = "none";
+        logout.onclick = null;
+      }
+    }
+  } catch (error) {
+    console.error("Auth navigation update failed:", error);
+  }
+}
+
+setTimeout(updateAuthUI, 500);
+
+if (typeof supabase !== "undefined" && supabase.auth) {
+  supabase.auth.onAuthStateChange(function () {
+    setTimeout(updateAuthUI, 0);
+  });
+}
+</script>
+
+<script src="/assets/js/leh-ai-chat.js"></script>
+

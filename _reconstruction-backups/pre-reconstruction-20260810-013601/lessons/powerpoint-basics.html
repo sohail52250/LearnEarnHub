@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>PowerPoint Basics - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Microsoft PowerPoint Basics</h1>
+
+<h2>English</h2>
+<p>Create simple presentations and slides.</p>
+<ol>
+<li>Create slides</li>
+<li>Add text and pictures</li>
+<li>Use designs</li>
+<li>Present your work</li>
+</ol>
+
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ù¾Ø§ÙˆØ± Ù¾ÙˆØ§Ø¦Ù†Ù¹ Ù…ÛŒÚº Ø³Ù„Ø§Ø¦ÛŒÚˆØ² Ø§ÙˆØ± Ù¾Ø±ÛŒØ²Ù†Ù¹ÛŒØ´Ù† Ø¨Ù†Ø§Ù†Ø§ Ø³ÛŒÚ©Ú¾ÛŒÚºÛ”</p>
+
+<a href="/">Home</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

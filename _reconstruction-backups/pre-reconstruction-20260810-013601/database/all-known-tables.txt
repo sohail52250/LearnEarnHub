@@ -1,0 +1,152 @@
+./ai_deal_room.sql:create table deal_messages 
+./ai_deal_room.sql:create table deal_payments 
+./ai_deal_room.sql:create table deal_rooms 
+./ai_deal_room.sql:create table entity_verifications 
+./ai_deal_room.sql:create table meeting_requests 
+./business_admin_v3.sql:create table business_admin_reviews 
+./business_admin_v3.sql:create table business_service_fees 
+./business_ai_matching.sql:create table business_match_scores 
+./business_ai_matching.sql:create table business_verification_badges 
+./business_deal_requests.sql:create table business_anonymous_rooms 
+./business_deal_requests.sql:create table business_deal_requests 
+./business_deal_requests.sql:create table business_interest_requests 
+./business_payment_v4.sql:create table business_commissions 
+./business_payment_v4.sql:create table business_packages 
+./business_payment_v4.sql:create table business_payments 
+./business_verification_v5.sql:create table business_badges 
+./business_verification_v5.sql:create table business_trust_scores 
+./business_verification_v5.sql:create table business_verification_requests 
+./deal_ai_v4.sql:create table deal_agreements 
+./deal_ai_v4.sql:create table deal_ai_summaries 
+./deal_ai_v4.sql:create table deal_proposals 
+./deal_ai_v5.sql:create table deal_audit_logs 
+./deal_ai_v5.sql:create table deal_documents 
+./deal_ai_v5.sql:create table deal_risk_reports 
+./deal_ai_v5.sql:create table deal_service_fees 
+./deal_ai_v6.sql:create table deal_certificates 
+./deal_ai_v6.sql:create table deal_document_reviews 
+./deal_ai_v6.sql:create table deal_risk_scores 
+./deal_ai_v7.sql:create table deal_escrow 
+./deal_ai_v7.sql:create table deal_final_approval 
+./deal_ai_v7.sql:create table deal_negotiations 
+./deal_ai_v8.sql:create table completed_deals 
+./deal_ai_v8.sql:create table deal_contracts 
+./deal_ai_v8.sql:create table deal_signatures 
+./deal_ai_v8.sql:create table entity_reputation 
+./deal_ai_v8.sql:create table escrow_release_requests 
+./learner_earning_v1.sql:create table earning_tasks 
+./learner_earning_v1.sql:create table learner_earnings 
+./learner_earning_v1.sql:create table task_applications 
+./learner_earning_v2.sql:create table task_matches 
+./learner_earning_v2.sql:create table task_payments 
+./learner_earning_v2.sql:create table task_progress 
+account_status 
+admin_actions 
+admin_activity_logs 
+admin_applications 
+admin_audit_logs 
+admin_logs 
+admin_permissions 
+admin_roles 
+admin_users 
+admin_vacancies 
+ads 
+advertisement_packages 
+ai_course_reviews 
+ai_review_queue 
+applications 
+business_analytics 
+business_buy_requests 
+business_contracts 
+business_needs 
+business_opportunities 
+business_partnership_requests 
+business_premium_features 
+business_profiles 
+business_referrals 
+business_sales 
+business_verification_requests 
+businesses 
+categories 
+company_acquisitions 
+company_badges 
+company_private_information 
+company_profiles 
+company_reputation_scores 
+company_verification_records 
+compliance_audit_logs 
+compliance_documents 
+compliance_reports 
+contact_requests 
+course_categories 
+course_enrollments 
+course_lessons 
+course_progress 
+course_publish_logs 
+course_quizzes 
+course_review_logs 
+course_reviews 
+course_submissions 
+courses 
+deal_completion_records 
+deal_documents_access 
+deal_introduction_payments 
+deal_matches 
+deal_meeting_requests 
+deal_messages 
+deal_milestones 
+deal_risk_assessments 
+deal_rooms 
+due_diligence_documents 
+enrollments 
+government_accounts 
+government_requests 
+instructor_activity_log 
+instructor_applications 
+instructor_courses 
+instructor_feedback 
+instructor_improvements 
+instructor_rewards 
+instructors 
+investor_profiles 
+invoices 
+job_applications 
+job_opportunities 
+jobs 
+learner_badges 
+learner_course_history 
+learner_goals 
+learner_projects 
+learner_skills 
+learner_stats 
+marketplace_messages 
+marketplace_reviews 
+onboarding_progress 
+opportunity_matches 
+order_payments 
+partnership_preferences 
+payment_history 
+payment_transactions 
+platform_reports 
+platform_rewards 
+product_inquiries 
+product_orders 
+profile_details 
+profiles 
+referral_scores 
+referrals 
+registration_requests 
+reviews 
+security_logs 
+skill_verifications 
+subscription_packages 
+user_activity_logs 
+user_permissions 
+user_profiles 
+user_roles 
+user_skills 
+user_trust_scores 
+user_verification_requests 
+users 
+verification_actions 
+verification_history 

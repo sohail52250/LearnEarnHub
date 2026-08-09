@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Sign-In Demo</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <h2>Sign in with Google</h2>
+  <div id="Enter the element ID for the sign-in button: google-signin-button"></div>
+  <script>
+    window.onload = function() {
+      google.accounts.id.initialize({
+        client_id: '1005859142498-nds3loqd4s1rgn9jvl6c2ibkhidugm6m.apps.googleusercontent.com',
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.renderButton(
+        document.getElementById('Enter the element ID for the sign-in button: google-signin-button'),
+        { theme: 'outline', size: 'large' }
+      );
+    };
+    function handleCredentialResponse(response) {
+      console.log('Encoded JWT ID token: ' + response.credential);
+    }
+  </script>
+</body>
+</html>

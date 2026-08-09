@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>LearnEarnHub Opportunities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+.card{
+border:1px solid #ddd;
+padding:15px;
+margin:10px;
+border-radius:12px;
+}
+button{
+padding:8px 15px;
+border-radius:8px;
+}
+</style>
+<script src="/language-config.js"></script>
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+<link rel="stylesheet" href="/assets/css/leh-design-system.css">
+
+
+
+
+    <link rel="stylesheet" href="/assets/css/leh-final-ui.css">
+<link rel="stylesheet" href="/css/responsive-theme.css">
+<link rel="stylesheet" href="/assets/css/leh-professional-theme.css">
+    <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
+
+<link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
+  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+</head>
+
+<body>
+<div id="global-header"></div>
+
+<h1>💼 Opportunities Hub</h1>
+
+<p>Jobs, tasks and earning opportunities from LearnEarnHub sources.</p>
+
+<div id="list">Loading opportunities...</div>
+
+<script>
+
+async function load(){
+
+let box=document.getElementById("list");
+let jobs=[];
+
+try{
+let external=await fetch("/api/external/jobs-feed");
+let e=await external.json();
+
+if(e.jobs){
+jobs.push(...e.jobs.map(x=>({
+title:x.title,
+category:x.category,
+reward:x.reward,
+type:x.type,
+source:x.source,
+url:x.apply_url
+})));
+}
+
+}catch(err){}
+
+
+try{
+let partner=await fetch("/api/partner/jobs");
+let p=await partner.json();
+
+if(p.jobs){
+jobs.push(...p.jobs.map(x=>({
+title:x.title,
+category:"Partner Job",
+reward:x.reward+" "+(x.currency||""),
+type:"task",
+source:x.company,
+url:x.website
+})));
+}
+
+}catch(err){}
+
+
+if(!jobs.length){
+box.innerHTML="<p>No opportunities available.</p>";
+return;
+}
+
+
+box.innerHTML=jobs.map(j=>`
+
+<div class="card">
+
+<h3>${j.title}</h3>
+
+<p>📄Œ Source: ${j.source}</p>
+
+<p>Category: ${j.category}</p>
+
+<p>Type: ${j.type}</p>
+
+<p>Reward: ${j.reward}</p>
+
+${j.url && j.url.startsWith("http")?
+`<a href="${j.url}" target="_blank" rel="noopener">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/auth-system.js"></script>
+<script src="/config.js"></script>
+
+<script src="/logout.js"></script>
+<script src="/global-layout.js"></script>
+    <script src="/mobile-nav.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

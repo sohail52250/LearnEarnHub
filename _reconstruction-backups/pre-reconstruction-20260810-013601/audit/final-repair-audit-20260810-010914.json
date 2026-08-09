@@ -1,0 +1,32 @@
+﻿{
+    "timestamp":  "2026-08-10T01:12:23",
+    "project":  "F:\\Projects\\lehup\\LearnEarnHub",
+    "branch":  "main",
+    "commit":  "db1940714408135fb90627ecabebeb9b6523c93e",
+    "backup":  "F:\\Projects\\lehup\\LearnEarnHub\\_final-repair-backups\\20260810-010914",
+    "repairs":  [
+
+                ],
+    "failures":  [
+                     "server.js exited during startup.\nF:\\Projects\\lehup\\LearnEarnHub\\node_modules\\@supabase\\supabase-js\\dist\\index.cjs:371\r\n\tif (!trimmedUrl) throw new Error(\"supabaseUrl is required.\");\r\n\t                 ^\r\n\r\nError: supabaseUrl is required.\r\n    at validateSupabaseUrl (F:\\Projects\\lehup\\LearnEarnHub\\node_modules\\@supabase\\supabase-js\\dist\\index.cjs:371:25)\r\n    at new SupabaseClient (F:\\Projects\\lehup\\LearnEarnHub\\node_modules\\@supabase\\supabase-js\\dist\\index.cjs:614:19)\r\n    at createClient (F:\\Projects\\lehup\\LearnEarnHub\\node_modules\\@supabase\\supabase-js\\dist\\index.cjs:854:9)\r\n    at Object.\u003canonymous\u003e (F:\\Projects\\lehup\\LearnEarnHub\\services\\dashboard-service.js:5:10)\r\n    at Module._compile (node:internal/modules/cjs/loader:1854:14)\r\n    at Object..js (node:internal/modules/cjs/loader:1985:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1577:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1379:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.require (node:internal/modules/cjs/loader:1600:12)\r\n\r\nNode.js v24.16.0\r\n"
+                 ],
+    "warnings":  [
+
+                 ],
+    "checks":  {
+                   "html_files":  392,
+                   "javascript_files":  1862,
+                   "css_references":  11,
+                   "js_references":  184,
+                   "syntax_failures":  0,
+                   "missing_assets":  0,
+                   "broken_html_links":  0,
+                   "duplicate_css":  0,
+                   "server_started":  false,
+                   "http_root":  false,
+                   "health_endpoint":  false,
+                   "test_port":  null
+               },
+    "decision":  "NOT READY - blocking application failures remain. DO NOT DEPLOY.",
+    "deployment_performed":  false
+}

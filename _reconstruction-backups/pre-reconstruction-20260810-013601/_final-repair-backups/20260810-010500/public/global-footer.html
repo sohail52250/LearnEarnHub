@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/leh-global-spacing.css">
+<footer class="leh-footer">
+
+<p>
+🚀 LearnEarnHub
+</p>
+
+<p>
+Learn Skills • Earn Opportunities • Build Business
+</p>
+
+
+<p>
+
+<a href="/about.html">About</a> |
+
+<a href="/privacy.html">Privacy</a> |
+
+<a href="/terms.html">Terms</a> |
+
+<a href="/security-center.html">Security</a>
+
+</p>
+
+
+<p>
+© LearnEarnHub
+</p>
+
+
+<a href="/developer/login.html">Developer Portal</a>
+<a href="/opportunities.html">💼 Opportunities</a></footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

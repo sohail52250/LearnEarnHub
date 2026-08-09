@@ -1,0 +1,52 @@
+﻿{
+    "timestamp":  "2026-08-10T01:02:57",
+    "project":  "F:\\Projects\\lehup\\LearnEarnHub",
+    "branch":  "main",
+    "commit":  "db1940714408135fb90627ecabebeb9b6523c93e",
+    "backup":  "F:\\Projects\\lehup\\LearnEarnHub\\_final-audit-backups\\20260810-010153",
+    "decision":  "NOT READY  blocking application-level failures remain. DO NOT DEPLOY.",
+    "ready_for_deployment":  false,
+    "checks":  {
+                   "branch":  "main",
+                   "commit":  "db1940714408135fb90627ecabebeb9b6523c93e",
+                   "git_changes":  8,
+                   "backup":  "F:\\Projects\\lehup\\LearnEarnHub\\_final-audit-backups\\20260810-010153",
+                   "node":  "v24.16.0",
+                   "npm":  "11.13.0",
+                   "package_main":  "server.js",
+                   "package_start":  "node server.js",
+                   "javascript_files":  658,
+                   "javascript_syntax_failures":  0,
+                   "html_files":  392,
+                   "css_references":  11,
+                   "js_references":  184,
+                   "missing_assets":  1,
+                   "duplicate_css":  0,
+                   "broken_html_links":  0,
+                   "route_files":  15,
+                   "routes_detected":  29,
+                   "test_port":  64352,
+                   "server_started":  false,
+                   "http_root":  false,
+                   "health_endpoint":  false,
+                   "backup_directories":  6,
+                   "failures":  3,
+                   "warnings":  3
+               },
+    "failures":  [
+                     "Missing frontend asset: market.js",
+                     "server.js exited during startup. See F:\\Projects\\lehup\\LearnEarnHub\\audit\\server-smoke-20260810-010153.err.log",
+                     "Server startup error: node:internal/modules/cjs/loader:1503\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module \u0027dotenv\u0027\r\nRequire stack:\r\n- F:\\Projects\\lehup\\LearnEarnHub\\server.js\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1500:15)\r\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)\r\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1116:12)\r\n    at Module._load (node:internal/modules/cjs/loader:1285:25)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.require (node:internal/modules/cjs/loader:1600:12)\r\n    at require (node:internal/modules/helpers:153:16)\r\n    at Object.\u003canonymous\u003e (F:\\Projects\\lehup\\LearnEarnHub\\server.js:1:1)\r\n    at Module._compile (node:internal/modules/cjs/loader:1854:14) {\r\n  code: \u0027MODULE_NOT_FOUND\u0027,\r\n  requireStack: [ \u0027F:\\\\Projects\\\\lehup\\\\LearnEarnHub\\\\server.js\u0027 ]\r\n}\r\n\r\nNode.js v24.16.0"
+                 ],
+    "warnings":  [
+                     "Working tree contains 8 changed/untracked item(s).",
+                     "Server produced stderr during smoke test. Review F:\\Projects\\lehup\\LearnEarnHub\\audit\\server-smoke-20260810-010153.err.log",
+                     "Suspicious artifact exists: audit-learning-flow.js"
+                 ],
+    "reports":  {
+                    "text":  "F:\\Projects\\lehup\\LearnEarnHub\\audit\\final-application-audit-20260810-010153.txt",
+                    "json":  "F:\\Projects\\lehup\\LearnEarnHub\\audit\\final-application-audit-20260810-010153.json",
+                    "server_stdout":  "F:\\Projects\\lehup\\LearnEarnHub\\audit\\server-smoke-20260810-010153.out.log",
+                    "server_stderr":  "F:\\Projects\\lehup\\LearnEarnHub\\audit\\server-smoke-20260810-010153.err.log"
+                }
+}

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Browsing Basics - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Internet Browsing Basics</h1>
+
+<h2>English</h2>
+<p>Learn safe internet browsing and online information search.</p>
+
+<ol>
+<li>Open a browser</li>
+<li>Search information</li>
+<li>Use websites safely</li>
+<li>Avoid online risks</li>
+</ol>
+
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ù…Ø­ÙÙˆØ¸ Ø§Ù†Ù¹Ø±Ù†ÛŒÙ¹ Ø¨Ø±Ø§Ø¤Ø²Ù†Ú¯ Ø§ÙˆØ± Ø¢Ù† Ù„Ø§Ø¦Ù† Ù…Ø¹Ù„ÙˆÙ…Ø§Øª ØªÙ„Ø§Ø´ Ú©Ø±Ù†Ø§ Ø³ÛŒÚ©Ú¾ÛŒÚºÛ”</p>
+
+<a href="/">Home</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

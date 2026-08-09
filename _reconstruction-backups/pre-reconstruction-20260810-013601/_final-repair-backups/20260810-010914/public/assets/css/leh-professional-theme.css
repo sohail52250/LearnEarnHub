@@ -1,0 +1,85 @@
+:root{
+--primary:#2563eb;
+--primary2:#3b82f6;
+--secondary:#7c3aed;
+--bg:#f5f7fb;
+--surface:#ffffff;
+--text:#0f172a;
+--border:#e2e8f0;
+--radius:16px;
+}
+@media (prefers-color-scheme:dark){
+:root{
+--bg:#0b1120;
+--surface:#111827;
+--text:#f8fafc;
+--border:#334155;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0!important;
+background:var(--bg)!important;
+color:var(--text)!important;
+font-family:Inter,Arial,sans-serif!important;
+overflow-x:hidden!important;
+}
+.container,.leh-container{
+width:min(95%,1400px)!important;
+margin:auto!important;
+}
+.leh-global-nav,.leh-nav{
+background:var(--surface)!important;
+position:sticky!important;
+top:0!important;
+z-index:999!important;
+box-shadow:0 4px 20px rgba(0,0,0,.08)!important;
+}
+.leh-global-nav a,.leh-nav a{
+padding:10px 14px!important;
+border-radius:10px!important;
+text-decoration:none!important;
+font-weight:600!important;
+}
+.btn,.btn-primary,button{
+background:linear-gradient(135deg,var(--primary),var(--primary2))!important;
+border:none!important;
+color:#fff!important;
+padding:12px 22px!important;
+border-radius:12px!important;
+font-weight:700!important;
+cursor:pointer!important;
+transition:.25s!important;
+}
+.btn:hover,.btn-primary:hover,button:hover{
+transform:translateY(-2px)!important;
+}
+.card,.leh-card,.quiz-box,.account-cta{
+background:var(--surface)!important;
+border:1px solid var(--border)!important;
+border-radius:18px!important;
+box-shadow:0 10px 25px rgba(0,0,0,.08)!important;
+}
+.grid,.leh-grid{
+display:grid!important;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important;
+gap:20px!important;
+}
+img,video,iframe{
+max-width:100%!important;
+height:auto!important;
+}
+input,select,textarea{
+width:100%!important;
+padding:12px!important;
+border:1px solid var(--border)!important;
+border-radius:10px!important;
+}
+h1{font-size:clamp(2rem,5vw,4rem)}
+h2{font-size:clamp(1.5rem,4vw,3rem)}
+h3{font-size:clamp(1.2rem,3vw,2rem)}
+@media(max-width:768px){
+.grid,.leh-grid{grid-template-columns:1fr!important}
+.btn,.btn-primary,button{width:100%!important}
+.leh-global-nav{flex-wrap:wrap!important}
+}

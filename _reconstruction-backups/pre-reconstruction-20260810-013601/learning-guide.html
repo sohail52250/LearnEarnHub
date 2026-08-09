@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Guide - Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Learning Guide</h1>
+
+<p>
+Welcome to Learn & Earn Hub.
+Follow these lessons in order.
+Each lesson contains simple explanations for beginners.
+</p>
+
+<ol>
+<li><a href="/word.html">Microsoft Word Basics</a></li>
+<li><a href="/excel.html">Microsoft Excel Basics</a></li>
+<li><a href="/powerpoint.html">Microsoft PowerPoint Basics</a></li>
+<li><a href="/windows.html">Windows Fundamentals</a></li>
+<li><a href="/browsing.html">Internet Browsing</a></li>
+<li><a href="/notepad.html">Notepad & WordPad</a></li>
+<li><a href="/paint.html">Microsoft Paint</a></li>
+<li><a href="/problems.html">Computer Problem Solving</a></li>
+</ol>
+
+<a href="/">Home</a>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

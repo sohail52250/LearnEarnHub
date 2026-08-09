@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>Windows Fundamentals</title></head>
+<body>
+<h1>Windows Fundamentals</h1>
+<p>Learn desktop, folders and files.</p>
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>ÙˆÙ†ÚˆÙˆØ² Ú©Ù…Ù¾ÛŒÙˆÙ¹Ø± Ú†Ù„Ø§Ù†Û’ Ú©Ø§ Ø¨Ù†ÛŒØ§Ø¯ÛŒ Ù†Ø¸Ø§Ù… ÛÛ’Û”</p>
+<a href="/learning-guide.html">Back</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

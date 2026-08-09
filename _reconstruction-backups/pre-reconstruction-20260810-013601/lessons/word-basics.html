@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Microsoft Word Basics - Learn & Earn Hub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Microsoft Word Basics</h1>
+
+<h2>English</h2>
+<p>Learn how to create, edit and format documents using Microsoft Word.</p>
+<ol>
+<li>Open Microsoft Word</li>
+<li>Create a new document</li>
+<li>Type and edit text</li>
+<li>Change fonts and formatting</li>
+<li>Save and print documents</li>
+</ol>
+
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+<p>Ù…Ø§Ø¦ÛŒÚ©Ø±ÙˆØ³Ø§ÙÙ¹ ÙˆØ±Úˆ Ù…ÛŒÚº Ø¯Ø³ØªØ§ÙˆÛŒØ² Ø¨Ù†Ø§Ù†Ø§ØŒ Ù„Ú©Ú¾Ù†Ø§ Ø§ÙˆØ± ÙØ§Ø±Ù…ÛŒÙ¹ Ú©Ø±Ù†Ø§ Ø³ÛŒÚ©Ú¾ÛŒÚºÛ”</p>
+
+<a href="/">Home</a>
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

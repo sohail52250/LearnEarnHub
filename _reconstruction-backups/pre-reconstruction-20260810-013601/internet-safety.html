@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Internet Safety | Learn & Earn Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Internet Safety</h1>
+
+<h2>Stay Safe Online</h2>
+
+<ul>
+<li>Use strong passwords.</li>
+<li>Do not share OTP codes.</li>
+<li>Avoid suspicious links.</li>
+<li>Keep software updated.</li>
+<li>Use trusted websites.</li>
+</ul>
+
+<h2>Ø§Ø±Ø¯Ùˆ</h2>
+
+<ul>
+<li>Ù…Ø¶Ø¨ÙˆØ· Ù¾Ø§Ø³ ÙˆØ±Úˆ Ø§Ø³ØªØ¹Ù…Ø§Ù„ Ú©Ø±ÛŒÚºÛ”</li>
+<li>Ø§Ùˆ Ù¹ÛŒ Ù¾ÛŒ Ú©Ø³ÛŒ Ú©Ùˆ Ù†Û Ø¯ÛŒÚºÛ”</li>
+<li>Ù…Ø´Ú©ÙˆÚ© Ù„Ù†Ú©Ø³ Ù¾Ø± Ú©Ù„Ú© Ù†Û Ú©Ø±ÛŒÚºÛ”</li>
+<li>Ø³Ø§ÙÙ¹ ÙˆÛŒØ¦Ø± Ø§Ù¾ÚˆÛŒÙ¹ Ø±Ú©Ú¾ÛŒÚºÛ”</li>
+<li>Ù‚Ø§Ø¨Ù„ Ø§Ø¹ØªÙ…Ø§Ø¯ ÙˆÛŒØ¨ Ø³Ø§Ø¦Ù¹Ø³ Ø§Ø³ØªØ¹Ù…Ø§Ù„ Ú©Ø±ÛŒÚºÛ”</li>
+</ul>
+
+<p><a href="/">Back Home</a></p>
+
+<button id="google-signin" style="padding:10px; font-size:16px;">Sign in with Google</button>
+<script src=""https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js""></script>
+<script>
+  const supabase = supabase.createClient('seKey');', '  document.getElementById('google-signin').onclick = () => {
+    supabase.auth.signIn({ provider: 'google' });
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Computer Fundamentals - LearnEarnHub</title>
+<meta name="description" content="Beginner computer course for LearnEarnHub learners.">
+<link rel="canonical" href="https://learn-earnhub.vercel.app/computer-fundamentals.html">
+<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
+<link rel="stylesheet" href="/assets/css/leh-design-system.css">
+<link rel="stylesheet" href="/assets/css/leh-design-system.css">
+</head>
+<body>
+<div id="global-header"></div>
+<h1>💻 Computer Fundamentals - Start Here</h1>
+
+<p>This is the first step for beginners before learning digital skills, freelancing and earning skills.</p>
+
+<h2>Course Lessons</h2>
+
+<ul>
+<li><a href="/lessons/computer-fundamentals/what-is-computer.html">What is a Computer?</a></li>
+<li><a href="/lessons/computer-fundamentals/computer-parts.html">Computer Parts</a></li>
+<li><a href="/lessons/computer-fundamentals/start-shutdown.html">Start and Shutdown</a></li>
+<li><a href="/lessons/computer-fundamentals/keyboard-mouse.html">Keyboard and Mouse</a></li>
+<li><a href="/lessons/computer-fundamentals/windows-basics.html">Windows Basics</a></li>
+<li><a href="/lessons/computer-fundamentals/files-folders.html">Files and Folders</a></li>
+<li><a href="/lessons/computer-fundamentals/internet-basics.html">Internet Basics</a></li>
+<li><a href="/lessons/computer-fundamentals/email-basics.html">Email Basics</a></li>
+<li><a href="/lessons/computer-fundamentals/online-safety.html">Online Safety</a></li>
+</ul>
+
+<button class="btn btn-primary" type="button" onclick="googleLogin()">Sign in with Google</button>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.getElementById('google-signin')?.onclick = () => {
+    googleLogin();
+  };
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      window.location.href = 'dashboard.html';
+    }
+  });
+</script>
+<script src="/auth-system.js"></script>
+<script src="/config.js"></script>
+
+<script src="/logout.js"></script>
+<script src="/global-layout.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
