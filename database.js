@@ -1,4 +1,4 @@
-require("dotenv").config();
+﻿require("dotenv").config();
 
 const { createClient } = require("@supabase/supabase-js");
 
@@ -10,8 +10,12 @@ const SUPABASE_KEY =
     process.env.SUPABASE_KEY ||
     process.env.SUPABASE_ANON_KEY;
 
-if (!SUPABASE_URL || !SUPABASE_KEY) {
-    throw new Error("Supabase configuration missing: SUPABASE_URL and a Supabase key are required.");
+if (!SUPABASE_URL) {
+    throw new Error("Supabase configuration missing: SUPABASE_URL");
+}
+
+if (!SUPABASE_KEY) {
+    throw new Error("Supabase configuration missing: Supabase key");
 }
 
 const db = createClient(SUPABASE_URL, SUPABASE_KEY);
