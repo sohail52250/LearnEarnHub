@@ -2,14 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex,follow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="0;url=/register-v2.html">
 <link rel="canonical" href="/register-v2.html">
-<title>Create Account - Learn &amp; Earn Hub</title>
-<script>window.location.replace("/register-v2.html");</script>
+<title>LearnEarnHub Registration</title>
+<script>
+(function () {
+    var target = "/register-v2.html";
+    if (window.location.pathname !== target) {
+        window.location.replace(target);
+    }
+})();
+</script>
 </head>
 <body>
-<p>Redirecting to registration...</p>
-<p><a href="/register-v2.html">Continue to registration</a></p>
+<p>Redirecting to <a href="/register-v2.html">LearnEarnHub</a>...</p>
+<div class="leh-google-auth" data-google-auth="true" style="margin:16px 0;">
+    <button
+        type="button"
+        class="google-signin-btn"
+        onclick="googleLogin()"
+        style="width:100%;padding:12px 16px;border:1px solid #d0d5dd;border-radius:8px;background:#fff;color:#1f2937;font-weight:600;cursor:pointer;">
+        Continue with Google
+    </button>
+</div>
+<script src="/assets/js/google-login.js"></script>
 </body>
 </html>

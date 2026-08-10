@@ -1,4 +1,4 @@
-﻿/*
+/*
  * LearnEarnHub authentication configuration.
  *
  * IMPORTANT:
@@ -9,7 +9,7 @@
 
 window.LEH_AUTH_CONFIG = Object.freeze({
   provider: "google",
-  enabled: false,
+  enabled: true,
   signInPath: "/auth/sign-in.html",
   createAccountPath: "/auth/create-account.html",
   forgotPasswordPath: "/auth/forgot-password.html",
