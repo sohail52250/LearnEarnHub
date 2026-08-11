@@ -1,59 +1,74 @@
+﻿(function(global){
 
-async function completeLesson(course_id, lesson_id){
+    "use strict";
 
-const {data:userData}=await supabaseClient.auth.getUser();
+    async function completeLesson(course_id,lesson_id){
 
+        let user = null;
 
-if(!userData.user){
+        if(
+            global.supabaseClient &&
+            global.supabaseClient.auth
+        ){
+            const result =
+                await global.supabaseClient.auth.getUser();
 
-alert("Please login first");
+            user =
+                result &&
+                result.data &&
+                result.data.user
+                    ? result.data.user
+                    : null;
+        }
 
-return;
+        if(!user){
+            alert("Please login first");
+            return;
+        }
 
-}
+        try{
 
+            const result =
+                await global.LEHLearning.completeLesson(
+                    course_id,
+                    lesson_id,
+                    user.id
+                );
 
+            if(
+                result &&
+                (
+                    result.success ||
+                    result.message ||
+                    result.data
+                )
+            ){
+                alert("Lesson completed successfully.");
+                location.reload();
+                return;
+            }
 
-const response=await fetch(
-"/api/complete-lesson",
-{
+            alert(
+                result &&
+                result.error
+                    ? result.error
+                    : "Lesson completion failed."
+            );
 
-method:"POST",
+        }catch(error){
 
-headers:{
-"Content-Type":"application/json"
-},
+            console.error(
+                "LearnEarnHub lesson completion error:",
+                error
+            );
 
-body:JSON.stringify({
+            alert(
+                error.message ||
+                "Lesson completion failed."
+            );
+        }
+    }
 
-user_id:userData.user.id,
-course_id:course_id,
-lesson_id:lesson_id
+    global.completeLesson = completeLesson;
 
-})
-
-});
-
-
-const result=await response.json();
-
-
-
-if(result.success){
-
-alert("Lesson completed ✅");
-
-location.reload();
-
-}else{
-
-alert(result.error || "Error");
-
-}
-
-
-}
-
-
-window.completeLesson=completeLesson;
-
+})(window);

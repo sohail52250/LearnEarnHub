@@ -1,27 +1,7 @@
-<link rel="stylesheet" href="/css/leh-global-spacing.css">
-<div class="card" id="language-box">
-
-<h3>
-🌐 Language / زبان / اللغة / Taal
-</h3>
-
-<button class="btn btn-primary" onclick="setLanguage('en')">
-🇬🇧 English
-</button>
-
-<button class="btn btn-primary" onclick="setLanguage('ur')">
-🇵🇰 اردو
-</button>
-
-<button class="btn btn-primary" onclick="setLanguage('ar')">
-🇸🇦 العربية
-</button>
-
-<button class="btn btn-primary" onclick="setLanguage('nl')">
-🇳🇱 Nederlands
-</button>
-
+<div class="leh-language standalone-language-selector" id="language-box">
+    <strong> Language / زبان / اللغة / Taal</strong>
+    <button type="button" onclick="setLanguage('en')"> English</button>
+    <button type="button" onclick="setLanguage('ur')"> اردو</button>
+    <button type="button" onclick="setLanguage('ar')"> العربية</button>
+    <button type="button" onclick="setLanguage('nl')"> Nederlands</button>
 </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

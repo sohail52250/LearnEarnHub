@@ -1,47 +1,64 @@
+﻿(function(global){
 
-async function enrollCourse(course_id,user_id){
+    "use strict";
 
+    async function enrollCourse(course_id,user_id){
 
-const res=await fetch(
-"/api/enrollment",
-{
+        if(!course_id){
+            throw new Error("course_id is required");
+        }
 
-method:"POST",
+        if(!user_id){
+            const current =
+                global.supabaseClient &&
+                global.supabaseClient.auth
+                    ? await global.supabaseClient.auth.getUser()
+                    : null;
 
-headers:{
-"Content-Type":"application/json"
-},
+            user_id =
+                current &&
+                current.data &&
+                current.data.user
+                    ? current.data.user.id
+                    : null;
+        }
 
-body:JSON.stringify({
+        if(!user_id){
+            alert("Please login first");
+            return;
+        }
 
-action:"enroll",
+        try{
 
-course_id,
+            const result =
+                await global.LEHLearning.enrollCourse(
+                    course_id,
+                    user_id
+                );
 
-user_id
+            alert(
+                result &&
+                (result.course_id || result.success || result.message)
+                    ? "Course enrolled successfully."
+                    : "Enrollment failed."
+            );
 
-})
+            location.reload();
 
-});
+        }catch(error){
 
+            console.error(
+                "LearnEarnHub enrollment error:",
+                error
+            );
 
-const data=await res.json();
+            alert(
+                error.message ||
+                "Enrollment failed."
+            );
+        }
+    }
 
+    global.enrollCourse = enrollCourse;
 
-alert(
-data.course_id
-?
-"Course enrolled ✅"
-:
-"Enrollment failed"
-);
-
-
-location.reload();
-
-
-}
-
-
-window.enrollCourse=enrollCourse;
-
+})(window);

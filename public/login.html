@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -42,7 +42,6 @@ border:0;
 
 </style>
 
-<script src="/language-config.js"></script>
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
 <link rel="stylesheet" href="/assets/css/leh-design-system.css">
 
@@ -58,20 +57,22 @@ border:0;
 
     <link rel="stylesheet" href="/auth-flow-guidance.css">
 <script src="/assets/js/leh-api-client.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
 
 
 <body>
 <div id="global-header"></div>
 <div class="leh-global-nav">
-<a href="/index.html">ðŸ  Home</a>
-<a href="/learn.html">ðŸ“š Learn</a>
-<a href="/jobs.html">ðŸ’¼ Jobs</a>
-<a href="/task-marketplace.html">ðŸ’° Tasks</a>
-<a href="/marketplace.html">ðŸª Marketplace</a>
-<a href="/post-job.html">ðŸ“ Post Job</a>
-<a href="/login.html">ðŸ” Login</a>
-<a href="/developer/login.html">ðŸ›  Developer</a>
+<a href="/index.html">Ã°Å¸ÂÂ  Home</a>
+<a href="/learn.html">Ã°Å¸â€œÅ¡ Learn</a>
+<a href="/jobs.html">Ã°Å¸â€™Â¼ Jobs</a>
+<a href="/task-marketplace.html">Ã°Å¸â€™Â° Tasks</a>
+<a href="/marketplace.html">Ã°Å¸ÂÂª Marketplace</a>
+<a href="/post-job.html">Ã°Å¸â€œÂ Post Job</a>
+<a href="/login.html">Ã°Å¸â€Â Login</a>
+<a href="/developer/login.html">Ã°Å¸â€ºÂ  Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -97,7 +98,7 @@ font-size:14px;
 
 <div class="box">
 
-<h2>ðŸ” LearnEarnHub</h2>
+<h2>Ã°Å¸â€Â LearnEarnHub</h2>
 
 
 <input id="email" placeholder="Email">
@@ -237,11 +238,11 @@ function signup() {
 
 <script src="/js/login-handler.js"></script>
 <div class="leh-bottom-nav">
-<a href="/index.html">ðŸ <span>Home</span></a>
-<a href="/learn.html">ðŸ“š<span>Learn</span></a>
-<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
-<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
-<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
+<a href="/index.html">Ã°Å¸ÂÂ <span>Home</span></a>
+<a href="/learn.html">Ã°Å¸â€œÅ¡<span>Learn</span></a>
+<a href="/jobs.html">Ã°Å¸â€™Â¼<span>Jobs</span></a>
+<a href="/task-marketplace.html">Ã°Å¸â€™Â°<span>Earn</span></a>
+<a href="/learner-dashboard.html">Ã°Å¸â€˜Â¤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -277,18 +278,7 @@ padding-bottom:70px;
 }
 }
 </style>
-<button id="google-signin" class="btn btn-primary">ðŸ” Sign in with Google</button>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/js/supabase-config.js"></script>
-<script>
-  
-  supabase.auth.getSession().then(({ data: { session } }) => {
-    if (session) {
-      window.location.href = 'dashboard.html';
-    }
-  });
-</script>
-<script src="/config.js"></script>
+<div class="leh-google-auth"><div class="leh-divider"><span>OR</span></div><button id="google-signin" type="button" class="leh-google-btn"><span class="leh-google-icon">G</span><span>Continue with Google</span></button><p class="leh-auth-note">Fast, secure sign-in with your Google account.</p></div><script src="/config.js"></script>
 <script src="/google-login.js"></script>
 <script>
 document.getElementById('google-signin')?.addEventListener('click', function(){

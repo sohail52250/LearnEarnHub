@@ -1,11 +1,75 @@
-﻿<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Learning — LearnEarnHub</title>
+<title>Learning - LearnEarnHub</title>
 <link rel="stylesheet" href="/assets/css/app.css">
+
+<style>
+.leh-language-area{
+    width:100%;
+    margin:0 0 28px;
+}
+
+.leh-language-box{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    padding:12px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    box-shadow:0 6px 20px rgba(15,23,42,.06);
+}
+
+.leh-language-title{
+    font-weight:800;
+    margin-right:6px;
+}
+
+.leh-language-btn{
+    min-height:38px;
+    padding:7px 13px;
+    border:1px solid #dbe3ef;
+    border-radius:9px;
+    background:#f8fafc;
+    color:#122033;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.leh-language-btn:hover,
+.leh-language-btn:focus{
+    background:#eaf0ff;
+    border-color:#2457d6;
+    outline:none;
+}
+
+@media(max-width:700px){
+    .leh-language-box{
+        align-items:stretch;
+    }
+
+    .leh-language-title{
+        width:100%;
+    }
+
+    .leh-language-btn{
+        flex:1 1 calc(50% - 8px);
+    }
+}
+</style>
+
+<script src="/assets/js/leh-api-client.js"></script>
+
+
+<script src="/assets/js/leh-language-system.js" defer></script>
+<script src="/assets/js/leh-learning-api.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
 </head>
+
 <body>
 
 <header class="site-header">
@@ -34,33 +98,70 @@
 <main class="page">
 <div class="container">
 
+<div class="leh-language-area">
+
+</div>
+
 <div class="page-header">
 <span class="eyebrow">Learning</span>
-<h1>Learn skills. Complete courses. Get certified.</h1>
-<p>Build practical knowledge through structured courses with a clear path from enrolment to certification.</p>
+
+<h1>
+Learn skills. Complete courses. Get certified.
+</h1>
+
+<p>
+Build practical knowledge through structured courses with a clear path from enrolment to certification.
+</p>
 </div>
 
 <div class="grid-3">
 
 <article class="card">
-<div class="icon">📚</div>
+
+<div class="icon" aria-hidden="true"></div>
+
 <h3>Course catalogue</h3>
-<p>Browse courses by subject, level and learning goal.</p>
-<a class="card-link" href="/learning/courses.html">Browse courses →</a>
+
+<p>
+Browse courses by subject, level and learning goal.
+</p>
+
+<a class="card-link" href="/learning/courses.html">
+Browse courses
+</a>
+
 </article>
 
 <article class="card">
-<div class="icon">▶</div>
+
+<div class="icon" aria-hidden="true"></div>
+
 <h3>My learning</h3>
-<p>Continue enrolled courses and track your progress.</p>
-<a class="card-link" href="/dashboard/">Open dashboard →</a>
+
+<p>
+Continue enrolled courses and track your progress.
+</p>
+
+<a class="card-link" href="/dashboard/">
+Open dashboard
+</a>
+
 </article>
 
 <article class="card">
-<div class="icon">🏆</div>
+
+<div class="icon" aria-hidden="true"></div>
+
 <h3>Certificates</h3>
-<p>View completed learning and earned certificates.</p>
-<a class="card-link" href="/learning/certificate.html">View certificates →</a>
+
+<p>
+View completed learning and earned certificates.
+</p>
+
+<a class="card-link" href="/learning/certificate.html">
+View certificates
+</a>
+
 </article>
 
 </div>
@@ -70,10 +171,14 @@
 
 <footer class="footer">
 <div class="container">
-<p>© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
+<p>
+ <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.
+</p>
 </div>
 </footer>
 
 <script src="/assets/js/app.js"></script>
+
+<script src="/assets/js/leh-language-system.js"></script>
 </body>
 </html>

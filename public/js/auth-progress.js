@@ -1,65 +1,55 @@
-const SUPABASE_URL = window.SUPABASE_URL;
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+(function(global){
 
-let supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
-
+"use strict";
 
 async function getCurrentUser(){
 
- const {data,error}=await supabaseClient.auth.getUser();
+    if(!global.lehLearningApi){
+        return null;
+    }
 
- if(error){
-   console.log(error);
-   return null;
- }
-
- return data.user;
-
+    return await global.lehLearningApi.getCurrentUser();
 }
-
-
 
 async function completeLesson(course_id,lesson_id){
 
- const user=await getCurrentUser();
+    if(!global.lehLearningApi){
+        alert("Learning API is not loaded");
+        return;
+    }
 
- if(!user){
-   alert("Please login first");
-   return;
- }
+    try{
 
+        const result =
+            await global.lehLearningApi.completeLesson(
+                course_id,
+                lesson_id
+            );
 
- const res=await fetch("/api/progress/complete",{
+        alert(
+            result &&
+            result.message
+                ? result.message
+                : "Lesson completed"
+        );
 
- method:"POST",
+        return result;
 
- headers:{
-  "Content-Type":"application/json"
- },
+    }catch(error){
 
- body:JSON.stringify({
+        console.error(
+            "LearnEarnHub auth-progress error:",
+            error
+        );
 
-  user_id:user.id,
-  course_id,
-  lesson_id
-
- })
-
- });
-
-
- const data=await res.json();
-
- alert(
- data.message || "Lesson completed"
- );
-
+        alert(
+            error.message ||
+            "Unable to complete lesson"
+        );
+    }
 }
 
+global.getCurrentUser = getCurrentUser;
+global.completeLesson = completeLesson;
 
-window.completeLesson=completeLesson;
-window.getCurrentUser=getCurrentUser;
-
+})(window);

@@ -1,80 +1,100 @@
+(function(){
 
-let currentLanguage =
-localStorage.getItem("language") || "en";
+    let currentLanguage =
+        localStorage.getItem("leh_lang") ||
+        localStorage.getItem("language") ||
+        "en";
 
+    async function setLanguage(lang){
 
-async function setLanguage(lang){
+        if(!["en","ur","ar","nl"].includes(lang)){
+            lang="en";
+        }
 
-localStorage.setItem(
-"language",
-lang
-);
+        currentLanguage=lang;
 
-currentLanguage=lang;
+        localStorage.setItem("leh_lang",lang);
+        localStorage.setItem("language",lang);
 
-await loadLanguage();
+        await loadLanguage(lang);
 
-}
+    }
 
+    async function loadLanguage(lang){
 
+        if(lang){
+            currentLanguage=lang;
+        }
 
-async function loadLanguage(lang){
+        try{
 
-if(lang){
-currentLanguage=lang;
-localStorage.setItem("language",lang);
-}
+            const response=await fetch(
+                "/translations/"+encodeURIComponent(currentLanguage)+".json",
+                {cache:"no-store"}
+            );
 
-const response =
-await fetch(
-`/translations/${currentLanguage}.json`
-);
+            if(!response.ok){
+                throw new Error(
+                    "Translation HTTP "+response.status
+                );
+            }
 
+            const words=await response.json();
 
-const words =
-await response.json();
+            document.querySelectorAll("[data-i18n]").forEach(
+                function(el){
 
+                    const key=el.getAttribute("data-i18n");
 
+                    if(words[key] !== undefined){
+                        el.textContent=words[key];
+                    }
 
-document.querySelectorAll("[data-key]")
-.forEach(el=>{
+                }
+            );
 
-let key =
-el.getAttribute("data-key");
+            document.querySelectorAll("[data-key]").forEach(
+                function(el){
 
+                    const key=el.getAttribute("data-key");
 
-if(words[key]){
+                    if(words[key] !== undefined){
+                        el.textContent=words[key];
+                    }
 
-el.innerHTML =
-words[key];
+                }
+            );
 
-}
+            document.documentElement.lang=currentLanguage;
 
-});
+            if(
+                currentLanguage==="ur" ||
+                currentLanguage==="ar"
+            ){
+                document.documentElement.dir="rtl";
+            }else{
+                document.documentElement.dir="ltr";
+            }
 
+        }catch(error){
 
+            console.error(
+                "LearnEarnHub translation error:",
+                error
+            );
 
-if(currentLanguage==="ur" ||
-currentLanguage==="ar"){
+        }
 
-document.documentElement.dir="rtl";
+    }
 
-}else{
+    window.setLanguage=setLanguage;
+    window.loadLanguage=loadLanguage;
 
-document.documentElement.dir="ltr";
+    document.addEventListener(
+        "DOMContentLoaded",
+        function(){
+            loadLanguage(currentLanguage);
+        }
+    );
 
-}
-
-
-}
-
-
-
-document.addEventListener(
-"DOMContentLoaded",
-loadLanguage
-);
-
-
-window.setLanguage=setLanguage;
-
+})();
