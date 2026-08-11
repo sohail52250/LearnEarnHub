@@ -35,6 +35,7 @@ const auth = require("./auth");
 app.post("/auth", auth);
 
 app.use("/courses", require("../routes/courses"));
+app.use("/certificates", require("../routes/certificates"));
 
 app.get("/jobs",(req,res)=>{
 res.json({
