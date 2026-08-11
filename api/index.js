@@ -34,6 +34,10 @@ mode:"Single API Router"
 const auth = require("./auth");
 app.post("/auth", auth);
 
+// Canonical lesson-completion API
+const completeLesson = require("../backend-api/complete-lesson");
+app.post("/complete-lesson", completeLesson);
+
 app.use("/courses", require("../routes/courses"));
 app.use("/certificates", require("../routes/certificates"));
 
