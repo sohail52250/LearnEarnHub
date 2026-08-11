@@ -2,16 +2,19 @@
  * LearnEarnHub canonical learning API bridge.
  * Safe migration layer.
  *
- * This file intentionally does NOT delete or disable legacy learning
- * implementations. It provides one stable frontend interface while
- * existing pages are migrated incrementally.
+ * Provides the stable frontend learning API while preserving
+ * existing backend APIs and legacy learning implementations.
  */
 
 (function(global){
 
     "use strict";
 
-    const client = global.LEHApi || global.lehApi || global.LEH_API_CLIENT || null;
+    const client =
+        global.LEHApi ||
+        global.lehApi ||
+        global.LEH_API_CLIENT ||
+        null;
 
     function jsonHeaders(){
         return {
@@ -76,6 +79,10 @@
         return data;
     }
 
+    async function getCourses(){
+        return get("/api/courses");
+    }
+
     async function enrollCourse(course_id,user_id){
         return post(
             "/api/enrollment",
@@ -108,11 +115,23 @@
         );
     }
 
-    global.LEHLearning = {
+    const learningApi = {
+        getCourses,
         enrollCourse,
         completeLesson,
         courseProgress,
         apiClient: client
     };
+
+    /*
+     * Canonical API name.
+     */
+    global.LEHLearning = learningApi;
+
+    /*
+     * Compatibility alias used by existing learning pages.
+     * This intentionally points to the same object.
+     */
+    global.LEH_LEARNING_API = learningApi;
 
 })(window);
