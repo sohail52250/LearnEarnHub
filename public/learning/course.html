@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Course â€” LearnEarnHub</title>
+<title>Course ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â LearnEarnHub</title>
 <link rel="stylesheet" href="/assets/css/app.css">
 <script src="/assets/js/leh-api-client.js"></script>
 <script src="/assets/js/leh-learning-api.js"></script>
 <link rel="stylesheet" href="/assets/css/leh-language-system.css">
 <script src="/assets/js/leh-language-system.js" defer></script>
-</head>
+<script src="/assets/js/leh-authenticated-learning.js"></script><script src="/assets/js/leh-oauth-learning-return.js"></script></head>
 <body>
 
 <header class="site-header">
@@ -25,6 +25,8 @@
 <a href="/businesses/">Businesses</a>
 <a href="/corporate/">Corporate</a>
 <a href="/developers/">Developers</a>
+
+    <a href="/study-plan.html" class="btn">Ã°Å¸â€œÅ¡ Study Plan</a>
 </nav>
 
 <div class="nav-actions">
@@ -60,20 +62,155 @@
 
 <article class="card">
 <h3>Your learning path</h3>
-<p>1. Enrol â†’ 2. Lessons â†’ 3. Progress â†’ 4. Assessment â†’ 5. Certificate</p>
+<p>1. Enrol ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 2. Lessons ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 3. Progress ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 4. Assessment ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 5. Certificate</p>
 </article>
 
 </div>
 
 </div>
+
+<section class="learning-next-actions" aria-label="Learning actions">
+    <div class="learning-action-card">
+        <h2>Continue Learning</h2>
+        <p>Continue with the next lesson in your course and keep your progress visible.</p>
+        <a id="continueLearningBtn"
+           class="btn btn-primary"
+           href="/learning/lesson.html?course_id=2&lesson_id=1">
+            Continue Learning
+        </a>
+    </div>
+
+    <div class="learning-action-card">
+        <h2>Progress</h2>
+        <p>Review completed lessons and your current course progress.</p>
+        <a id="courseProgressBtn"
+           class="btn btn-secondary"
+           href="/learning/progress.html?course_id=2">
+            View Progress
+        </a>
+    </div>
+
+    <div class="learning-action-card">
+        <h2>Study Plan</h2>
+        <p>Open your complete learning plan and continue from your planned course.</p>
+        <a class="btn btn-secondary" href="/study-plan.html">
+            My Study Plan
+        </a>
+    </div>
+</section>
 </main>
 
 <footer class="footer">
 <div class="container">
-<p>Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
+<p>ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
 </div>
 </footer>
 
 <script src="/assets/js/app.js"></script>
-</body>
+<script>
+(function(){
+    "use strict";
+    var params=new URLSearchParams(window.location.search);
+    var courseId=params.get("id") || params.get("course_id") || localStorage.getItem("leh_active_course_id") || "";
+    var lessonId=params.get("lesson_id") || localStorage.getItem("leh_active_lesson_id") || "1";
+
+    if(courseId){
+        localStorage.setItem("leh_active_course_id",courseId);
+        localStorage.setItem("leh_active_lesson_id",lessonId);
+    }
+
+    var start=document.querySelector('a[href="/learning/lesson.html"], a[href="lesson.html"]');
+    if(start && courseId){
+        start.href="/learning/lesson.html?course_id="+encodeURIComponent(courseId)+"&lesson_id="+encodeURIComponent(lessonId);
+    }
+})();
+</script><script>
+(function(){
+"use strict";
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    var p=new URLSearchParams(window.location.search);
+    var id=p.get("id") || p.get("course_id") || "";
+
+    if(id){
+        localStorage.setItem(
+            "leh_active_course_id",
+            id
+        );
+    }
+
+    document
+    .querySelectorAll(
+        'a[href="/learning/lesson.html"],a[href="lesson.html"]'
+    )
+    .forEach(function(link){
+
+        link.addEventListener("click",async function(event){
+
+            event.preventDefault();
+
+            try{
+                var context=
+                    window.LEHAuthenticatedLearning.remember();
+
+                if(!context.course_id){
+                    throw new Error(
+                        "No course was selected."
+                    );
+                }
+
+                await window.LEHAuthenticatedLearning.enroll();
+
+                localStorage.setItem(
+                    "leh_active_lesson_id",
+                    "1"
+                );
+
+                window.LEHAuthenticatedLearning.go(
+                    "/learning/lesson.html",
+                    true
+                );
+
+            }catch(error){
+
+                if(error &&
+                   error.message &&
+                   /sign|session|learner/i.test(error.message)){
+
+                    return;
+                }
+
+                alert(
+                    error.message ||
+                    "Unable to start this course."
+                );
+            }
+        });
+    });
+});
+})();
+</script>
+<!-- LEH_AUTHENTICATED_COURSE_START --><script>
+(function(){
+"use strict";
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    var p=new URLSearchParams(window.location.search);
+    var id=p.get("id") || p.get("course_id") || "";
+
+    if(id){
+        localStorage.setItem("leh_active_course_id",id);
+    }
+
+    if(window.LEHOAuthLearningReturn){
+        window.LEHOAuthLearningReturn.remember(
+            window.location.pathname + window.location.search
+        );
+    }
+
+});
+})();
+</script></body>
 </html>

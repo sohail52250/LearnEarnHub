@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LearnEarnHub Account</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js"></script>
+
 <style>
 body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f7fb;color:#172033}
 .wrap{max-width:900px;margin:70px auto;padding:20px}
@@ -14,36 +16,123 @@ h1{margin:0 0 8px;font-size:32px}
 p{color:#667085}
 .status{text-align:center;padding:20px}
 </style>
-<link rel="stylesheet" href="/assets/css/leh-language-system.css">
-<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
+
 <body>
 <div class="wrap">
 <div class="card">
 <div class="status">
-<h1>Checking your LearnEarnHub account</h1>
-<p>Please wait while we securely complete sign-in.</p>
+<h1 id="title">Completing sign-in…</h1>
+<p id="message">Please wait while we securely restore your LearnEarnHub session.</p>
 </div>
 </div>
 </div>
+
 <script>
-(async function(){
-try{
-const client=window.supabaseClient;
-if(!client) throw new Error("Supabase client failed to initialize.");
+(function () {
+"use strict";
 
-const {data,error}=await client.auth.getSession();
-if(error) throw error;
+var DASHBOARD = "/dashboard/";
+var SIGNIN = "/auth/sign-in.html";
+var MAX_ATTEMPTS = 30;
+var DELAY = 500;
 
-if(data.session){
-location.replace("/profile.html?welcome=1");
-}else{
-location.replace("/auth/sign-in.html");
+function go(url) {
+    window.location.replace(url);
 }
-}catch(e){
-console.error(e);
-location.replace("/auth/sign-in.html?error=session");
+
+function sleep(ms) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, ms);
+    });
 }
+
+async function waitForClient() {
+    for (var i = 0; i < MAX_ATTEMPTS; i++) {
+        if (
+            window.supabaseClient &&
+            window.supabaseClient.auth
+        ) {
+            return window.supabaseClient;
+        }
+
+        await sleep(DELAY);
+    }
+
+    throw new Error("Supabase client unavailable.");
+}
+
+async function completeOAuth(client) {
+    var url = new URL(window.location.href);
+    var code = url.searchParams.get("code");
+
+    if (code && typeof client.auth.exchangeCodeForSession === "function") {
+        var exchange = await client.auth.exchangeCodeForSession(code);
+
+        if (exchange.error) {
+            throw exchange.error;
+        }
+    }
+}
+
+async function getAuthenticatedSession(client) {
+    for (var i = 0; i < MAX_ATTEMPTS; i++) {
+        var result = await client.auth.getSession();
+
+        if (
+            result &&
+            !result.error &&
+            result.data &&
+            result.data.session &&
+            result.data.session.user
+        ) {
+            return result.data.session;
+        }
+
+        await sleep(DELAY);
+    }
+
+    return null;
+}
+
+async function main() {
+    try {
+        var client = await waitForClient();
+
+        await completeOAuth(client);
+
+        var session = await getAuthenticatedSession(client);
+
+        if (session && session.user) {
+            document.getElementById("title").textContent =
+                "Sign-in successful";
+
+            document.getElementById("message").textContent =
+                "Opening your authenticated dashboard…";
+
+            await sleep(150);
+
+            go(DASHBOARD);
+            return;
+        }
+
+        throw new Error("No authenticated Supabase session was established.");
+    } catch (error) {
+        console.error("LearnEarnHub OAuth router:", error);
+
+        document.getElementById("title").textContent =
+            "Sign-in could not be completed";
+
+        document.getElementById("message").textContent =
+            "Returning you to the sign-in page…";
+
+        await sleep(1000);
+
+        go(SIGNIN + "?error=session");
+    }
+}
+
+main();
 })();
 </script>
 </body>

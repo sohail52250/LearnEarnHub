@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Learning Progress â€” LearnEarnHub</title>
+<title>Learning Progress ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â LearnEarnHub</title>
 <link rel="stylesheet" href="/assets/css/app.css">
 <script src="/assets/js/leh-api-client.js"></script>
 <script src="/assets/js/leh-learning-api.js"></script>
 <link rel="stylesheet" href="/assets/css/leh-language-system.css">
 <script src="/assets/js/leh-language-system.js" defer></script>
-</head>
+<script src="/assets/js/leh-authenticated-learning.js"></script></head>
 <body>
 
 <header class="site-header">
@@ -25,6 +25,8 @@
 <a href="/businesses/">Businesses</a>
 <a href="/corporate/">Corporate</a>
 <a href="/developers/">Developers</a>
+
+    <a href="/study-plan.html" class="btn">ðŸ“š Study Plan</a>
 </nav>
 
 <div class="nav-actions">
@@ -59,7 +61,7 @@
 <article class="card">
 <h3>Next step</h3>
 <p>Continue your next lesson or complete the assessment.</p>
-<a class="card-link" href="/learning/certificate.html">Certification â†’</a>
+<a class="card-link" href="/learning/certificate.html">Certification ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢</a>
 </article>
 
 </div>
@@ -69,10 +71,92 @@
 
 <footer class="footer">
 <div class="container">
-<p>Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
+<p>Ãƒâ€šÃ‚Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
 </div>
 </footer>
 
 <script src="/assets/js/app.js"></script>
-</body>
+<script>
+(function(){
+    "use strict";
+    var params=new URLSearchParams(window.location.search);
+    var courseId=params.get("course_id") || localStorage.getItem("leh_active_course_id") || "";
+    var lessonId=params.get("lesson_id") || localStorage.getItem("leh_active_lesson_id") || "1";
+
+    if(courseId){
+        localStorage.setItem("leh_active_course_id",courseId);
+        localStorage.setItem("leh_active_lesson_id",lessonId);
+    }
+
+    document.querySelectorAll('a[href="/learning/certificate.html"], a[href="certificate.html"]').forEach(function(a){
+        a.href="/learning/certificate.html?course_id="+encodeURIComponent(courseId);
+    });
+
+    document.querySelectorAll('a[href="/learning/lesson.html"], a[href="lesson.html"]').forEach(function(a){
+        a.href="/learning/lesson.html?course_id="+encodeURIComponent(courseId)+"&lesson_id="+encodeURIComponent(lessonId);
+    });
+})();
+</script><script>
+(function(){
+"use strict";
+
+document.addEventListener("DOMContentLoaded",async function(){
+
+    try{
+
+        var data=
+            await window.LEHAuthenticatedLearning.progress();
+
+        if(!data){
+            return;
+        }
+
+        var source=data.data || data;
+
+        var completed=Number(
+            source.completed_lessons ||
+            source.completed ||
+            0
+        );
+
+        var total=Number(
+            source.total_lessons ||
+            source.total ||
+            0
+        );
+
+        var percent=
+            total>0
+            ? Math.round((completed/total)*100)
+            : 0;
+
+        document
+        .querySelectorAll("[data-course-progress]")
+        .forEach(function(el){
+            el.textContent=percent+"%";
+        });
+
+        document
+        .querySelectorAll("[data-lessons-completed]")
+        .forEach(function(el){
+            el.textContent=completed;
+        });
+
+        document
+        .querySelectorAll("[data-lessons-total]")
+        .forEach(function(el){
+            el.textContent=total;
+        });
+
+    }catch(error){
+
+        console.warn(
+            "Authenticated learning progress unavailable:",
+            error
+        );
+    }
+});
+})();
+</script>
+<!-- LEH_AUTHENTICATED_PROGRESS --></body>
 </html>

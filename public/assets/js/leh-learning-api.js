@@ -1,4 +1,4 @@
-﻿/*
+/*
  * LearnEarnHub canonical learning API bridge.
  * Safe migration layer.
  *
@@ -96,7 +96,7 @@
 
     async function completeLesson(course_id,lesson_id,user_id){
         return post(
-            "/api/complete-lesson",
+            "/complete-lesson",
             {
                 user_id,
                 course_id,

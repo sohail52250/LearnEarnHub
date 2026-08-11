@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Certificate â€” LearnEarnHub</title>
+<title>Certificate ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â LearnEarnHub</title>
 <link rel="stylesheet" href="/assets/css/app.css">
 <script src="/assets/js/leh-api-client.js"></script>
 <script src="/assets/js/leh-learning-api.js"></script>
 <link rel="stylesheet" href="/assets/css/leh-language-system.css">
 <script src="/assets/js/leh-language-system.js" defer></script>
-</head>
+<script src="/assets/js/leh-authenticated-learning.js"></script></head>
 <body>
 
 <header class="site-header">
@@ -25,6 +25,8 @@
 <a href="/businesses/">Businesses</a>
 <a href="/corporate/">Corporate</a>
 <a href="/developers/">Developers</a>
+
+    <a href="/study-plan.html" class="btn">ðŸ“š Study Plan</a>
 </nav>
 
 <div class="nav-actions">
@@ -45,7 +47,7 @@
 </div>
 
 <div class="card">
-<div class="icon">ðŸ†</div>
+<div class="icon">ÃƒÂ°Ã…Â¸Ã‚ÂÃ¢â‚¬Â </div>
 <h3>Certificate centre</h3>
 <p>Your certificates will appear here after completing the required course and assessment.</p>
 <a class="btn btn-primary" href="/dashboard/">Go to dashboard</a>
@@ -56,10 +58,98 @@
 
 <footer class="footer">
 <div class="container">
-<p>Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
+<p>Ãƒâ€šÃ‚Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
 </div>
 </footer>
 
 <script src="/assets/js/app.js"></script>
-</body>
+<script>
+(function(){
+    "use strict";
+    var params=new URLSearchParams(window.location.search);
+    var courseId=params.get("course_id") || localStorage.getItem("leh_active_course_id") || "";
+
+    if(courseId){
+        localStorage.setItem("leh_active_course_id",courseId);
+    }
+
+    document.querySelectorAll('a[href="/dashboard/"], a[href="/dashboard.html"]').forEach(function(a){
+        a.href="/dashboard/";
+    });
+})();
+</script><script>
+(function(){
+"use strict";
+
+document.addEventListener("DOMContentLoaded",async function(){
+
+    try{
+
+        var session=
+            await window.LEHAuthenticatedLearning.requireLearner();
+
+        if(!session){
+            return;
+        }
+
+        var data=
+            await window.LEHAuthenticatedLearning.progress();
+
+        var source=data && (data.data || data);
+
+        var completed=Number(
+            source &&
+            (
+                source.completed_lessons ||
+                source.completed ||
+                0
+            )
+        );
+
+        var total=Number(
+            source &&
+            (
+                source.total_lessons ||
+                source.total ||
+                0
+            )
+        );
+
+        if(total>0 && completed<total){
+
+            var main=
+                document.querySelector("main") ||
+                document.body;
+
+            var note=document.createElement("div");
+
+            note.className="card";
+
+            note.innerHTML=
+                "<strong>Certificate not yet available.</strong>"+
+                "<p>Complete all required lessons and the assessment before receiving your certificate.</p>";
+
+            main.prepend(note);
+        }
+
+    }catch(error){
+
+        console.warn(
+            "Certificate eligibility check unavailable:",
+            error
+        );
+    }
+
+    document
+    .querySelectorAll(
+        'a[href="/dashboard/"],a[href="/dashboard.html"]'
+    )
+    .forEach(function(link){
+        link.href="/dashboard/";
+    });
+
+});
+})();
+</script>
+<!-- LEH_AUTHENTICATED_CERTIFICATE --></body>
 </html>

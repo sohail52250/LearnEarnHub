@@ -87,7 +87,7 @@ html += `
 
 <p>
 
-${done ? "✅" : "🔒"}
+${done ? "âœ…" : "ðŸ”’"}
 
 ${item.title}
 
@@ -117,7 +117,7 @@ document.getElementById(
 `
 
 <h3>
-➡ ${next.title}
+âž¡ ${next.title}
 </h3>
 
 <p>
@@ -139,7 +139,7 @@ Start Learning
 `
 
 <h3>
-🎉 Learning path completed
+ðŸŽ‰ Learning path completed
 </h3>
 
 <p>

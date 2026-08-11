@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesson â€” LearnEarnHub</title>
+<title>Lesson ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â LearnEarnHub</title>
 <link rel="stylesheet" href="/assets/css/app.css">
 <script src="/assets/js/leh-api-client.js"></script>
 <script src="/assets/js/leh-learning-api.js"></script>
 <link rel="stylesheet" href="/assets/css/leh-language-system.css">
 <script src="/assets/js/leh-language-system.js" defer></script>
-</head>
+<script src="/assets/js/leh-authenticated-learning.js"></script></head>
 <body>
 
 <header class="site-header">
@@ -25,6 +25,8 @@
 <a href="/businesses/">Businesses</a>
 <a href="/corporate/">Corporate</a>
 <a href="/developers/">Developers</a>
+
+    <a href="/study-plan.html" class="btn">Ã°Å¸â€œÅ¡ Study Plan</a>
 </nav>
 
 <div class="nav-actions">
@@ -41,15 +43,41 @@
 <div class="page-header">
 <span class="eyebrow">Course lesson</span>
 <h1>Continue learning.</h1>
-<p>Complete lessons one by one and keep your progress visible.</p>
-</div>
+<section class="lesson-content" aria-labelledby="lessonTitle">
+    <h1 id="lessonTitle">Lesson 1  Getting Started</h1>
 
-<div class="card">
-<h3>Lesson 1 â€” Getting started</h3>
-<p>
-This is the beginning of your learning journey. Future lessons will contain
-the actual course content, media, activities and assessments.
-</p>
+    <p>
+        Welcome to your first LearnEarnHub lesson. In this lesson you will
+        learn how the learning system works and how to move through a course.
+    </p>
+
+    <h2>What you will learn</h2>
+
+    <ul>
+        <li>How to open and follow a course.</li>
+        <li>How to complete lessons one by one.</li>
+        <li>How your learning progress is recorded.</li>
+        <li>How to return to your Study Plan.</li>
+    </ul>
+
+    <h2>Your first task</h2>
+
+    <p>
+        Read this lesson carefully and review the learning steps above.
+        When you are ready, select <strong>Mark lesson complete</strong>.
+    </p>
+
+    <p>
+        After completion, LearnEarnHub can take you to your progress page,
+        where you can review the status of your course.
+    </p>
+
+    <div class="lesson-next-actions">
+        <a class="btn btn-secondary" href="/study-plan.html">
+            My Study Plan
+        </a>
+    </div>
+</section>
 
 <div class="hero-actions">
 <a class="btn btn-primary" href="/learning/progress.html">Mark lesson complete</a>
@@ -62,10 +90,71 @@ the actual course content, media, activities and assessments.
 
 <footer class="footer">
 <div class="container">
-<p>Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
+<p>ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
 </div>
 </footer>
 
 <script src="/assets/js/app.js"></script>
-</body>
+<script>
+(function(){
+    "use strict";
+    var params=new URLSearchParams(window.location.search);
+    var courseId=params.get("course_id") || localStorage.getItem("leh_active_course_id") || "";
+    var lessonId=params.get("lesson_id") || localStorage.getItem("leh_active_lesson_id") || "1";
+
+    if(courseId){
+        localStorage.setItem("leh_active_course_id",courseId);
+        localStorage.setItem("leh_active_lesson_id",lessonId);
+    }
+
+    document.querySelectorAll('a[href="/learning/progress.html"], a[href="progress.html"]').forEach(function(a){
+        a.href="/learning/progress.html?course_id="+encodeURIComponent(courseId)+"&lesson_id="+encodeURIComponent(lessonId);
+    });
+
+    document.querySelectorAll('a[href="/learning/course.html"], a[href="course.html"]').forEach(function(a){
+        if(courseId){
+            a.href="/learning/course.html?id="+encodeURIComponent(courseId);
+        }
+    });
+})();
+</script><script>
+(function(){
+"use strict";
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    window.LEHAuthenticatedLearning.remember();
+
+    document
+    .querySelectorAll(
+        'a[href="/learning/progress.html"],a[href="progress.html"]'
+    )
+    .forEach(function(link){
+
+        link.addEventListener("click",async function(event){
+
+            event.preventDefault();
+
+            try{
+
+                await window.LEHAuthenticatedLearning.completeLesson();
+
+                window.LEHAuthenticatedLearning.go(
+                    "/learning/progress.html",
+                    false
+                );
+
+            }catch(error){
+
+                alert(
+                    error.message ||
+                    "Unable to complete this lesson."
+                );
+            }
+        });
+    });
+});
+})();
+</script>
+<!-- LEH_AUTHENTICATED_LESSON_COMPLETE --></body>
 </html>
