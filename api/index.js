@@ -1,4 +1,4 @@
-const express=require("express");
+﻿const express=require("express");
 
 const app=express();
 
@@ -37,6 +37,9 @@ app.post("/auth", auth);
 // Canonical lesson-completion API
 const completeLesson = require("../backend-api/complete-lesson");
 app.post("/complete-lesson", completeLesson);
+
+/* businesses-api-route */
+app.use("/businesses", require("./businesses"));
 
 app.use("/courses", require("../routes/courses"));
 app.use("/certificates", require("../routes/certificates"));
@@ -86,3 +89,4 @@ app.use("/partner/jobs",partnerJobs);
 
 
 module.exports=app;
+
