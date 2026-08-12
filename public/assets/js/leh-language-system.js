@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     "use strict";
 
     const LANG_KEY = "leh_language";
@@ -28,7 +28,7 @@
 
     function getLanguage() {
         const saved = localStorage.getItem(LANG_KEY);
-        return LANGUAGES[saved] ? saved : "en";
+        return LANGUAGES[saved] ? saved : "ur";
     }
 
     function applyDirection(lang) {
