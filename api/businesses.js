@@ -1,8 +1,39 @@
-﻿const service = require("../services/business-service");
+const service = require("../services/business-service");
 
 module.exports = async function(req, res) {
     try {
         if (req.method === "GET") {
+
+            const opportunityView =
+                String(
+                    req.query?.view ||
+                    req.query?.action ||
+                    ""
+                )
+                .trim()
+                .toLowerCase();
+
+            if (
+                opportunityView === "opportunities" ||
+                opportunityView === "open-opportunities"
+            ) {
+
+                const limit = Number(
+                    req.query?.limit || 100
+                );
+
+                const opportunities =
+                    await service.listOpportunities({
+                        limit
+                    });
+
+                return res.status(200).json({
+                    success: true,
+                    opportunities,
+                    count: opportunities.length
+                });
+            }
+
             const reference = String(
                 req.query?.reference || ""
             ).trim();
@@ -14,7 +45,8 @@ module.exports = async function(req, res) {
                 });
             }
 
-            const business = await service.getBusiness(reference);
+            const business =
+                await service.getBusiness(reference);
 
             if (!business) {
                 return res.status(404).json({
