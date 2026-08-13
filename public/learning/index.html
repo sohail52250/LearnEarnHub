@@ -15,56 +15,33 @@
 
     <link rel="stylesheet" href="/assets/css/app.css">
     <link rel="stylesheet" href="/assets/css/leh-language-system.css">
+    <link rel="stylesheet" href="/assets/css/leh-accessibility-reconstruction.css">
 </head>
 
 <body>
 
 <header class="site-header">
+<div class="container nav">
 
-    <nav class="site-nav" aria-label="Primary navigation">
+<a class="brand" href="/">
+<span class="brand-mark">L</span>
+<span>LearnEarnHub</span>
+</a>
 
-        <a class="brand" href="/">
-            <strong>LearnEarnHub</strong>
-        </a>
+<nav class="nav-links" data-nav>
+<a href="/learning/" data-i18n="learn">Learning</a>
+<a href="/businesses/" data-i18n="business">Businesses</a>
+<a href="/corporate/" data-i18n="enterprise">Corporate</a>
+<a href="/developers/" data-i18n="career">Developers</a>
+<a href="/learning/study-plan.html">Study Plan</a>
+</nav>
 
-        <div class="nav-links">
+<div class="nav-actions">
+<a class="btn btn-secondary" href="/auth/sign-in.html" data-i18n="login">Sign in</a>
+<a class="btn btn-primary" href="/auth/create-account.html" data-i18n="create_account">Create account</a>
+</div>
 
-            <a href="/learning/" aria-current="page">
-                Learning
-            </a>
-
-            <a href="/businesses/">
-                Businesses
-            </a>
-
-            <a href="/corporate/">
-                Corporate
-            </a>
-
-            <a href="/developers/">
-                Developers
-            </a>
-
-            <a href="/learning/study-plan.html">
-                Study Plan
-            </a>
-
-        </div>
-
-        <div class="nav-actions">
-
-            <a href="/auth/sign-in.html">
-                Sign in
-            </a>
-
-            <a href="/auth/create-account.html">
-                Create account
-            </a>
-
-        </div>
-
-    </nav>
-
+</div>
 </header>
 
 <main>
@@ -405,16 +382,45 @@
 </main>
 
 
-<footer class="site-footer">
+<footer class="footer">
+<div class="container footer-grid">
 
-    <div class="container">
+<div>
+<a class="brand" href="/">
+<span class="brand-mark">L</span>
+<span>LearnEarnHub</span>
+</a>
+<p data-i18n="home_title">Learn. Build. Earn. Grow.</p>
+</div>
 
-        <p>
-            2026 LearnEarnHub. Learn. Build. Earn. Grow.
-        </p>
+<div>
+<strong>Learning</strong>
+<a href="/learning/" data-i18n="courses">Courses</a>
+<a href="/learning/courses.html">Course catalogue</a>
+<a href="/learning/certificate.html" data-i18n="certificates">Certificates</a>
+<a href="/learning/study-plan.html">Study Plan</a>
+<a href="/learning/progress.html">My Progress</a>
+</div>
 
-    </div>
+<div>
+<strong>Business</strong>
+<a href="/businesses/" data-i18n="business">Businesses</a>
+<a href="/businesses/post-task.html">Post a task</a>
+<a href="/businesses/post-job.html">Post a job</a>
+</div>
 
+<div>
+<strong>Platform</strong>
+<a href="/corporate/" data-i18n="enterprise">Corporate</a>
+<a href="/developers/" data-i18n="career">Developers</a>
+<a href="/auth/sign-in.html" data-i18n="login">Sign in</a>
+</div>
+
+</div>
+
+<div class="container">
+<p>© <span data-year></span> LearnEarnHub. All rights reserved.</p>
+</div>
 </footer>
 
 </body>
