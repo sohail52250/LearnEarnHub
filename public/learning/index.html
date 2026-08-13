@@ -1,186 +1,421 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Learning - LearnEarnHub</title>
-<link rel="stylesheet" href="/assets/css/app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-.leh-language-area{
-    width:100%;
-    margin:0 0 28px;
-}
+    <title>Learning | LearnEarnHub</title>
 
-.leh-language-box{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:8px;
-    padding:12px;
-    background:#fff;
-    border:1px solid #e2e8f0;
-    border-radius:14px;
-    box-shadow:0 6px 20px rgba(15,23,42,.06);
-}
+    <meta
+        name="description"
+        content="Learn practical skills through structured courses, study plans, progress tracking and certificates."
+    >
 
-.leh-language-title{
-    font-weight:800;
-    margin-right:6px;
-}
+    <link rel="icon" href="/favicon.png">
 
-.leh-language-btn{
-    min-height:38px;
-    padding:7px 13px;
-    border:1px solid #dbe3ef;
-    border-radius:9px;
-    background:#f8fafc;
-    color:#122033;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.leh-language-btn:hover,
-.leh-language-btn:focus{
-    background:#eaf0ff;
-    border-color:#2457d6;
-    outline:none;
-}
-
-@media(max-width:700px){
-    .leh-language-box{
-        align-items:stretch;
-    }
-
-    .leh-language-title{
-        width:100%;
-    }
-
-    .leh-language-btn{
-        flex:1 1 calc(50% - 8px);
-    }
-}
-</style>
-
-<script src="/assets/js/leh-api-client.js"></script>
-
-
-<script src="/assets/js/leh-language-system.js" defer></script>
-<script src="/assets/js/leh-learning-api.js"></script>
-<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/leh-language-system.css">
 </head>
 
 <body>
 
 <header class="site-header">
-<div class="container nav">
 
-<a class="brand" href="/">
-<span class="brand-mark">L</span>
-<span>LearnEarnHub</span>
-</a>
+    <nav class="site-nav" aria-label="Primary navigation">
 
-<nav class="nav-links">
-<a href="/learning/">Learning</a>
-<a href="/businesses/">Businesses</a>
-<a href="/corporate/">Corporate</a>
-<a href="/developers/">Developers</a>
+        <a class="brand" href="/">
+            <strong>LearnEarnHub</strong>
+        </a>
 
-    <a href="/learning/learning/study-plan.html" class="btn">Ã°Å¸â€œÅ¡ Study Plan</a>
-</nav>
+        <div class="nav-links">
 
-<div class="nav-actions">
-<a class="btn btn-secondary" href="/auth/sign-in.html">Sign in</a>
-<a class="btn btn-primary" href="/auth/create-account.html">Create account</a>
-</div>
+            <a href="/learning/" aria-current="page">
+                Learning
+            </a>
 
-</div>
+            <a href="/businesses/">
+                Businesses
+            </a>
+
+            <a href="/corporate/">
+                Corporate
+            </a>
+
+            <a href="/developers/">
+                Developers
+            </a>
+
+            <a href="/learning/study-plan.html">
+                Study Plan
+            </a>
+
+        </div>
+
+        <div class="nav-actions">
+
+            <a href="/auth/sign-in.html">
+                Sign in
+            </a>
+
+            <a href="/auth/create-account.html">
+                Create account
+            </a>
+
+        </div>
+
+    </nav>
+
 </header>
 
-<main class="page">
-<div class="container">
+<main>
 
-<div class="leh-language-area">
+    <section class="hero">
 
-</div>
+        <div class="container">
 
-<div class="page-header">
-<span class="eyebrow">Learning</span>
+            <p class="eyebrow">
+                Learning
+            </p>
 
-<h1>
-Learn skills. Complete courses. Get certified.
-</h1>
+            <h1>
+                Learn skills. Complete courses. Get certified.
+            </h1>
 
-<p>
-Build practical knowledge through structured courses with a clear path from enrolment to certification.
-</p>
-</div>
+            <p class="hero-text">
+                Build practical knowledge through structured courses,
+                guided study plans, progress tracking and certification.
+            </p>
 
-<div class="grid-3">
+            <div class="hero-actions">
 
-<article class="card">
+                <a
+                    class="btn"
+                    href="/learning/courses.html"
+                >
+                    Browse courses
+                </a>
 
-<div class="icon" aria-hidden="true"></div>
+                <a
+                    class="btn"
+                    href="/learning/study-plan.html"
+                >
+                    Open study plan
+                </a>
 
-<h3>Course catalogue</h3>
+            </div>
 
-<p>
-Browse courses by subject, level and learning goal.
-</p>
+        </div>
 
-<a class="card-link" href="/learning/courses.html">
-Browse courses
-</a>
+    </section>
 
-</article>
 
-<article class="card">
+    <section class="container">
 
-<div class="icon" aria-hidden="true"></div>
+        <div class="section-heading">
 
-<h3>My learning</h3>
+            <p class="eyebrow">
+                Learning journey
+            </p>
 
-<p>
-Continue enrolled courses and track your progress.
-</p>
+            <h2>
+                Learn, practice, track and earn
+            </h2>
 
-<a class="card-link" href="/dashboard/">
-Open dashboard
-</a>
+            <p>
+                Follow a clear path from choosing a skill to completing
+                learning activities and earning certificates.
+            </p>
 
-</article>
+        </div>
 
-<article class="card">
 
-<div class="icon" aria-hidden="true"></div>
+        <div class="card-grid">
 
-<h3>Certificates</h3>
+            <article class="card">
 
-<p>
-View completed learning and earned certificates.
-</p>
+                <h3>
+                    Course Catalogue
+                </h3>
 
-<a class="card-link" href="/learning/certificate.html">
-View certificates
-</a>
+                <p>
+                    Browse structured courses by subject, level and
+                    learning goal.
+                </p>
 
-</article>
+                <a
+                    class="btn"
+                    href="/learning/courses.html"
+                >
+                    Browse courses
+                </a>
 
-</div>
+            </article>
 
-</div>
+
+            <article class="card">
+
+                <h3>
+                    Study Plan
+                </h3>
+
+                <p>
+                    Follow a practical roadmap from choosing a skill
+                    through practice and progress.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/study-plan.html"
+                >
+                    Open study plan
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    My Progress
+                </h3>
+
+                <p>
+                    Track your learning activity and continue working
+                    toward your goals.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/progress.html"
+                >
+                    Track progress
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    Continue Learning
+                </h3>
+
+                <p>
+                    Open your dashboard and continue enrolled learning
+                    activities.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/dashboard/"
+                >
+                    Open dashboard
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    Certificates
+                </h3>
+
+                <p>
+                    View completed learning and certificates earned
+                    through LearnEarnHub.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/certificate.html"
+                >
+                    View certificates
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    Move Toward Earning
+                </h3>
+
+                <p>
+                    Explore available opportunities after building
+                    useful skills.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/opportunities.html"
+                >
+                    Explore opportunities
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                Structured learning
+            </p>
+
+            <h2>
+                Your learning path
+            </h2>
+
+        </div>
+
+
+        <div class="card-grid">
+
+            <article class="card">
+
+                <h3>
+                    1. Choose a Skill
+                </h3>
+
+                <p>
+                    Find a subject and course that matches your goal.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/courses.html"
+                >
+                    Choose a course
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    2. Study the Course
+                </h3>
+
+                <p>
+                    Work through lessons and practical learning material.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/course.html"
+                >
+                    Open course
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    3. Practice
+                </h3>
+
+                <p>
+                    Apply what you learn through practical activities.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/lesson.html"
+                >
+                    Start lesson
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    4. Track Progress
+                </h3>
+
+                <p>
+                    Monitor your learning progress and continue improving.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/progress.html"
+                >
+                    View progress
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    5. Get Certified
+                </h3>
+
+                <p>
+                    Complete eligible learning paths and access certificates.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/learning/certificate.html"
+                >
+                    View certificates
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    6. Move Toward Earning
+                </h3>
+
+                <p>
+                    Explore opportunities that can help turn skills into
+                    practical earning possibilities.
+                </p>
+
+                <a
+                    class="btn"
+                    href="/opportunities.html"
+                >
+                    Explore opportunities
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
 </main>
 
-<footer class="footer">
-<div class="container">
-<p>
- <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.
-</p>
-</div>
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <p>
+            2026 LearnEarnHub. Learn. Build. Earn. Grow.
+        </p>
+
+    </div>
+
 </footer>
 
-<script src="/assets/js/app.js"></script>
-
-<script src="/assets/js/leh-language-system.js"></script>
 </body>
 </html>
