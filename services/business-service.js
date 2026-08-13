@@ -1,4 +1,4 @@
-﻿const { createClient } = require("@supabase/supabase-js");
+const { createClient } = require("@supabase/supabase-js");
 
 function client() {
     const url = process.env.SUPABASE_URL;
@@ -91,6 +91,46 @@ async function getBusiness(referenceId) {
     return data;
 }
 
+async function listOpportunities(options = {}) {
+    const db = client();
+
+    const requestedLimit = Number(options.limit || 100);
+
+    const limit = Math.min(
+        Math.max(requestedLimit, 1),
+        100
+    );
+
+    const { data, error } = await db
+        .from("business_tasks")
+        .select(`
+            *,
+            businesses!inner(
+                reference_id,
+                business_name,
+                visibility,
+                verification_status,
+                status
+            )
+        `)
+        .eq("status", "open")
+        .eq("businesses.visibility", "public")
+        .eq("businesses.verification_status", "approved")
+        .eq("businesses.status", "active")
+        .order("created_at", { ascending: false })
+        .limit(limit);
+
+    if (error) throw error;
+
+    return (data || []).map(task => ({
+        ...task,
+        business_reference:
+            task.businesses?.reference_id || null,
+        business_name:
+            task.businesses?.business_name || null
+    }));
+}
+
 async function createTask(businessReference, payload) {
     const db = client();
 
@@ -119,6 +159,17 @@ async function createTask(businessReference, payload) {
                 ? null
                 : Number(payload.time_required_minutes),
         deadline: payload.deadline || null,
+        required_skills: [
+            ...new Set(
+                (
+                    Array.isArray(payload.required_skills)
+                        ? payload.required_skills
+                        : String(payload.required_skills || "").split(",")
+                )
+                    .map(value => String(value || "").trim().toLowerCase())
+                    .filter(Boolean)
+            )
+        ],
         status: "open"
     };
 
@@ -136,5 +187,6 @@ async function createTask(businessReference, payload) {
 module.exports = {
     createBusiness,
     getBusiness,
-    createTask
+    createTask,
+    listOpportunities
 };
