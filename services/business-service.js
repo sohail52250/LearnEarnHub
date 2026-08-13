@@ -131,6 +131,94 @@ async function listOpportunities(options = {}) {
     }));
 }
 
+async function getOpportunity(referenceId) {
+    const db = client();
+
+    const reference = String(referenceId || '').trim();
+
+    if (!reference) {
+        return null;
+    }
+
+    const { data, error } = await db
+        .from("business_tasks")
+        .select(`
+            id,
+            reference_id,
+            task_description,
+            payment_amount,
+            payment_currency,
+            frequency,
+            time_required_minutes,
+            deadline,
+            required_skills,
+            status,
+            created_at,
+            updated_at,
+            businesses!inner(
+                reference_id,
+                business_name,
+                business_type,
+                category,
+                description,
+                website,
+                country,
+                city,
+                visibility,
+                verification_status,
+                status
+            )
+        `)
+        .eq("reference_id", reference)
+        .eq("status", "open")
+        .eq("businesses.visibility", "public")
+        .eq("businesses.verification_status", "approved")
+        .eq("businesses.status", "active")
+        .maybeSingle();
+
+    if (error) throw error;
+
+    if (!data) {
+        return null;
+    }
+
+    return {
+        id: data.id,
+        reference_id: data.reference_id,
+        task_description: data.task_description,
+        payment_amount: data.payment_amount,
+        payment_currency: data.payment_currency,
+        frequency: data.frequency,
+        time_required_minutes: data.time_required_minutes,
+        deadline: data.deadline,
+        required_skills: Array.isArray(data.required_skills)
+            ? data.required_skills
+            : [],
+        status: data.status,
+        created_at: data.created_at,
+        updated_at: data.updated_at,
+        business: data.businesses
+            ? {
+                reference_id:
+                    data.businesses.reference_id || null,
+                business_name:
+                    data.businesses.business_name || null,
+                business_type:
+                    data.businesses.business_type || null,
+                category:
+                    data.businesses.category || null,
+                description:
+                    data.businesses.description || null,
+                website:
+                    data.businesses.website || null,
+                country:
+                    data.businesses.country || null,
+                city:
+                    data.businesses.city || null
+            }
+            : null
+    };
+}
 async function createTask(businessReference, payload) {
     const db = client();
 
@@ -188,5 +276,6 @@ module.exports = {
     createBusiness,
     getBusiness,
     createTask,
+    getOpportunity,
     listOpportunities
 };
