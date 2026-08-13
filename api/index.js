@@ -1,4 +1,4 @@
-﻿const express=require("express");
+const express=require("express");
 
 const app=express();
 
@@ -40,6 +40,7 @@ app.post("/complete-lesson", completeLesson);
 
 /* businesses-api-route */
 app.use("/businesses", require("./businesses"));
+app.use("/opportunities", require("./opportunities"));
 
 app.use("/courses", require("../routes/courses"));
 app.use("/certificates", require("../routes/certificates"));
