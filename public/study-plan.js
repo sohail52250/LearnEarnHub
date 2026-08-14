@@ -50,21 +50,24 @@ async function loadStudyPlan(){
 
         /*
          * Step 24E canonical recommendation:
-         * Prefer the existing Computer Fundamentals root beginner course.
-         * The ID is taken only from /api/courses; it is never invented.
+         * Select the existing Computer Basics course returned by /api/courses.
+         * The course ID is obtained exclusively from the canonical API response.
+         * No course ID is invented or hard-coded.
          */
         const recommended = courses.find(function(course){
-            const title=String(course.title || course.name || course.course_title || "").trim().toLowerCase();
-            const category=String(course.category || course.type || "").trim().toLowerCase();
-            return title === "computer fundamentals" ||
-                (title.indexOf("computer") !== -1 && category.indexOf("root beginner") !== -1);
-        }) || courses.find(function(course){
-            const level=String(course.level || course.difficulty || "").trim().toLowerCase();
-            return level === "beginner";
+            const title=String(
+                course.title ||
+                course.title_en ||
+                course.name ||
+                course.course_title ||
+                ""
+            ).trim().toLowerCase();
+
+            return title === "computer basics";
         });
 
         if(!recommended){
-            throw new Error("No beginner course was returned by the canonical learning API.");
+            throw new Error("Canonical Computer Basics course was not returned by the learning API.");
         }
 
         const courseId = recommended.id || recommended.course_id;
