@@ -1,0 +1,60 @@
+﻿/* ============================================================
+   LearnEarnHub Universal Button Icons
+   ============================================================ */
+
+.leh-button-icon {
+    width: 1.05em;
+    height: 1.05em;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: -0.14em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+button .leh-button-icon,
+.btn .leh-button-icon,
+[role="button"] .leh-button-icon,
+.card-link .leh-button-icon {
+    margin-inline-end: .48em;
+}
+
+.leh-icon-only .leh-button-icon {
+    margin-inline-end: 0;
+}
+
+button,
+.btn,
+[role="button"] {
+    gap: .45em;
+}
+
+button.leh-icon-ready,
+.btn.leh-icon-ready,
+[role="button"].leh-icon-ready {
+    align-items: center;
+}
+
+[dir="rtl"] button .leh-button-icon,
+[dir="rtl"] .btn .leh-button-icon,
+[dir="rtl"] [role="button"] .leh-button-icon,
+[dir="rtl"] .card-link .leh-button-icon {
+    margin-inline-end: 0;
+    margin-inline-start: .48em;
+}
+
+.leh-button-icon[aria-hidden="true"] {
+    user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn:hover,
+    button:hover,
+    [role="button"]:hover {
+        transform: none !important;
+    }
+}
