@@ -1,4 +1,4 @@
-async function loadInstructorDashboard(){
+﻿async function loadInstructorDashboard(){
 
 const client=supabase.createClient(
 SUPABASE_URL,
@@ -9,7 +9,7 @@ SUPABASE_ANON_KEY
 const {data:{user}}=await client.auth.getUser();
 
 if(!user){
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 }
 

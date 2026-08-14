@@ -1,4 +1,4 @@
-/*
+﻿/*
  * LearnEarnHub authentication flow guidance.
  *
  * This does NOT replace authentication forms.
@@ -47,7 +47,7 @@
         let config = null;
 
         if (
-            current.endsWith("/login.html") ||
+            current.endsWith("/auth/sign-in.html") ||
             current.endsWith("/login-v2.html")
         ) {
             config = {
@@ -74,7 +74,7 @@
                 links: [
                     {
                         label: "Already registered? Sign in",
-                        href: "/login.html"
+                        href: "/auth/sign-in.html"
                     }
                 ]
             };
@@ -91,7 +91,7 @@
                     }
                 ]
             };
-        } else if (current.endsWith("/developer/login.html")) {
+        } else if (current.endsWith("/developer/auth/sign-in.html")) {
             config = {
                 title: "Developer sign in",
                 text:
@@ -134,7 +134,7 @@
                 links: [
                     {
                         label: "Already have an account? Sign in",
-                        href: "/login.html"
+                        href: "/auth/sign-in.html"
                     },
                     {
                         label: "Explore learning",

@@ -1,4 +1,4 @@
-async function getUserRole(userId){
+﻿async function getUserRole(userId){
 
 const result = await fetch(
 `${SUPABASE_URL}/rest/v1/user_roles?user_id=eq.${userId}`,
@@ -34,7 +34,7 @@ if(!user){
 
 alert("Login required");
 
-window.location.href="/login.html";
+window.location.href="/auth/sign-in.html";
 
 return false;
 

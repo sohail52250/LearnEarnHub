@@ -1,4 +1,4 @@
-async function loadProfile(){
+﻿async function loadProfile(){
 
 const client=supabase.createClient(
 SUPABASE_URL,
@@ -8,7 +8,7 @@ SUPABASE_ANON_KEY
 const user=JSON.parse(localStorage.getItem("user")||"null");
 
 if(!user){
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 }
 

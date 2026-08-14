@@ -1,4 +1,4 @@
-
+﻿
 
 async function applyInstructor(){
 
@@ -22,7 +22,7 @@ if(!user){
 
 alert("Please login first");
 
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 
 return;
 

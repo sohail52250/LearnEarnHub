@@ -1,4 +1,4 @@
-
+﻿
 async function loadTrust(){
 
 const client=supabase.createClient(
@@ -13,7 +13,7 @@ await client.auth.getUser();
 
 if(!user){
 
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 
 return;
 

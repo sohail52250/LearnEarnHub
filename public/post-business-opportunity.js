@@ -1,4 +1,4 @@
-
+﻿
 async function postOpportunity(){
 
 
@@ -11,7 +11,7 @@ let user=session.data.session?.user;
 
 if(!user){
 
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 
 }

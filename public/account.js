@@ -1,4 +1,4 @@
-async function showUser(){
+﻿async function showUser(){
 
 const client = supabase.createClient(
 SUPABASE_URL,
@@ -37,6 +37,6 @@ SUPABASE_ANON_KEY
 
 await client.auth.signOut();
 
-window.location="/login.html";
+window.location="/auth/sign-in.html";
 
 }

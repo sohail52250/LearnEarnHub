@@ -1,4 +1,4 @@
-async function requestAd(packageName,amount){
+﻿async function requestAd(packageName,amount){
 
 const client=supabase.createClient(
 SUPABASE_URL,
@@ -10,7 +10,7 @@ const {data:userData}=await client.auth.getUser();
 
 
 if(!userData.user){
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 }
 

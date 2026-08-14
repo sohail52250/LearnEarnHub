@@ -1,4 +1,4 @@
-async function loadBusinessTrust(){
+﻿async function loadBusinessTrust(){
 
 const client=supabase.createClient(
 SUPABASE_URL,
@@ -10,7 +10,7 @@ localStorage.getItem("user") || "null"
 );
 
 if(!user){
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 }
 

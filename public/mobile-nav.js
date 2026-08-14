@@ -1,4 +1,4 @@
-
+﻿
 function createMobileNav(){
 
 let nav=document.createElement("div");
@@ -20,7 +20,7 @@ nav.innerHTML=`
 🏆 Certificates
 </a>
 
-<a href="/login.html">
+<a href="/auth/sign-in.html">
 👤 Account
 </a>
 
