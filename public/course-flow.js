@@ -16,7 +16,7 @@
     certificate: "/certificate.html",
     quiz: "/quiz.html",
     practice: "/practice.html",
-    studyPlan: "/study-plan.html"
+    studyPlan: "/learning/"
   };
 
   function params() {
