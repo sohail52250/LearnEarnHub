@@ -1,23 +1,34 @@
+async function ensureLearningApi(){
+    if(window.LEH_LEARNING_API && typeof window.LEH_LEARNING_API.getCourses === "function"){
+        return;
+    }
+
+    await new Promise(function(resolve,reject){
+        const script=document.createElement("script");
+        script.src="/assets/js/leh-learning-api.js";
+        script.onload=resolve;
+        script.onerror=function(){ reject(new Error("Unable to load the canonical learning API.")); };
+        document.head.appendChild(script);
+    });
+}
+
 async function loadStudyPlan(){
 
     const box=document.getElementById("study-plan");
     const nextBox=document.getElementById("next-step");
 
     try{
-        if(!window.LEH_LEARNING_API || typeof window.LEH_LEARNING_API.getCourses !== "function"){
-            throw new Error("LearnEarnHub learning API is unavailable.");
-        }
+        await ensureLearningApi();
 
         const client = window.supabase && typeof window.supabase.createClient === "function"
             ? window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY)
             : null;
 
-        let user = null;
         let progress = [];
 
         if(client){
             const {data:userData}=await client.auth.getUser();
-            user = userData && userData.user ? userData.user : null;
+            const user = userData && userData.user ? userData.user : null;
 
             if(user){
                 const {data:progressData}=await client
