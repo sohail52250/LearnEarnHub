@@ -1,4 +1,4 @@
-/*
+﻿/*
  * LearnEarnHub — Central Authentication & Role Access
  *
  * Supabase session is the authentication source of truth.
@@ -175,7 +175,7 @@
         }
       } catch (error) {}
 
-      window.location.replace("/login.html");
+      window.location.replace("/auth/sign-in.html");
       return null;
     }
 

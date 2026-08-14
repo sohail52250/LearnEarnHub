@@ -1,4 +1,4 @@
-async function registerUser(){
+﻿async function registerUser(){
 
 const name=document.getElementById("name").value;
 const email=document.getElementById("email").value;
@@ -29,7 +29,7 @@ return;
 }
 alert("Account created successfully!");
 
-window.location="/login.html";
+window.location="/auth/sign-in.html";
 
 }
 
@@ -79,6 +79,6 @@ SUPABASE_ANON_KEY
 
 await client.auth.signOut();
 
-window.location="/login.html";
+window.location="/auth/sign-in.html";
 
 }

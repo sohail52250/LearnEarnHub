@@ -1,4 +1,4 @@
-
+﻿
 async function loadMarketplace(){
 
 
@@ -89,7 +89,7 @@ await client.auth.getUser();
 
 if(!user){
 
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 
 return;
 

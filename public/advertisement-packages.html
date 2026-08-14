@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
@@ -68,19 +68,16 @@ table{
 <link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/assets/css/leh-design-system.css">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
-<script src="/language-config.js"></script>
-
-
-
-
-
-    <link rel="stylesheet" href="/assets/css/leh-final-ui.css">
+<link rel="stylesheet" href="/assets/css/leh-final-ui.css">
 <link rel="stylesheet" href="/css/responsive-theme.css">
 <link rel="stylesheet" href="/assets/css/leh-professional-theme.css">
     <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+  
+<script src="/assets/js/leh-api-client.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
 <body>
 <div class="leh-global-nav">
@@ -90,8 +87,8 @@ table{
 <a href="/task-marketplace.html">💰 Tasks</a>
 <a href="/marketplace.html">🏪 Marketplace</a>
 <a href="/post-job.html">📝 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">🛠 Developer</a>
+<a href="/auth/sign-in.html">🔐 Login</a>
+<a href="/developer/auth/sign-in.html">🛠 Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -183,7 +180,7 @@ padding-bottom:70px;
 }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script src="/auth-system.js"></script>
     <script src="/mobile-nav.js"></script>

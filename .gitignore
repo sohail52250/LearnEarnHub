@@ -13,3 +13,22 @@ public/*.html.before-*
 public/*before-structure-fix*
 public/*before-google-fix*
 public/*before-main-google-cleanup*
+# LearnEarnHub generated audit/reconstruction files
+audit/
+_reconstruction-backups/
+_reconstruction-fix-backups/
+_seo-auth-audit-backups/
+# Temporary repair snapshots
+public/index.*-backup-*.html
+public/index.*-repair-*.html
+public/index.auto-repair-*.html
+public/index.encoding-backup-*.html
+public/index.language-*.html
+public/index.mojibake-*.html
+public/index.safe-i18n-*.html
+# Backup artifacts
+*.BACKUP-*
+*.backup-*
+*.broken-backup
+*.bak
+*.orig

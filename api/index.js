@@ -38,7 +38,12 @@ app.post("/auth", auth);
 const completeLesson = require("../backend-api/complete-lesson");
 app.post("/complete-lesson", completeLesson);
 
+/* businesses-api-route */
+app.use("/businesses", require("./businesses"));
+app.use("/opportunities", require("./opportunities"));
+
 app.use("/courses", require("../routes/courses"));
+app.use("/certificates", require("../routes/certificates"));
 
 app.get("/jobs",(req,res)=>{
 res.json({
@@ -85,3 +90,4 @@ app.use("/partner/jobs",partnerJobs);
 
 
 module.exports=app;
+

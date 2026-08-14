@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,6 @@ body{font-family:Arial;padding:20px}
 .card{border:1px solid #ddd;padding:15px;margin:10px;border-radius:10px}
 button{padding:10px}
 </style>
-<script src="/language-config.js"></script>
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
 <link rel="stylesheet" href="/assets/css/leh-design-system.css">
 
@@ -22,7 +21,10 @@ button{padding:10px}
     <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+  
+<script src="/assets/js/leh-api-client.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
 <body>
 <div id="global-header"></div>
@@ -48,7 +50,7 @@ box.innerHTML=data.jobs.map(j=>`
 ${j.apply_url?
 `<a href="${j.apply_url}" target="_blank">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script src="/auth-system.js"></script>
 <script src="/config.js"></script>

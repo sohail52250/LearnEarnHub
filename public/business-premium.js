@@ -1,4 +1,4 @@
-
+﻿
 async function buyPlan(plan,amount){
 
 const client=supabase.createClient(
@@ -12,7 +12,7 @@ const {data:userData}=await client.auth.getUser();
 
 if(!userData.user){
 
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 
 }

@@ -1,2 +1,0 @@
-public/post-ad.html:<form id="adForm">
-public/quiz.html:<form id="quiz">

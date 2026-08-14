@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
 
 const token = localStorage.getItem("token");
 
@@ -19,7 +19,7 @@ const protectedPatterns = [
 
 for(const p of protectedPatterns){
     if(path.includes(p)){
-        window.location="/login.html";
+        window.location="/auth/sign-in.html";
         return;
     }
 }

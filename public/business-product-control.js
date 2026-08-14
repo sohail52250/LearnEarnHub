@@ -1,4 +1,4 @@
-
+﻿
 async function loadProducts(){
 
 const client=supabase.createClient(
@@ -13,7 +13,7 @@ localStorage.getItem("user") || "null"
 
 
 if(!user){
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 }
 

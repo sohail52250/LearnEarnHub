@@ -1,4 +1,4 @@
-
+﻿
 async function signUpUser(email,password){
 
 const client =
@@ -165,14 +165,14 @@ window.resetPassword=resetPassword;
         const path = currentPath();
 
         return (
-            path.endsWith("/login.html") ||
+            path.endsWith("/auth/sign-in.html") ||
             path.endsWith("/login-v2.html") ||
             path.endsWith("/register.html") ||
             path.endsWith("/register-v2.html") ||
             path.endsWith("/signup-role.html") ||
             path.endsWith("/signup-v2.html") ||
             path.endsWith("/admin-login.html") ||
-            path.endsWith("/developer/login.html") ||
+            path.endsWith("/developer/auth/sign-in.html") ||
             path.endsWith("/business-register.html")
         );
     }
@@ -242,7 +242,7 @@ window.resetPassword=resetPassword;
          * and submit buttons remain available on their own pages.
          */
         const loginLinks = [
-            "a[href$='/login.html']",
+            "a[href$='/auth/sign-in.html']",
             "a[href$='login.html']",
             "a[href$='/login-v2.html']",
             "a[href$='login-v2.html']"

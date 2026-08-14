@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -71,34 +71,31 @@ table{
 <link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/assets/css/leh-design-system.css">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
-<script src="/language-config.js"></script>
-
-
-
-
-
-    <link rel="stylesheet" href="/assets/css/leh-final-ui.css">
+<link rel="stylesheet" href="/assets/css/leh-final-ui.css">
 <link rel="stylesheet" href="/css/responsive-theme.css">
 <link rel="stylesheet" href="/assets/css/leh-professional-theme.css">
     <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+  
 
     <link rel="stylesheet" href="/auth-flow-guidance.css">
+<script src="/assets/js/leh-api-client.js"></script>
+<script src="/js/supabase-config.js"></script>`r`n<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
 
 
 <body>
 <div class="leh-global-nav">
-<a href="/index.html">🏠 Home</a>
-<a href="/learn.html">📚 Learn</a>
-<a href="/jobs.html">💼 Jobs</a>
-<a href="/task-marketplace.html">💰 Tasks</a>
-<a href="/marketplace.html">🏪 Marketplace</a>
-<a href="/post-job.html">📝 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">🛠 Developer</a>
+<a href="/index.html">ðŸ  Home</a>
+<a href="/learn.html">ðŸ“š Learn</a>
+<a href="/jobs.html">ðŸ’¼ Jobs</a>
+<a href="/task-marketplace.html">ðŸ’° Tasks</a>
+<a href="/marketplace.html">ðŸª Marketplace</a>
+<a href="/post-job.html">ðŸ“ Post Job</a>
+<a href="/auth/sign-in.html">ðŸ” Login</a>
+<a href="/developer/auth/sign-in.html">ðŸ›  Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -123,7 +120,7 @@ font-size:14px;
 
 <div class="card">
 
-<h1>🚀 Create LearnEarnHub Account</h1>
+<h1>ðŸš€ Create LearnEarnHub Account</h1>
 
 
 <label>Name</label>
@@ -139,19 +136,19 @@ font-size:14px;
 <select id="role">
 
 <option value="learner">
-📚 Learner
+ðŸ“š Learner
 </option>
 
 <option value="seller">
-🏪 Seller
+ðŸª Seller
 </option>
 
 <option value="business">
-🏢 Business Owner
+ðŸ¢ Business Owner
 </option>
 
 <option value="investor">
-💰 Investor
+ðŸ’° Investor
 </option>
 
 </select>
@@ -168,11 +165,11 @@ Create Account
 <script src="/assets/js/theme-helper.js"></script>
 
 <div class="leh-bottom-nav">
-<a href="/index.html">🏠<span>Home</span></a>
-<a href="/learn.html">📚<span>Learn</span></a>
-<a href="/jobs.html">💼<span>Jobs</span></a>
-<a href="/task-marketplace.html">💰<span>Earn</span></a>
-<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
+<a href="/index.html">ðŸ <span>Home</span></a>
+<a href="/learn.html">ðŸ“š<span>Learn</span></a>
+<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
+<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
+<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -209,13 +206,29 @@ padding-bottom:70px;
 }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="/auth-system.js"></script>
-    <script src="/mobile-nav.js"></script>
-<script src="/auth-system.js"></script>
 
-    <script src="/auth-flow-guidance.js"></script>
+<script src="/mobile-nav.js"></script>
+<script src="/auth-flow-guidance.js"></script>
+<div class="leh-google-auth" data-google-auth="true" style="margin:16px 0;">
+    <button
+        type="button"
+        class="google-signin-btn"
+        onclick="googleLogin()"
+        style="width:100%;padding:12px 16px;border:1px solid #d0d5dd;border-radius:8px;background:#fff;color:#1f2937;font-weight:600;cursor:pointer;">
+        Continue with Google
+    </button>
+</div>
+<script src="/assets/js/google-login.js"></script>
+<div id="google-auth-container" style="margin-top:12px;">
+<button
+    id="google-signin"
+    type="button"
+    class="btn btn-primary"
+    style="display:block;width:100%;padding:12px;cursor:pointer;">
+    🔐 Continue with Google
+</button>
+</div>
 </body>
 
 </html>

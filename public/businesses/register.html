@@ -1,0 +1,451 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register Business  LearnEarnHub</title>
+<link rel="stylesheet" href="/assets/css/app.css">
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-api-client.js"></script>
+<script src="/assets/js/leh-language-system.js" defer></script>
+</head>
+
+<body>
+
+<header class="site-header">
+<div class="container nav">
+
+<a class="brand" href="/">
+<span class="brand-mark">L</span>
+<span>LearnEarnHub</span>
+</a>
+
+<nav class="nav-links">
+<a href="/learning/">Learning</a>
+<a href="/businesses/">Businesses</a>
+<a href="/corporate/">Corporate</a>
+<a href="/developers/">Developers</a>
+</nav>
+
+<div class="nav-actions">
+<a class="btn btn-secondary" href="/auth/sign-in.html">Sign in</a>
+<a class="btn btn-primary" href="/auth/create-account.html">Create account</a>
+</div>
+
+</div>
+</header>
+
+<main class="page">
+<div class="container">
+
+<div class="page-header">
+<span class="eyebrow">Business registration</span>
+<h1>Create a complete business presence.</h1>
+<p>
+Tell LearnEarnHub who you are, what your business does,
+how people can contact you, and where real work opportunities exist.
+</p>
+</div>
+
+<form id="businessRegistrationForm" class="form-card">
+
+<section>
+<h2>1. Business identity</h2>
+
+<div class="form-group">
+<label for="business_name">Business name *</label>
+<input id="business_name" name="business_name" required>
+</div>
+
+<div class="form-group">
+<label for="legal_name">Legal / registered name</label>
+<input id="legal_name" name="legal_name">
+</div>
+
+<div class="form-group">
+<label for="business_type">Business type</label>
+<select id="business_type" name="business_type">
+<option value="">Select</option>
+<option>Individual / Sole proprietor</option>
+<option>Partnership</option>
+<option>Private company</option>
+<option>Public company</option>
+<option>Non-profit / NGO</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="category">Business category *</label>
+<select id="category" name="category" required>
+<option value="">Select category</option>
+<option>Services</option>
+<option>Retail</option>
+<option>Wholesale</option>
+<option>Manufacturing</option>
+<option>Technology</option>
+<option>Education</option>
+<option>Healthcare</option>
+<option>Finance</option>
+<option>Construction</option>
+<option>Hospitality</option>
+<option>Transport</option>
+<option>Professional services</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="subcategory">Subcategory</label>
+<input id="subcategory" name="subcategory">
+</div>
+
+<div class="form-group">
+<label for="description">Business introduction</label>
+<textarea id="description" name="description" rows="5"
+placeholder="What does your business do?"></textarea>
+</div>
+</section>
+
+<section>
+<h2>2. Contact & presence</h2>
+
+<div class="form-group">
+<label for="contact_person_name">Primary contact person *</label>
+<input id="contact_person_name" name="contact_person_name" required>
+</div>
+
+<div class="form-group">
+<label for="contact_role">Contact person's role</label>
+<input id="contact_role" name="contact_role"
+placeholder="Owner, manager, HR, etc.">
+</div>
+
+<div class="form-group">
+<label for="contact_email">Business email *</label>
+<input type="email" id="contact_email" name="contact_email" required>
+</div>
+
+<div class="form-group">
+<label for="contact_phone">Phone</label>
+<input id="contact_phone" name="contact_phone">
+</div>
+
+<div class="form-group">
+<label for="contact_whatsapp">WhatsApp</label>
+<input id="contact_whatsapp" name="contact_whatsapp">
+</div>
+
+<div class="form-group">
+<label for="website">Website</label>
+<input id="website" name="website" type="url"
+placeholder="https://">
+</div>
+
+<div class="form-group">
+<label for="social_links">Social/profile links</label>
+<textarea id="social_links" name="social_links" rows="3"
+placeholder="One link per line"></textarea>
+</div>
+</section>
+
+<section>
+<h2>3. Location & operations</h2>
+
+<div class="form-group">
+<label for="country">Country</label>
+<input id="country" name="country" value="Pakistan">
+</div>
+
+<div class="form-group">
+<label for="city">City</label>
+<input id="city" name="city">
+</div>
+
+<div class="form-group">
+<label for="address">Business address</label>
+<textarea id="address" name="address" rows="3"></textarea>
+</div>
+
+<div class="form-group">
+<label for="postal_code">Postal code</label>
+<input id="postal_code" name="postal_code">
+</div>
+
+<div class="form-group">
+<label for="business_hours">Business hours</label>
+<input id="business_hours" name="business_hours">
+</div>
+
+<div class="form-group">
+<label for="years_active">Years active</label>
+<input id="years_active" name="years_active" type="number" min="0">
+</div>
+
+<div class="form-group">
+<label for="staff_count">Approximate staff count</label>
+<input id="staff_count" name="staff_count" type="number" min="0">
+</div>
+</section>
+
+<section>
+<h2>4. What the business does</h2>
+
+<div class="form-group">
+<label for="products_services">Products & services</label>
+<textarea id="products_services" name="products_services" rows="5"
+placeholder="What do you sell or provide?"></textarea>
+</div>
+
+<div class="form-group">
+<label for="current_activities">Current business activities</label>
+<textarea id="current_activities" name="current_activities" rows="5"
+placeholder="Describe important activities your business performs regularly."></textarea>
+</div>
+
+<div class="form-group">
+<label for="operational_needs">Operational needs</label>
+<textarea id="operational_needs" name="operational_needs" rows="5"
+placeholder="What support, skills or work does your business need?"></textarea>
+</div>
+</section>
+
+<section>
+<h2>5. Introducer / reference</h2>
+
+<p>
+If someone introduced this business to LearnEarnHub, record the
+relationship here so the business has a traceable reference.
+</p>
+
+<div class="form-group">
+<label for="introducer_name">Introducer name</label>
+<input id="introducer_name" name="introducer_name">
+</div>
+
+<div class="form-group">
+<label for="introducer_relationship">Relationship</label>
+<input id="introducer_relationship" name="introducer_relationship"
+placeholder="Client, partner, employee, friend, organisation, etc.">
+</div>
+
+<div class="form-group">
+<label for="introducer_contact">Introducer contact</label>
+<input id="introducer_contact" name="introducer_contact">
+</div>
+
+<div class="form-group">
+<label for="introducer_reference">Introducer reference / ID</label>
+<input id="introducer_reference" name="introducer_reference">
+</div>
+</section>
+
+<section>
+<h2>6. Business visibility</h2>
+
+<div class="form-group">
+<label for="visibility">Profile visibility</label>
+<select id="visibility" name="visibility">
+<option value="private">Private</option>
+<option value="registered">Registered users</option>
+<option value="public">Public</option>
+</select>
+</div>
+</section>
+
+<section>
+<h2>7. Real work opportunity</h2>
+
+<p>
+After registration, a business can describe recurring work using
+the five-question opportunity model.
+</p>
+
+<div class="form-group">
+<label for="task_description">
+1. What work happens regularly but your staff do not have enough time for?
+</label>
+<textarea id="task_description" name="task_description" rows="4"
+placeholder="Describe the actual task or problem."></textarea>
+</div>
+
+<div class="form-group">
+<label for="payment_amount">
+2. How much would you pay a reliable person to do it?
+</label>
+<input id="payment_amount" name="payment_amount" type="number"
+min="0" step="0.01" placeholder="Amount">
+</div>
+
+<div class="form-group">
+<label for="payment_currency">Currency</label>
+<select id="payment_currency" name="payment_currency">
+<option value="PKR">PKR</option>
+<option value="USD">USD</option>
+<option value="AED">AED</option>
+<option value="SAR">SAR</option>
+<option value="GBP">GBP</option>
+<option value="EUR">EUR</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="frequency">3. How often does this work happen?</label>
+<select id="frequency" name="frequency">
+<option value="">Select</option>
+<option>One time</option>
+<option>Daily</option>
+<option>Several times a week</option>
+<option>Weekly</option>
+<option>Monthly</option>
+<option>As needed</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="time_required_minutes">
+4. How long does one occurrence take?
+</label>
+<input id="time_required_minutes"
+name="time_required_minutes"
+type="number"
+min="1"
+placeholder="Minutes">
+</div>
+
+<div class="form-group">
+<label for="deadline">
+5. When do you need it completed?
+</label>
+<input id="deadline" name="deadline" type="datetime-local">
+</div>
+</section>
+
+<div id="businessMessage" role="status"></div>
+
+<button class="btn btn-primary" type="submit">
+Register business
+</button>
+
+</form>
+
+</div>
+</main>
+
+<footer class="footer">
+<div class="container">
+<p> <span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
+</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+const form=document.getElementById("businessRegistrationForm");
+const message=document.getElementById("businessMessage");
+
+function value(name){
+    const el=form.elements[name];
+    return el ? String(el.value || "").trim() : "";
+}
+
+function socialLinks(){
+    return value("social_links")
+        .split(/\r?\n/)
+        .map(x=>x.trim())
+        .filter(Boolean);
+}
+
+form.addEventListener("submit",async function(event){
+    event.preventDefault();
+
+    message.textContent="Saving business registration...";
+
+    const payload={
+        action:"register",
+
+        business_name:value("business_name"),
+        legal_name:value("legal_name"),
+        business_type:value("business_type"),
+        category:value("category"),
+        subcategory:value("subcategory"),
+        description:value("description"),
+        website:value("website"),
+
+        social_links:{
+            links:socialLinks()
+        },
+
+        contact_person_name:value("contact_person_name"),
+        contact_role:value("contact_role"),
+        contact_email:value("contact_email"),
+        contact_phone:value("contact_phone"),
+        contact_whatsapp:value("contact_whatsapp"),
+
+        country:value("country"),
+        city:value("city"),
+        address:value("address"),
+        postal_code:value("postal_code"),
+
+        business_hours:value("business_hours"),
+        years_active:value("years_active"),
+        staff_count:value("staff_count"),
+
+        products_services:value("products_services"),
+        current_activities:value("current_activities"),
+        operational_needs:value("operational_needs"),
+
+        introducer_name:value("introducer_name"),
+        introducer_relationship:value("introducer_relationship"),
+        introducer_contact:value("introducer_contact"),
+        introducer_reference:value("introducer_reference"),
+
+        visibility:value("visibility")
+    };
+
+    try{
+        const result=await window.LEH_API.post("/businesses",payload);
+
+        if(!result || !result.business){
+            throw new Error("Business registration returned no business record.");
+        }
+
+        const business=result.business;
+
+        if(value("task_description")){
+            await window.LEH_API.post("/businesses",{
+                action:"create-task",
+                business_reference:business.reference_id,
+                task_description:value("task_description"),
+                payment_amount:value("payment_amount"),
+                payment_currency:value("payment_currency"),
+                frequency:value("frequency"),
+                time_required_minutes:value("time_required_minutes"),
+                deadline:value("deadline")
+            });
+        }
+
+        message.innerHTML=
+            "<strong>Business registered successfully.</strong><br>" +
+            "Business reference: <strong>" +
+            String(business.reference_id) +
+            "</strong>";
+
+        form.reset();
+
+    }catch(error){
+        console.error(error);
+
+        message.textContent=
+            error?.message ||
+            "Business registration could not be completed.";
+    }
+});
+
+})();
+</script>
+
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

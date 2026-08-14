@@ -1,0 +1,109 @@
+#leh-header-language {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.leh-language-toggle {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 13px;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 11px;
+    background: #fff;
+    color: var(--text, #122033);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.leh-language-toggle:hover {
+    border-color: var(--primary, #2457d6);
+    background: var(--surface-soft, #f0f4fa);
+}
+
+.leh-language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 190px;
+    padding: 7px;
+    display: none;
+    background: #fff;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, .15);
+}
+
+.leh-language.open .leh-language-menu {
+    display: grid;
+    gap: 4px;
+}
+
+.leh-language-option {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 11px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text, #122033);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.leh-language-option:hover,
+.leh-language-option.active {
+    background: var(--surface-soft, #f0f4fa);
+    color: var(--primary, #2457d6);
+}
+
+.leh-rtl {
+    direction: rtl;
+}
+
+.leh-rtl .leh-language-menu {
+    right: auto;
+    left: 0;
+}
+
+@media (max-width: 620px) {
+    #leh-header-language {
+        margin-left: 2px;
+    }
+
+    .leh-language-toggle {
+        width: 46px;
+        min-width: 46px;
+        padding: 0;
+        justify-content: center;
+        font-size: 0;
+    }
+
+    .leh-language-toggle span:first-child {
+        font-size: 1.25rem;
+    }
+
+    .leh-language-toggle span:last-child {
+        display: none;
+    }
+
+    .leh-language-current {
+        display: none;
+    }
+
+    .leh-language-menu {
+        position: fixed;
+        top: 66px;
+        right: 11px;
+        left: auto;
+    }
+}

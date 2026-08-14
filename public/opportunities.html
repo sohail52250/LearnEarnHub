@@ -1,129 +1,54 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-<title>LearnEarnHub Opportunities</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<style>
-.card{
-border:1px solid #ddd;
-padding:15px;
-margin:10px;
-border-radius:12px;
-}
-button{
-padding:8px 15px;
-border-radius:8px;
-}
-</style>
-<script src="/language-config.js"></script>
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
-<link rel="stylesheet" href="/assets/css/leh-design-system.css">
+    <meta charset="utf-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
 
+    <meta
+        name="description"
+        content="Discover opportunities matched to your skills and interests."
+    >
 
+    <title>Opportunities | LearnEarnHub</title>
 
-    <link rel="stylesheet" href="/assets/css/leh-final-ui.css">
-<link rel="stylesheet" href="/css/responsive-theme.css">
-<link rel="stylesheet" href="/assets/css/leh-professional-theme.css">
-    <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
-
-<link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+    <link
+        rel="stylesheet"
+        href="/css/leh-opportunity-ui.css"
+    >
 </head>
 
 <body>
-<div id="global-header"></div>
 
-<h1>💼 Opportunities Hub</h1>
+<main class="leh-opportunity-page">
 
-<p>Jobs, tasks and earning opportunities from LearnEarnHub sources.</p>
+    <header class="leh-opportunity-header">
+        <h1>Opportunities</h1>
+        <p>
+            Discover opportunities matched to your skills
+            and interests.
+        </p>
+    </header>
 
-<div id="list">Loading opportunities...</div>
+    <section
+        id="leh-opportunity-results"
+        class="leh-opportunity-results"
+        aria-live="polite"
+        aria-busy="true"
+    ></section>
 
-<script>
+    <section
+        id="leh-opportunity-detail"
+        aria-live="polite"
+    ></section>
 
-async function load(){
+</main>
 
-let box=document.getElementById("list");
-let jobs=[];
+<script src="/js/leh-opportunity-api.js"></script>
+<script src="/js/leh-opportunity-ui.js"></script>
 
-try{
-let external=await fetch("/api/external/jobs-feed");
-let e=await external.json();
-
-if(e.jobs){
-jobs.push(...e.jobs.map(x=>({
-title:x.title,
-category:x.category,
-reward:x.reward,
-type:x.type,
-source:x.source,
-url:x.apply_url
-})));
-}
-
-}catch(err){}
-
-
-try{
-let partner=await fetch("/api/partner/jobs");
-let p=await partner.json();
-
-if(p.jobs){
-jobs.push(...p.jobs.map(x=>({
-title:x.title,
-category:"Partner Job",
-reward:x.reward+" "+(x.currency||""),
-type:"task",
-source:x.company,
-url:x.website
-})));
-}
-
-}catch(err){}
-
-
-if(!jobs.length){
-box.innerHTML="<p>No opportunities available.</p>";
-return;
-}
-
-
-box.innerHTML=jobs.map(j=>`
-
-<div class="card">
-
-<h3>${j.title}</h3>
-
-<p>📄Œ Source: ${j.source}</p>
-
-<p>Category: ${j.category}</p>
-
-<p>Type: ${j.type}</p>
-
-<p>Reward: ${j.reward}</p>
-
-${j.url && j.url.startsWith("http")?
-`<a href="${j.url}" target="_blank" rel="noopener">
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="/auth-system.js"></script>
-<script src="/config.js"></script>
-
-<script src="/logout.js"></script>
-<script src="/global-layout.js"></script>
-    <script src="/mobile-nav.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

@@ -1,427 +1,284 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ur">
 <head>
-<meta name="description" content="LearnEarnHub - Learn skills, find opportunities, earn online, and grow your career.">
-<meta property="og:title" content="LearnEarnHub">
-<meta property="og:description" content="Learn skills, find opportunities, earn online, and grow your career.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://learn-earnhub.vercel.app/">
-<meta property="og:image" content="https://learn-earnhub.vercel.app/favicon.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LearnEarnHub">
-<meta name="twitter:description" content="Learn skills, find opportunities, earn online, and grow your career.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://learn-earnhub.vercel.app/">
-<link rel="icon" type="image/png" href="/favicon.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LearnEarnHub - Learn • Earn • Build • Grow</title>
-
-<style>
-
-body{
-font-family:Arial,sans-serif;
-max-width:1400px;
-margin:auto;
-padding:20px;
-background:#f8f9fa;
-}
-
-.hero{
-text-align:center;
-padding:40px;
-background:white;
-border-radius:12px;
-margin-bottom:20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-border:1px solid #ddd;
-}
-
-.btn{
-display:inline-block;
-padding:10px 15px;
-margin:4px;
-border-radius:6px;
-border:1px solid #444;
-text-decoration:none;
-color:black;
-}
-
-h2{
-margin-top:30px;
-}
-
-</style>
-
-
-
-<style>
-*{
- box-sizing:border-box;
-}
-
-html,body{
- width:100%;
- max-width:100%;
- overflow-x:hidden;
-}
-
-body{
- margin:0 auto;
- padding:15px;
- font-size:16px;
-}
-
-img,video,iframe{
- max-width:100%;
- height:auto;
-}
-
-.hero{
- width:100%;
- padding:20px 10px;
-}
-
-.grid{
- display:grid;
- grid-template-columns:
- repeat(auto-fit,minmax(min(100%,260px),1fr));
- gap:15px;
- width:100%;
-}
-
-.card{
- width:100%;
- overflow-wrap:break-word;
-}
-
-.btn{
- max-width:100%;
- display:inline-block;
-}
-
-select{
- max-width:100%;
- padding:8px;
-}
-
-@media(max-width:600px){
-
-body{
- padding:10px;
- font-size:15px;
-}
-
-h1{
- font-size:28px;
-}
-
-h2{
- font-size:22px;
-}
-
-h3{
- font-size:18px;
-}
-
-.btn{
- width:100%;
- margin:5px 0;
- text-align:center;
-}
-
-.grid{
- grid-template-columns:1fr;
-}
-
-}
-</style>
-
-
-
-<style>
-body{
- text-align:center;
-}
-
-.hero,
-.card,
-.grid,
-footer{
- text-align:center;
-}
-
-.grid{
- justify-items:center;
-}
-
-.card{
- max-width:420px;
- width:100%;
-}
-
-.card a{
- display:inline-block;
-}
-
-h1,h2,h3,p{
- text-align:center;
-}
-
-@media(max-width:600px){
- body{
-  padding:10px;
- }
- .card{
-  width:100%;
- }
-}
-</style>
-
-
-<link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
-<meta name="theme-color" content="#0f172a">
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
-<script src="/language-config.js"></script>
-<link rel="stylesheet" href="/assets/css/leh-design-system.css">
-
-
-
-    <link rel="stylesheet" href="/assets/css/leh-final-ui.css">
-<link rel="stylesheet" href="/css/responsive-theme.css">
-<link rel="stylesheet" href="/assets/css/leh-professional-theme.css">
-    <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
-
-<link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="LearnEarnHub — Learn, build, earn and grow through learning, business, corporate and developer opportunities.">
+<title>LearnEarnHub — Learn. Build. Earn. Grow.</title>
+<link rel="stylesheet" href="/assets/css/app.css">
+<script src="/assets/js/leh-api-client.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-accessibility-reconstruction.css">
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
-
 <body>
-<main class="container">
 
-<style>
-.leh-global-nav{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-padding:12px;
-background:#f5f5f5;
-border-radius:10px;
-margin:10px 0;
-}
-.leh-global-nav a{
-padding:8px 12px;
-border-radius:8px;
-text-decoration:none;
-background:white;
-border:1px solid #ddd;
-font-size:14px;
-}
-</style>
-<div id="global-header"></div>
+<header class="site-header">
+<div class="container nav">
 
+<a class="brand" href="/">
+<span class="brand-mark">L</span>
+<span>LearnEarnHub</span>
+</a>
 
-<div class="hero">
+<nav class="nav-links" data-nav>
+<a href="/learning/" data-i18n="learn">Learning</a>
+<a href="/businesses/" data-i18n="business">Businesses</a>
+<a href="/corporate/" data-i18n="enterprise">Corporate</a>
+<a href="/developers/" data-i18n="career">Developers</a>
+</nav>
 
-<h1 data-i18n="home_title">🚀 LearnEarnHub</h1>
+<div class="nav-actions">
+<a class="btn btn-secondary" href="/auth/sign-in.html" data-i18n="login">Sign in</a>
+<a class="btn btn-primary" href="/auth/create-account.html" data-i18n="create_account">Create account</a>
+</div>
 
-<p>
-<span data-i18n="home_subtitle">Learn Skills • Earn Opportunities • Build Business • Grow Enterprise</span>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div>
+<span class="eyebrow" data-i18n="platform_intro">One connected opportunity platform</span>
+
+<h1 data-i18n="home_title">Learn. Build. Earn. Grow.</h1>
+
+<p class="lead">
+LearnEarnHub connects learners, entrepreneurs, businesses and developers
+through four focused experiences — without making the platform confusing.
 </p>
 
-<a class="btn" href="/register-v2.html">Join Now</a>
-<a class="btn" href="/search.html">Search</a>
-<a class="btn" href="/student-dashboard.html">Dashboard</a>
-
+<div class="hero-actions">
+<div class="leh-beginner-guidance" aria-label="Beginner learning guidance">
+  <strong>New here?</strong>
+  <span>Start with a guided learning path.</span>
+</div>
+<a class="btn btn-primary" href="/learning/" data-i18n="start_learning">Start Learning</a>
+<a class="btn btn-secondary" href="/businesses/" data-i18n="explore_businesses">Explore Businesses</a>
+</div>
 </div>
 
-<h2><span data-i18n="learning_hub">🎓 Learning Hub</span></h2>
-
-<div class="grid">
-
-<div class="card">
-<h3><span data-i18n="courses">Courses</span></h3>
-<a href="/courses.html">Open <span data-i18n="courses">Courses</span></a>
+<div class="hero-panel">
+<div class="hero-stat">
+<strong>Learning</strong>
+<span data-i18n="courses_certificates">Courses & certificates</span>
 </div>
 
-<div class="card">
-<h3><span data-i18n="study_plan">Study Plan</span></h3>
-<a href="/study-plan.html">Open <span data-i18n="study_plan">Study Plan</span></a>
+<div class="hero-stat">
+<strong>Businesses</strong>
+<span data-i18n="tasks_jobs">Tasks & jobs</span>
 </div>
 
-<div class="card">
-<h3><span data-i18n="certificates">Certificates</span></h3>
-<a href="/verify-certificate.html">Verify Certificate</a>
+<div class="hero-stat">
+<strong>Corporate</strong>
+<span data-i18n="buy_sell_businesses">Buy & sell businesses</span>
 </div>
 
-<div class="card">
-<h3>Learner Dashboard</h3>
-<a href="/student-dashboard.html">Open Dashboard</a>
+<div class="hero-stat">
+<strong>Developers</strong>
+<span data-i18n="integrations_opportunities">Integrations & opportunities</span>
 </div>
-
-</div>
-
-<h2><span data-i18n="career_hub">💼 Career & Opportunities</span></h2>
-
-<div class="grid">
-
-<div class="card">
-<h3><span data-i18n="profile">Unified Profile</span></h3>
-<a href="/unified-profile.html">Open Profile</a>
-</div>
-
-<div class="card">
-<h3>Learner CV</h3>
-<a href="/view-learner-cv.html">View CV</a>
-</div>
-
-<div class="card">
-<h3>Find Opportunities</h3>
-<a href="/matched-opportunities.html">Explore</a>
-</div>
-
-<div class="card">
-<h3>Verification</h3>
-<a href="/verification-request.html">Get Verified</a>
 </div>
 
 </div>
-
-<h2><span data-i18n="business_hub">🏢 Business Hub</span></h2>
-
-<div class="grid">
-
-<div class="card">
-<h3><span data-i18n="business_marketplace">Business Marketplace</span></h3>
-<a href="/business-marketplace.html">Open Marketplace</a>
-</div>
-
-<div class="card">
-<h3>Sell Business</h3>
-<a href="/sell-business.html">Open</a>
-</div>
-
-<div class="card">
-<h3>Sell Company</h3>
-<a href="/sell-company.html">Open</a>
-</div>
-
-<div class="card">
-<h3>Business Exchange</h3>
-<a href="/business-exchange-dashboard.html">Open</a>
-</div>
-
-</div>
-
-<h2><span data-i18n="enterprise_hub">🤝 Sponsorship & Enterprise</span></h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Sponsor Dashboard</h3>
-<a href="/sponsor-dashboard.html">Open</a>
-</div>
-
-<div class="card">
-<h3>Sponsor Opportunities</h3>
-<a href="/sponsor-opportunities.html">Open</a>
-</div>
-
-<div class="card">
-<h3><span data-i18n="enterprise_zone">Enterprise Zone</span></h3>
-<a href="/enterprise-os-dashboard.html">Open</a>
-</div>
-
-<div class="card">
-<h3>Security Center</h3>
-<a href="/security-center.html">Open</a>
-</div>
-
-</div>
-
-
-
-
-
-<script src="/language-switcher.js"></script>
-<script src="/js/role-guard.js"></script>
-<script src="/assets/js/theme-helper.js"></script>
-<p><a href="/developer/">Developer Portal</a></p><a href="/business-applicants.html">Applicants Dashboard</a>
-
-
-<style>
-.leh-bottom-nav{
-display:none;
-}
-
-@media(max-width:700px){
-.leh-bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-display:flex;
-justify-content:space-around;
-background:white;
-border-top:1px solid #ddd;
-padding:8px 4px;
-z-index:9999;
-}
-
-.leh-bottom-nav a{
-text-align:center;
-text-decoration:none;
-font-size:12px;
-}
-
-.leh-bottom-nav span{
-display:block;
-}
-body{
-padding-bottom:70px;
-}
-}
-</style>
-<a href="/computer-fundamentals.html">💻 Start Computer Fundamentals</a>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="/config.js"></script>
-<script src="/auth-system.js"></script>
-<script src="/google-login.js"></script>
-<script>
-  
-</script>
-
-</main></main>
-    
-
-
-<section>
-<h2>Latest Jobs & Tasks</h2>
-<p>Find remote jobs, freelance tasks and earning opportunities.</p>
-<a href="/opportunities/index.html">
-<button class="btn btn-primary">View Opportunities</button>
-</a>
 </section>
 
-<div id="global-footer"></div>
+<section class="section">
+<div class="container">
 
-<script src="/global-layout.js"></script>
+<div class="section-heading">
+<span class="eyebrow" data-i18n="choose_path">Choose your path</span>
+<h2 data-i18n="learning_hub">Four clear ways to use LearnEarnHub</h2>
+<p data-i18n="shared_platform">Each section has its own purpose while sharing the same account and platform.</p>
+</div>
 
-<script src="/mobile-nav.js"></script>
+<div class="cards">
+
+<article class="card">
+<div class="icon">🎓</div>
+<h3 data-i18n="learn">Learning</h3>
+<p>
+Learn practical skills, complete courses, track progress and earn certificates.
+</p>
+<a class="card-link" href="/learning/">Explore learning →</a>
+</article>
+
+<article class="card">
+<div class="icon">💼</div>
+<h3 data-i18n="business">Businesses</h3>
+<p>
+Register a business, publish tasks and jobs, and connect with capable people.
+</p>
+<a class="card-link" href="/businesses/">Explore businesses →</a>
+</article>
+
+<article class="card">
+<div class="icon">🏢</div>
+<h3 data-i18n="enterprise">Corporate</h3>
+<p>
+Discover businesses available for acquisition and connect buyers with sellers.
+</p>
+<a class="card-link" href="/corporate/">Explore corporate →</a>
+</article>
+
+<article class="card">
+<div class="icon">⚙️</div>
+<h3 data-i18n="career">Developers</h3>
+<p>
+Connect external platforms and make useful jobs and opportunities available here.
+</p>
+<a class="card-link" href="/developers/">Explore developers →</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="section-heading">
+<span class="eyebrow" data-i18n="for_learners">For learners</span>
+<h2 data-i18n="learning_path_title">A simple path from learning to certification</h2>
+<p>
+No confusing jumps. Learners can follow a clear progression from discovering a
+course through completion and certification.
+</p>
+</div>
+
+<div class="flow">
+
+<div class="flow-step">
+<div class="flow-number">01</div>
+<h3 data-i18n="discover">Discover</h3>
+<p data-i18n="discover_text">Find a course that matches your goal.</p>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">02</div>
+<h3 data-i18n="enrol">Enrol</h3>
+<p data-i18n="enrol_text">Start the course and access its lessons.</p>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">03</div>
+<h3>Learn</h3>
+<p data-i18n="learn_text">Complete lessons and track your progress.</p>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">04</div>
+<h3 data-i18n="assess">Assess</h3>
+<p data-i18n="assess_text">Complete required assessments.</p>
+</div>
+
+<div class="flow-step">
+<div class="flow-number">05</div>
+<h3 data-i18n="certify">Certify</h3>
+<p data-i18n="certify_text">Receive your course certificate.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="feature-grid">
+
+<article class="card">
+<h3 data-i18n="for_entrepreneurs">For entrepreneurs</h3>
+<p>
+Build a business presence, publish opportunities and connect with people.
+</p>
+<a class="card-link" href="/businesses/">Business workspace →</a>
+</article>
+
+<article class="card">
+<h3 data-i18n="for_companies">For companies</h3>
+<p>
+Explore opportunities to acquire or sell businesses through a dedicated space.
+</p>
+<a class="card-link" href="/corporate/">Corporate marketplace →</a>
+</article>
+
+<article class="card">
+<h3 data-i18n="for_developers">For developers</h3>
+<p>
+Bring external opportunities into LearnEarnHub through future integrations.
+</p>
+<a class="card-link" href="/developers/">Developer platform →</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta">
+
+<div>
+<h2 data-i18n="create_account">Ready to get started?</h2>
+<p data-i18n="ready_text">Create one account and choose the experience that fits you.</p>
+</div>
+
+<a class="btn btn-primary" href="/auth/create-account.html">
+Create your account
+</a>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container footer-grid">
+
+<div>
+<a class="brand" href="/">
+<span class="brand-mark">L</span>
+<span>LearnEarnHub</span>
+</a>
+<p data-i18n="home_title">Learn. Build. Earn. Grow.</p>
+</div>
+
+<div>
+<strong>Learning</strong>
+<a href="/learning/" data-i18n="courses">Courses</a>
+<a href="/learning/courses.html">Course catalogue</a>
+<a href="/learning/certificate.html" data-i18n="certificates">Certificates</a>
+</div>
+
+<div>
+<strong>Business</strong>
+<a href="/businesses/" data-i18n="business">Businesses</a>
+<a href="/businesses/post-task.html">Post a task</a>
+<a href="/businesses/post-job.html">Post a job</a>
+</div>
+
+<div>
+<strong>Platform</strong>
+<a href="/corporate/" data-i18n="enterprise">Corporate</a>
+<a href="/developers/" data-i18n="career">Developers</a>
+<a href="/auth/sign-in.html" data-i18n="login">Sign in</a>
+</div>
+
+</div>
+
+<div class="container">
+<p>© <span data-year></span> LearnEarnHub. All rights reserved.</p>
+</div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
 
 </body>
 </html>
+
+

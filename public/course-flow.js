@@ -1,4 +1,4 @@
-/* LearnEarnHub — canonical learner course-flow helper */
+/* LearnEarnHub â€” canonical learner course-flow helper */
 (function () {
   "use strict";
 
@@ -16,7 +16,7 @@
     certificate: "/certificate.html",
     quiz: "/quiz.html",
     practice: "/practice.html",
-    studyPlan: "/study-plan.html"
+    studyPlan: "/learning/"
   };
 
   function params() {
@@ -74,17 +74,17 @@
       "align-items:center;";
 
     const links = [
-      ["📚 Learn", FLOW.learn],
-      ["🎓 Courses", FLOW.courses],
-      ["🗂 Categories", FLOW.categories],
-      ["🛒 Marketplace", FLOW.marketplace],
-      ["📖 My Courses", withCourse(FLOW.myCourses)],
-      ["▶️ Continue", withCourse(FLOW.player)],
-      ["📝 Lesson", withCourse(FLOW.lesson)],
-      ["📊 Progress", withCourse(FLOW.progress)],
-      ["🧠 Quiz", withCourse(FLOW.quiz)],
-      ["🏆 Completion", withCourse(FLOW.completion)],
-      ["🎓 Certificate", withCourse(FLOW.certificate)]
+      ["ðŸ“š Learn", FLOW.learn],
+      ["ðŸŽ“ Courses", FLOW.courses],
+      ["ðŸ—‚ Categories", FLOW.categories],
+      ["ðŸ›’ Marketplace", FLOW.marketplace],
+      ["ðŸ“– My Courses", withCourse(FLOW.myCourses)],
+      ["â–¶ï¸ Continue", withCourse(FLOW.player)],
+      ["ðŸ“ Lesson", withCourse(FLOW.lesson)],
+      ["ðŸ“Š Progress", withCourse(FLOW.progress)],
+      ["ðŸ§  Quiz", withCourse(FLOW.quiz)],
+      ["ðŸ† Completion", withCourse(FLOW.completion)],
+      ["ðŸŽ“ Certificate", withCourse(FLOW.certificate)]
     ];
 
     links.forEach(function ([label, href]) {

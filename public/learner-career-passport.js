@@ -1,4 +1,4 @@
-
+﻿
 async function loadPassport(){
 
 const client=supabase.createClient(
@@ -10,7 +10,7 @@ const {data:{user}}=
 await client.auth.getUser();
 
 if(!user){
-location.href="/login.html";
+location.href="/auth/sign-in.html";
 return;
 }
 

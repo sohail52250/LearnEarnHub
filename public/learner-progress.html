@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,7 +9,6 @@
 
 <script src="/js/supabase-config.js"></script>
 
-<script src="/language-config.js"></script>
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
 <link rel="stylesheet" href="/assets/css/leh-design-system.css">
 
@@ -22,20 +21,24 @@
     <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+  
+<script src="/assets/js/leh-api-client.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
+<script src="/assets/js/leh-learning-api.js"></script>
 </head>
 
 <body>
 <div id="global-header"></div>
 <div class="leh-global-nav">
-<a href="/index.html">🏠 Home</a>
-<a href="/learn.html">📚 Learn</a>
-<a href="/jobs.html">💼 Jobs</a>
-<a href="/task-marketplace.html">💰 Tasks</a>
-<a href="/marketplace.html">🏪 Marketplace</a>
-<a href="/post-job.html">📝 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">🛠 Developer</a>
+<a href="/index.html">ðŸ  Home</a>
+<a href="/learn.html">ðŸ“š Learn</a>
+<a href="/jobs.html">ðŸ’¼ Jobs</a>
+<a href="/task-marketplace.html">ðŸ’° Tasks</a>
+<a href="/marketplace.html">ðŸª Marketplace</a>
+<a href="/post-job.html">ðŸ“ Post Job</a>
+<a href="/auth/sign-in.html">ðŸ” Login</a>
+<a href="/developer/auth/sign-in.html">ðŸ›  Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -58,29 +61,29 @@ font-size:14px;
 </style>
 
 
-<h1>📈 Learner Progress Center</h1>
+<h1>ðŸ“ˆ Learner Progress Center</h1>
 <nav>
-<a href="/reputation-center.html">⭐ Reputation</a>
-<a href="/notifications.html">🔔 Notifications</a>
-<a href="/learner-dashboard.html">🏠 Dashboard</a> |
-<a href="/recommended-tasks.html">🎯 Tasks</a> |
-<a href="/task-marketplace.html">📋 Marketplace</a>
+<a href="/reputation-center.html">â­ Reputation</a>
+<a href="/notifications.html">ðŸ”” Notifications</a>
+<a href="/learner-dashboard.html">ðŸ  Dashboard</a> |
+<a href="/recommended-tasks.html">ðŸŽ¯ Tasks</a> |
+<a href="/task-marketplace.html">ðŸ“‹ Marketplace</a>
 </nav>
 
 
-<h2>🛠 Skills</h2>
+<h2>ðŸ›  Skills</h2>
 <div id="skills">Loading...</div>
 
 
-<h2>📋 Task Progress</h2>
+<h2>ðŸ“‹ Task Progress</h2>
 <div id="tasks">Loading...</div>
 
 
-<h2>💰 Earnings</h2>
+<h2>ðŸ’° Earnings</h2>
 <div id="earnings">Loading...</div>
 
 
-<h2>🏅 Badges</h2>
+<h2>ðŸ… Badges</h2>
 <div id="badges">Loading...</div>
 
 
@@ -88,11 +91,11 @@ font-size:14px;
 
 
 <div class="leh-bottom-nav">
-<a href="/index.html">🏠<span>Home</span></a>
-<a href="/learn.html">📚<span>Learn</span></a>
-<a href="/jobs.html">💼<span>Jobs</span></a>
-<a href="/task-marketplace.html">💰<span>Earn</span></a>
-<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
+<a href="/index.html">ðŸ <span>Home</span></a>
+<a href="/learn.html">ðŸ“š<span>Learn</span></a>
+<a href="/jobs.html">ðŸ’¼<span>Jobs</span></a>
+<a href="/task-marketplace.html">ðŸ’°<span>Earn</span></a>
+<a href="/learner-dashboard.html">ðŸ‘¤<span>Dashboard</span></a>
 </div>
 
 <style>
@@ -136,5 +139,6 @@ padding-bottom:70px;
 </body>
 
 </html>
+
 
 

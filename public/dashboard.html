@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -51,7 +51,6 @@ margin:8px;
 
 </style>
 
-<script src="/language-config.js"></script>
 <link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
 <link rel="stylesheet" href="/assets/css/leh-design-system.css">
 
@@ -64,11 +63,14 @@ margin:8px;
     <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
 
 <link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+  
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="/js/supabase-config.js"></script>
 
+<script src="/assets/js/leh-api-client.js"></script>
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
 
 
@@ -81,8 +83,8 @@ margin:8px;
 <a href="/task-marketplace.html">💰 Tasks</a>
 <a href="/marketplace.html">🏪 Marketplace</a>
 <a href="/post-job.html">📝 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">🛠 Developer</a>
+<a href="/auth/sign-in.html">🔐 Login</a>
+<a href="/developer/auth/sign-in.html">🛠 Developer</a>
 </div>
 <style>
 .leh-global-nav{
@@ -148,7 +150,7 @@ async function loadDashboard() {
       await client.auth.getUser();
 
     if (authError || !authData || !authData.user) {
-      window.location.replace("/login.html");
+      window.location.replace("/auth/sign-in.html");
       return;
     }
 

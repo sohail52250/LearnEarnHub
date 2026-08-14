@@ -1,224 +1,122 @@
-<!DOCTYPE html>
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your LearnEarnHub Profile</title>
 
-<title>LearnEarnHub Profile</title>
-
+<script src="/js/supabase-config.js"></script>
 <style>
-
-body{
-font-family:Arial;
-background:#f5f7fb;
-padding:20px;
-}
-
-.box{
-
-background:white;
-max-width:500px;
-margin:auto;
-padding:20px;
-border-radius:12px;
-
-}
-
-input,textarea,button{
-
-width:100%;
-padding:12px;
-margin:8px 0;
-
-}
-
-button{
-
-background:#1565c0;
-color:white;
-border:0;
-
-}
-
+body{margin:0;background:#f5f7fb;color:#172033;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.container{max-width:760px;margin:50px auto;padding:20px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:22px;padding:34px;box-shadow:0 14px 45px rgba(15,23,42,.08)}
+.head{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+.avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;background:#e9eef5;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700}
+h1{margin:0 0 6px;font-size:30px}
+.muted{color:#667085}
+label{display:block;margin:18px 0 7px;font-weight:600}
+input,textarea{width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d0d5dd;border-radius:10px;font:inherit}
+textarea{min-height:110px;resize:vertical}
+button{margin-top:22px;width:100%;padding:14px;border:0;border-radius:10px;background:#111827;color:#fff;font-weight:700;font-size:15px;cursor:pointer}
+button:hover{background:#273449}
+.notice{margin-top:16px;padding:12px;border-radius:10px;background:#f0fdf4;color:#166534;display:none}
 </style>
-
-<script src="/language-config.js"></script>
-<link rel="stylesheet" href="/assets/css/learn-earnhub-ui.css">
-<link rel="stylesheet" href="/assets/css/leh-design-system.css">
-
-
-
-
-    <link rel="stylesheet" href="/assets/css/leh-final-ui.css">
-<link rel="stylesheet" href="/css/responsive-theme.css">
-<link rel="stylesheet" href="/assets/css/leh-professional-theme.css">
-    <link rel="stylesheet" href="/assets/css/leh-ui-final.css">
-
-<link rel="stylesheet" href="/assets/css/leh-universal-responsive.css">
-  <link rel="stylesheet" href="/css/leh-global-spacing.css">
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
 </head>
-
-
 <body>
-<div id="global-header"></div>
-<div class="leh-global-nav">
-<a href="/index.html">🏠 Home</a>
-<a href="/learn.html">📚 Learn</a>
-<a href="/jobs.html">💼 Jobs</a>
-<a href="/task-marketplace.html">💰 Tasks</a>
-<a href="/marketplace.html">🏪 Marketplace</a>
-<a href="/post-job.html">📝 Post Job</a>
-<a href="/login.html">🔐 Login</a>
-<a href="/developer/login.html">🛠 Developer</a>
+<div class="container">
+<div class="card">
+<div class="head">
+<img id="avatar" class="avatar" alt="Profile photo" style="display:none">
+<div id="avatarText" class="avatar">L</div>
+<div>
+<h1>Create your profile</h1>
+<div id="email" class="muted">Loading account</div>
 </div>
-<style>
-.leh-global-nav{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-padding:12px;
-background:#f5f5f5;
-border-radius:10px;
-margin:10px 0;
-}
-.leh-global-nav a{
-padding:8px 12px;
-border-radius:8px;
-text-decoration:none;
-background:white;
-border:1px solid #ddd;
-font-size:14px;
-}
-</style>
-
-
-
-<div class="box">
-
-<h2>👤 My Profile</h2>
-
-
-<input id="name" placeholder="Full Name">
-
-
-<input id="avatar" placeholder="Photo URL">
-
-
-<textarea id="bio" placeholder="About me"></textarea>
-
-
-<button class="btn btn-primary" onclick="save()">
-Save Profile
-</button>
-
-
-<p id="msg"></p>
-
-
 </div>
 
+<p class="muted">
+Complete your LearnEarnHub profile so your account is ready for learning,
+business and earning experiences.
+</p>
 
+<label for="fullName">Full name</label>
+<input id="fullName" autocomplete="name" placeholder="Your full name">
+
+<label for="username">Username</label>
+<input id="username" autocomplete="username" placeholder="Choose a username">
+
+<label for="bio">About you</label>
+<textarea id="bio" placeholder="Tell us briefly about yourself, your skills or goals"></textarea>
+
+<label for="location">Location</label>
+<input id="location" autocomplete="address-level2" placeholder="City, country">
+
+<button id="save">Save profile and continue</button>
+<div id="notice" class="notice"></div>
+</div>
+</div>
 
 <script>
+(async function(){
+const client=window.supabaseClient;
+if(!client){location.replace("/auth/sign-in.html");return;}
 
+const {data,error}=await client.auth.getSession();
+if(error||!data.session){location.replace("/auth/sign-in.html");return;}
 
-const user_id=
-new URLSearchParams(location.search)
-.get("user_id");
+const user=data.session.user;
+const meta=user.user_metadata||{};
+const name=meta.full_name||meta.name||"";
+const avatar=meta.avatar_url||meta.picture||"";
 
+document.getElementById("email").textContent=user.email||"";
+document.getElementById("fullName").value=name;
+document.getElementById("username").value=meta.username||"";
+document.getElementById("bio").value=meta.bio||"";
+document.getElementById("location").value=meta.location||"";
 
-
-async function save(){
-
-
-let res=await fetch("/api/profile",
-{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-
-user_id,
-
-full_name:name.value,
-
-avatar_url:avatar.value,
-
-bio:bio.value
-
-})
-
-});
-
-
-let data=await res.json();
-
-
-msg.innerText=
-"Profile saved ✅";
-
+if(avatar){
+const img=document.getElementById("avatar");
+img.src=avatar;
+img.style.display="block";
+document.getElementById("avatarText").style.display="none";
+}else{
+document.getElementById("avatarText").textContent=(name||user.email||"L").charAt(0).toUpperCase();
 }
 
+document.getElementById("save").onclick=async function(){
+const button=this;
+button.disabled=true;
+button.textContent="Saving profile";
 
+const payload={
+full_name:document.getElementById("fullName").value.trim(),
+username:document.getElementById("username").value.trim(),
+bio:document.getElementById("bio").value.trim(),
+location:document.getElementById("location").value.trim(),
+profile_completed:true
+};
+
+const result=await client.auth.updateUser({data:payload});
+
+if(result.error){
+alert("Profile could not be saved: "+result.error.message);
+button.disabled=false;
+button.textContent="Save profile and continue";
+return;
+}
+
+const n=document.getElementById("notice");
+n.textContent="Profile saved successfully.";
+n.style.display="block";
+
+setTimeout(function(){
+location.replace("/dashboard.html");
+},700);
+};
+})();
 </script>
-
-
-
-<div class="leh-bottom-nav">
-<a href="/index.html">🏠<span>Home</span></a>
-<a href="/learn.html">📚<span>Learn</span></a>
-<a href="/jobs.html">💼<span>Jobs</span></a>
-<a href="/task-marketplace.html">💰<span>Earn</span></a>
-<a href="/learner-dashboard.html">👤<span>Dashboard</span></a>
-</div>
-
-<style>
-.leh-bottom-nav{
-display:none;
-}
-
-@media(max-width:700px){
-.leh-bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-display:flex;
-justify-content:space-around;
-background:white;
-border-top:1px solid #ddd;
-padding:8px 4px;
-z-index:9999;
-}
-
-.leh-bottom-nav a{
-text-align:center;
-text-decoration:none;
-font-size:12px;
-}
-
-.leh-bottom-nav span{
-display:block;
-}
-body{
-padding-bottom:70px;
-}
-}
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="/auth-system.js"></script>
-<script src="/global-layout.js"></script>
-    <script src="/mobile-nav.js"></script>
 </body>
-
 </html>
-
-

@@ -1,6 +1,102 @@
+﻿$ErrorActionPreference = "Stop"
+
+try {
+    Write-Host ""
+    Write-Host "============================================================" -ForegroundColor Cyan
+    Write-Host " LEARNEARNHUB - PRODUCTION DEPLOYMENT CLEANUP" -ForegroundColor Cyan
+    Write-Host "============================================================" -ForegroundColor Cyan
+
+    Write-Host ""
+    Write-Host "[1/8] Checking repository..." -ForegroundColor Yellow
+
+    git status
+    $branch = git branch --show-current
+    Write-Host "Branch: $branch" -ForegroundColor Green
+
+    if ($branch -ne "reconstruction-integration-20260810") {
+        throw "Unexpected branch: $branch"
+    }
+
+    Write-Host ""
+    Write-Host "[2/8] Creating Vercel deployment exclusions..." -ForegroundColor Yellow
+
+    @'
+# ============================================================
+# LearnEarnHub - Vercel production exclusions
+# Keep production deployment limited to application files.
+# ============================================================
+
+# Git / local development
+.git
+.git/**
+.github
+.github/**
+
+# Local backups
+*_BACKUP*
+*_BACKUP*/
+*-BACKUP*
+*-BACKUP*/
+
+# Audit artifacts
+audit
+audit/**
+**/audit
+**/audit/**
+
+# SEO/auth audit backups
+_seo-auth-audit-backups
+_seo-auth-audit-backups/**
+
+# Cleanup/quarantine artifacts
+cleanup-quarantine
+cleanup-quarantine/**
+**/cleanup-quarantine
+**/cleanup-quarantine/**
+
+# Temporary files
+.tmp
+.tmp/**
+temp
+temp/**
+tmp
+tmp/**
+*.tmp
+*.bak
+*.backup
+*.log
+
+# PowerShell/local automation scripts
+reconcile-and-check.ps1
+deploy-fix.ps1
+*.local.ps1
+
+# Documentation that does not need to be deployed
+README.md
+README.*
+CHANGELOG.md
+
+# Node development artifacts
 node_modules
-backups
-safe-backups
-audit.txt
-reports
-*.backup*
+node_modules/**
+
+# Test/development folders
+test
+test/**
+tests
+tests/**
+__tests__
+__tests__/**
+
+# Python/cache artifacts
+__pycache__
+__pycache__/**
+*.pyc
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode
+.vscode/**
+.idea
+.idea/**

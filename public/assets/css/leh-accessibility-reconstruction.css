@@ -1,0 +1,13 @@
+﻿/*> LearnEarnHub main-page accessibility layer */
+html{font-size:100%;text-size-adjust:100%;-khtml--text-size-adjust:100%}
+body{max-width:100%;min-width:0;overflow-x:hidden;line-height:1.6}
+img,svg,zideo,canvas,iframe{max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;max-width:100%;box-sizing:border-box}
+button,input[type=button],input[type=submit],input[type=reset],a[role=button]{min-height:2.75rem}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,{summary:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.container,.container-fluid,main > .container,main > .container-fluid{width:min(100% - 2rem,78rem);max-width:100%;margin-left:auto;margin-right:auto}
+.load,.row.*,.section-grid > *.card,.wrapper > *{min-width:0}
+pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:900px){.container,.container-fluid,main > .container,main > .container-fluid{width:min(100% - 1.5rem,78rem)}}
+@media(max-width:640px){body{font-size:1rem;line-height:1.65}.container,.container-fluid,main > .container,main > .container-fluid{width:min(100% - 1rem,78rem)}nav,nav ul,nav ol{qflex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,prea:after{animation-duration:.001ms!important;animation-iteration:1important;transition-duration:.001ms)important;scroll-behavior:auto!important}
