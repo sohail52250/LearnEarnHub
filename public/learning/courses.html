@@ -3,27 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Courses  LearnEarnHub</title>
+<meta name="description" content="Explore practical LearnEarnHub courses for computer skills, business, office productivity, freelancing, programming, AI and digital skills.">
+<title>Courses | LearnEarnHub</title>
 
 <link rel="stylesheet" href="/assets/css/app.css">
-
 <script src="/assets/js/leh-api-client.js"></script>
 <script src="/assets/js/leh-learning-api.js"></script>
-
 <link rel="stylesheet" href="/assets/css/leh-language-system.css">
 <script src="/assets/js/leh-language-system.js" defer></script>
 
 <style>
-.course-toolbar {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 0 0 28px;
+.course-hero {
+    max-width: 760px;
+    margin-bottom: 28px;
 }
 
-.course-search {
-    flex: 1 1 320px;
+.course-hero h1 {
+    margin-bottom: 10px;
+}
+
+.course-toolbar {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) auto;
+    gap: 12px;
+    margin: 0 0 14px;
+    align-items: center;
+}
+
+.course-search,
+.course-filter {
     min-height: 46px;
     padding: 0 14px;
     border: 1px solid var(--border);
@@ -31,11 +39,32 @@
     background: #fff;
     color: var(--text);
     outline: none;
+    font: inherit;
 }
 
-.course-search:focus {
+.course-search:focus,
+.course-filter:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(36,87,214,.1);
+}
+
+.course-filter {
+    min-width: 190px;
+}
+
+.course-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: .92rem;
+}
+
+.course-count {
+    font-weight: 700;
+    color: var(--text);
 }
 
 .course-status {
@@ -44,6 +73,7 @@
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--muted);
+    margin-bottom: 18px;
 }
 
 .course-status.error {
@@ -62,11 +92,15 @@
     flex: 1;
 }
 
+.course-card h3 {
+    margin-top: 0;
+}
+
 .course-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
-    margin: 14px 0;
+    margin: 16px 0 12px;
 }
 
 .course-badge {
@@ -76,118 +110,117 @@
     border-radius: 999px;
     background: var(--surface-soft);
     color: var(--muted);
-    font-size: .82rem;
+    font-size: .8rem;
     font-weight: 700;
 }
 
+.course-instructor {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
 .course-card .card-link {
-    margin-top: auto;
+    margin-top: 18px;
 }
 
 .course-empty {
     grid-column: 1 / -1;
 }
+
+@media (max-width: 700px) {
+    .course-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .course-filter {
+        width: 100%;
+    }
+}
 </style>
 </head>
 
 <body>
-
 <header class="site-header">
 <div class="container nav">
+    <a class="brand" href="/" aria-label="LearnEarnHub home">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span>LearnEarnHub</span>
+    </a>
 
-<a class="brand" href="/">
-<span class="brand-mark">L</span>
-<span>LearnEarnHub</span>
-</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/learning/">Learning</a>
+        <a href="/businesses/">Businesses</a>
+        <a href="/corporate/">Corporate</a>
+        <a href="/developers/">Developers</a>
+        <a href="/learning/" class="btn">Study Plan</a>
+    </nav>
 
-<nav class="nav-links">
-<a href="/learning/">Learning</a>
-<a href="/businesses/">Businesses</a>
-<a href="/corporate/">Corporate</a>
-<a href="/developers/">Developers</a>
-
-    <a href="/learning/" class="btn">Ã°Å¸â€œÅ¡ Study Plan</a>
-</nav>
-
-<div class="nav-actions">
-<a class="btn btn-secondary" href="/auth/sign-in.html">Sign in</a>
-<a class="btn btn-primary" href="/auth/create-account.html">Create account</a>
-</div>
-
+    <div class="nav-actions">
+        <a class="btn btn-secondary" href="/auth/sign-in.html">Sign in</a>
+        <a class="btn btn-primary" href="/auth/create-account.html">Create account</a>
+    </div>
 </div>
 </header>
 
 <main class="page">
-
 <div class="container">
 
-<div class="page-header">
-<span class="eyebrow">Course catalogue</span>
+    <header class="page-header course-hero">
+        <span class="eyebrow">Course catalogue</span>
+        <h1>Find your next course.</h1>
+        <p>Build practical skills with focused courses designed for learning, progress and earning opportunities.</p>
+    </header>
 
-<h1>Find your next course.</h1>
+    <section aria-label="Course search and filters">
+        <div class="course-toolbar">
+            <label for="course-search" class="sr-only">Search courses</label>
+            <input
+                id="course-search"
+                class="course-search"
+                type="search"
+                placeholder="Search courses, skills or categories..."
+                autocomplete="off"
+                aria-label="Search courses, skills or categories"
+            >
 
-<p>
-Discover practical learning paths designed for people who want
-useful skills and measurable progress.
-</p>
+            <label for="course-category" class="sr-only">Filter by category</label>
+            <select id="course-category" class="course-filter" aria-label="Filter courses by category">
+                <option value="">All categories</option>
+            </select>
+        </div>
+
+        <div class="course-summary" aria-live="polite">
+            <span id="course-count" class="course-count">Loading courses...</span>
+            <span>Use search or category filters to narrow the catalogue.</span>
+        </div>
+    </section>
+
+    <div id="course-status" class="course-status" role="status" aria-live="polite">
+        Loading courses...
+    </div>
+
+    <div id="courses" class="grid-3" style="display:none;"></div>
 </div>
-
-<div class="course-toolbar">
-
-<input
-    id="course-search"
-    class="course-search"
-    type="search"
-    placeholder="Search courses..."
-    autocomplete="off"
-    aria-label="Search courses"
->
-
-</div>
-
-<div
-    id="course-status"
-    class="course-status"
-    role="status"
-    aria-live="polite"
->
-Loading courses...
-</div>
-
-<div
-    id="courses"
-    class="grid-3"
-    style="display:none;"
-></div>
-
-</div>
-
 </main>
 
 <footer class="footer">
-
 <div class="container">
-
-<p>
- <span data-year></span> LearnEarnHub.
-Learn. Build. Earn. Grow.
-</p>
-
+    <p><span data-year></span> LearnEarnHub. Learn. Build. Earn. Grow.</p>
 </div>
-
 </footer>
 
 <script src="/assets/js/app.js"></script>
-
 <script>
 (function () {
     "use strict";
 
     var allCourses = [];
-
     var courseBox = document.getElementById("courses");
     var statusBox = document.getElementById("course-status");
     var searchBox = document.getElementById("course-search");
+    var categoryBox = document.getElementById("course-category");
+    var countBox = document.getElementById("course-count");
 
     function escapeHtml(value) {
         return String(value == null ? "" : value)
@@ -199,225 +232,157 @@ Learn. Build. Earn. Grow.
     }
 
     function normaliseResponse(response) {
-        if (Array.isArray(response)) {
-            return response;
-        }
-
-        if (response && Array.isArray(response.courses)) {
-            return response.courses;
-        }
-
-        if (response && Array.isArray(response.data)) {
-            return response.data;
-        }
-
-        if (response && response.data && Array.isArray(response.data.courses)) {
-            return response.data.courses;
-        }
-
+        if (Array.isArray(response)) return response;
+        if (response && Array.isArray(response.courses)) return response.courses;
+        if (response && Array.isArray(response.data)) return response.data;
+        if (response && response.data && Array.isArray(response.data.courses)) return response.data.courses;
         return [];
     }
 
     function courseTitle(course) {
-        return course.title ||
-            course.name ||
-            course.course_title ||
-            "Skill Course";
+        return course.title || course.name || course.course_title || "Skill Course";
+    }
+
+    function courseCategory(course) {
+        return course.category || course.type || "General Skills";
+    }
+
+    function courseLevel(course) {
+        return course.level || course.difficulty || "Beginner";
+    }
+
+    function isGenericDescription(description, title) {
+        var value = String(description || "").trim().toLowerCase();
+        var expected = "learn " + String(title || "").trim().toLowerCase() + " skills.";
+        return !value || value === expected || /^learn .+ skills\.?$/i.test(String(description || "").trim());
     }
 
     function courseDescription(course) {
-        return course.description ||
-            course.summary ||
-            course.content ||
-            "Practical learning resources from LearnEarnHub.";
+        var title = courseTitle(course);
+        var description = course.description || course.summary || "";
+
+        if (isGenericDescription(description, title)) {
+            return "Build practical skills in " + title + " through focused lessons, examples and guided learning.";
+        }
+
+        return description || "Build practical skills through focused lessons, examples and guided learning.";
+    }
+
+    function courseInstructor(course) {
+        return course.instructor || course.instructor_name || "LearnEarnHub Instructor";
+    }
+
+    function populateCategories(courses) {
+        var categories = {};
+        courses.forEach(function (course) {
+            var category = courseCategory(course).trim();
+            if (category) categories[category] = true;
+        });
+
+        Object.keys(categories)
+            .sort(function (a, b) { return a.localeCompare(b); })
+            .forEach(function (category) {
+                var option = document.createElement("option");
+                option.value = category;
+                option.textContent = category;
+                categoryBox.appendChild(option);
+            });
     }
 
     function renderCourses(courses) {
+        countBox.textContent = courses.length + (courses.length === 1 ? " course" : " courses");
 
         if (!courses.length) {
-
             courseBox.innerHTML =
                 '<div class="card course-empty">' +
                     '<h3>No courses found</h3>' +
-                    '<p>There are currently no courses matching your search.</p>' +
+                    '<p>Try a different search term or choose another category.</p>' +
                 '</div>';
-
             courseBox.style.display = "grid";
             return;
         }
 
         courseBox.innerHTML = courses.map(function (course) {
-
-            var id = course.id ||
-                course.course_id ||
-                course.slug ||
-                "";
-
+            var id = course.id || course.course_id || course.slug || "";
             var title = courseTitle(course);
-
             var description = courseDescription(course);
-
-            var category =
-                course.category ||
-                course.type ||
-                "General";
-
-            var level =
-                course.level ||
-                course.difficulty ||
-                "Beginner";
-
-            var instructor =
-                course.instructor ||
-                course.instructor_name ||
-                "LearnEarnHub Instructor";
-
-            var status =
-                course.status ||
-                "published";
-
-            var href =
-                "/learning/course.html?id=" +
-                encodeURIComponent(String(id));
+            var category = courseCategory(course);
+            var level = courseLevel(course);
+            var instructor = courseInstructor(course);
+            var href = "/learning/course.html?id=" + encodeURIComponent(String(id));
 
             return (
                 '<article class="card course-card">' +
-
                     '<div class="course-card-body">' +
-
-                        '<div class="icon" aria-hidden="true">L</div>' +
-
-                        '<h3>' +
-                            escapeHtml(title) +
-                        '</h3>' +
-
-                        '<p>' +
-                            escapeHtml(description) +
-                        '</p>' +
-
+                        '<h3>' + escapeHtml(title) + '</h3>' +
+                        '<p>' + escapeHtml(description) + '</p>' +
                         '<div class="course-meta">' +
-
-                            '<span class="course-badge">' +
-                                escapeHtml(category) +
-                            '</span>' +
-
-                            '<span class="course-badge">' +
-                                escapeHtml(level) +
-                            '</span>' +
-
-                            '<span class="course-badge">' +
-                                escapeHtml(status) +
-                            '</span>' +
-
+                            '<span class="course-badge">' + escapeHtml(category) + '</span>' +
+                            '<span class="course-badge">' + escapeHtml(level) + '</span>' +
                         '</div>' +
-
-                        '<p>' +
-                            '<strong>Instructor:</strong> ' +
-                            escapeHtml(instructor) +
-                        '</p>' +
-
+                        '<p class="course-instructor"><strong>Instructor:</strong> ' + escapeHtml(instructor) + '</p>' +
                     '</div>' +
-
-                    '<a class="card-link" href="' +
-                        href +
-                    '">' +
-                        'Start learning ' +
-                    '</a>' +
-
+                    '<a class="card-link" href="' + href + '">Start learning</a>' +
                 '</article>'
             );
-
         }).join("");
 
         courseBox.style.display = "grid";
     }
 
     function filterCourses() {
-
-        var query = String(
-            searchBox.value || ""
-        ).trim().toLowerCase();
-
-        if (!query) {
-            renderCourses(allCourses);
-            return;
-        }
+        var query = String(searchBox.value || "").trim().toLowerCase();
+        var category = String(categoryBox.value || "").trim().toLowerCase();
 
         var filtered = allCourses.filter(function (course) {
-
+            var title = courseTitle(course);
+            var description = courseDescription(course);
+            var courseCategoryValue = courseCategory(course);
             var haystack = [
-                course.title,
-                course.name,
-                course.description,
-                course.summary,
-                course.category,
-                course.level,
-                course.instructor
-            ]
-            .filter(Boolean)
-            .join(" ")
-            .toLowerCase();
+                title,
+                description,
+                courseCategoryValue,
+                courseLevel(course),
+                course.instructor,
+                course.instructor_name
+            ].filter(Boolean).join(" ").toLowerCase();
 
-            return haystack.indexOf(query) !== -1;
+            var matchesQuery = !query || haystack.indexOf(query) !== -1;
+            var matchesCategory = !category || courseCategoryValue.toLowerCase() === category;
+            return matchesQuery && matchesCategory;
         });
 
         renderCourses(filtered);
     }
 
     async function loadCourses() {
-
         try {
-
-            if (
-                !window.LEH_LEARNING_API ||
-                typeof window.LEH_LEARNING_API.getCourses !== "function"
-            ) {
-                throw new Error(
-                    "LearnEarnHub learning API is unavailable."
-                );
+            if (!window.LEH_LEARNING_API || typeof window.LEH_LEARNING_API.getCourses !== "function") {
+                throw new Error("LearnEarnHub learning API is unavailable.");
             }
 
             statusBox.textContent = "Loading courses...";
+            var response = await window.LEH_LEARNING_API.getCourses();
+            allCourses = normaliseResponse(response).filter(function (course) {
+                return course && (course.id || course.course_id || course.slug);
+            });
 
-            var response =
-                await window.LEH_LEARNING_API.getCourses();
-
-            allCourses = normaliseResponse(response);
-
+            populateCategories(allCourses);
             statusBox.style.display = "none";
-
             renderCourses(allCourses);
-
         } catch (error) {
-
-            console.error(
-                "LearnEarnHub course catalogue error:",
-                error
-            );
-
-            statusBox.className =
-                "course-status error";
-
-            statusBox.textContent =
-                "Unable to load courses right now. " +
-                "Please try again later.";
-
+            console.error("LearnEarnHub course catalogue error:", error);
+            statusBox.className = "course-status error";
+            statusBox.textContent = "Unable to load courses right now. Please try again later.";
+            countBox.textContent = "Courses unavailable";
             courseBox.style.display = "none";
         }
     }
 
-    searchBox.addEventListener(
-        "input",
-        filterCourses
-    );
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        loadCourses
-    );
-
+    searchBox.addEventListener("input", filterCourses);
+    categoryBox.addEventListener("change", filterCourses);
+    document.addEventListener("DOMContentLoaded", loadCourses);
 })();
 </script>
-
 </body>
 </html>
