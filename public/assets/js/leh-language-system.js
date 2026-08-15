@@ -134,12 +134,7 @@
         wrapper.className = "leh-language";
 
         wrapper.innerHTML =
-            '<button type="button" class="leh-language-toggle" ' +
-            'aria-label="Choose language" aria-expanded="false">' +
-            '<span aria-hidden="true"></span>' +
-            '<span class="leh-language-current">English</span>' +
-            '<span aria-hidden="true"></span>' +
-            '</button>' +
+            '<button type="button" class="leh-language-toggle" aria-label="Choose language" aria-expanded="false"><span class="leh-language-icon" aria-hidden="true">🌐</span><span class="leh-language-current">English</span></button>' +
 
             '<div class="leh-language-menu" role="menu">' +
 
@@ -166,6 +161,8 @@
             '</div>';
 
         const target =
+            document.querySelector(".leh-nav") ||
+            document.querySelector(".leh-header") ||
             document.querySelector(".nav-actions") ||
             document.querySelector(".nav") ||
             document.querySelector(".site-header");
@@ -243,3 +240,9 @@
         }
     );
 })();
+
+
+
+
+
+

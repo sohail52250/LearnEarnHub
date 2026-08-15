@@ -1,4 +1,4 @@
-#leh-header-language {
+﻿#leh-header-language {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -88,8 +88,15 @@
         font-size: 0;
     }
 
-    .leh-language-toggle span:first-child {
+    .leh-language-toggle .leh-language-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.25rem;
+        min-width: 1.25rem;
+        height: 1.25rem;
         font-size: 1.25rem;
+        line-height: 1;
     }
 
     .leh-language-toggle span:last-child {
@@ -107,3 +114,80 @@
         left: auto;
     }
 }
+
+.leh-language-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+    flex: 0 0 auto;
+}
+
+/* ============================================================
+   LEH CANONICAL LANGUAGE SELECTOR ICON
+   Explicitly renders the globe on mobile and desktop.
+   ============================================================ */
+
+.leh-language-toggle .leh-language-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    min-height: 1.25rem;
+    flex: 0 0 auto;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+    visibility: visible;
+    opacity: 1;
+}
+
+.leh-language-toggle .leh-language-icon::before {
+    content: "";
+    display: inline-block;
+    font-size: 1.25rem;
+    line-height: 1;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .leh-language-toggle {
+        width: 46px;
+        min-width: 46px;
+        height: 46px;
+        min-height: 46px;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        display: inline-flex;
+        visibility: visible;
+        opacity: 1;
+        overflow: visible;
+    }
+
+    .leh-language-toggle .leh-language-icon {
+        display: inline-flex;
+        width: 1.25rem;
+        min-width: 1.25rem;
+        height: 1.25rem;
+        min-height: 1.25rem;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .leh-language-toggle .leh-language-icon::before {
+        content: "";
+        display: inline-block;
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+}
+
