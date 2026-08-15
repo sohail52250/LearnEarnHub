@@ -1,4 +1,4 @@
-
+﻿
 async function loadPart(id,file){
 
 let el=document.getElementById(id);
@@ -27,4 +27,5 @@ loadPart(
 "global-footer",
 "/global-footer.html"
 );
+
 
