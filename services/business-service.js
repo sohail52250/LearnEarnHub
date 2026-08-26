@@ -1,4 +1,4 @@
-﻿const { createClient } = require("@supabase/supabase-js");
+const { createClient } = require("@supabase/supabase-js");
 
 function client() {
     const url = process.env.SUPABASE_URL;
@@ -91,6 +91,67 @@ async function getBusiness(referenceId) {
     return data;
 }
 
+/**
+ * Canonical Phase 2 opportunity listing.
+ *
+ * Opportunities are business_tasks joined to their parent businesses.
+ * Only tasks belonging to active, public, approved businesses are exposed.
+ * The service-role client is used only on the server; the same visibility
+ * predicates are kept here so this endpoint remains correct even if RLS is
+ * later changed or a different database client is introduced.
+ */
+async function listOpportunities(options = {}) {
+    const db = client();
+
+    const requestedLimit = Number(options.limit);
+    const limit = Number.isFinite(requestedLimit)
+        ? Math.min(Math.max(Math.trunc(requestedLimit), 1), 100)
+        : 100;
+
+    const { data, error } = await db
+        .from("business_tasks")
+        .select(`
+            id,
+            reference_id,
+            task_description,
+            payment_amount,
+            payment_currency,
+            frequency,
+            time_required_minutes,
+            deadline,
+            status,
+            created_at,
+            updated_at,
+            business:businesses!inner(
+                id,
+                reference_id,
+                business_name,
+                legal_name,
+                business_type,
+                category,
+                subcategory,
+                description,
+                website,
+                country,
+                city,
+                address
+            )
+        `)
+        .eq("status", "open")
+        .eq("businesses.status", "active")
+        .eq("businesses.visibility", "public")
+        .eq("businesses.verification_status", "approved")
+        .order("created_at", { ascending: false })
+        .limit(limit);
+
+    if (error) throw error;
+
+    return (data || []).map((task) => ({
+        ...task,
+        business: task.business || null
+    }));
+}
+
 async function createTask(businessReference, payload) {
     const db = client();
 
@@ -136,5 +197,6 @@ async function createTask(businessReference, payload) {
 module.exports = {
     createBusiness,
     getBusiness,
+    listOpportunities,
     createTask
 };
