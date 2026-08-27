@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ur">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tell LearnEarnHub about a problem, need, service request or improvement idea.">
+<title>Tell Us What You Need | LearnEarnHub</title>
+<link rel="stylesheet" href="/assets/css/app.css">
+<link rel="stylesheet" href="/assets/css/leh-accessibility-reconstruction.css">
+<link rel="stylesheet" href="/assets/css/leh-language-system.css">
+<script src="/assets/js/leh-language-system.js" defer></script>
+<style>
+.form-wrap{max-width:900px;margin:auto}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-weight:700}input,select,textarea{font:inherit;padding:12px;border:1px solid #ccd3dc;border-radius:10px;background:#fff}textarea{min-height:130px;resize:vertical}.hint{font-size:.9rem;opacity:.75}.honeypot{position:absolute;left:-10000px}.result{margin-top:20px;padding:15px;border-radius:10px;display:none}.result.ok,.result.err{display:block}.result.ok{background:#eaf8ef}.result.err{background:#fff0f0}.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:25px 0}.workflow div{padding:14px;border-radius:10px;background:#f4f6f8;text-align:center;font-weight:700}@media(max-width:700px){.form-grid,.workflow{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">L</span><span>LearnEarnHub</span></a><nav class="nav-links"><a href="/learning/">Learning</a><a href="/businesses/">Businesses</a><a href="/sourcing/">Sourcing</a><a href="/corporate/">Corporate</a><a href="/developers/">Developers</a></nav><div class="nav-actions"><a class="btn btn-secondary" href="/auth/sign-in.html">Sign in</a><a class="btn btn-primary" href="/auth/create-account.html">Create account</a></div></div></header>
+<main>
+<section class="section"><div class="container form-wrap">
+<div class="section-heading"><span class="eyebrow">Customer-first discovery</span><h1>Tell Us What You Need</h1><p>Finding the customer's real need is the starting point of good business. Tell us about a problem, service you need, idea, learning request or improvement. We will review it and determine the most useful next step.</p></div>
+<div class="workflow"><div>01 · Need</div><div>02 · Understand</div><div>03 · Find a solution</div><div>04 · Connect & deliver</div></div>
+<form id="needForm"><div class="form-grid">
+<div class="field"><label for="person_type">Who are you? *</label><select id="person_type" name="person_type" required><option value="">Select one</option><option value="customer">Customer</option><option value="student">Student / Learner</option><option value="business">Business</option><option value="supplier">Supplier</option><option value="freelancer">Freelancer</option><option value="employer">Employer</option><option value="other">Other</option></select></div>
+<div class="field"><label for="request_type">What do you need? *</label><select id="request_type" name="request_type" required><option value="">Select one</option><option value="problem">Problem to solve</option><option value="service-request">Service request</option><option value="product-request">Product request</option><option value="website-improvement">Website improvement</option><option value="learning-suggestion">Learning suggestion</option><option value="business-opportunity">Business opportunity</option><option value="feature-request">Feature request</option><option value="other">Other</option></select></div>
+<div class="field full"><label for="title">Short title *</label><input id="title" name="title" maxlength="160" required placeholder="e.g. I need a reliable supplier for office printing"></div>
+<div class="field full"><label for="problem_description">Describe your actual need or problem *</label><textarea id="problem_description" name="problem_description" maxlength="5000" required placeholder="What are you trying to achieve? What is difficult today? Include specifications, quantity or context where useful."></textarea><span class="hint">Focus on the real outcome you want, not only the product or service name.</span></div>
+<div class="field full"><label for="desired_outcome">What outcome would you like?</label><textarea id="desired_outcome" name="desired_outcome" maxlength="3000" placeholder="Describe what a successful solution would look like."></textarea></div>
+<div class="field"><label for="urgency">Urgency</label><select id="urgency" name="urgency"><option value="normal">Normal</option><option value="low">Low</option><option value="high">High</option><option value="urgent">Urgent</option></select></div>
+<div class="field"><label for="location">Location (optional)</label><input id="location" name="location" maxlength="200" placeholder="City / area / remote"></div>
+<div class="field"><label for="budget">Budget (optional)</label><input id="budget" name="budget" type="number" min="0" step="0.01" placeholder="e.g. 25000"></div>
+<div class="field"><label for="preferred_contact">Preferred contact</label><select id="preferred_contact" name="preferred_contact"><option value="">No preference</option><option value="email">Email</option><option value="phone">Phone</option><option value="whatsapp">WhatsApp</option></select></div>
+<div class="field"><label for="contact_name">Your name</label><input id="contact_name" name="contact_name" maxlength="160"></div>
+<div class="field"><label for="contact_email">Email</label><input id="contact_email" name="contact_email" type="email" maxlength="320"></div>
+<div class="field"><label for="contact_phone">Phone / WhatsApp</label><input id="contact_phone" name="contact_phone" maxlength="50"></div>
+<div class="field honeypot" aria-hidden="true"><label>Website</label><input name="website" tabindex="-1" autocomplete="off"></div>
+<div class="field full"><label><input type="checkbox" id="consent" required> I understand that my contact details may be used to follow up on this request.</label></div>
+<div class="field full"><button class="btn btn-primary" id="submitBtn" type="submit">Submit my need / suggestion</button></div>
+</div></form><div id="result" class="result" role="status" aria-live="polite"></div>
+</div></section>
+</main>
+<footer class="footer"><div class="container"><p>© <span data-year></span> LearnEarnHub. Customer needs come first.</p></div></footer>
+<script>
+document.querySelector('[data-year]').textContent=new Date().getFullYear();
+const form=document.getElementById('needForm'),result=document.getElementById('result'),button=document.getElementById('submitBtn');
+form.addEventListener('submit',async e=>{e.preventDefault();button.disabled=true;button.textContent='Sending...';result.className='result';result.textContent='';const body=Object.fromEntries(new FormData(form).entries());delete body.consent;try{const r=await fetch('/api/customer-needs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw new Error(d.error||'Submission failed');result.className='result ok';result.innerHTML='<strong>Thank you.</strong> Your need has been received. Reference: <strong>'+String(d.reference_id)+'</strong>';form.reset()}catch(err){result.className='result err';result.textContent=err.message||'Unable to submit right now.'}finally{button.disabled=false;button.textContent='Submit my need / suggestion'}});
+</script><script src="/assets/js/app.js"></script>
+</body></html>
